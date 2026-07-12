@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grammar Universe — 3D Map | EnglishAngel</title>
+<meta name="description" content="Interactive 3D map of the full EnglishAngel curriculum: 81 grammar topics from A1 to C2, connected by grammar family.">
+<link rel="canonical" href="https://pipefleurs87-sudo.github.io/EnglishAngel.com/herramientas/mapa-3d.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1B2A41;--paper:#EFF1EC;--red:#B23A2E;--gold:#C9962F;--muted:#6B7079;--line:#D8DAD1;--space:#0A111C;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;overflow:hidden;}
+body{background:radial-gradient(ellipse at 50% 35%, #14213A 0%, var(--space) 70%);font-family:'IBM Plex Sans',sans-serif;color:var(--paper);}
+#c3d{position:fixed;inset:0;display:block;cursor:grab;}
+#c3d.dragging{cursor:grabbing;}
+.ui{position:fixed;z-index:5;}
+#hdr{top:18px;left:22px;pointer-events:none;}
+#hdr h1{font-family:'Source Serif 4',serif;font-size:clamp(20px,3vw,30px);font-weight:700;letter-spacing:.3px;}
+#hdr h1 .angel{color:var(--gold);}
+#hdr .sub{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9AA3AE;margin-top:4px;letter-spacing:.6px;}
+#hdr .cursive{font-family:'Caveat',cursive;font-size:17px;color:var(--gold);margin-top:2px;opacity:.9;}
+#searchbox{top:18px;right:22px;display:flex;gap:8px;align-items:center;}
+#search{background:rgba(27,42,65,.75);border:1px solid rgba(216,218,209,.25);color:var(--paper);font-family:'IBM Plex Mono',monospace;font-size:12px;padding:8px 12px;border-radius:20px;width:190px;outline:none;backdrop-filter:blur(6px);}
+#search:focus{border-color:var(--gold);}
+#search::placeholder{color:#7d8794;}
+#levels{bottom:86px;left:50%;transform:translateX(-50%);display:flex;gap:6px;flex-wrap:wrap;justify-content:center;}
+#levels button{background:rgba(27,42,65,.75);border:1px solid rgba(216,218,209,.25);color:var(--paper);font-family:'IBM Plex Mono',monospace;font-size:12px;padding:7px 14px;border-radius:18px;cursor:pointer;backdrop-filter:blur(6px);transition:all .2s;}
+#levels button:hover{border-color:var(--gold);color:var(--gold);}
+#levels button.active{background:var(--gold);border-color:var(--gold);color:#14213A;font-weight:600;}
+#legend{bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:5px;flex-wrap:wrap;justify-content:center;max-width:92vw;}
+.chip{display:flex;align-items:center;gap:5px;background:rgba(27,42,65,.7);border:1px solid rgba(216,218,209,.18);border-radius:14px;padding:4px 10px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#C5CBD3;cursor:pointer;transition:all .2s;backdrop-filter:blur(6px);}
+.chip .dot{width:8px;height:8px;border-radius:50%;flex:none;}
+.chip:hover{border-color:var(--paper);color:var(--paper);}
+.chip.on{border-color:var(--gold);color:var(--paper);background:rgba(201,150,47,.18);}
+.chip.dim{opacity:.35;}
+#tip{position:fixed;z-index:8;pointer-events:none;display:none;background:rgba(16,26,42,.94);border:1px solid rgba(201,150,47,.5);border-radius:10px;padding:10px 13px;max-width:260px;backdrop-filter:blur(8px);box-shadow:0 8px 28px rgba(0,0,0,.5);}
+#tip .tt{font-family:'Source Serif 4',serif;font-size:14.5px;font-weight:600;line-height:1.25;}
+#tip .tm{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);margin-top:4px;letter-spacing:.5px;}
+#tip .th{margin-top:6px;display:flex;gap:4px;flex-wrap:wrap;}
+#tip .th span{font-family:'IBM Plex Mono',monospace;font-size:9px;border:1px solid rgba(216,218,209,.3);border-radius:8px;padding:1px 6px;color:#B8BFC8;}
+#panel{top:0;right:0;height:100%;width:min(340px,92vw);background:rgba(13,21,35,.96);border-left:1px solid rgba(201,150,47,.35);padding:26px 24px;transform:translateX(105%);transition:transform .35s cubic-bezier(.2,.8,.2,1);backdrop-filter:blur(10px);overflow-y:auto;z-index:7;}
+#panel.open{transform:translateX(0);}
+#panel .close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1;}
+#panel .close:hover{color:var(--paper);}
+#panel .lvl{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:1.5px;}
+#panel h2{font-family:'Source Serif 4',serif;font-size:22px;font-weight:700;line-height:1.25;margin:8px 0 4px;}
+#panel .area{font-family:'Caveat',cursive;font-size:19px;color:var(--red);filter:brightness(1.5);}
+#panel .skills{display:flex;gap:5px;flex-wrap:wrap;margin:14px 0 6px;}
+#panel .skills span{font-family:'IBM Plex Mono',monospace;font-size:10px;border:1px solid rgba(216,218,209,.3);border-radius:10px;padding:2px 8px;color:#B8BFC8;}
+#panel .meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8b94a0;margin-bottom:18px;}
+#panel a.btn{display:block;text-align:center;text-decoration:none;font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:14px;padding:11px;border-radius:10px;margin-bottom:9px;transition:filter .2s;}
+#panel a.btn:hover{filter:brightness(1.15);}
+.b-lesson{background:var(--gold);color:#14213A;}
+.b-practice{background:rgba(239,241,236,.12);color:var(--paper);border:1px solid rgba(216,218,209,.35);}
+.b-test{background:var(--red);color:var(--paper);}
+#hint{bottom:18px;right:22px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6d7783;text-align:right;line-height:1.7;transition:opacity 1s;pointer-events:none;}
+#loading{position:fixed;inset:0;z-index:20;background:var(--space);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;transition:opacity .6s;}
+#loading .star{font-size:34px;animation:spin 2.4s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+#loading p{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8b94a0;}
+#backlink{position:fixed;bottom:52px;right:22px;z-index:5;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9AA3AE;text-decoration:none;}
+#backlink:hover{color:var(--gold);}
+@media(max-width:640px){
+ #hdr .cursive{display:none;}
+ #search{width:130px;}
+ #legend{bottom:14px;gap:4px;}
+ .chip{font-size:9px;padding:3px 7px;}
+ #levels{bottom:96px;}
+ #hint{display:none;}
+ #backlink{display:none;}
+}
+</style>
+</head>
+<body>
+<canvas id="c3d"></canvas>
+<div id="loading"><div class="star">✦</div><p>Building the universe…</p></div>
+<div class="ui" id="hdr">
+ <h1>Grammar Universe <span class="angel">✦</span></h1>
+ <div class="sub">ENGLISHANGEL · 81 TOPICS · A1 → C2</div>
+ <div class="cursive">every level is a galaxy — climb the spiral</div>
+ <div class="sub" id="progress-count" style="margin-top:6px;color:var(--gold);"></div>
+</div>
+<div class="ui" id="searchbox"><input id="search" type="text" placeholder="Search a topic… ⏎" autocomplete="off"></div>
+<div class="ui" id="levels"></div>
+<div class="ui" id="legend"></div>
+<div id="tip"></div>
+<div class="ui" id="panel">
+ <button class="close" id="pclose">×</button>
+ <div class="lvl" id="p-lvl"></div>
+ <h2 id="p-title"></h2>
+ <div class="area" id="p-area"></div>
+ <div class="skills" id="p-skills"></div>
+ <div class="meta" id="p-meta"></div>
+ <a class="btn b-lesson" id="p-lesson" target="_blank">📖 Lesson</a>
+ <a class="btn b-practice" id="p-practice" target="_blank">✏️ Practice</a>
+ <a class="btn b-test" id="p-test" target="_blank">🎯 Test</a>
+</div>
+<a id="backlink" href="../index.html">← EnglishAngel home</a>
+<div class="ui" id="hint">drag to orbit · scroll to zoom<br>click a star to open its topic</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const TEMAS=[{"id": "a1-adjectives-people-things-01", "n": "A1", "a": "Adjectives", "t": "Adjectives — Describing People & Things", "q": "vocabulario", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-articles-01", "n": "A1", "a": "Articles", "t": "Articles — a / an / the", "q": "determinantes", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "a1-demonstratives-01", "n": "A1", "a": "Determiners", "t": "This / That / These / Those", "q": "determinantes", "h": ["grammar", "reading", "writing"], "e": 0}, {"id": "a1-family-possessive-s-01", "n": "A1", "a": "Possessives", "t": "Family & Possessive 's", "q": "determinantes", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-have-got-01", "n": "A1", "a": "Have Got", "t": "Have got — Possessions", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-imperatives-01", "n": "A1", "a": "Imperatives", "t": "Imperatives — Instructions & Directions", "q": "funcional_skills", "h": ["grammar", "vocabulary", "listening", "reading", "writing", "speaking"], "e": 0}, {"id": "a1-modal-can-ability-01", "n": "A1", "a": "Modals", "t": "Modal Verb 'Can' — Ability & the Body", "q": "modales", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-modal-have-to-01", "n": "A1", "a": "Modals", "t": "Modal 'Have to' — Obligations at Work & School", "q": "modales", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-modal-must-duties-01", "n": "A1", "a": "Modals", "t": "Modal Verb 'Must' — Duties at Home", "q": "modales", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-modal-should-advice-01", "n": "A1", "a": "Modals", "t": "Modal Verb 'Should' — Advice & Suggestions", "q": "modales", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-modal-would-like-01", "n": "A1", "a": "Wishes & Regrets", "t": "Would like — Wishes & Polite Offers", "q": "modales", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "a1-object-pronouns-01", "n": "A1", "a": "Pronouns & Possessives", "t": "Object Pronouns (me, him, her, us, them)", "q": "pronombres", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "a1-plural-nouns-01", "n": "A1", "a": "Nouns", "t": "Plural Nouns — regular & irregular", "q": "vocabulario", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-prepositions-place-01", "n": "A1", "a": "Prepositions", "t": "Prepositions of Place (in, on, under, next to...)", "q": "preposiciones", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "a1-prepositions-time-01", "n": "A1", "a": "Prepositions", "t": "Prepositions of Time (at, on, in)", "q": "preposiciones", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "a1-present-continuous-01", "n": "A1", "a": "Present Simple", "t": "Present Continuous — Now (vs Present Simple)", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-present-simple-frequency-01", "n": "A1", "a": "Present Simple", "t": "Present Simple — Adverbs of Frequency", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-present-simple-likes-01", "n": "A1", "a": "Present Simple", "t": "Present Simple — Likes, Hobbies & Free Time", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-present-simple-neg-questions-01", "n": "A1", "a": "Present Simple", "t": "Present Simple — Negatives & Questions", "q": "tiempo_verbal", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "a1-present-simple-routines-01", "n": "A1", "a": "Present Simple", "t": "Present Simple — Daily Routines", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-present-simple-wh-questions-01", "n": "A1", "a": "Present Simple", "t": "Present Simple — Wh- Questions", "q": "tiempo_verbal", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "a1-pronouns-possessives-01", "n": "A1", "a": "Pronouns & Possessives", "t": "Subject Pronouns & Possessive Adjectives", "q": "pronombres", "h": ["grammar", "vocabulary", "reading", "writing"], "e": 0}, {"id": "a1-relative-clauses-objects-01", "n": "A1", "a": "Relative Clauses", "t": "Relative Clauses — Objects to Work & Study (a thing that you use to...)", "q": "clausulas_relativas", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-relative-clauses-places-01", "n": "A1", "a": "Relative Clauses", "t": "Relative Clauses — Places in the City (a place where...)", "q": "clausulas_relativas", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-relative-clauses-professions-01", "n": "A1", "a": "Relative Clauses", "t": "Relative Clauses — Defining People (a person who...)", "q": "clausulas_relativas", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-review-grand-01", "n": "A1", "a": "Review", "t": "A1 Grand Review — All Topics Together", "q": "joined_exercise", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "a1-review-identity-01", "n": "A1", "a": "Review", "t": "A1 Review — Identity: To Be, Pronouns & Demonstratives", "q": "joined_exercise", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "a1-review-modals-preps-01", "n": "A1", "a": "Review", "t": "A1 Review — Modals & Prepositions: Advice, Duties, Time & Place", "q": "joined_exercise", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "a1-review-present-simple-01", "n": "A1", "a": "Review", "t": "A1 Review — Present Simple: Routines, Frequency, Questions & Likes", "q": "joined_exercise", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "a1-to-be-nationalities-01", "n": "A1", "a": "Verb To Be", "t": "Verb To Be — Nationalities", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a1-to-be-neg-questions-01", "n": "A1", "a": "Verb To Be", "t": "Verb To Be — Negatives & Questions", "q": "tiempo_verbal", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "a1-wh-questions-bank-01", "n": "A1", "a": "Questions", "t": "Wh- Questions — Question Bank (you / he-she)", "q": "funcional_skills", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "a2-comparatives-superlatives-01", "n": "A2", "a": "Comparatives", "t": "Comparatives & Superlatives — The Great Dilemmas of Life", "q": "comparativos", "h": ["grammar", "vocabulary", "listening", "reading", "writing", "speaking"], "e": 0}, {"id": "a2-countables-some-any-01", "n": "A2", "a": "Countable & Uncountable", "t": "Countable & Uncountable — a / some / any / much / many (Food)", "q": "determinantes", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a2-going-to-future-01", "n": "A2", "a": "Going To", "t": "Going to — Plans, Decisions & Predictions", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a2-past-continuous-vs-simple-01", "n": "A2", "a": "Past Simple", "t": "Past Continuous vs Past Simple — when / while", "q": "tiempo_verbal", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "a2-past-simple-irregular-01", "n": "A2", "a": "Past Simple", "t": "Past Simple — Irregular Verbs (patterns)", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing", "speaking"], "e": 0}, {"id": "a2-past-simple-narrative-01", "n": "A2", "a": "Past Simple", "t": "Past Simple — Telling a Story", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a2-past-simple-regular-01", "n": "A2", "a": "Past Simple", "t": "Past Simple — Regular Verbs (-ed) & Time Expressions", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing", "speaking"], "e": 0}, {"id": "a2-review-grand-01", "n": "A2", "a": "Review", "t": "A2 Grand Review — All Topics Together", "q": "joined_exercise", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "a2-there-is-there-are-01", "n": "A2", "a": "There is/are", "t": "There is / There are — Describing the House", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "a2-verb-to-be-past-01", "n": "A2", "a": "Verb To Be", "t": "Verb To Be — Past (was / were)", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "b1-adverbs-01", "n": "B1", "a": "Comparatives", "t": "Adverbs of Manner — quickly, carefully & comparatives", "q": "comparativos", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "b1-conditionals-0-1-2-01", "n": "B1", "a": "Conditionals", "t": "Conditionals 0, 1 & 2 — One Ice Cream, Three Realities", "q": "tiempo_verbal", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "b1-gerund-vs-infinitive-01", "n": "B1", "a": "Gerund vs Infinitive", "t": "Gerund vs Infinitive — enjoy reading, want to read", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "b1-passive-voice-01", "n": "B1", "a": "Passive Voice", "t": "Passive Voice — Present, Past & Perfect", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "b1-present-perfect-bucket-list-01", "n": "B1", "a": "Present Perfect", "t": "Present Perfect — The Bucket List (already / yet)", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "b1-present-perfect-continuous-01", "n": "B1", "a": "Present Perfect Continuous", "t": "Present Perfect Continuous — for / since / just", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "b1-present-perfect-ever-experiences-01", "n": "B1", "a": "Past Simple", "t": "Have You Ever...? — Experiences (details in past simple)", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing", "speaking"], "e": 0}, {"id": "b1-present-perfect-vs-past-simple-01", "n": "B1", "a": "Past Simple", "t": "Present Perfect vs Past Simple — Which One?", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "listening", "reading", "writing"], "e": 0}, {"id": "b1-review-grand-01", "n": "B1", "a": "Review", "t": "B1 Grand Review — All Topics Together", "q": "joined_exercise", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "b1-used-to-01", "n": "B1", "a": "Used To", "t": "Used to — Past Habits That Are Gone", "q": "tiempo_verbal", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "b1-will-vs-going-to-01", "n": "B1", "a": "Will vs Going To", "t": "Will vs Going to — Plans, Decisions & Promises", "q": "tiempo_verbal", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "b2-causative-01", "n": "B2", "a": "Causative", "t": "Causative — Have / Get Something Done", "q": "tiempo_verbal", "h": ["grammar", "vocabulary", "writing", "speaking"], "e": 0}, {"id": "b2-idioms-money-01", "n": "B2", "a": "Idioms", "t": "Idioms — Money & Business (Abuela Carmen's Wisdom)", "q": "vocabulario", "h": ["vocabulary", "reading", "speaking", "listening"], "e": 0}, {"id": "b2-idioms-time-effort-01", "n": "B2", "a": "Idioms", "t": "Idioms — Time & Effort (Abuela Carmen's Wisdom)", "q": "vocabulario", "h": ["vocabulary", "reading", "speaking", "listening"], "e": 0}, {"id": "b2-linkers-01", "n": "B2", "a": "Linkers", "t": "Linking Words — Contrast, Addition, Cause, Result & More", "q": "funcional_skills", "h": ["writing", "speaking", "reading"], "e": 0}, {"id": "b2-mixed-conditionals-01", "n": "B2", "a": "Conditionals", "t": "Mixed Conditionals", "q": "tiempo_verbal", "h": ["grammar", "writing", "speaking"], "e": 0}, {"id": "b2-modals-deduction-past-01", "n": "B2", "a": "Modals", "t": "Modals of Deduction — Past (must have / might have / can't have)", "q": "modales", "h": ["grammar", "listening", "reading", "writing"], "e": 0}, {"id": "b2-modals-deduction-present-01", "n": "B2", "a": "Modals", "t": "Modals of Deduction — Present (must / might / could / can't)", "q": "modales", "h": ["grammar", "speaking", "listening", "reading"], "e": 0}, {"id": "b2-modals-obligation-past-01", "n": "B2", "a": "Modals", "t": "Modals of Obligation — Past (had to / didn't have to / needn't have)", "q": "modales", "h": ["grammar", "speaking", "writing", "reading"], "e": 0}, {"id": "b2-phrasal-verbs-down-01", "n": "B2", "a": "Phrasal Verbs", "t": "Phrasal Verbs with DOWN", "q": "vocabulario", "h": ["vocabulary", "speaking", "listening", "reading"], "e": 0}, {"id": "b2-phrasal-verbs-get-01", "n": "B2", "a": "Phrasal Verbs", "t": "Phrasal Verbs — GET: One Verb, Many Meanings", "q": "vocabulario", "h": ["vocabulary", "speaking", "listening", "reading"], "e": 0}, {"id": "b2-phrasal-verbs-on-off-01", "n": "B2", "a": "Phrasal Verbs", "t": "Phrasal Verbs with ON vs OFF", "q": "vocabulario", "h": ["vocabulary", "speaking", "listening", "reading"], "e": 0}, {"id": "b2-phrasal-verbs-out-01", "n": "B2", "a": "Phrasal Verbs", "t": "Phrasal Verbs with OUT", "q": "vocabulario", "h": ["vocabulary", "speaking", "listening", "reading"], "e": 0}, {"id": "b2-phrasal-verbs-up-01", "n": "B2", "a": "Phrasal Verbs", "t": "Phrasal Verbs with UP", "q": "vocabulario", "h": ["vocabulary", "speaking", "listening", "reading"], "e": 0}, {"id": "b2-relative-clauses-01", "n": "B2", "a": "Relative Clauses", "t": "Relative Clauses — Non-Defining & Advanced Structures", "q": "clausulas_relativas", "h": ["grammar", "reading", "writing", "speaking"], "e": 0}, {"id": "b2-reported-speech-01", "n": "B2", "a": "Reported Speech", "t": "Reported Speech — Statements, Questions & Commands", "q": "tiempo_verbal", "h": ["grammar", "listening", "reading", "writing", "speaking"], "e": 0}, {"id": "b2-third-conditional-01", "n": "B2", "a": "Conditionals", "t": "Third Conditional — If I Had Known", "q": "tiempo_verbal", "h": ["grammar", "writing", "speaking", "listening"], "e": 0}, {"id": "b2-wish-if-only-01", "n": "B2", "a": "Wishes & Regrets", "t": "Wish / If Only — Regrets & Change", "q": "tiempo_verbal", "h": ["grammar", "speaking", "writing"], "e": 0}, {"id": "c1-advanced-passive-01", "n": "C1", "a": "Passive Voice", "t": "Advanced Passive — Reporting Verbs & Passive Infinitives", "q": "tiempo_verbal", "h": ["grammar", "writing", "reading"], "e": 0}, {"id": "c1-cleft-sentences-01", "n": "C1", "a": "Cleft Sentences", "t": "Cleft Sentences — It-Clefts & What-Clefts", "q": "tiempo_verbal", "h": ["grammar", "writing", "speaking"], "e": 0}, {"id": "c1-ellipsis-substitution-01", "n": "C1", "a": "Ellipsis & Substitution", "t": "Ellipsis & Substitution", "q": "tiempo_verbal", "h": ["grammar", "speaking", "writing"], "e": 0}, {"id": "c1-emphatic-structures-01", "n": "C1", "a": "Emphatic Structures", "t": "Emphatic Structures — do/does/did & so/such", "q": "tiempo_verbal", "h": ["grammar", "speaking", "writing"], "e": 0}, {"id": "c1-future-in-the-past-01", "n": "C1", "a": "Future in the Past", "t": "Future in the Past", "q": "tiempo_verbal", "h": ["grammar", "writing", "speaking"], "e": 0}, {"id": "c1-gerund-clauses-subject-01", "n": "C1", "a": "Gerund Clauses as Subject", "t": "Gerund Clauses as Subject", "q": "tiempo_verbal", "h": ["grammar", "writing", "speaking"], "e": 0}, {"id": "c1-inversion-01", "n": "C1", "a": "Inversion", "t": "Inversion for Emphasis", "q": "tiempo_verbal", "h": ["grammar", "writing", "speaking"], "e": 0}, {"id": "c1-participle-clauses-01", "n": "C1", "a": "Participle Clauses", "t": "Participle Clauses", "q": "tiempo_verbal", "h": ["grammar", "writing", "reading"], "e": 0}, {"id": "c1-register-style-01", "n": "C1", "a": "Register & Style", "t": "Register & Style — Formal vs Informal Rewriting (C1–C2, capstone)", "q": "funcional_skills", "h": ["writing", "speaking", "reading"], "e": 0}, {"id": "c1-subjunctive-01", "n": "C1", "a": "Subjunctive", "t": "Subjunctive — Formal & Literary Register (C1–C2)", "q": "modales", "h": ["grammar", "writing", "speaking", "reading"], "e": 0}, {"id": "c1-would-rather-prefer-01", "n": "C1", "a": "Modals", "t": "Would Rather / Would Prefer", "q": "modales", "h": ["grammar", "speaking", "writing"], "e": 0}];
+const ORDER=['A1','A2','B1','B2','C1'];
+const PROG=(()=>{try{return JSON.parse(localStorage.getItem('ea_progreso')||'{}')}catch(e){return{}}})();
+const PLACE=(()=>{try{return JSON.parse(localStorage.getItem('ea_placement')||'null')}catch(e){return null}})();
+const isLit=id=>!!(PROG[id]&&PROG[id].pct>=60);
+let progressMode=Object.keys(PROG).some(isLit);
+const LVLNAME={A1:'A1',A2:'A2',B1:'B1',B2:'B2',C1:'C1/C2'};
+const ARQ={
+ tiempo_verbal:{c:0xC9962F,n:'Verb tenses'},
+ modales:{c:0xCC4A3C,n:'Modals'},
+ vocabulario:{c:0x4FA3A5,n:'Vocabulary'},
+ joined_exercise:{c:0x8E7CC3,n:'Review'},
+ determinantes:{c:0x5B8DBE,n:'Determiners'},
+ funcional_skills:{c:0xC97BA0,n:'Functional & skills'},
+ clausulas_relativas:{c:0x7FA65A,n:'Relative clauses'},
+ pronombres:{c:0xD98E4A,n:'Pronouns'},
+ preposiciones:{c:0x3FB6C9,n:'Prepositions'},
+ comparativos:{c:0xA8B44A,n:'Comparatives'}
+};
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.1,3000);
+const renderer=new THREE.WebGLRenderer({canvas:document.getElementById('c3d'),antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setSize(innerWidth,innerHeight);
+const root=new THREE.Group();scene.add(root);
+// --- glow texture (shared) ---
+function glowTex(){const s=128,cv=document.createElement('canvas');cv.width=cv.height=s;const g=cv.getContext('2d');const gr=g.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);gr.addColorStop(0,'rgba(255,255,255,1)');gr.addColorStop(.25,'rgba(255,255,255,.45)');gr.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=gr;g.fillRect(0,0,s,s);return new THREE.CanvasTexture(cv);}
+const GLOW=glowTex();
+// --- starfield ---
+(function(){const N=1600,pos=new Float32Array(N*3);for(let i=0;i<N;i++){const r=420+Math.random()*520,t=Math.random()*Math.PI*2,p=Math.acos(2*Math.random()-1);pos[i*3]=r*Math.sin(p)*Math.cos(t);pos[i*3+1]=r*Math.cos(p);pos[i*3+2]=r*Math.sin(p)*Math.sin(t);}
+const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3));
+scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0xEFF1EC,size:1.3,transparent:true,opacity:.65,sizeAttenuation:true})));})();
+// --- nebulas ---
+[0xC9962F,0xB23A2E,0x4FA3A5,0x5B8DBE,0x8E7CC3,0xC9962F].forEach((c,i)=>{
+ const m=new THREE.SpriteMaterial({map:GLOW,color:c,transparent:true,opacity:.05,blending:THREE.AdditiveBlending,depthWrite:false});
+ const sp=new THREE.Sprite(m);const a=i*1.05,r=160+i*38;
+ sp.position.set(r*Math.cos(a),(i-2.5)*42,r*Math.sin(a));sp.scale.setScalar(220+i*30);scene.add(sp);});
+// --- helix layout: one galaxy per level ---
+const HELIX_R=62,HELIX_DY=27,HELIX_DA=1.35;
+const lvlCenter={},lvlRadius={},byLvl={};
+ORDER.forEach(l=>byLvl[l]=[]);
+TEMAS.forEach(t=>{if(byLvl[t.n])byLvl[t.n].push(t);});
+ORDER.forEach((l,i)=>{
+ const a=i*HELIX_DA-2.1;
+ lvlCenter[l]=new THREE.Vector3(HELIX_R*Math.cos(a),i*HELIX_DY-2*HELIX_DY,HELIX_R*Math.sin(a));
+ lvlRadius[l]=7+Math.sqrt(byLvl[l].length)*2.6;
+});
+// fibonacci sphere, temas sorted by arquetipo => color bands
+const nodes=[],nodeByid={};
+const GA=Math.PI*(3-Math.sqrt(5));
+ORDER.forEach(l=>{
+ const arr=byLvl[l].slice().sort((a,b)=>a.q<b.q?-1:a.q>b.q?1:(a.a<b.a?-1:1));
+ const rc=lvlRadius[l],C=lvlCenter[l];
+ arr.forEach((t,i)=>{
+  const y=arr.length===1?0:1-(i/(arr.length-1))*2;
+  const rr=Math.sqrt(Math.max(0,1-y*y)),th=GA*i;
+  const p=new THREE.Vector3(C.x+rc*rr*Math.cos(th),C.y+rc*y*.72,C.z+rc*rr*Math.sin(th));
+  const col=(ARQ[t.q]||ARQ.tiempo_verbal).c;
+  const mesh=new THREE.Mesh(new THREE.SphereGeometry(1.55,16,12),new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:1}));
+  mesh.position.copy(p);mesh.userData=t;root.add(mesh);
+  const gm=new THREE.SpriteMaterial({map:GLOW,color:col,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false});
+  const glow=new THREE.Sprite(gm);glow.position.copy(p);glow.scale.setScalar(7.5);root.add(glow);
+  const nd={t,mesh,glow,base:p.clone(),phase:Math.random()*Math.PI*2,vis:true,lit:isLit(t.id),gbase:7.5};
+  nodes.push(nd);nodeByid[t.id]=nd;
+ });
+});
+// --- level rings + labels ---
+function labelSprite(txt,sub,color){const cv=document.createElement('canvas');cv.width=512;cv.height=256;const g=cv.getContext('2d');
+ g.font='700 110px "Source Serif 4",serif';g.fillStyle=color;g.textAlign='center';g.fillText(txt,256,120);
+ g.font='500 34px "IBM Plex Mono",monospace';g.fillStyle='rgba(239,241,236,.75)';g.fillText(sub,256,175);
+ const tx=new THREE.CanvasTexture(cv);const m=new THREE.SpriteMaterial({map:tx,transparent:true,depthWrite:false});
+ const sp=new THREE.Sprite(m);sp.scale.set(30,15,1);return sp;}
+ORDER.forEach((l,i)=>{
+ const C=lvlCenter[l],rc=lvlRadius[l];
+ const ring=new THREE.Mesh(new THREE.RingGeometry(rc+3.5,rc+3.9,72),new THREE.MeshBasicMaterial({color:0xC9962F,side:THREE.DoubleSide,transparent:true,opacity:.14}));
+ ring.position.copy(C);ring.rotation.x=Math.PI/2+(-.12+i*.05);root.add(ring);
+ const lab=labelSprite(LVLNAME[l],byLvl[l].length+' topics','#C9962F');
+ lab.position.set(C.x,C.y+rc+8,C.z);root.add(lab);
+});
+// --- threads: same area across the curriculum ---
+const areaMap={};
+TEMAS.forEach(t=>{(areaMap[t.a]=areaMap[t.a]||[]).push(t);});
+const threads=[];
+Object.values(areaMap).forEach(list=>{
+ if(list.length<2)return;
+ list.sort((a,b)=>ORDER.indexOf(a.n)-ORDER.indexOf(b.n));
+ const pts=list.map(t=>nodeByid[t.id].base);
+ const curve=new THREE.CatmullRomCurve3(pts);
+ const col=(ARQ[list[0].q]||ARQ.tiempo_verbal).c;
+ const g=new THREE.BufferGeometry().setFromPoints(curve.getPoints(Math.max(24,pts.length*10)));
+ const line=new THREE.Line(g,new THREE.LineBasicMaterial({color:col,transparent:true,opacity:.28,blending:THREE.AdditiveBlending}));
+ root.add(line);threads.push({line,areas:list[0].a,arq:list[0].q});
+});
+// --- camera orbit (custom controls) ---
+const target=new THREE.Vector3(0,0,10);
+let sph={r:210,th:.9,ph:1.15},sphGoal=null,targetGoal=null;
+function applyCam(){
+ camera.position.set(
+  target.x+sph.r*Math.sin(sph.ph)*Math.cos(sph.th),
+  target.y+sph.r*Math.cos(sph.ph),
+  target.z+sph.r*Math.sin(sph.ph)*Math.sin(sph.th));
+ camera.lookAt(target);}
+applyCam();
+const cv=renderer.domElement;
+let drag=false,px=0,py=0,moved=0,lastAct=0,pinch0=0;
+function act(){lastAct=performance.now();}
+cv.addEventListener('pointerdown',e=>{drag=true;moved=0;px=e.clientX;py=e.clientY;cv.classList.add('dragging');act();});
+addEventListener('pointerup',()=>{drag=false;cv.classList.remove('dragging');});
+addEventListener('pointermove',e=>{
+ if(drag){const dx=e.clientX-px,dy=e.clientY-py;moved+=Math.abs(dx)+Math.abs(dy);
+  sph.th+=dx*.005;sph.ph=Math.min(2.6,Math.max(.35,sph.ph-dy*.005));sphGoal=null;act();applyCam();}
+ px=e.clientX;py=e.clientY;hover(e);});
+cv.addEventListener('wheel',e=>{e.preventDefault();sph.r=Math.min(500,Math.max(40,sph.r*(1+e.deltaY*.001)));sphGoal=null;act();applyCam();},{passive:false});
+cv.addEventListener('touchstart',e=>{if(e.touches.length===2){pinch0=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);}},{passive:true});
+cv.addEventListener('touchmove',e=>{if(e.touches.length===2){const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);sph.r=Math.min(500,Math.max(40,sph.r*pinch0/d));pinch0=d;act();applyCam();}},{passive:true});
+function flyTo(vec,radius){targetGoal=vec.clone();sphGoal={r:radius,th:sph.th+.6,ph:1.12};act();}
+// --- raycast hover / click ---
+const ray=new THREE.Raycaster(),mou=new THREE.Vector2(),tip=document.getElementById('tip');
+let hovered=null;
+function pick(e){mou.x=(e.clientX/innerWidth)*2-1;mou.y=-(e.clientY/innerHeight)*2+1;ray.setFromCamera(mou,camera);
+ const hits=ray.intersectObjects(nodes.filter(n=>n.vis).map(n=>n.mesh));return hits.length?hits[0].object.userData:null;}
+function hover(e){if(drag)return;const t=pick(e);
+ if(t){cv.style.cursor='pointer';hovered=t;
+  tip.style.display='block';
+  tip.innerHTML='<div class="tt">'+t.t+'</div><div class="tm">'+LVLNAME[t.n]+' · '+t.a+' · '+t.e+' exercises</div><div class="th">'+t.h.map(s=>'<span>'+s+'</span>').join('')+'</div>';
+  tip.style.left=Math.min(innerWidth-280,e.clientX+16)+'px';tip.style.top=Math.max(8,e.clientY-14)+'px';}
+ else{if(!drag)cv.style.cursor='grab';hovered=null;tip.style.display='none';}}
+cv.addEventListener('click',e=>{if(moved>6)return;const t=pick(e);if(t)openPanel(t);else closePanel();});
+// --- panel ---
+const panel=document.getElementById('panel');
+function openPanel(t){
+ document.getElementById('p-lvl').textContent=LVLNAME[t.n]+' · '+(ARQ[t.q]||{}).n;
+ document.getElementById('p-title').textContent=t.t;
+ document.getElementById('p-area').textContent=t.a;
+ document.getElementById('p-skills').innerHTML=t.h.map(s=>'<span>'+s+'</span>').join('');
+ document.getElementById('p-meta').textContent=t.e+' exercises · id: '+t.id;
+ document.getElementById('p-lesson').href='../leccion/'+t.id+'.html';
+ document.getElementById('p-practice').href='../preview/'+t.id+'.html';
+ document.getElementById('p-test').href='../evaluacion/'+t.id+'.html';
+ panel.classList.add('open');
+ const nd=nodeByid[t.id];flyTo(nd.base,46);}
+function closePanel(){panel.classList.remove('open');}
+document.getElementById('pclose').addEventListener('click',closePanel);
+// --- level buttons ---
+const lvlBox=document.getElementById('levels');
+const allBtn=document.createElement('button');allBtn.textContent='✦ All';allBtn.className='active';
+allBtn.addEventListener('click',()=>{setLvlBtn(allBtn);flyTo(new THREE.Vector3(0,0,10),210);});
+lvlBox.appendChild(allBtn);
+ORDER.forEach(l=>{const b=document.createElement('button');b.textContent=LVLNAME[l];
+ b.addEventListener('click',()=>{setLvlBtn(b);flyTo(lvlCenter[l],lvlRadius[l]*4.4);});lvlBox.appendChild(b);});
+function setLvlBtn(b){lvlBox.querySelectorAll('button').forEach(x=>x.classList.remove('active'));b.classList.add('active');}
+const pmBtn=document.createElement('button');
+function pmLabel(){pmBtn.textContent=progressMode?'\u2726 Show all':'\u{1F525} My progress';}
+pmLabel();
+pmBtn.addEventListener('click',()=>{progressMode=!progressMode;pmLabel();applyFilter();});
+lvlBox.appendChild(pmBtn);
+const plBtn=document.createElement('button');
+if(PLACE&&lvlCenter[PLACE.nivel]){plBtn.textContent='\u2605 '+LVLNAME[PLACE.nivel]+' \u2014 you are here';
+ plBtn.addEventListener('click',()=>{setLvlBtn(plBtn);flyTo(lvlCenter[PLACE.nivel],lvlRadius[PLACE.nivel]*4.4);});}
+else{plBtn.textContent='\u25CE Find your level';plBtn.addEventListener('click',()=>{location.href='placement.html';});}
+lvlBox.appendChild(plBtn);
+const stBtn=document.createElement('button');stBtn.textContent='\u{1F30A} La Ola \u2014 the story';
+stBtn.addEventListener('click',()=>{location.href='la-ola.html';});
+lvlBox.appendChild(stBtn);
+if(PLACE&&lvlCenter[PLACE.nivel]){
+ const cv2=document.createElement('canvas');cv2.width=512;cv2.height=160;const g2=cv2.getContext('2d');
+ g2.font='600 66px Caveat,cursive';g2.fillStyle='#C9962F';g2.textAlign='center';g2.fillText('\u2605 you are here',256,95);
+ const hs=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(cv2),transparent:true,depthWrite:false}));
+ hs.scale.set(26,8.1,1);const HC=lvlCenter[PLACE.nivel];hs.position.set(HC.x,HC.y-lvlRadius[PLACE.nivel]-7,HC.z);root.add(hs);}
+// --- legend / filter ---
+const legend=document.getElementById('legend');let arqFilter=null;
+Object.entries(ARQ).forEach(([k,v])=>{
+ const ch=document.createElement('div');ch.className='chip';
+ ch.innerHTML='<span class="dot" style="background:#'+v.c.toString(16).padStart(6,'0')+'"></span>'+v.n;
+ ch.addEventListener('click',()=>{arqFilter=arqFilter===k?null:k;
+  legend.querySelectorAll('.chip').forEach(c=>c.classList.remove('on','dim'));
+  if(arqFilter){ch.classList.add('on');legend.querySelectorAll('.chip').forEach(c=>{if(c!==ch)c.classList.add('dim');});}
+  applyFilter();});
+ legend.appendChild(ch);});
+// --- search ---
+const searchEl=document.getElementById('search');let term='';
+searchEl.addEventListener('input',()=>{term=searchEl.value.trim().toLowerCase();applyFilter();});
+searchEl.addEventListener('keydown',e=>{if(e.key==='Enter'){const m=nodes.find(n=>n.vis);if(m){openPanel(m.t);}}});
+function match(t){
+ if(arqFilter&&t.q!==arqFilter)return false;
+ if(term&&!(t.t.toLowerCase().includes(term)||t.a.toLowerCase().includes(term)||t.n.toLowerCase().includes(term)))return false;
+ return true;}
+const DIMCOL=new THREE.Color(0x3E4E66);
+function applyFilter(){
+ let lit=0;
+ nodes.forEach(n=>{n.vis=match(n.t);
+  const off=progressMode&&!n.lit;
+  n.mesh.material.color.set(off?DIMCOL:new THREE.Color((ARQ[n.t.q]||ARQ.tiempo_verbal).c));
+  n.mesh.material.opacity=n.vis?(off?.4:1):.08;
+  n.glow.material.opacity=n.vis?(off?.08:.85):.03;
+  n.gbase=n.vis?(off?3.5:7.5):4;
+  if(n.lit)lit++;});
+ threads.forEach(th=>{const on=(!arqFilter||th.arq===arqFilter)&&!term;th.line.material.opacity=on?(progressMode?.12:.28):.04;});
+ const pc=document.getElementById('progress-count');
+ pc.textContent=progressMode?('\u2726 '+lit+' / '+nodes.length+' stars lit \u2014 pass a Test to light one'):'';}
+applyFilter();
+// --- animate ---
+const clock=new THREE.Clock();
+let frames=0;
+function animate(){requestAnimationFrame(animate);
+ const t=clock.getElapsedTime();
+ if(performance.now()-lastAct>4000&&!sphGoal){sph.th+=.0011;applyCam();}
+ if(sphGoal){sph.r+=(sphGoal.r-sph.r)*.06;sph.th+=(sphGoal.th-sph.th)*.06;sph.ph+=(sphGoal.ph-sph.ph)*.06;
+  if(Math.abs(sphGoal.r-sph.r)<.5)sphGoal=null;}
+ if(targetGoal){target.lerp(targetGoal,.07);if(target.distanceTo(targetGoal)<.4)targetGoal=null;}
+ if(sphGoal||targetGoal)applyCam();
+ nodes.forEach((n,i)=>{const pulse=1+Math.sin(t*1.6+n.phase)*.18;
+  n.glow.scale.setScalar(n.gbase*pulse);
+  const hv=hovered&&hovered.id===n.t.id;
+  n.mesh.scale.setScalar(hv?1.8:1);});
+ root.rotation.y=Math.sin(t*.05)*.02;
+ renderer.render(scene,camera);
+ if(++frames===2){const L=document.getElementById('loading');L.style.opacity=0;setTimeout(()=>L.remove(),700);}}
+animate();
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
+setTimeout(()=>{const h=document.getElementById('hint');if(h)h.style.opacity=0;},9000);
+
+</script>
+</body>
+</html>
