@@ -152,7 +152,7 @@ Cada ejercicio aparece en: lección + práctica + generador de hojas personaliza
 
 ## 🌐 Publicación en GitHub Pages
 
-El sitio vive en: **https://pipefleurs87-sudo.github.io/EnglishAngel.com/**
+El sitio vive en: **pipefleurs87-sudo.github.io/EnglishAngel/**
 
 Para actualizar tras crear contenido:
 1. Abre GitHub Desktop
