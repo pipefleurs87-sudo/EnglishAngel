@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Class Generator — Build a Custom Class Session | EnglishAngel</title>
+<meta name="description" content="Pick two or three topics already on EnglishAngel and combine them into one full class session, ready to teach right now.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Class Generator — Build a Custom Class Session | EnglishAngel">
+<meta property="og:description" content="Combine existing topics into one full class session, ready to teach right now.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{BASE_URL}}/og-image.png">
+<meta property="og:url" content="{{BASE_URL}}/herramientas/generador-clases.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="{{BASE_URL}}/herramientas/generador-clases.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1B2A41;--paper:#EFF1EC;--red:#B23A2E;--gold:#C9962F;--muted:#6B7079;--line:#D8DAD1;
+    --serif:'Source Serif 4',Georgia,serif;--sans:'IBM Plex Sans',system-ui,sans-serif;--mono:'IBM Plex Mono',monospace;--hand:'Caveat',cursive;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55}
+  .wrap{max-width:780px;margin:0 auto;padding:28px 20px 80px}
+  a{color:var(--red)}
+  .masthead{border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:26px;display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap}
+  .brand{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .brand a{color:var(--muted);text-decoration:none}
+  .brand a:hover{color:var(--ink)}
+  .masthead-r{font-family:var(--mono);font-size:12px}
+  .masthead-r a{text-decoration:none;border-bottom:1px dotted var(--red)}
+  .tema{font-family:var(--serif);font-weight:700;font-size:clamp(26px,5vw,38px);line-height:1.1;margin:6px 0 10px}
+  .sub{color:var(--muted);font-size:15.5px;max-width:620px}
+
+  .panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px;margin:22px 0}
+  .panel h2{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 12px}
+  .panel h2:not(:first-child){margin-top:20px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip-f{font-family:var(--mono);font-size:12px;letter-spacing:.05em;border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:var(--paper);color:var(--muted);cursor:pointer;user-select:none}
+  .chip-f.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:16px}
+  input[type=text]{font-family:var(--sans);font-size:15px;padding:9px 11px;border:1px solid var(--line);border-radius:7px;background:var(--paper);color:var(--ink)}
+  input[type=text]:focus{outline:none;border-color:var(--ink);background:#fff}
+  #tituloClase{flex:1;min-width:220px}
+  .btn{font-family:var(--sans);font-weight:600;font-size:15px;border:none;border-radius:8px;padding:12px 22px;cursor:pointer}
+  .btn.primary{background:var(--red);color:#fff}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn.small{font-size:12px;padding:6px 12px}
+  .status{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:10px}
+
+  .niv-group{margin-bottom:14px}
+  .niv-label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:14px 0 6px;display:flex;align-items:center;gap:8px}
+  .niv-label::after{content:"";flex:1;height:1px;background:var(--line)}
+  .tclass{display:flex;align-items:baseline;gap:10px;padding:8px 4px;border-bottom:1px solid var(--line);cursor:pointer}
+  .tclass:last-child{border-bottom:none}
+  .tclass input{margin-top:3px;accent-color:var(--red)}
+  .tclass-name{font-family:var(--serif);font-size:15.5px}
+  .tclass-meta{font-family:var(--mono);font-size:11px;color:var(--muted);margin-left:auto;white-space:nowrap}
+
+  .clase-row{display:flex;align-items:center;gap:10px;padding:8px 4px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12.5px}
+  .clase-row:last-child{border-bottom:none}
+  .clase-nom{flex:1}
+
+  section{margin:34px 0}
+  .sec-label{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .sec-label::after{content:"";flex:1;height:1px;background:var(--line)}
+  .summary{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px;margin-bottom:20px}
+  .summary .def{font-family:var(--serif);font-size:16px;margin:0 0 12px}
+  .summary table{width:100%;border-collapse:collapse;font-size:14px}
+  .summary th,.summary td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+  .summary th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .diag{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:14px;margin-top:14px;font-size:14px}
+  .diag b{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:6px}
+  .ex{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;margin:14px 0}
+  .ex .stage{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:flex;justify-content:space-between;gap:10px}
+  .ex .stage .src{color:var(--muted);text-transform:none;letter-spacing:0}
+  .ex .stage .src a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--muted)}
+  .ex .prompt{font-size:16px;margin:0 0 12px}
+  .ex .instr{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:8px}
+  .ex .base{font-family:var(--serif);font-size:17px;margin:4px 0 10px}
+  .scrambled{font-family:var(--serif);font-size:19px;margin:4px 0 12px}
+  .scrambled span{display:inline-block;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:3px 9px;margin:3px}
+  input[type=text].inline-gap{display:inline-block;width:clamp(90px,28%,160px)}
+  .choices{display:grid;gap:8px}
+  .choice{display:flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:10px 12px;cursor:pointer}
+  .choice input{accent-color:var(--red)}
+  .tf-btns{display:flex;gap:10px}
+  .tf-btns button{flex:1;font-family:var(--sans);font-size:15px;padding:10px;border:1px solid var(--line);border-radius:7px;background:var(--paper);cursor:pointer}
+  .tf-btns button.sel{border-color:var(--ink);background:#fff;font-weight:600}
+  .mark{font-family:var(--hand);font-size:22px;margin-top:8px;min-height:26px}
+  .mark.right{color:#2f7d4f}.mark.wrong{color:var(--red)}
+  .mark .sol{font-family:var(--sans);font-size:13px;color:var(--muted);display:block;margin-top:2px}
+  .controls{position:sticky;bottom:0;background:linear-gradient(transparent,var(--paper) 30%);padding:20px 0 4px;margin-top:30px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .score{font-family:var(--mono);font-size:14px;color:var(--muted)}
+  .score b{color:var(--ink)}
+  .empty{font-family:var(--serif);font-size:17px;color:var(--muted);text-align:center;padding:40px 0}
+  footer{margin-top:50px;border-top:1px solid var(--line);padding-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);text-align:center}
+  @media print{
+    .panel,.controls,footer,.print-btn,.masthead-r{display:none!important}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="masthead">
+    <div>
+      <div class="brand"><a href="../index.html">← EnglishAngel</a></div>
+      <h1 class="tema">🧩 Class Generator</h1>
+      <p class="sub">Pick two or three topics already on the site. This combines their sentence bank and exercises into one full class session — ready to teach right now, no new content generated.</p>
+    </div>
+    <div class="masthead-r"><a href="generador-ejercicios.html">🎲 Exercise generator</a></div>
+  </div>
+
+  <div class="panel">
+    <h2>Level</h2>
+    <div class="chips" id="chipsNivel"></div>
+
+    <h2>Topics for this class</h2>
+    <div id="listaTemas"></div>
+
+    <h2>Class title</h2>
+    <div class="row">
+      <input type="text" id="tituloClase" placeholder="e.g. Tuesday review — Ben & Sofía">
+      <button class="btn primary" id="generar">Generate class</button>
+      <span class="status" id="status"></span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>My classes <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">(saved in this browser)</span></h2>
+    <div id="misClases"></div>
+  </div>
+
+  <section id="sheetSection" style="display:none">
+    <div class="sec-label">Your class</div>
+    <div id="resumen"></div>
+    <div id="sheet"></div>
+    <div class="controls">
+      <button class="btn primary" id="check">Check answers</button>
+      <button class="btn ghost" id="reset">Reset</button>
+      <button class="btn ghost print-btn" id="printBtn">🖨 Print</button>
+      <button class="btn ghost" id="descargar">⬇ Download JSON</button>
+      <div class="score" id="score"></div>
+    </div>
+  </section>
+
+  <footer>EnglishAngel — combines your own already-checked content. Nothing here is generated by AI on the fly. · <a href="https://www.superprof.co/ingles-real-para-hablar-sin-miedo-conversacion-confianza-clases-disfrutan.html" target="_blank" rel="noopener noreferrer" style="color:var(--red);font-weight:600">Book real classes on Superprof</a></footer>
+</div>
+<script>
+
+(function(){
+  const NIVEL_ORDEN = ['A1','A2','B1','B2','C1','C2'];
+  let TEMAS = [];
+  const selNivel = new Set();
+  const chipsNivel = document.getElementById('chipsNivel');
+  const listaTemas = document.getElementById('listaTemas');
+  const tituloInput = document.getElementById('tituloClase');
+  const statusEl = document.getElementById('status');
+  const sheetSection = document.getElementById('sheetSection');
+  const resumen = document.getElementById('resumen');
+  const sheet = document.getElementById('sheet');
+  const misClasesBox = document.getElementById('misClases');
+  const graders = [];
+  let checks = [];
+
+  function el(t,c,h){const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
+  function esc(s){return String(s).replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function normalize(s){ if(s==null)return''; s=String(s).toLowerCase().trim();
+    const c={"i'm":"i am","you're":"you are","he's":"he is","she's":"she is","it's":"it is","we're":"we are","they're":"they are","isn't":"is not","aren't":"are not","don't":"do not","doesn't":"does not","didn't":"did not","can't":"cannot","won't":"will not","i've":"i have","you've":"you have","we've":"we have","they've":"they have","that's":"that is","what's":"what is"};
+    for(const k in c){s=s.replace(new RegExp("\\b"+k.replace("'","'?")+"\\b","g"),c[k]);}
+    s=s.replace(/[‘’`]/g,"'").normalize('NFD').replace(/[̀-ͯ]/g,'');
+    return s.replace(/[.,;:!?]/g,'').replace(/\s+/g,' ').trim(); }
+  function eq(a,b){return normalize(a)===normalize(b);}
+  function slugify(s){ return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'') || 'clase'; }
+  function fechaSlug(){ const d=new Date(); return d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0'); }
+
+  (function(){
+    TEMAS = window.TEMAS_COMPLETOS || [];
+    const niveles = NIVEL_ORDEN.filter(n=>TEMAS.some(t=>t.nivel===n));
+    niveles.forEach(n=>selNivel.add(n));
+    niveles.forEach(n=>{
+      const c=el('span','chip-f on',n); c.dataset.nivel=n;
+      c.onclick=()=>{c.classList.toggle('on'); c.classList.contains('on')?selNivel.add(n):selNivel.delete(n); renderLista();};
+      chipsNivel.appendChild(c);
+    });
+    renderLista();
+    renderMisClases();
+  })();
+
+  function renderLista(){
+    const marcados = new Set(checks.filter(c=>c.checked).map(c=>c.dataset.id));
+    listaTemas.innerHTML=''; checks=[];
+    const niveles = NIVEL_ORDEN.filter(n=>selNivel.has(n) && TEMAS.some(t=>t.nivel===n));
+    niveles.forEach(n=>{
+      const grp = el('div','niv-group');
+      grp.appendChild(el('div','niv-label',n));
+      TEMAS.filter(t=>t.nivel===n).sort((a,b)=>a.area.localeCompare(b.area)||a.tema.localeCompare(b.tema)).forEach(t=>{
+        const lab = el('label','tclass');
+        const inp = document.createElement('input'); inp.type='checkbox'; inp.dataset.id=t.id;
+        inp.checked = marcados.has(t.id);
+        lab.appendChild(inp);
+        lab.appendChild(el('span','tclass-name',esc(t.tema)));
+        lab.appendChild(el('span','tclass-meta',esc(t.area)+' · '+(t.ejercicios||[]).length+' ex.'));
+        grp.appendChild(lab);
+        checks.push(inp);
+      });
+      listaTemas.appendChild(grp);
+    });
+  }
+
+  function seleccionActual(){
+    const ids = checks.filter(c=>c.checked).map(c=>c.dataset.id);
+    return TEMAS.filter(t=>ids.includes(t.id));
+  }
+
+  function construirClase(seleccion, titulo){
+    const niveles = [...new Set(seleccion.map(t=>t.nivel))];
+    const nivel = niveles.length===1 ? niveles[0] : NIVEL_ORDEN.find(n=>niveles.includes(n));
+    const habilidades = [...new Set(seleccion.flatMap(t=>t.habilidades||[]))];
+    let sid=1;
+    const banco_oraciones = seleccion.flatMap(t=>(t.banco_oraciones||[]).map(o=>({id:'s'+(sid++), oracion:o.oracion})));
+    const ejerciciosConOrigen = seleccion.flatMap(t=>(t.ejercicios||[]).map(e=>({ejercicio:e, origenTema:t.tema, origenId:t.id, origenNivel:t.nivel})));
+    const diagFuente = seleccion.map(t=>t.banner_diagnostico).find(Boolean);
+    const tabla = { titulo:'Topics in this class', encabezados:['Topic','Key example'],
+      filas: seleccion.map(t=>[t.tema, (t.banco_oraciones&&t.banco_oraciones[0]) ? t.banco_oraciones[0].oracion : '']) };
+    const inicio = { definicion_pragmatica:'Combined class practice: ' + seleccion.map(t=>t.tema).join(', ') + '.', tabla, vocab_warmup:false };
+    if(diagFuente) inicio.banner_diagnostico = diagFuente;
+    const data = {
+      id: 'clase-' + slugify(titulo) + '-' + fechaSlug(),
+      nivel: nivel, arquetipo:'joined_exercise', tema: titulo,
+      habilidades, banco_oraciones,
+      fases: { inicio, practica: { ejercicios: ejerciciosConOrigen.map(x=>x.ejercicio) } }
+    };
+    return {data, ejerciciosConOrigen, tabla, definicion_pragmatica: inicio.definicion_pragmatica, banner_diagnostico: diagFuente};
+  }
+
+  let claseActual = null;
+
+  document.getElementById('generar').onclick = ()=>{
+    const seleccion = seleccionActual();
+    const titulo = tituloInput.value.trim();
+    if(!titulo){ statusEl.style.color='var(--red)'; statusEl.textContent='Give this class a title first.'; return; }
+    if(seleccion.length < 2){ statusEl.style.color='var(--red)'; statusEl.textContent='Pick at least 2 topics to combine.'; return; }
+    statusEl.style.color='var(--muted)'; statusEl.textContent='';
+    claseActual = construirClase(seleccion, titulo);
+    renderSheet(claseActual);
+    guardarEnMisClases(claseActual.data, seleccion);
+    renderMisClases();
+  };
+
+  function renderSheet(clase){
+    sheet.innerHTML=''; resumen.innerHTML=''; graders.length=0;
+    const box = el('div','summary');
+    box.appendChild(el('p','def',esc(clase.definicion_pragmatica)));
+    if(clase.banner_diagnostico){
+      const d = el('div','diag');
+      d.innerHTML = '<b>Common mistake vs. correct</b>✗ '+esc(clase.banner_diagnostico.opcion_a)+'<br>✓ '+esc(clase.banner_diagnostico.opcion_b);
+      box.appendChild(d);
+    }
+    const t = document.createElement('table');
+    t.innerHTML = '<tr><th>'+clase.tabla.encabezados.map(esc).join('</th><th>')+'</th></tr>' +
+      clase.tabla.filas.map(f=>'<tr><td>'+f.map(esc).join('</td><td>')+'</td></tr>').join('');
+    box.appendChild(t);
+    resumen.appendChild(box);
+    if(!clase.ejerciciosConOrigen.length){ sheet.appendChild(el('div','empty','No exercises in this combination.')); }
+    clase.ejerciciosConOrigen.forEach((item,idx)=>{
+      sheet.appendChild(renderExercise(item.ejercicio, idx, item));
+    });
+    sheetSection.style.display='';
+    document.getElementById('score').innerHTML='';
+    sheetSection.scrollIntoView({behavior:'smooth'});
+  }
+
+  function srcTag(item){
+    return '<span class="src">'+esc(item.origenNivel)+' · <a href="../preview/'+esc(item.origenId)+'.html" target="_blank">'+esc(item.origenTema)+'</a></span>';
+  }
+
+  function renderExercise(ex, idx, item){
+    const box=el('div','ex');
+    const stageMap={multiple_choice:'Recognize',true_false:'Recognize',gap_fill:'Manipulate',unscramble:'Manipulate',correct_mistake:'Manipulate',transformation:'Transform',write_opposite:'Transform',short_answer_production:'Produce'};
+    box.appendChild(el('div','stage','<span>'+(stageMap[ex.tipo]||'Exercise')+'</span>'+(item?srcTag(item):'')));
+    if(Array.isArray(ex.combina) && ex.combina.length) box.appendChild(el('div','joined','🔗 Combines: '+ex.combina.map(esc).join(' + ')));
+    let getVal,correct,markEl=el('div','mark','');
+    switch(ex.tipo){
+      case 'multiple_choice':{
+        box.appendChild(el('p','prompt',esc(ex.pregunta).replace(/___/g,'<b>_____</b>')));
+        const ch=el('div','choices');
+        (ex.opciones||[]).forEach(o=>{const lab=el('label','choice');lab.innerHTML=`<input type="radio" name="mc${idx}" value="${esc(o)}"> <span>${esc(o)}</span>`;ch.appendChild(lab);});
+        box.appendChild(ch);getVal=()=>{const r=box.querySelector(`input[name=mc${idx}]:checked`);return r?r.value:'';};correct=ex.respuesta;break;}
+      case 'true_false':{
+        box.appendChild(el('p','prompt',esc(ex.afirmacion)));
+        const tf=el('div','tf-btns');let sel='';
+        ['true','false'].forEach(v=>{const btn=el('button',null,'');btn.textContent=v==='true'?'✔ True':'✗ False';btn.onclick=()=>{sel=v;tf.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));btn.classList.add('sel');};tf.appendChild(btn);});
+        box.appendChild(tf);getVal=()=>sel;correct=String(ex.respuesta);break;}
+      case 'gap_fill':{
+        const parts=esc(ex.texto).split('___');const p=el('p','prompt');const inp=el('input');inp.type='text';inp.className='inline-gap';
+        p.innerHTML=parts[0];p.appendChild(inp);p.insertAdjacentHTML('beforeend',parts[1]||'');box.appendChild(p);
+        getVal=()=>inp.value;correct=ex.respuesta;break;}
+      case 'unscramble':{
+        box.appendChild(el('div','instr','Put the words in order to make a correct sentence.'));
+        const sc=el('div','scrambled');const ws=(ex.palabras||[]).slice();for(let i=ws.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[ws[i],ws[j]]=[ws[j],ws[i]];}if(ws.length>2&&ws.join(' ')===(ex.palabras||[]).join(' '))ws.push(ws.shift());ws.forEach(w=>sc.appendChild(el('span',null,esc(w))));box.appendChild(sc);
+        const inp=el('input');inp.type='text';inp.placeholder='Write the ordered sentence…';box.appendChild(inp);getVal=()=>inp.value;correct=ex.respuesta;break;}
+      case 'correct_mistake':{
+        box.appendChild(el('div','instr','There is a mistake. Rewrite the correct sentence.'));
+        box.appendChild(el('div','base','✗ '+esc(ex.texto_con_error)));
+        const inp=el('input');inp.type='text';inp.placeholder='Corrected version…';box.appendChild(inp);getVal=()=>inp.value;correct=ex.respuesta;break;}
+      case 'transformation':
+      case 'write_opposite':{
+        box.appendChild(el('div','instr',esc(ex.instruccion||'')));
+        box.appendChild(el('div','base',esc(ex.oracion_base)));
+        const inp=el('input');inp.type='text';inp.placeholder='Your answer…';box.appendChild(inp);getVal=()=>inp.value;correct=ex.respuesta;break;}
+      case 'short_answer_production':{
+        box.appendChild(el('p','prompt',esc(ex.pregunta)));
+        const inp=el('input');inp.type='text';inp.placeholder='Answer in a full sentence…';box.appendChild(inp);getVal=()=>inp.value;correct=ex.respuesta;break;}
+      default: box.appendChild(el('p','prompt','[Unsupported type: '+esc(ex.tipo)+']'));getVal=()=>'';correct='';
+    }
+    box.appendChild(markEl);
+    graders.push({check:()=>eq(getVal(),correct),
+      answered:()=>String(getVal()||'').trim()!=='',
+      clear:()=>{markEl.className='mark';markEl.innerHTML='';},
+      reveal:(ok)=>{markEl.className='mark '+(ok?'right':'wrong');markEl.innerHTML=ok?'✓ Correct!':'✗ Not quite<span class="sol">Answer: '+esc(correct)+'</span>';}});
+    return box;
+  }
+
+  document.getElementById('check').onclick=()=>{
+    const score=document.getElementById('score'); let ok=0,ans=0;
+    graders.forEach(g=>{ if(g.answered && !g.answered()){ if(g.clear)g.clear(); return; } ans++; const r=g.check(); g.reveal(r); if(r)ok++; });
+    if(!graders.length){score.innerHTML='';return;}
+    if(!ans){score.innerHTML='Nothing answered yet — try a few first.';return;}
+    score.innerHTML=`Score: <b>${ok}/${ans}</b> answered`+(ans<graders.length?` <span style="color:var(--muted)">· ${graders.length} total</span>`:'');
+  };
+  document.getElementById('reset').onclick=()=>{ if(claseActual) renderSheet(claseActual); };
+  document.getElementById('printBtn').onclick=()=>window.print();
+  document.getElementById('descargar').onclick=()=>{
+    if(!claseActual) return;
+    const blob = new Blob([JSON.stringify(claseActual.data, null, 2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href=url; a.download = claseActual.data.id + '.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url), 1000);
+  };
+
+  // "Mis clases" -- registro liviano en localStorage (sin backend): guarda combinaciones
+  // ya generadas para reabrirlas despues en el mismo navegador. El JSON de verdad se
+  // registra de forma permanente descargandolo y pidiendo que se integre al sitio.
+  function cargarMisClases(){ try{ return JSON.parse(localStorage.getItem('ea_mis_clases')||'[]'); }catch(e){ return []; } }
+  function guardarEnMisClases(data, seleccion){
+    const arr = cargarMisClases();
+    arr.unshift({id:data.id, titulo:data.tema, nivel:data.nivel, temas:seleccion.map(t=>t.id), fecha:new Date().toISOString().slice(0,10)});
+    localStorage.setItem('ea_mis_clases', JSON.stringify(arr.slice(0,30)));
+  }
+  function renderMisClases(){
+    const arr = cargarMisClases();
+    misClasesBox.innerHTML='';
+    if(!arr.length){ misClasesBox.appendChild(el('div','status','No saved classes yet — generate one and it will show up here.')); return; }
+    arr.forEach((c,i)=>{
+      const row = el('div','clase-row');
+      row.appendChild(el('span','clase-nom', esc(c.titulo)+' · '+esc(c.nivel)+' · '+c.temas.length+' topics · '+esc(c.fecha)));
+      const bLoad = el('button','btn small ghost','Load');
+      bLoad.onclick=()=>{
+        tituloInput.value=c.titulo;
+        selNivel.clear(); NIVEL_ORDEN.forEach(n=>selNivel.add(n));
+        [...chipsNivel.querySelectorAll('.chip-f')].forEach(ch=>ch.classList.add('on'));
+        renderLista();
+        checks.forEach(ch=>{ ch.checked = c.temas.includes(ch.dataset.id); });
+        window.scrollTo({top:0,behavior:'smooth'});
+      };
+      const bDel = el('button','btn small ghost','✕ Remove');
+      bDel.onclick=()=>{ const a2=cargarMisClases(); a2.splice(i,1); localStorage.setItem('ea_mis_clases', JSON.stringify(a2)); renderMisClases(); };
+      row.appendChild(bLoad); row.appendChild(bDel);
+      misClasesBox.appendChild(row);
+    });
+  }
+})();
+
+</script>
+</body>
+</html>

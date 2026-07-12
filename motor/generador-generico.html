@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build Your Own Worksheet — Exercise Generator | EnglishAngel</title>
+<meta name="description" content="Pick a CEFR level, a topic and an exercise type, and build a custom English worksheet from EnglishAngel's full exercise bank. Free, instant, printable.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Build Your Own Worksheet — Exercise Generator | EnglishAngel">
+<meta property="og:description" content="Pick a level, topic and exercise type. Build a custom English worksheet from EnglishAngel's full exercise bank.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{BASE_URL}}/og-image.png">
+<meta property="og:url" content="{{BASE_URL}}/herramientas/generador-ejercicios.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="{{BASE_URL}}/herramientas/generador-ejercicios.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1B2A41;--paper:#EFF1EC;--red:#B23A2E;--gold:#C9962F;--muted:#6B7079;--line:#D8DAD1;
+    --serif:'Source Serif 4',Georgia,serif;--sans:'IBM Plex Sans',system-ui,sans-serif;--mono:'IBM Plex Mono',monospace;--hand:'Caveat',cursive;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55}
+  .wrap{max-width:760px;margin:0 auto;padding:28px 20px 80px}
+  a{color:var(--red)}
+  .masthead{border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:26px}
+  .brand{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .brand a{color:var(--muted);text-decoration:none}
+  .brand a:hover{color:var(--ink)}
+  .tema{font-family:var(--serif);font-weight:700;font-size:clamp(26px,5vw,38px);line-height:1.1;margin:6px 0 10px}
+  .sub{color:var(--muted);font-size:15.5px;max-width:600px}
+
+  .panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px;margin:22px 0}
+  .panel h2{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 12px}
+  .panel h2:not(:first-child){margin-top:20px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip-f{font-family:var(--mono);font-size:12px;letter-spacing:.05em;border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:var(--paper);color:var(--muted);cursor:pointer;user-select:none}
+  .chip-f.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .stage-group{margin-bottom:10px}
+  .stage-label{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:10px 0 6px}
+  .row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:16px}
+  input[type=text],input[type=number],select{font-family:var(--sans);font-size:15px;padding:9px 11px;border:1px solid var(--line);border-radius:7px;background:var(--paper);color:var(--ink)}
+  input[type=text]:focus,input[type=number]:focus,select:focus{outline:none;border-color:var(--ink);background:#fff}
+  #temaSelect{flex:1;min-width:200px;max-width:100%}
+  #linkOutput{flex:1;min-width:200px}
+  #cantidad{width:70px}
+  label.qty{font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px}
+  .btn{font-family:var(--sans);font-weight:600;font-size:15px;border:none;border-radius:8px;padding:12px 22px;cursor:pointer}
+  .btn.primary{background:var(--red);color:#fff}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn.small{font-size:12px;padding:6px 12px}
+  .status{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:10px}
+
+  section{margin:34px 0}
+  .sec-label{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .sec-label::after{content:"";flex:1;height:1px;background:var(--line)}
+  .ex{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;margin:14px 0}
+  .ex .stage{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:flex;justify-content:space-between;gap:10px}
+  .ex .stage .src{color:var(--muted);text-transform:none;letter-spacing:0}
+  .ex .stage .src a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--muted)}
+  .ex .joined{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--red);background:#faeeec;border:1px solid var(--line);border-radius:6px;padding:3px 8px;display:inline-block;margin-bottom:8px}
+  .ex .prompt{font-size:16px;margin:0 0 12px}
+  .ex .instr{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:8px}
+  .ex .base{font-family:var(--serif);font-size:17px;margin:4px 0 10px}
+  .scrambled{font-family:var(--serif);font-size:19px;margin:4px 0 12px}
+  .scrambled span{display:inline-block;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:3px 9px;margin:3px}
+  input[type=text].inline-gap{display:inline-block;width:clamp(90px,28%,160px)}
+  .choices{display:grid;gap:8px}
+  .choice{display:flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:10px 12px;cursor:pointer}
+  .choice input{accent-color:var(--red)}
+  .tf-btns{display:flex;gap:10px}
+  .tf-btns button{flex:1;font-family:var(--sans);font-size:15px;padding:10px;border:1px solid var(--line);border-radius:7px;background:var(--paper);cursor:pointer}
+  .tf-btns button.sel{border-color:var(--ink);background:#fff;font-weight:600}
+  .mark{font-family:var(--hand);font-size:22px;margin-top:8px;min-height:26px}
+  .mark.right{color:#2f7d4f}.mark.wrong{color:var(--red)}
+  .mark .sol{font-family:var(--sans);font-size:13px;color:var(--muted);display:block;margin-top:2px}
+  .reading-text{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px;font-family:var(--serif);font-size:17px;line-height:1.7;margin-bottom:10px}
+  .controls{position:sticky;bottom:0;background:linear-gradient(transparent,var(--paper) 30%);padding:20px 0 4px;margin-top:30px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .score{font-family:var(--mono);font-size:14px;color:var(--muted)}
+  .score b{color:var(--ink)}
+  .empty{font-family:var(--serif);font-size:17px;color:var(--muted);text-align:center;padding:40px 0}
+  footer{margin-top:50px;border-top:1px solid var(--line);padding-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);text-align:center}
+  @media print{
+    .panel,.controls,footer,.print-btn{display:none!important}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="masthead">
+    <div class="brand"><a href="../index.html">← EnglishAngel</a></div>
+    <h1 class="tema">🎲 Build your own worksheet</h1>
+    <p class="sub">Pick a level, a topic and an exercise type. This pulls from every exercise already on the site — nothing generated on the fly, everything already teacher-checked.</p>
+    <p class="sub">Pick your filters, then hit <b>🔗 Copy link to this</b> — it saves the exact combination as a link you can send a student before class.</p>
+  </div>
+
+  <div class="panel">
+    <h2>Level</h2>
+    <div class="chips" id="chipsNivel"></div>
+
+    <h2>Exercise type</h2>
+    <div id="chipsTipo"></div>
+
+    <h2>Category</h2>
+    <div class="chips" id="chipsCategoria"></div>
+
+    <h2>Topic</h2>
+    <div class="row">
+      <select id="temaSelect"><option value="">Any topic</option></select>
+    </div>
+
+    <div class="row">
+      <label class="qty">How many? <input type="number" id="cantidad" value="15" min="1" max="60"></label>
+      <button class="btn primary" id="generar">Generate worksheet</button>
+      <button class="btn ghost" id="copyLink">🔗 Copy link to this</button>
+      <span class="status" id="status"></span>
+    </div>
+    <div class="row" id="linkBox" style="display:none">
+      <input type="text" id="linkOutput" readonly>
+      <span class="status" id="copyStatus"></span>
+    </div>
+  </div>
+
+  <section id="sheetSection" style="display:none">
+    <div class="sec-label">Your worksheet</div>
+    <div id="sheet"></div>
+    <div class="controls">
+      <button class="btn primary" id="check">Check answers</button>
+      <button class="btn ghost" id="reset">Reset</button>
+      <button class="btn ghost print-btn" id="printBtn">🖨 Print</button>
+      <div class="score" id="score"></div>
+    </div>
+  </section>
+
+  <footer>EnglishAngel — made by your teacher, recombined from real classes, not a random worksheet machine. · <a href="https://www.superprof.co/ingles-real-para-hablar-sin-miedo-conversacion-confianza-clases-disfrutan.html" target="_blank" rel="noopener noreferrer" style="color:var(--red);font-weight:600">Book real classes on Superprof</a></footer>
+</div>
+<script>
+
+(function(){
+  const TIPOS = [
+    {k:'multiple_choice', label:'Multiple choice', etapa:'Recognize'},
+    {k:'true_false', label:'True / False', etapa:'Recognize'},
+    {k:'gap_fill', label:'Gap fill', etapa:'Manipulate'},
+    {k:'unscramble', label:'Unscramble', etapa:'Manipulate'},
+    {k:'correct_mistake', label:'Correct the mistake', etapa:'Manipulate'},
+    {k:'transformation', label:'Transformation', etapa:'Transform'},
+    {k:'write_opposite', label:'Write the opposite', etapa:'Transform'},
+    {k:'short_answer_production', label:'Short answer', etapa:'Transform'},
+    {k:'reading_comprehension', label:'Reading comprehension', etapa:'Reading'}
+  ];
+  const NIVEL_ORDEN = ['A1','A2','B1','B2','C1','C2'];
+  const CATEGORIAS = [
+    {k:'grammar', label:'Grammar', arq:['tiempo_verbal','determinantes','pronombres','comparativos','clausulas_relativas','preposiciones','modales']},
+    {k:'vocab', label:'Vocabulary', arq:['vocabulario']},
+    {k:'skills', label:'Skills', arq:['funcional_skills']},
+    {k:'review', label:'Review', arq:['joined_exercise']}
+  ];
+  function categoriaOf(arquetipo){ const c=CATEGORIAS.find(c=>c.arq.includes(arquetipo)); return c?c.k:'grammar'; }
+
+  let BANCO = [];
+  const selNivel = new Set(), selTipo = new Set(TIPOS.map(t=>t.k)), selCategoria = new Set(CATEGORIAS.map(c=>c.k));
+  const chipsNivel = document.getElementById('chipsNivel');
+  const chipsTipo = document.getElementById('chipsTipo');
+  const chipsCategoria = document.getElementById('chipsCategoria');
+  const temaSelect = document.getElementById('temaSelect');
+  const statusEl = document.getElementById('status');
+  const sheetSection = document.getElementById('sheetSection');
+  const sheet = document.getElementById('sheet');
+  const graders = [];
+
+  function el(t,c,h){const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
+  function esc(s){return String(s).replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function normalize(s){ if(s==null)return''; s=String(s).toLowerCase().trim();
+    const c={"i'm":"i am","you're":"you are","he's":"he is","she's":"she is","it's":"it is","we're":"we are","they're":"they are","isn't":"is not","aren't":"are not","don't":"do not","doesn't":"does not","didn't":"did not","can't":"cannot","won't":"will not","i've":"i have","you've":"you have","we've":"we have","they've":"they have","that's":"that is","what's":"what is"};
+    for(const k in c){s=s.replace(new RegExp("\\b"+k.replace("'","'?")+"\\b","g"),c[k]);}
+    s=s.replace(/[‘’`]/g,"'").normalize('NFD').replace(/[̀-ͯ]/g,'');
+    return s.replace(/[.,;:!?]/g,'').replace(/\s+/g,' ').trim(); }
+  function eq(a,b){return normalize(a)===normalize(b);}
+  function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+  (function(){
+    const data = window.BANCO_MAESTRO || [];
+    BANCO = data;
+    const niveles = NIVEL_ORDEN.filter(n=>data.some(i=>i.nivel===n));
+    niveles.forEach(n=>selNivel.add(n));
+    niveles.forEach(n=>{
+      const c=el('span','chip-f on',n); c.dataset.nivel=n;
+      c.onclick=()=>{c.classList.toggle('on'); c.classList.contains('on')?selNivel.add(n):selNivel.delete(n); onFilterChange();};
+      chipsNivel.appendChild(c);
+    });
+    ['Recognize','Manipulate','Transform','Reading'].forEach(etapa=>{
+      const grp=el('div','stage-group');
+      grp.appendChild(el('div','stage-label',etapa));
+      const row=el('div','chips');
+      TIPOS.filter(t=>t.etapa===etapa).forEach(t=>{
+        const c=el('span','chip-f on',t.label); c.dataset.tipo=t.k;
+        c.onclick=()=>{c.classList.toggle('on'); c.classList.contains('on')?selTipo.add(t.k):selTipo.delete(t.k); onFilterChange();};
+        row.appendChild(c);
+      });
+      grp.appendChild(row);
+      chipsTipo.appendChild(grp);
+    });
+    CATEGORIAS.forEach(c=>{
+      const chip=el('span','chip-f on',c.label); chip.dataset.cat=c.k;
+      chip.onclick=()=>{chip.classList.toggle('on'); chip.classList.contains('on')?selCategoria.add(c.k):selCategoria.delete(c.k); onFilterChange();};
+      chipsCategoria.appendChild(chip);
+    });
+    temaSelect.onchange = updateCount;
+    refreshTemaOptions();
+  })();
+
+  // Cuenta, para el filtro Nivel+Tipo+Categoria ACTUAL (sin el tema), cuantos items hay por area.
+  // Repuebla el <select> de Topic con esos conteos y deshabilita las areas en 0 -- asi es imposible
+  // elegir a mano un tema que ya sabemos que va a dar 0 resultados.
+  function refreshTemaOptions(){
+    const prev = temaSelect.value;
+    const counts = {};
+    let total = 0;
+    BANCO.forEach(i=>{
+      if(!selNivel.has(i.nivel) || !selTipo.has(i.tipo) || !selCategoria.has(categoriaOf(i.arquetipo))) return;
+      counts[i.area] = (counts[i.area]||0) + 1; total++;
+    });
+    const areas = [...new Set(BANCO.map(i=>i.area).filter(Boolean))].sort();
+    temaSelect.innerHTML = '';
+    const optAny = document.createElement('option'); optAny.value=''; optAny.textContent = 'Any topic ('+total+')';
+    temaSelect.appendChild(optAny);
+    areas.forEach(a=>{
+      const n = counts[a]||0;
+      const opt = document.createElement('option'); opt.value=a; opt.textContent = a+' ('+n+')';
+      if(n===0) opt.disabled = true;
+      temaSelect.appendChild(opt);
+    });
+    // Si el tema que tenias elegido ya no tiene resultados con los filtros actuales, vuelve a "Any topic"
+    // en vez de dejarte parado en una combinacion garantizada en cero.
+    temaSelect.value = (prev && counts[prev]) ? prev : '';
+  }
+  function onFilterChange(){ refreshTemaOptions(); updateCount(); }
+
+  function applyUrlParams(){
+    // Permite mandar un link ya armado (ej. a un estudiante antes de clase): ?nivel=A2,B1&tipo=gap_fill&categoria=grammar&tema=Past+Simple&cantidad=10&auto=1
+    const params = new URLSearchParams(window.location.search);
+    function syncChips(container, want, sel, dataAttr){
+      [...container.querySelectorAll('.chip-f')].forEach(c=>{
+        const key = c.dataset[dataAttr]; const on = want.has(key);
+        if(on !== c.classList.contains('on')){ c.classList.toggle('on'); on ? sel.add(key) : sel.delete(key); }
+      });
+    }
+    if(params.has('nivel')) syncChips(chipsNivel, new Set(params.get('nivel').split(',').map(s=>s.trim()).filter(Boolean)), selNivel, 'nivel');
+    if(params.has('tipo')) syncChips(chipsTipo, new Set(params.get('tipo').split(',').map(s=>s.trim()).filter(Boolean)), selTipo, 'tipo');
+    if(params.has('categoria')) syncChips(chipsCategoria, new Set(params.get('categoria').split(',').map(s=>s.trim()).filter(Boolean)), selCategoria, 'cat');
+    refreshTemaOptions();
+    if(params.has('tema')){
+      const t = params.get('tema');
+      if([...temaSelect.options].some(o=>o.value===t && !o.disabled)) temaSelect.value = t;
+    }
+    if(params.has('cantidad')){
+      const n = parseInt(params.get('cantidad'), 10);
+      if(n > 0) document.getElementById('cantidad').value = String(Math.min(60, n));
+    }
+    updateCount();
+    if(params.get('auto') === '1') document.getElementById('generar').click();
+  }
+
+  document.getElementById('copyLink').onclick = ()=>{
+    const params = new URLSearchParams();
+    params.set('nivel', [...selNivel].join(','));
+    params.set('tipo', [...selTipo].join(','));
+    params.set('categoria', [...selCategoria].join(','));
+    if(temaSelect.value) params.set('tema', temaSelect.value);
+    params.set('cantidad', document.getElementById('cantidad').value || '15');
+    params.set('auto', '1');
+    const base = location.href.split('?')[0].split('#')[0];
+    const url = base + '?' + params.toString();
+    const box = document.getElementById('linkBox'), out = document.getElementById('linkOutput'), cs = document.getElementById('copyStatus');
+    out.value = url; box.style.display=''; out.focus(); out.select();
+    let copiedSync = false;
+    try { copiedSync = document.execCommand('copy'); } catch(e){}
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(()=>{ cs.textContent='✓ Copied to clipboard.'; })
+        .catch(()=>{ cs.textContent = copiedSync ? '✓ Copied to clipboard.' : 'Could not auto-copy — text is selected, press Ctrl+C.'; });
+    } else {
+      cs.textContent = copiedSync ? '✓ Copied to clipboard.' : 'Could not auto-copy — text is selected, press Ctrl+C.';
+    }
+  };
+
+  function filterPool(){
+    const tema = temaSelect.value;
+    return BANCO.filter(i=>selNivel.has(i.nivel) && selTipo.has(i.tipo) &&
+      selCategoria.has(categoriaOf(i.arquetipo)) && (!tema || i.area===tema));
+  }
+  function updateCount(){
+    const n = filterPool().length;
+    statusEl.style.color = n===0 ? 'var(--red)' : 'var(--muted)';
+    statusEl.textContent = n===0
+      ? "0 match this combination — try widening a filter."
+      : n + ' of ' + BANCO.length + ' exercises match this combination.';
+  }
+
+  document.getElementById('generar').onclick = ()=>{
+    const n = Math.max(1, Math.min(60, parseInt(document.getElementById('cantidad').value,10) || 15));
+    const pool = shuffle(filterPool()).slice(0, n);
+    renderSheet(pool);
+  };
+
+  function renderSheet(pool){
+    sheet.innerHTML=''; graders.length=0;
+    if(!pool.length){ sheet.appendChild(el('div','empty','No exercises match this combination. Try widening the filters.')); sheetSection.style.display=''; return; }
+    pool.forEach((item,idx)=>{
+      if(item.tipo==='reading_comprehension') sheet.appendChild(renderReading(item, idx));
+      else sheet.appendChild(renderExercise(item.ejercicio, idx, item));
+    });
+    sheetSection.style.display='';
+    document.getElementById('score').innerHTML='';
+    sheetSection.scrollIntoView({behavior:'smooth'});
+  }
+
+  function srcTag(item){
+    return '<span class="src">'+esc(item.nivel)+' · <a href="../preview/'+esc(item.tema_id)+'.html" target="_blank">'+esc(item.tema)+'</a></span>';
+  }
+
+  function renderExercise(ex, idx, item){
+    const box=el('div','ex');
+    const stageMap={multiple_choice:'Recognize',true_false:'Recognize',gap_fill:'Manipulate',unscramble:'Manipulate',correct_mistake:'Manipulate',transformation:'Transform',write_opposite:'Transform',short_answer_production:'Produce'};
+    box.appendChild(el('div','stage','<span>'+(stageMap[ex.tipo]||'Exercise')+'</span>'+(item?srcTag(item):'')));
+    if(Array.isArray(ex.combina) && ex.combina.length) box.appendChild(el('div','joined','🔗 Combines: '+ex.combina.map(esc).join(' + ')));
+    let getVal,correct,markEl=el('div','mark','');
+    switch(ex.tipo){
+      case 'multiple_choice':{
+        box.appendChild(el('p','prompt',esc(ex.pregunta).replace(/___/g,'<b>_____</b>')));
+        const ch=el('div','choices');
+        (ex.opciones||[]).forEach(o=>{const lab=el('label','choice');lab.innerHTML=`<input type="radio" name="mc${idx}" value="${esc(o)}"> <span>${esc(o)}</span>`;ch.appendChild(lab);});
+        box.appendChild(ch);getVal=()=>{const r=box.querySelector(`input[name=mc${idx}]:checked`);return r?r.value:'';};correct=ex.respuesta;break;}
+      case 'true_false':{
+        box.appendChild(el('p','prompt',esc(ex.afirmacion)));
+        const tf=el('div','tf-btns');let sel='';
+        ['true','false'].forEach(v=>{const btn=el('button',null,'');btn.textContent=v==='true'?'✔ True':'✗ False';btn.onclick=()=>{sel=v;tf.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));btn.classList.add('sel');};tf.appendChild(btn);});
+        box.appendChild(tf);getVal=()=>sel;correct=String(ex.respuesta);break;}
+      case 'gap_fill':{
+        const parts=esc(ex.texto).split('___');const p=el('p','prompt');const inp=el('input');inp.type='text';inp.className='inline-gap';
+        p.innerHTML=parts[0];p.appendChild(inp);p.insertAdjacentHTML('beforeend',parts[1]||'');box.appendChild(p);
+        getVal=()=>inp.value;correct=ex.respuesta;break;}
+      case 'unscramble':{
+        box.appendChild(el('div','instr','Put the words in order to make a correct sentence.'));
+        const sc=el('div','scrambled');const ws=(ex.palabras||[]).slice();for(let i=ws.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[ws[i],ws[j]]=[ws[j],ws[i]];}if(ws.length>2&&ws.join(' ')===(ex.palabras||[]).join(' '))ws.push(ws.shift());ws.forEach(w=>sc.appendChild(el('span',null,esc(w))));box.appendChild(sc);
+        const inp=el('input');inp.type='text';inp.placeholder='Write the ordered sentence…';box.appendChild(inp);getVal=()=>inp.value;correct=ex.respuesta;break;}
+      case 'correct_mistake':{
+        box.appendChild(el('div','instr','There is a mistake. Rewrite the correct sentence.'));
+        box.appendChild(el('div','base','✗ '+esc(ex.texto_con_error)));
+        const inp=el('input');inp.type='text';inp.placeholder='Corrected version…';box.appendChild(inp);getVal=()=>inp.value;correct=ex.respuesta;break;}
+      case 'transformation':
+      case 'write_opposite':{
+        box.appendChild(el('div','instr',esc(ex.instruccion||'')));
+        box.appendChild(el('div','base',esc(ex.oracion_base)));
+        const inp=el('input');inp.type='text';inp.placeholder='Your answer…';box.appendChild(inp);getVal=()=>inp.value;correct=ex.respuesta;break;}
+      case 'short_answer_production':{
+        box.appendChild(el('p','prompt',esc(ex.pregunta)));
+        const inp=el('input');inp.type='text';inp.placeholder='Answer in a full sentence…';box.appendChild(inp);getVal=()=>inp.value;correct=ex.respuesta;break;}
+      default: box.appendChild(el('p','prompt','[Unsupported type: '+esc(ex.tipo)+']'));getVal=()=>'';correct='';
+    }
+    box.appendChild(markEl);
+    graders.push({check:()=>eq(getVal(),correct),
+      answered:()=>String(getVal()||'').trim()!=='',
+      clear:()=>{markEl.className='mark';markEl.innerHTML='';},
+      reveal:(ok)=>{markEl.className='mark '+(ok?'right':'wrong');markEl.innerHTML=ok?'✓ Correct!':'✗ Not quite<span class="sol">Answer: '+esc(correct)+'</span>';}});
+    return box;
+  }
+
+  function renderReading(item, idx){
+    const wrap=el('div');
+    const box0=el('div','ex');
+    box0.appendChild(el('div','stage','<span>Reading</span>'+srcTag(item)));
+    box0.appendChild(el('div','reading-text',esc(item.ejercicio.texto)));
+    wrap.appendChild(box0);
+    (item.ejercicio.preguntas||[]).forEach((p,i)=>wrap.appendChild(renderExercise({tipo:'true_false',afirmacion:p.afirmacion,respuesta:p.respuesta}, idx+'-r'+i, null)));
+    return wrap;
+  }
+
+  document.getElementById('check').onclick=()=>{
+    const score=document.getElementById('score'); let ok=0,ans=0;
+    graders.forEach(g=>{ if(g.answered && !g.answered()){ if(g.clear)g.clear(); return; } ans++; const r=g.check(); g.reveal(r); if(r)ok++; });
+    if(!graders.length){score.innerHTML='';return;}
+    if(!ans){score.innerHTML='Nothing answered yet — try a few first.';return;}
+    score.innerHTML=`Score: <b>${ok}/${ans}</b> answered`+(ans<graders.length?` <span style="color:var(--muted)">· ${graders.length} total</span>`:'');
+  };
+  document.getElementById('reset').onclick=()=>{ document.getElementById('generar').click(); };
+  document.getElementById('printBtn').onclick=()=>window.print();
+
+  // Se llama al final, ya con generar/copyLink conectados, para que ?auto=1 pueda hacer click de verdad.
+  applyUrlParams();
+})();
+
+</script>
+</body>
+</html>
