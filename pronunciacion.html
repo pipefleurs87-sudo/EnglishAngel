@@ -52,7 +52,7 @@ button.rec[data-on="1"]{background:var(--red);border-color:var(--red);animation:
 .consent{background:#fff8e6;border:1px dashed var(--gold);border-radius:10px;padding:14px 16px}
 .consent label{display:flex;gap:10px;align-items:flex-start;font-size:14px;cursor:pointer}
 .verdict{font-family:var(--serif);font-size:26px;font-weight:700;margin:6px 0}
-.verdict.correcto{color:var(--good)} .verdict.error{color:var(--bad)}
+.verdict.correcto{color:var(--good)} .verdict.error{color:var(--bad)} .verdict.empate{color:var(--muted)}
 .meter{height:14px;background:var(--paper);border:1px solid var(--line);border-radius:8px;position:relative;overflow:hidden;margin:8px 0}
 .meter>i{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--muted)}
 .meter>b{position:absolute;top:0;bottom:0;border-radius:8px;display:block}
@@ -149,7 +149,8 @@ a.dl{color:var(--red);font-weight:600;text-decoration:none;border-bottom:1px sol
     <div id="verdictBox">
       <div id="verdict" class="verdict">—</div>
       <div class="meter"><i></i><b id="marginBar"></b></div>
-      <div class="tiny">Barra: centro = empate. A la <b style="color:var(--good)">derecha/verde</b> = más cerca de la versión correcta; a la <b style="color:var(--bad)">izquierda/roja</b> = más cerca del error típico.</div>
+      <div id="empateHint" class="tiny hidden" style="color:var(--red)">Consejo: graba las dos anclas <b>claramente distintas</b> (la correcta bien pronunciada, el error bien marcado), en el mismo micrófono y volumen. Anclas parecidas → empate.</div>
+    <div class="tiny">Barra: centro = empate. A la <b style="color:var(--good)">derecha/verde</b> = más cerca de la versión correcta; a la <b style="color:var(--bad)">izquierda/roja</b> = más cerca del error típico.</div>
     </div>
 
     <div class="grid2" style="margin-top:14px">
@@ -378,13 +379,37 @@ a.dl{color:var(--red);font-weight:600;text-decoration:none;border-bottom:1px sol
     return Math.sqrt(s);
   }
 
+  // ---- Preproceso para DTW: recorte de silencio + CMN ---------
+  // Se aplica SOLO al comparar; las features crudas se guardan intactas.
+  function prepSeq(mfcc, rms) {
+    const n = mfcc.length;
+    if (!n) return [];
+    let maxR = 0; for (let i = 0; i < rms.length; i++) if (rms[i] > maxR) maxR = rms[i];
+    const thr = maxR * 0.12;               // umbral suave de energía
+    let a = 0, b = n - 1;
+    while (a < b && (rms[a] || 0) < thr) a++;   // recorta silencio inicial
+    while (b > a && (rms[b] || 0) < thr) b--;   // recorta silencio final
+    const seg = mfcc.slice(a, b + 1);
+    const dim = seg[0].length;
+    const mean = new Array(dim).fill(0);        // CMN: media por coeficiente
+    seg.forEach(v => { for (let k = 0; k < dim; k++) mean[k] += v[k]; });
+    for (let k = 0; k < dim; k++) mean[k] /= seg.length;
+    return seg.map(v => v.map((x, k) => x - mean[k]));
+  }
+  function prepForDTW(fe) { return prepSeq(fe.mfcc, fe.rms); }
+
   // ---- Doble ancla: ¿lado correcto o lado del error? ----------
   function doubleAnchor(feStudent, feCorrect, feError) {
-    const dC = dtw(feStudent.mfcc, feCorrect.mfcc);
-    const dE = dtw(feStudent.mfcc, feError.mfcc);
+    const s = prepForDTW(feStudent), c = prepForDTW(feCorrect), e = prepForDTW(feError);
+    const dC = dtw(s, c);
+    const dE = dtw(s, e);
     const side = dC <= dE ? 'correcto' : 'error';
     const margin = (dE + dC) > 0 ? (dE - dC) / (dE + dC) : 0; // >0 más cerca de correcto
-    return { dtwCorrecto: +dC.toFixed(3), dtwError: +dE.toFixed(3), lado: side, margen: +margin.toFixed(3) };
+    return {
+      dtwCorrecto: +dC.toFixed(3), dtwError: +dE.toFixed(3),
+      lado: side, margen: +margin.toFixed(3),
+      confiable: Math.abs(margin) >= 0.06   // margen diminuto = empate, no decidir con confianza
+    };
   }
 
   // ---- Entonación: pendiente F0 del último 30% ----------------
@@ -429,7 +454,7 @@ a.dl{color:var(--red);font-weight:600;text-decoration:none;border-bottom:1px sol
     return { ratio: +(hits / g.length).toFixed(3), dichas: t, objetivo: g, faltantes };
   }
 
-  const API = { fft, powerSpectrum, melFilterbank, extractFeatures, estimateF0, dtw, doubleAnchor, intonation, wordMatch, normalizeWords };
+  const API = { fft, powerSpectrum, melFilterbank, extractFeatures, estimateF0, dtw, prepForDTW, doubleAnchor, intonation, wordMatch, normalizeWords };
   if (typeof module !== 'undefined' && module.exports) module.exports = API;
   root.EA_DSP = API;
 })(typeof self !== 'undefined' ? self : this);
@@ -547,13 +572,19 @@ function analyze(){
   $('secResult').classList.remove('hidden');
   // veredicto
   const v = $('verdict');
-  v.textContent = anchor.lado==='correcto' ? '✅ Estás del lado correcto' : '⚠️ Estás del lado del error';
-  v.className = 'verdict ' + anchor.lado;
+  if(!anchor.confiable){
+    v.textContent = '≈ Empate — no puedo distinguir con confianza';
+    v.className = 'verdict empate';
+  } else {
+    v.textContent = anchor.lado==='correcto' ? '✅ Estás del lado correcto' : '⚠️ Estás del lado del error';
+    v.className = 'verdict ' + anchor.lado;
+  }
   // barra de margen (-1..1) → 0..100%
   const pct = (anchor.margen+1)/2*100;
   const bar = $('marginBar');
   if(anchor.margen>=0){ bar.style.left='50%'; bar.style.width=(pct-50)+'%'; bar.style.background='var(--good)'; }
   else { bar.style.right='50%'; bar.style.left='auto'; bar.style.width=(50-pct)+'%'; bar.style.background='var(--bad)'; }
+  $('empateHint').classList.toggle('hidden', anchor.confiable);
   $('vDtwC').textContent = anchor.dtwCorrecto;
   $('vDtwE').textContent = anchor.dtwError;
 
