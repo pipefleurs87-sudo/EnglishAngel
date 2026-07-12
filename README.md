@@ -216,7 +216,7 @@ Mándame la URL y una captura. Probablemente sea:
 ## 📞 Contacto y soporte
 
 **Tu email:** pipefleurs87@gmail.com  
-**Tu perfil Superprof:** [Enlace](https://www.superprof.es)
+**Tu perfil Superprof:** [[Enlace](https://www.superprof.es)](https://www.superprof.co/ingles-real-para-hablar-sin-miedo-conversacion-confianza-clases-disfrutan.html)
 
 Para crear contenido nuevo o reportar bugs, usa la interfaz CLAUDE.md del repo.
 
