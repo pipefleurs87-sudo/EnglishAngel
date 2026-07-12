@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Laboratorio de pronunciación — EnglishAngel (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1B2A41; --paper:#EFF1EC; --red:#B23A2E; --gold:#C9962F;
+  --muted:#6B7079; --line:#D8DAD1;
+  --good:#2E7D4F; --bad:#B23A2E; --mid:#C9962F;
+  --serif:'Source Serif 4',Georgia,serif;
+  --sans:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --hand:'Caveat',cursive;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:28px 20px 80px}
+header.top{border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:8px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+h1{font-family:var(--serif);font-weight:700;font-size:30px;margin:.15em 0 .1em}
+.sub{color:var(--muted);font-size:14px}
+.demo-tag{display:inline-block;font-family:var(--mono);font-size:11px;border:1px solid var(--gold);
+  color:var(--gold);padding:2px 7px;border-radius:3px;letter-spacing:.08em;vertical-align:middle;margin-left:8px}
+section{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 18px;margin-top:18px;
+  box-shadow:0 1px 0 rgba(27,42,65,.03)}
+h2{font-family:var(--serif);font-size:19px;margin:0 0 4px;font-weight:600}
+.step{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.1em}
+.hint{color:var(--muted);font-size:13px;margin:2px 0 12px}
+label.fld{display:block;font-size:13px;font-weight:500;margin:10px 0 4px}
+input[type=text],select{width:100%;font-family:var(--sans);font-size:15px;padding:9px 11px;
+  border:1px solid var(--line);border-radius:7px;background:var(--paper);color:var(--ink)}
+button{font-family:var(--sans);font-weight:500;font-size:14px;cursor:pointer;border-radius:8px;
+  border:1px solid var(--ink);background:var(--ink);color:#fff;padding:10px 16px;transition:.12s}
+button:hover:not(:disabled){transform:translateY(-1px)}
+button:disabled{opacity:.4;cursor:not-allowed}
+button.ghost{background:#fff;color:var(--ink)}
+button.gold{background:var(--gold);border-color:var(--gold);color:#1B2A41}
+button.red{background:var(--red);border-color:var(--red)}
+button.rec[data-on="1"]{background:var(--red);border-color:var(--red);animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.65}}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.chip{font-family:var(--mono);font-size:12px;padding:3px 8px;border-radius:20px;border:1px solid var(--line);color:var(--muted)}
+.chip.ok{color:var(--good);border-color:var(--good)}
+.chip.warn{color:var(--red);border-color:var(--red)}
+.consent{background:#fff8e6;border:1px dashed var(--gold);border-radius:10px;padding:14px 16px}
+.consent label{display:flex;gap:10px;align-items:flex-start;font-size:14px;cursor:pointer}
+.verdict{font-family:var(--serif);font-size:26px;font-weight:700;margin:6px 0}
+.verdict.correcto{color:var(--good)} .verdict.error{color:var(--bad)}
+.meter{height:14px;background:var(--paper);border:1px solid var(--line);border-radius:8px;position:relative;overflow:hidden;margin:8px 0}
+.meter>i{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--muted)}
+.meter>b{position:absolute;top:0;bottom:0;border-radius:8px;display:block}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:620px){.grid2{grid-template-columns:1fr}}
+.stat{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.stat .k{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.stat .v{font-family:var(--serif);font-size:22px;font-weight:600}
+canvas{width:100%;height:120px;display:block;background:var(--paper);border:1px solid var(--line);border-radius:8px}
+.note{font-family:var(--hand);font-size:19px;color:var(--red);line-height:1.25}
+pre{font-family:var(--mono);font-size:12px;background:#1b2a41;color:#e7ebe3;padding:14px;border-radius:8px;
+  overflow:auto;max-height:340px;margin:8px 0}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;background:var(--paper);border:1px solid var(--line);
+  padding:2px 7px;border-radius:4px;color:var(--muted)}
+.hidden{display:none!important}
+.tiny{font-size:12px;color:var(--muted)}
+a.dl{color:var(--red);font-weight:600;text-decoration:none;border-bottom:1px solid var(--red)}
+.legend{font-size:12px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap;margin-top:6px}
+.legend span{display:flex;align-items:center;gap:5px}
+.sw{width:11px;height:11px;border-radius:3px;display:inline-block}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="kicker">EnglishAngel · Laboratorio<span class="demo-tag">DEMO AISLADA</span></div>
+    <h1>Pronunciación en el navegador</h1>
+    <div class="sub">100% local · features crudas, nunca audio · doble ancla del profesor · sin costo por uso</div>
+  </header>
+
+  <!-- CONSENTIMIENTO -->
+  <section id="secConsent" class="consent">
+    <h2>Consentimiento de micrófono</h2>
+    <p class="hint" style="margin-top:2px">Este laboratorio procesa tu voz <b>en tu propio dispositivo</b>. No se sube ni se guarda audio: solo se extraen medidas numéricas (features). Puedes descargarlas y verlas al final.</p>
+    <label><input type="checkbox" id="ckConsent"> <span>Doy consentimiento para usar el micrófono en este dispositivo. <b>Si soy menor de edad</b>, un acudiente autoriza este uso.</span></label>
+    <div style="margin-top:12px"><button id="btnEnable" disabled>Activar micrófono</button>
+      <span id="micState" class="chip">micrófono: sin activar</span></div>
+  </section>
+
+  <!-- OBJETIVO -->
+  <section id="secTarget" class="disabledSec">
+    <div class="step">PASO 1</div><h2>Frase objetivo</h2>
+    <p class="hint">Escribe lo que se va a practicar y qué entonación se espera. El caso estrella: las <b>wh-questions</b> bajan en inglés, pero el hispanohablante las sube.</p>
+    <label class="fld" for="txtTarget">Texto</label>
+    <input type="text" id="txtTarget" value="Where do you live?">
+    <label class="fld" for="selInton">Entonación esperada</label>
+    <select id="selInton">
+      <option value="descendente">Afirmación / wh-question (baja) ↘</option>
+      <option value="ascendente">Pregunta sí/no (sube) ↗</option>
+      <option value="plana">Frase incompleta / lista (plana) →</option>
+    </select>
+  </section>
+
+  <!-- REFERENCIAS DEL PROFESOR -->
+  <section id="secRef" class="disabledSec">
+    <div class="step">PASO 2 · PROFESOR</div><h2>Doble ancla</h2>
+    <p class="hint">Grabá <b>dos</b> versiones: la correcta y el error típico que hace un hispanohablante. El puntaje del estudiante se vuelve categórico — "estás del lado correcto" o "del lado del error" — comparando contra ambas, no contra un locutor nativo ideal.</p>
+    <div class="grid2">
+      <div class="stat">
+        <div class="k">✅ Versión correcta</div>
+        <div class="row" style="margin-top:8px">
+          <button class="rec gold" id="recCorrect" data-on="0">● Grabar correcta</button>
+          <button class="ghost" id="playCorrect" disabled>▶ Oír</button>
+        </div>
+        <div id="stCorrect" class="chip" style="margin-top:8px">sin grabar</div>
+      </div>
+      <div class="stat">
+        <div class="k">⚠️ Error típico</div>
+        <div class="row" style="margin-top:8px">
+          <button class="rec red" id="recError" data-on="0">● Grabar error</button>
+          <button class="ghost" id="playError" disabled>▶ Oír</button>
+        </div>
+        <div id="stError" class="chip" style="margin-top:8px">sin grabar</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTUDIANTE -->
+  <section id="secStudent" class="disabledSec">
+    <div class="step">PASO 3 · ESTUDIANTE</div><h2>Tu intento</h2>
+    <p class="hint">Escuchá el modelo si querés, luego grabá tu intento. Se registra el contexto: cuántos intentos, si volviste a oír el modelo, cuánto tardaste.</p>
+    <div class="row">
+      <button class="ghost" id="btnListen" disabled>🔁 Volver a oír el modelo</button>
+      <button class="rec" id="recStudent" data-on="0" disabled>● Grabar mi intento</button>
+      <button class="ghost" id="btnWords" disabled>🗣️ Comprobar palabras</button>
+      <span id="wordEngine" class="chip">Web Speech: —</span>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section id="secResult" class="hidden">
+    <div class="step">RESULTADO</div><h2>Diagnóstico</h2>
+
+    <div id="verdictBox">
+      <div id="verdict" class="verdict">—</div>
+      <div class="meter"><i></i><b id="marginBar"></b></div>
+      <div class="tiny">Barra: centro = empate. A la <b style="color:var(--good)">derecha/verde</b> = más cerca de la versión correcta; a la <b style="color:var(--bad)">izquierda/roja</b> = más cerca del error típico.</div>
+    </div>
+
+    <div class="grid2" style="margin-top:14px">
+      <div class="stat"><div class="k">DTW a correcta</div><div class="v" id="vDtwC">—</div><div class="tiny">menor = más parecido</div></div>
+      <div class="stat"><div class="k">DTW a error</div><div class="v" id="vDtwE">—</div><div class="tiny">mayor = mejor</div></div>
+    </div>
+
+    <div style="margin-top:16px">
+      <h2 style="font-size:16px">Entonación (F0 del último 30%)</h2>
+      <canvas id="f0canvas" width="820" height="120"></canvas>
+      <div class="legend">
+        <span><i class="sw" style="background:var(--ink)"></i>tu contorno F0</span>
+        <span><i class="sw" style="background:var(--gold)"></i>tramo final (30%)</span>
+      </div>
+      <div id="intonMsg" class="row" style="margin-top:8px"></div>
+      <div id="whWarn" class="note hidden"></div>
+    </div>
+
+    <div style="margin-top:16px">
+      <h2 style="font-size:16px">Palabras (Web Speech)</h2>
+      <div id="wordsMsg" class="tiny">Pulsá "Comprobar palabras" (solo Chrome/Edge).</div>
+    </div>
+
+    <div style="margin-top:16px">
+      <h2 style="font-size:16px">Esquema del intento <span class="pill">lo que se guardaría</span></h2>
+      <p class="tiny">Features crudas + contexto del fracaso + consentimiento. <b>Sin audio.</b> El algoritmo puede cambiar y recalcular el histórico desde estas features. <a class="dl" id="dlJson" href="#">⬇ Descargar JSON</a></p>
+      <pre id="schemaOut">—</pre>
+    </div>
+  </section>
+
+  <p class="tiny" style="margin-top:24px">Demo aislada · no toca la plataforma ni la galaxia · integración a Firestore pendiente de tu visto bueno.</p>
+</div>
+<script>
+/* ============================================================
+   EnglishAngel — Motor DSP para pronunciación (vanilla, sin CDN)
+   Funciones puras: FFT, MFCC, F0 (autocorrelación), energía, DTW,
+   entonación y coincidencia de palabras. Testeable en node.
+   ============================================================ */
+(function (root) {
+  'use strict';
+
+  // ---- FFT radix-2 iterativa (in-place, re/im Float64) --------
+  function fft(re, im) {
+    const n = re.length;
+    // bit-reversal
+    for (let i = 1, j = 0; i < n; i++) {
+      let bit = n >> 1;
+      for (; j & bit; bit >>= 1) j ^= bit;
+      j ^= bit;
+      if (i < j) {
+        let tr = re[i]; re[i] = re[j]; re[j] = tr;
+        let ti = im[i]; im[i] = im[j]; im[j] = ti;
+      }
+    }
+    for (let len = 2; len <= n; len <<= 1) {
+      const ang = -2 * Math.PI / len;
+      const wr = Math.cos(ang), wi = Math.sin(ang);
+      for (let i = 0; i < n; i += len) {
+        let cwr = 1, cwi = 0;
+        for (let k = 0; k < len / 2; k++) {
+          const a = i + k, b = i + k + len / 2;
+          const tr = re[b] * cwr - im[b] * cwi;
+          const ti = re[b] * cwi + im[b] * cwr;
+          re[b] = re[a] - tr; im[b] = im[a] - ti;
+          re[a] += tr;        im[a] += ti;
+          const ncwr = cwr * wr - cwi * wi;
+          cwi = cwr * wi + cwi * wr; cwr = ncwr;
+        }
+      }
+    }
+  }
+
+  function powerSpectrum(frame) {
+    const n = frame.length;
+    const re = new Float64Array(n), im = new Float64Array(n);
+    for (let i = 0; i < n; i++) re[i] = frame[i];
+    fft(re, im);
+    const half = n / 2 + 1;
+    const ps = new Float64Array(half);
+    for (let i = 0; i < half; i++) ps[i] = (re[i] * re[i] + im[i] * im[i]) / n;
+    return ps;
+  }
+
+  function hann(n) {
+    const w = new Float64Array(n);
+    for (let i = 0; i < n; i++) w[i] = 0.5 - 0.5 * Math.cos(2 * Math.PI * i / (n - 1));
+    return w;
+  }
+
+  const hz2mel = f => 1127 * Math.log(1 + f / 700);
+  const mel2hz = m => 700 * (Math.exp(m / 1127) - 1);
+
+  function melFilterbank(nfilt, nfft, sr) {
+    const half = nfft / 2 + 1;
+    const low = hz2mel(0), high = hz2mel(sr / 2);
+    const pts = new Float64Array(nfilt + 2);
+    for (let i = 0; i < pts.length; i++) {
+      const mel = low + (high - low) * i / (nfilt + 1);
+      pts[i] = Math.floor((nfft + 1) * mel2hz(mel) / sr);
+    }
+    const fb = [];
+    for (let m = 1; m <= nfilt; m++) {
+      const f = new Float64Array(half);
+      const l = pts[m - 1], c = pts[m], r = pts[m + 1];
+      for (let k = l; k < c; k++) if (c !== l) f[k] = (k - l) / (c - l);
+      for (let k = c; k < r; k++) if (r !== c) f[k] = (r - k) / (r - c);
+      fb.push(f);
+    }
+    return fb;
+  }
+
+  function dct2(x, ncoef) {
+    const N = x.length, out = new Float64Array(ncoef);
+    for (let k = 0; k < ncoef; k++) {
+      let s = 0;
+      for (let n = 0; n < N; n++) s += x[n] * Math.cos(Math.PI * k * (2 * n + 1) / (2 * N));
+      out[k] = s * (k === 0 ? Math.sqrt(1 / N) : Math.sqrt(2 / N));
+    }
+    return out;
+  }
+
+  // ---- Extractor: MFCC + F0 + RMS por frame -------------------
+  function extractFeatures(signal, sr, opts) {
+    opts = opts || {};
+    const N = opts.frame || 2048;
+    const hop = opts.hop || 512;
+    const nfilt = opts.nfilt || 26;
+    const ncoef = opts.ncoef || 13;
+    const win = hann(N);
+    const fb = melFilterbank(nfilt, N, sr);
+    const half = N / 2 + 1;
+
+    const mfcc = [], f0 = [], rms = [];
+    const buf = new Float64Array(N);
+
+    for (let start = 0; start + N <= signal.length; start += hop) {
+      // energía RMS (sin ventana)
+      let e = 0;
+      for (let i = 0; i < N; i++) { const s = signal[start + i]; e += s * s; }
+      rms.push(Math.sqrt(e / N));
+
+      // ventana Hann para el espectro
+      for (let i = 0; i < N; i++) buf[i] = signal[start + i] * win[i];
+      const ps = powerSpectrum(buf);
+      const melE = new Float64Array(nfilt);
+      for (let m = 0; m < nfilt; m++) {
+        let acc = 0; const f = fb[m];
+        for (let k = 0; k < half; k++) acc += ps[k] * f[k];
+        melE[m] = Math.log(acc + 1e-10);
+      }
+      mfcc.push(Array.from(dct2(melE, ncoef)));
+
+      // F0 por autocorrelación (señal cruda del frame)
+      f0.push(estimateF0(signal, start, N, sr));
+    }
+    return {
+      frameMs: +(N / sr * 1000).toFixed(1),
+      hopMs: +(hop / sr * 1000).toFixed(1),
+      sampleRate: sr,
+      nFrames: mfcc.length,
+      mfcc, f0, rms
+    };
+  }
+
+  function estimateF0(signal, start, N, sr) {
+    const minF = 70, maxF = 400;
+    const minLag = Math.floor(sr / maxF), maxLag = Math.min(N - 1, Math.floor(sr / minF));
+    // media cero
+    let mean = 0;
+    for (let i = 0; i < N; i++) mean += signal[start + i];
+    mean /= N;
+    let r0 = 0;
+    for (let i = 0; i < N; i++) { const v = signal[start + i] - mean; r0 += v * v; }
+    if (r0 < 1e-7) return 0; // silencio
+    let bestLag = -1, bestVal = 0;
+    for (let lag = minLag; lag <= maxLag; lag++) {
+      let s = 0;
+      for (let i = 0; i < N - lag; i++) s += (signal[start + i] - mean) * (signal[start + i + lag] - mean);
+      const norm = s / r0;
+      if (norm > bestVal) { bestVal = norm; bestLag = lag; }
+    }
+    if (bestLag < 0 || bestVal < 0.3) return 0; // no sonoro / sin confianza
+    // interpolación parabólica sobre el pico
+    let lag = bestLag;
+    if (bestLag > minLag && bestLag < maxLag) {
+      const y0 = acf(signal, start, N, mean, bestLag - 1) / r0;
+      const y1 = bestVal;
+      const y2 = acf(signal, start, N, mean, bestLag + 1) / r0;
+      const denom = (y0 - 2 * y1 + y2);
+      if (Math.abs(denom) > 1e-9) lag = bestLag + 0.5 * (y0 - y2) / denom;
+    }
+    return sr / lag;
+  }
+  function acf(signal, start, N, mean, lag) {
+    let s = 0;
+    for (let i = 0; i < N - lag; i++) s += (signal[start + i] - mean) * (signal[start + i + lag] - mean);
+    return s;
+  }
+
+  // ---- DTW sobre secuencias MFCC (coeficientes 1..ncoef-1) ----
+  function dtw(seqA, seqB, band) {
+    const n = seqA.length, m = seqB.length;
+    if (!n || !m) return Infinity;
+    const r = band || Math.max(10, Math.abs(n - m));
+    const INF = Infinity;
+    let prev = new Float64Array(m + 1).fill(INF);
+    let cur = new Float64Array(m + 1);
+    prev[0] = 0;
+    for (let i = 1; i <= n; i++) {
+      cur.fill(INF); cur[0] = INF;
+      const jlo = Math.max(1, i - r), jhi = Math.min(m, i + r);
+      for (let j = jlo; j <= jhi; j++) {
+        const c = frameDist(seqA[i - 1], seqB[j - 1]);
+        const best = Math.min(prev[j], cur[j - 1], prev[j - 1]);
+        cur[j] = c + (best === INF ? 0 : best);
+      }
+      const t = prev; prev = cur; cur = t;
+    }
+    const total = prev[m];
+    return total === INF ? INF : total / (n + m); // normalizado por longitud del camino aprox
+  }
+  function frameDist(a, b) {
+    let s = 0; // saltamos c0 (energía) → empezamos en 1
+    const L = Math.min(a.length, b.length);
+    for (let k = 1; k < L; k++) { const d = a[k] - b[k]; s += d * d; }
+    return Math.sqrt(s);
+  }
+
+  // ---- Doble ancla: ¿lado correcto o lado del error? ----------
+  function doubleAnchor(feStudent, feCorrect, feError) {
+    const dC = dtw(feStudent.mfcc, feCorrect.mfcc);
+    const dE = dtw(feStudent.mfcc, feError.mfcc);
+    const side = dC <= dE ? 'correcto' : 'error';
+    const margin = (dE + dC) > 0 ? (dE - dC) / (dE + dC) : 0; // >0 más cerca de correcto
+    return { dtwCorrecto: +dC.toFixed(3), dtwError: +dE.toFixed(3), lado: side, margen: +margin.toFixed(3) };
+  }
+
+  // ---- Entonación: pendiente F0 del último 30% ----------------
+  function intonation(f0arr, expected) {
+    const voiced = [];
+    for (let i = 0; i < f0arr.length; i++) if (f0arr[i] > 0) voiced.push({ i, f: f0arr[i] });
+    if (voiced.length < 4) return { clase: 'indeterminada', pendienteRel: 0, esperada: expected || null, discrepancia: false, nVoiced: voiced.length };
+    const tailStart = Math.floor(voiced.length * 0.7);
+    const tail = voiced.slice(tailStart);
+    // regresión lineal f vs orden
+    const nn = tail.length;
+    let sx = 0, sy = 0, sxx = 0, sxy = 0;
+    tail.forEach((p, k) => { sx += k; sy += p.f; sxx += k * k; sxy += k * p.f; });
+    const denom = (nn * sxx - sx * sx) || 1;
+    const slope = (nn * sxy - sx * sy) / denom; // Hz por frame
+    const meanF = sy / nn;
+    const slopeRel = meanF > 0 ? (slope * nn) / meanF : 0; // cambio relativo a lo largo de la cola
+    let cls;
+    if (slopeRel > 0.08) cls = 'ascendente';       // sube → pregunta (o subida hispana)
+    else if (slopeRel < -0.08) cls = 'descendente'; // baja → afirmación / wh-question
+    else cls = 'plana';                             // incompleta / dudosa
+    const discrepancia = !!expected && expected !== cls;
+    return { clase: cls, pendienteRel: +slopeRel.toFixed(3), pendienteHzFrame: +slope.toFixed(2), esperada: expected || null, discrepancia, nVoiced: voiced.length };
+  }
+
+  // ---- Coincidencia de palabras (Web Speech) ------------------
+  function normalizeWords(s) {
+    return String(s || '').toLowerCase()
+      .replace(/[^\p{L}\p{N}\s']/gu, ' ')
+      .replace(/\s+/g, ' ').trim().split(' ').filter(Boolean);
+  }
+  function wordMatch(transcript, target) {
+    const t = normalizeWords(transcript), g = normalizeWords(target);
+    if (!g.length) return { ratio: 0, dichas: t, objetivo: g, faltantes: [] };
+    const pool = t.slice();
+    const faltantes = [];
+    let hits = 0;
+    g.forEach(w => {
+      const idx = pool.indexOf(w);
+      if (idx >= 0) { hits++; pool.splice(idx, 1); } else faltantes.push(w);
+    });
+    return { ratio: +(hits / g.length).toFixed(3), dichas: t, objetivo: g, faltantes };
+  }
+
+  const API = { fft, powerSpectrum, melFilterbank, extractFeatures, estimateF0, dtw, doubleAnchor, intonation, wordMatch, normalizeWords };
+  if (typeof module !== 'undefined' && module.exports) module.exports = API;
+  root.EA_DSP = API;
+})(typeof self !== 'undefined' ? self : this);
+</script>
+<script>
+/* ============ App: captura + orquestación + UI ============ */
+const D = window.EA_DSP;
+const $ = id => document.getElementById(id);
+let stream = null, audioCtx = null;
+const refs = { correcto:null, error:null };      // {features, blob, url}
+let student = null;                               // {features, signal, sr}
+const ctx = {                                     // contexto del intento
+  attemptNumber:0, sessionStart:Date.now(), lastAttemptAt:null,
+  relistened:false, listenCount:0, totalAttempts:0
+};
+
+/* ---- Habilitar / consentimiento ---- */
+$('ckConsent').onchange = e => $('btnEnable').disabled = !e.target.checked;
+
+$('btnEnable').onclick = async () => {
+  try{
+    stream = await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true}});
+    audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+    $('micState').textContent = 'micrófono: activo · ' + audioCtx.sampleRate + ' Hz';
+    $('micState').className = 'chip ok';
+    $('btnEnable').disabled = true; $('ckConsent').disabled = true;
+    document.querySelectorAll('.disabledSec').forEach(s=>s.classList.remove('disabledSec'));
+    $('recStudent').disabled = false;
+    detectSpeech();
+  }catch(err){
+    $('micState').textContent = 'no se pudo activar: ' + err.name;
+    $('micState').className = 'chip warn';
+  }
+};
+
+/* ---- Grabar → Float32 mono a la tasa del AudioContext ---- */
+function record(btn){
+  return new Promise((resolve,reject)=>{
+    const prevOnclick = btn.onclick, prevText = btn.textContent;
+    let mime = ''; ['audio/webm','audio/ogg','audio/mp4'].some(m=>MediaRecorder.isTypeSupported(m)&&(mime=m));
+    let mr;
+    try{ mr = new MediaRecorder(stream, mime?{mimeType:mime}:undefined); }
+    catch(err){ return reject(err); }
+    const chunks = [];
+    mr.ondataavailable = e => { if(e.data.size) chunks.push(e.data); };
+    mr.onstop = async () => {
+      btn.dataset.on='0'; btn.textContent = prevText; btn.onclick = prevOnclick;
+      try{
+        const blob = new Blob(chunks,{type:mime||'audio/webm'});
+        const ab = await audioCtx.decodeAudioData(await blob.arrayBuffer());
+        resolve({ signal:downmix(ab), sr:ab.sampleRate, blob, dur:ab.duration });
+      }catch(err){ reject(err); }
+    };
+    btn.dataset.on='1'; btn.textContent = '■ Detener';
+    mr.start();
+    // el próximo click (durante la grabación) la detiene
+    btn.onclick = () => { if(mr && mr.state!=='inactive') mr.stop(); };
+  });
+}
+function downmix(ab){
+  const n = ab.length, out = new Float32Array(n);
+  for(let c=0;c<ab.numberOfChannels;c++){ const ch=ab.getChannelData(c); for(let i=0;i<n;i++) out[i]+=ch[i]; }
+  const g = 1/ab.numberOfChannels; for(let i=0;i<n;i++) out[i]*=g;
+  return out;
+}
+
+/* ---- Wiring de grabación de referencias ---- */
+function bindRec(btnId, stId, playId, key, chipOkMsg){
+  const btn=$(btnId), st=$(stId), play=$(playId);
+  const base = btn.textContent;
+  btn.onclick = async () => {
+    const r = await record(btn);
+    const fe = D.extractFeatures(r.signal, r.sr);
+    if(refs[key] && refs[key].url) URL.revokeObjectURL(refs[key].url);
+    refs[key] = { features:fe, blob:r.blob, url:URL.createObjectURL(r.blob), dur:r.dur };
+    st.textContent = `✓ ${r.dur.toFixed(2)}s · ${fe.nFrames} frames`; st.className='chip ok';
+    play.disabled = false;
+    play.onclick = ()=> new Audio(refs[key].url).play();
+    maybeEnableStudent();
+  };
+}
+bindRec('recCorrect','stCorrect','playCorrect','correcto');
+bindRec('recError','stError','playError','error');
+
+function maybeEnableStudent(){
+  const ready = refs.correcto && refs.error;
+  $('btnListen').disabled = !refs.correcto;
+  if(refs.correcto){
+    $('btnListen').onclick = ()=>{ ctx.relistened=true; ctx.listenCount++; new Audio(refs.correcto.url).play(); };
+  }
+}
+
+/* ---- Grabar intento del estudiante ---- */
+$('recStudent').onclick = async () => {
+  if(!(refs.correcto && refs.error)){ alert('Primero el profesor graba las dos referencias (correcta y error).'); return; }
+  const now = Date.now();
+  const r = await record($('recStudent'));
+  ctx.attemptNumber++; ctx.totalAttempts++;
+  const msSincePrev = ctx.lastAttemptAt ? now - ctx.lastAttemptAt : null;
+  ctx.lastAttemptAt = Date.now();
+  const fe = D.extractFeatures(r.signal, r.sr);
+  student = { features:fe, signal:r.signal, sr:r.sr, dur:r.dur, msSincePrev };
+  analyze();
+  $('btnWords').disabled = false;
+};
+
+/* ---- Análisis + render ---- */
+let lastAttemptObj = null;
+function analyze(){
+  const fe = student.features;
+  const expected = $('selInton').value;
+  const anchor = D.doubleAnchor(fe, refs.correcto.features, refs.error.features);
+  const inton = D.intonation(fe.f0, expected);
+
+  $('secResult').classList.remove('hidden');
+  // veredicto
+  const v = $('verdict');
+  v.textContent = anchor.lado==='correcto' ? '✅ Estás del lado correcto' : '⚠️ Estás del lado del error';
+  v.className = 'verdict ' + anchor.lado;
+  // barra de margen (-1..1) → 0..100%
+  const pct = (anchor.margen+1)/2*100;
+  const bar = $('marginBar');
+  if(anchor.margen>=0){ bar.style.left='50%'; bar.style.width=(pct-50)+'%'; bar.style.background='var(--good)'; }
+  else { bar.style.right='50%'; bar.style.left='auto'; bar.style.width=(50-pct)+'%'; bar.style.background='var(--bad)'; }
+  $('vDtwC').textContent = anchor.dtwCorrecto;
+  $('vDtwE').textContent = anchor.dtwError;
+
+  drawF0(fe.f0);
+  renderInton(inton);
+
+  // objeto del intento (esquema)
+  lastAttemptObj = buildAttempt(fe, anchor, inton, expected);
+  $('schemaOut').textContent = JSON.stringify(lastAttemptObj, null, 2);
+  const blob = new Blob([JSON.stringify(lastAttemptObj,null,2)],{type:'application/json'});
+  $('dlJson').href = URL.createObjectURL(blob);
+  $('dlJson').download = (lastAttemptObj.item_id||'intento')+'-'+lastAttemptObj.attempt_id+'.json';
+  $('secResult').scrollIntoView({behavior:'smooth'});
+}
+
+function renderInton(inton){
+  const map = {ascendente:'sube ↗', descendente:'baja ↘', plana:'plana →', indeterminada:'indeterminada'};
+  const box = $('intonMsg');
+  const ok = !inton.discrepancia && inton.clase!=='indeterminada';
+  box.innerHTML = `<span class="chip ${ok?'ok':'warn'}">detectada: ${map[inton.clase]}</span>
+                   <span class="chip">esperada: ${map[inton.esperada]||'—'}</span>
+                   <span class="tiny">pendiente rel. ${inton.pendienteRel}</span>`;
+  const wh = $('whWarn');
+  const txt = $('txtTarget').value.trim().toLowerCase();
+  const isWh = /^(where|what|when|who|why|which|whose|how)\b/.test(txt);
+  if(inton.discrepancia && isWh && inton.clase==='ascendente'){
+    wh.classList.remove('hidden');
+    wh.textContent = '↘ Las wh-questions BAJAN en inglés. Subiste el tono al final — es el error clásico del hispanohablante. Volvé a intentarlo dejando caer la voz en la última palabra.';
+  } else if(inton.discrepancia){
+    wh.classList.remove('hidden');
+    wh.textContent = 'La entonación no coincide con la esperada — revisá la dirección del tono al final.';
+  } else wh.classList.add('hidden');
+}
+
+/* ---- Dibujo del contorno F0 ---- */
+function drawF0(f0){
+  const cv=$('f0canvas'), g=cv.getContext('2d'), W=cv.width, H=cv.height;
+  g.clearRect(0,0,W,H);
+  const pts=[]; f0.forEach((f,i)=>{ if(f>0) pts.push({i,f}); });
+  if(pts.length<2){ g.fillStyle='#6B7079'; g.font='14px sans-serif'; g.fillText('Sin tramos sonoros suficientes',12,H/2); return; }
+  const fs=pts.map(p=>p.f), lo=Math.min(...fs)*0.9, hi=Math.max(...fs)*1.1;
+  const x=i=>i/(f0.length-1)*(W-20)+10, y=f=>H-10-((f-lo)/(hi-lo))*(H-20);
+  const tailStart=Math.floor(pts.length*0.7);
+  // línea completa
+  g.lineWidth=2.5; g.strokeStyle='#1B2A41'; g.beginPath();
+  pts.forEach((p,k)=>{ const X=x(p.i),Y=y(p.f); k?g.lineTo(X,Y):g.moveTo(X,Y); }); g.stroke();
+  // tramo final 30% en dorado
+  g.lineWidth=3.5; g.strokeStyle='#C9962F'; g.beginPath();
+  pts.slice(tailStart).forEach((p,k)=>{ const X=x(p.i),Y=y(p.f); k?g.lineTo(X,Y):g.moveTo(X,Y); }); g.stroke();
+  // puntos
+  g.fillStyle='#1B2A41'; pts.forEach(p=>{ g.beginPath(); g.arc(x(p.i),y(p.f),2,0,7); g.fill(); });
+}
+
+/* ---- Web Speech: detección + comprobación de palabras ---- */
+let SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+function detectSpeech(){
+  const chip=$('wordEngine');
+  if(SR){ chip.textContent='Web Speech: disponible'; chip.className='chip ok'; }
+  else { chip.textContent='Web Speech: no disponible (usá Chrome/Edge)'; chip.className='chip warn'; $('btnWords').title='Solo Chrome/Edge'; }
+}
+$('btnWords').onclick = () => {
+  if(!SR){ $('wordsMsg').innerHTML='<span class="chip warn">Reconocimiento de voz no disponible en este navegador. Usá Chrome o Edge.</span>'; return; }
+  const rec = new SR(); rec.lang='en-US'; rec.interimResults=false; rec.maxAlternatives=1;
+  $('wordsMsg').textContent='Escuchando… decí la frase de nuevo.';
+  rec.onresult = e => {
+    const transcript = e.results[0][0].transcript;
+    const wm = D.wordMatch(transcript, $('txtTarget').value);
+    const cls = wm.ratio>=0.9?'ok':wm.ratio>=0.6?'':'warn';
+    $('wordsMsg').innerHTML = `<span class="chip ${cls}">${Math.round(wm.ratio*100)}% de palabras</span>
+       <span class="tiny">escuché: “${transcript}”</span>` +
+      (wm.faltantes.length?`<div class="tiny">faltó/sonó distinto: <b>${wm.faltantes.join(', ')}</b></div>`:'');
+    if(lastAttemptObj){ lastAttemptObj.words={engine:'webspeech',available:true,transcript,target:$('txtTarget').value,match_ratio:wm.ratio,faltantes:wm.faltantes};
+      $('schemaOut').textContent = JSON.stringify(lastAttemptObj,null,2); }
+  };
+  rec.onerror = ev => $('wordsMsg').innerHTML=`<span class="chip warn">error: ${ev.error}</span>`;
+  rec.start();
+};
+
+/* ---- Esquema del intento (features crudas, sin audio) ---- */
+function buildAttempt(fe, anchor, inton, expected){
+  const round = a => a.map(v => Array.isArray(v)? v.map(x=>+x.toFixed(3)) : +v.toFixed(2));
+  return {
+    schema_version: 1,
+    attempt_id: 'a' + Date.now().toString(36),
+    student_token: '(se inyecta al integrar con Firestore)',
+    item_id: slug($('txtTarget').value),
+    target_text: $('txtTarget').value,
+    device: { sampleRate: fe.sampleRate, ua: navigator.userAgent.slice(0,120) },
+    consent: { given:true, ts:new Date(ctx.sessionStart).toISOString(), guardian_if_minor:true },
+    reference_set: { correcto_frames: refs.correcto.features.nFrames, error_frames: refs.error.features.nFrames },
+    features: {                       // ← CRUDAS, se recalcula el histórico si cambia el algoritmo
+      frame_ms: fe.frameMs, hop_ms: fe.hopMs, n_frames: fe.nFrames,
+      mfcc: round(fe.mfcc), f0_hz: round(fe.f0), energy_rms: round(fe.rms)
+    },
+    intonation: { last30_slope_rel: inton.pendienteRel, contour: inton.clase, expected, mismatch: inton.discrepancia },
+    comparison: { dtw_to_correct: anchor.dtwCorrecto, dtw_to_error: anchor.dtwError, side: anchor.lado, margin: anchor.margen },
+    words: null,                      // se llena si corre Web Speech
+    context: {                        // ← contexto del fracaso
+      attempt_number: ctx.attemptNumber,
+      ms_since_prev_attempt: student.msSincePrev,
+      relistened_model: ctx.relistened,
+      listen_count: ctx.listenCount,
+      total_attempts_session: ctx.totalAttempts,
+      abandoned: false                // se marcaría true si sale sin acertar
+    },
+    audio_stored: false,              // invariante: nunca subimos audio
+    ts: new Date().toISOString()
+  };
+}
+function slug(s){ return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40); }
+</script>
+</body>
+</html>
