@@ -1,0 +1,18 @@
+# MAPA — pendientes. Procesar con "lote: temas/pendientes.txt"
+# Formato: nivel | tema | arquetipo | notas semilla
+# Orden = prioridad por demanda real (ver temas/mapa.md). Deadline A2: agosto 2026.
+
+# --- FASE 1 — cerrar A1 ---
+
+# --- FASE 2 — A2 núcleo (past simple = término más buscado del nicho) — CERRADA ---
+
+# --- FASE 3 — B1 (contrastes estrella; "present perfect vs past simple" tiene categoría de demanda propia) — CERRADA ---
+
+# --- FASE 4 — B2 columna gramatical — CERRADA (2026-07-12, 9/9 temas generados) ---
+
+# --- FASE 5 — B2 léxico — CERRADA (2026-07-12, 8/8 temas generados) ---
+
+# --- FASE 6 — C1, cluster único — CERRADA (2026-07-12, 11/11 temas generados) ---
+
+# --- Nota: There is/are y some/any se movieron a A2 por decisión de Felipe. ---
+# --- Niños: pospuesto. C2 como cluster separado queda descartado por ahora (ver pivote Fase 6 en mapa.md). ---

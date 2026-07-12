@@ -1,0 +1,83 @@
+# HECHOS — A1 (id | tema)
+A1 | Verb To Be — Nationalities | tiempo_verbal, 14 países, tabla am/is/are
+A1 | Verb To Be — Negatives & Questions | Are you...? / isn't, tabla contracciones
+A1 | Subject Pronouns & Possessive Adjectives | pronombres, I/my he/his she/her
+A1 | This / That / These / Those | determinantes, near/far singular/plural
+A1 | Present Simple — Daily Routines | tiempo_verbal, foco -s tercera persona
+A1 | Present Simple — Adverbs of Frequency | posición del adverbio
+A1 | Present Simple — Negatives & Questions | do/does, don't/doesn't, short answers
+A1 | Present Simple — Wh- Questions | what/where/when/why/how + do/does
+A1 | Present Simple — Likes, Hobbies & Free Time | like/love/hate + -ing
+A2 | Past Simple — Telling a Story | Ben en Cartagena — MIGRADO 2026-07-10: forma/tabla, vocab 3 formas, 15 ejercicios (5/5/5)
+A1 | Family & Possessive 's | determinantes, my X's Y is my ___, Abuela Carmen
+A1 | Relative Clauses — Defining People (a person who...) | clausulas_relativas, profesiones A-Z, who vs which
+A1 | Relative Clauses — Places in the City (a place where...) | clausulas_relativas, 14 lugares, where
+A1 | Relative Clauses — Objects to Work & Study (a thing that...) | clausulas_relativas, 14 objetos, that/which
+A1 | Object Pronouns (me, him, her, us, them) | pronombres, I love her
+A1 | Prepositions of Place (in, on, under...) | preposiciones, dónde está
+A1 | Prepositions of Time (at, on, in) | preposiciones, horas/días/meses
+A1 | Modal Verb 'Can' — Ability & the Body | modales, can + partes del cuerpo, joined con demostrativos
+A1 | Modal 'Must' — Duties at Home | modales, I must clean, joined con prep. lugar
+A1 | Modal 'Have to' — Obligations at Work/School | modales, has to, joined con prep. tiempo/lugar
+A1 | Would like — Wishes & Polite Offers | modales, would you like to...?, joined con relativas
+A1 | Modal 'Should' — Advice & Suggestions | modales, 5 sugerencias restaurante
+A1 | Present Continuous — Now (vs Present Simple) | tiempo_verbal, paralelo con present simple, joined
+A1 | Wh- Questions — Question Bank (you/he-she) | funcional_skills, cada wh en 2ª/3ª persona
+A1 | A1 Review — Identity: To Be, Pronouns & Demonstratives | joined_exercise, 18 ejercicios 2-3 por tipo, todos con combina
+A1 | A1 Review — Present Simple: Routines, Frequency, Questions & Likes | joined_exercise, cluster present simple completo
+A1 | A1 Review — Modals & Prepositions: Advice, Duties, Time & Place | joined_exercise, 5 modales + prep lugar/tiempo
+A1 | A1 Grand Review — All Topics Together | joined_exercise, cierre de nivel, despedida de Kenji
+A2 | Verb To Be — Past (was / were) | tiempo_verbal, eventos pasados + valoraciones históricas, 4 formas
+A2 | Past Simple — Regular Verbs (-ed) & Time Expressions | tiempo_verbal, vocab por sonido /t/ /d/ /ɪd/, interacción de personajes
+A2 | Past Simple — Irregular Verbs (patterns) | tiempo_verbal, 8 grupos de patrones, 3 formas por verbo, modales pasados
+A2 | There is / There are — Describing the House | tiempo_verbal, vocab casa con emoji, an+sonido vocal, combina con was/were
+A2 | Countable & Uncountable — a / some / any / much / many (Food) | determinantes, vocab nevera C/U, some ofertas, combina con there is/are
+A2 | Comparatives & Superlatives — The Great Dilemmas of Life | comparativos, 5 estructuras, dilemas reales (pizza vs burger, YouTube vs Netflix), adjetivos con 3 formas
+A2 | Going to — Plans, Decisions & Predictions | tiempo_verbal, planes de Sofía, predicciones con evidencia (clima/deportes), cita de Ben
+B1 | Conditionals 0, 1 & 2 — One Ice Cream, Three Realities | tiempo_verbal, cubre First y Second del mapa + zero, MC de completar con posición variada
+A2 | Past Continuous vs Past Simple — when / while | tiempo_verbal, movido de B1 a A2 por Felipe; escena+interrupción, historia de la abuela en Miami
+B1 | Present Perfect — The Bucket List (already / yet) | tiempo_verbal, participios como vocab, hecho vs pendiente
+B1 | Have You Ever...? — Experiences (details in past simple) | tiempo_verbal, regla del switch: Yes I have + past simple (I went in 2020), puente al contraste PP vs past
+B1 | Present Perfect Continuous — for / since / just | tiempo_verbal, since=punto de inicio vs for=rango, just como pasado reciente (Yes I have, I just did)
+B1 | Passive Voice — Present, Past & Perfect | tiempo_verbal, 5 tiempos (se omitió pasiva de PP continuous por antinaturaleza), misma oración a través de tiempos
+B1 | Present Perfect vs Past Simple — Which One? | tiempo_verbal, señales de tiempo como vocab, interview rule + news rule
+B1 | Will vs Going to — Plans, Decisions & Promises | tiempo_verbal, plan vs decisión espontánea vs promesa, predicción con/sin evidencia
+B1 | Used to — Past Habits That Are Gone | tiempo_verbal, didn't use to sin -d, Medellín de antes
+B1 | Gerund vs Infinitive | tiempo_verbal, verbos +ing/+to como vocab etiquetado, trampa stop+ing vs stop+to
+B1 | Adverbs of Manner — quickly, carefully & comparatives | comparativos, regla de Felipe (-ly, antes del verbo o al final), hard vs hardly, comparative adverbs
+A1 | Articles — a / an / the | determinantes, sonido no letra, error fósil 'she is teacher', iguana con horario
+A1 | Adjectives — Describing People & Things | vocabulario, antes del sustantivo, sin plural (talls X)
+A1 | Plural Nouns — regular & irregular | vocabulario, +s/+es/-ies/irreg/= con etiquetas, children/people/feet
+A1 | Have got — Possessions | tiempo_verbal, estructura britanica de Ben, sin 'do' en preguntas
+A1 | Imperatives — Instructions & Directions | funcional_skills, Don't+verbo vs calco 'No touch', interrogativo via 'Can you...please?', receta de arepas
+A2 | Past Simple — Negatives & Questions | TACHADO 2026-07-10 por decisión de Felipe: ya cubierto por a2-past-simple-regular-01 e irregular-01 (regla de formas completa), no se genera aparte
+A2 | A2 Grand Review — All Topics Together | joined_exercise, 1 review por nivel (no sub-clusters), Ben pierde el teléfono en la ola de Cartagena, 18 ejercicios (5/8/5), primer uso de 'interaccion' en motor de lección
+B1 | B1 Grand Review — All Topics Together | joined_exercise, historia de Abuela Carmen (mangos a García Márquez 1982, concurso de cumbia 1975), 18 ejercicios (5/8/5), cierre de nivel
+B2 | Relative Clauses — Non-Defining & Advanced Structures | clausulas_relativas, whose/where/when, omisión de pronombre en defining, error calco 'that' con comas en non-defining, Kenji/Sofía describiendo Medellín
+B2 | Reported Speech — Statements, Questions & Commands | tiempo_verbal, backshift de tiempos, orden de reported questions sin inversión, continúa la historia del teléfono perdido de Ben
+B2 | Modals of Deduction — Present (must / might / can't) | modales, deducción positiva vs negativa, error clásico 'mustn't' para negar deducción (es 'can't')
+B2 | Modals of Deduction — Past (must have / might have / can't have) | modales, participio obligatorio tras 'have', combina con deducción presente, teléfono perdido de Ben otra vez
+B2 | Modals of Obligation — Past (had to / didn't have to / needn't have) | modales, no-obligación vs prohibición (mustn't), matiz needn't have vs didn't need to
+B2 | Causative — Have / Get Something Done | tiempo_verbal, orden de palabras (no lo hizo el sujeto), Sofía delegando en su estudio de diseño
+B2 | Third Conditional — If I Had Known | tiempo_verbal, past perfect obligatorio en el if-clause, Ben imaginando cómo evitar perder el teléfono
+B2 | Mixed Conditionals | tiempo_verbal, pasado+presente cruzados, Abuela Carmen y los mangos a García Márquez como origen de su negocio actual
+B2 | Wish / If Only — Regrets & Change | tiempo_verbal, wish+past simple (yo) vs wish+would (otros), cierre de la columna gramatical B2 con los 4 personajes
+B2 | Phrasal Verbs — GET: One Verb, Many Meanings | vocabulario, tema introductorio, get up/away with/on/over/through/by, la partícula cambia el significado
+B2 | Phrasal Verbs with UP | vocabulario, wake/grow/give/look/show/end up
+B2 | Phrasal Verbs with DOWN | vocabulario, calm/let/break/turn/write/slow down
+B2 | Phrasal Verbs with OUT | vocabulario, find/work/run/figure/hand/stand out
+B2 | Phrasal Verbs with ON vs OFF | vocabulario, turn on/off, carry on, call off, count on, put off — contraste de opuestos
+B2 | Linking Words — Contrast, Addition, Cause, Result & More | funcional_skills, agrupado por función pragmática (contraste/adición/ejemplificación/causa/consecuencia/cierre)
+B2 | Idioms — Money & Business | vocabulario, narrado por Abuela Carmen (30 años vendiendo mangos), contraste literal vs idiomático
+B2 | Idioms — Time & Effort | vocabulario, narrado por Abuela Carmen, Kenji estudioso vs Ben contrarreloj
+C1 | Subjunctive — Formal & Literary Register (C1–C2) | modales (mandativo + formulaico), If I were you, so be it, tambien_valido con 'should + verb'
+C1 | Cleft Sentences — It-Clefts & What-Clefts | tiempo_verbal, It was Ben who..., What I need is...
+C1 | Inversion for Emphasis | tiempo_verbal, Never have I, Not only... but also, Should you need
+C1 | Gerund Clauses as Subject | tiempo_verbal, your/you being late, registro formal vs informal del sujeto
+C1 | Participle Clauses | tiempo_verbal, reducir relativas/adverbiales con -ing/-ed, Having finished...
+C1 | Emphatic Structures — do/does/did & so/such | tiempo_verbal, I DO understand, such a good day that...
+C1 | Advanced Passive — Reporting Verbs & Passive Infinitives | tiempo_verbal, It is said that..., believed to have
+C1 | Future in the Past | tiempo_verbal, was going to, would como futuro-en-pasado, future perfect continuous
+C1 | Ellipsis & Substitution | tiempo_verbal, so can I, I think so / I hope not
+C1 | Would Rather / Would Prefer | modales, bare infinitive vs subject+past simple, to-infinitive
+C1 | Register & Style — Formal vs Informal Rewriting (C1–C2, capstone) | funcional_skills, reescribir el mismo texto en registro distinto
