@@ -1,0 +1,104 @@
+{
+  "id": "b2-reported-speech-01",
+  "nivel": "B2",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Reported Speech — Statements, Questions & Commands",
+  "habilidades": ["grammar", "listening", "reading", "writing", "speaking"],
+  "vocabulario": [
+    {"bandera": "say (that) — no personal object", "palabra": "say", "traduccion": "decir"},
+    {"bandera": "tell + person (that)", "palabra": "tell", "traduccion": "decirle a alguien"},
+    {"bandera": "ask + if/whether", "palabra": "ask", "traduccion": "preguntar (sí/no)"},
+    {"bandera": "ask + wh-word", "palabra": "ask", "traduccion": "preguntar (qué/dónde/cuándo)"},
+    {"bandera": "explain (that)", "palabra": "explain", "traduccion": "explicar"},
+    {"bandera": "warn + person + not to", "palabra": "warn", "traduccion": "advertir"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Ben said (that) he was tired."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Ben told Sofía (that) he had lost his phone."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Kenji explained that he was learning Spanish."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Abuela Carmen said (that) she would call later."},
+    {"id": "s5", "forma": "negativo", "oracion": "Ben said he wasn't hungry."},
+    {"id": "s6", "forma": "negativo", "oracion": "Sofía told him she didn't have time."},
+    {"id": "s7", "forma": "negativo", "oracion": "Kenji said he hadn't seen the wave coming."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Sofía asked Ben if he was okay."},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Kenji asked what time the class started."},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Abuela Carmen asked whether Ben had found his phone."},
+    {"id": "s11", "forma": "short_answer", "oracion": "Did Ben say he was tired? Yes, he did."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Did Sofía tell him to hurry? No, she didn't."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Did Kenji ask where the market was? Yes, he did."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Ben: I lost my phone in the sea. Again.",
+        "Sofía: Wait — didn't you **tell me** last month that you'd bought a waterproof case?",
+        "Ben: I did **say that**. I just... didn't say I'd actually use it.",
+        "Kenji: So when Ben **told us** his phone story, he left out the important part."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "Ben said that he loses his phone last week.",
+        "opcion_b": "Ben said that he had lost his phone the week before.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Reported speech retells what someone said without quoting them directly — the verb tense usually moves one step back into the past, and time/place words change too.",
+      "tabla": {
+        "titulo": "Direct → Reported: what moves back",
+        "encabezados": ["Direct speech", "Reported speech"],
+        "filas": [
+          ["Present simple: 'I am tired'", "Past simple: he said he was tired"],
+          ["Present perfect: 'I have lost it'", "Past perfect: he said he had lost it"],
+          ["Past simple: 'I saw it'", "Past perfect: he said he had seen it"],
+          ["'today' / 'now'", "that day / then"],
+          ["'tomorrow'", "the next day"],
+          ["Question: 'Are you okay?'", "he asked if I was okay (no question mark, no inversion)"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Ben said that he ___ tired.", "opciones": ["is", "was", "were"], "respuesta": "was"},
+        {"tipo": "multiple_choice", "pregunta": "Sofía asked Ben ___ he was okay.", "opciones": ["that", "if", "what"], "respuesta": "if"},
+        {"tipo": "multiple_choice", "pregunta": "Kenji asked ___ time the class started.", "opciones": ["what", "if", "that"], "respuesta": "what"},
+        {"tipo": "true_false", "afirmacion": "In reported speech, 'I have lost it' becomes 'he said he had lost it'.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "Reported questions keep the question mark and word inversion.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'Tell' needs a person as an object (tell someone), but 'say' doesn't.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "Ben said he ___ (be) tired.", "respuesta": "was"},
+        {"tipo": "gap_fill", "texto": "Sofía told him she ___ (not/have) time.", "respuesta": "didn't have"},
+        {"tipo": "gap_fill", "texto": "Kenji asked what time the class ___ (start).", "respuesta": "started"},
+        {"tipo": "unscramble", "palabras": ["Sofía", "asked", "Ben", "if", "he", "was", "okay"], "respuesta": "Sofía asked Ben if he was okay"},
+        {"tipo": "unscramble", "palabras": ["Ben", "said", "that", "he", "had", "lost", "his", "phone"], "respuesta": "Ben said that he had lost his phone"},
+        {"tipo": "correct_mistake", "texto_con_error": "Sofía asked Ben was he okay.", "respuesta": "Sofía asked Ben if he was okay."},
+        {"tipo": "transformation", "oracion_base": "\"I'm tired,\" Ben said.", "instruccion": "Report what Ben said.", "respuesta": "Ben said (that) he was tired."},
+        {"tipo": "transformation", "oracion_base": "\"Are you okay?\" Sofía asked Ben.", "instruccion": "Report the question.", "respuesta": "Sofía asked Ben if he was okay."},
+        {"tipo": "transformation", "oracion_base": "\"What time does the class start?\" Kenji asked.", "instruccion": "Report the question.", "respuesta": "Kenji asked what time the class started."},
+        {"tipo": "write_opposite", "oracion_base": "Ben said he was hungry.", "instruccion": "Write the negative form.", "respuesta": "Ben said he wasn't hungry."},
+        {"tipo": "short_answer_production", "pregunta": "Did Kenji ask where the market was? (short answer, Yes)", "respuesta": "Yes, he did."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Ben: So the wave just... took it. My phone. Gone.",
+        "Sofía: Wait, so what did he say happened?",
+        "Kenji: He said a wave had taken his phone while he was swimming.",
+        "Abuela Carmen: And did he say if he'd checked the weather first?",
+        "Kenji: He said he hadn't. He never does.",
+        "Ben: I heard that."
+      ],
+      "gaps": ["wave", "swimming", "weather", "hadn't"],
+      "comprension": [
+        {"pregunta": "What did Kenji say happened to Ben's phone?", "opciones": ["A wave took it while he was swimming", "He dropped it in a taxi", "He lost it at the market"], "respuesta": "A wave took it while he was swimming"},
+        {"pregunta": "Did Ben check the weather first?", "opciones": ["No, he hadn't", "Yes, he had", "He doesn't remember"], "respuesta": "No, he hadn't"}
+      ]
+    },
+    "reading": {
+      "texto": "Sofía wrote in her journal: 'Today Ben told us he had lost his phone in the sea — again. He said a wave had taken it while he was swimming near Cartagena. When I asked if he'd checked the forecast, Kenji said Ben admitted he hadn't. Abuela Carmen just laughed and said she had warned him about swimming with his pockets full. Later, Kenji asked me if I thought Ben would buy a proper waterproof case this time. I told him I doubted it — Ben always says he will, and he never does.'",
+      "preguntas": [
+        {"afirmacion": "Ben said a wave had taken his phone while he was swimming.", "respuesta": "true"},
+        {"afirmacion": "Ben had checked the weather forecast before swimming.", "respuesta": "false"},
+        {"afirmacion": "Abuela Carmen said she had warned Ben before.", "respuesta": "true"},
+        {"afirmacion": "Sofía believes Ben will definitely buy a waterproof case.", "respuesta": "false"}
+      ]
+    }
+  }
+}

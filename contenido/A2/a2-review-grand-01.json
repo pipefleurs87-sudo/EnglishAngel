@@ -1,0 +1,93 @@
+{
+  "id": "a2-review-grand-01",
+  "nivel": "A2",
+  "arquetipo": "joined_exercise",
+  "tema": "A2 Grand Review — All Topics Together",
+  "habilidades": ["grammar", "listening", "reading", "writing"],
+  "banco_oraciones": [
+    {"id": "s1", "oracion": "The weekend in Cartagena was fantastic, but the hotel wasn't cheap."},
+    {"id": "s2", "oracion": "Ben was swimming when a big wave took his phone."},
+    {"id": "s3", "oracion": "There were two beds and a small balcony in the room."},
+    {"id": "s4", "oracion": "There wasn't much water in the mini fridge, so they bought some juice."},
+    {"id": "s5", "oracion": "The beach was more crowded than last year, but the food was cheaper."},
+    {"id": "s6", "oracion": "Next month, they are going to visit Kenji in Japan."},
+    {"id": "s7", "oracion": "Sofía finished her design project a week before the trip."},
+    {"id": "s8", "oracion": "Kenji flew to Bogotá and thought the food was amazing."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Ben: I have to tell you about my trip to Cartagena last month.",
+        "Sofía: Oh no, what happened this time?",
+        "Ben: I **was swimming** in the sea when a big wave **took** my phone. It just disappeared!",
+        "Kenji: Some things never change."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "Yesterday, when Ben arrive at the hotel, there was no towels.",
+        "opcion_b": "Yesterday, when Ben arrived at the hotel, there were no towels.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "This is everything A2 gave you, working together: the past, descriptions, comparisons and plans — one level, one story.",
+      "tabla": {
+        "titulo": "your A2 map",
+        "encabezados": ["Topic", "Key example"],
+        "filas": [
+          ["Was/were", "The weekend was fantastic"],
+          ["Past simple", "Ben lost his phone / Kenji flew to Bogotá"],
+          ["Past continuous", "I was having dinner when Dani called"],
+          ["There is/are", "There are two bedrooms"],
+          ["Countables", "There isn't much sugar"],
+          ["Comparatives", "Pizza is more delicious than a burger"],
+          ["Going to", "We're going to travel next month"]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "combina": ["past continuous", "past simple"], "pregunta": "Ben ___ in the sea when a big wave took his phone.", "opciones": ["was swimming", "swam", "is swimming"], "respuesta": "was swimming"},
+        {"tipo": "multiple_choice", "combina": ["there is/are"], "pregunta": "___ two beds in the room.", "opciones": ["There is", "There are", "There was"], "respuesta": "There are"},
+        {"tipo": "multiple_choice", "combina": ["comparatives"], "pregunta": "The beach was ___ than last year.", "opciones": ["crowded", "more crowded", "most crowded"], "respuesta": "more crowded"},
+        {"tipo": "true_false", "combina": ["was/were"], "afirmacion": "'The players was sad' is correct.", "respuesta": "false"},
+        {"tipo": "true_false", "combina": ["going to"], "afirmacion": "We use 'going to' for a plan we already decided.", "respuesta": "true"},
+        {"tipo": "gap_fill", "combina": ["countables"], "texto": "There ___ much water in the mini fridge, so they bought some juice.", "respuesta": "wasn't"},
+        {"tipo": "gap_fill", "combina": ["past simple"], "texto": "Kenji ___ (fly) to Bogotá and thought the food was amazing.", "respuesta": "flew"},
+        {"tipo": "gap_fill", "combina": ["going to"], "texto": "Next month, they ___ (go) to visit Kenji in Japan.", "respuesta": "are going"},
+        {"tipo": "unscramble", "combina": ["there is/are"], "palabras": ["a", "There", "balcony", "small", "was"], "respuesta": "There was a small balcony"},
+        {"tipo": "unscramble", "combina": ["past simple", "past continuous"], "palabras": ["dinner", "when", "called", "I", "having", "Dani", "was"], "respuesta": "I was having dinner when Dani called"},
+        {"tipo": "correct_mistake", "combina": ["was/were"], "texto_con_error": "The weekend were fantastic.", "respuesta": "The weekend was fantastic."},
+        {"tipo": "correct_mistake", "combina": ["comparatives"], "texto_con_error": "The food was more cheap than the hotel.", "respuesta": "The food was cheaper than the hotel."},
+        {"tipo": "correct_mistake", "combina": ["countables"], "texto_con_error": "There is many hotels in Cartagena.", "respuesta": "There are many hotels in Cartagena."},
+        {"tipo": "transformation", "combina": ["past simple"], "oracion_base": "Sofía finishes her design project.", "instruccion": "Put it in the past (it happened a week before the trip).", "respuesta": "Sofía finished her design project."},
+        {"tipo": "transformation", "combina": ["there is/are", "comparatives"], "oracion_base": "The hotel room is small.", "instruccion": "Compare it with 'the beach house' (bigger).", "respuesta": "The beach house is bigger than the hotel room."},
+        {"tipo": "write_opposite", "combina": ["was/were"], "oracion_base": "The hotel was cheap.", "instruccion": "Write the negative.", "respuesta": "The hotel wasn't cheap."},
+        {"tipo": "short_answer_production", "combina": ["going to"], "pregunta": "What are you going to do next weekend?", "respuesta": "(respuesta libre, ej. I'm going to visit my family.)"},
+        {"tipo": "short_answer_production", "combina": ["past continuous", "past simple"], "pregunta": "What were you doing yesterday at 8 pm, and what happened?", "respuesta": "(respuesta libre, ej. I was watching TV when my friend called.)"}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Ben: I have to tell you about my trip to Cartagena last month.",
+        "Sofía: Oh no, what happened this time?",
+        "Ben: I was swimming in the sea when a big wave took my phone. It just disappeared!",
+        "Kenji: That's terrible! Was the hotel at least nice?",
+        "Ben: It was okay. There were two beds and a small balcony, but there wasn't much water in the mini fridge.",
+        "Sofía: Well, next time you're going to bring a waterproof bag.",
+        "Ben: You're right. I'm going to buy one this week."
+      ],
+      "gaps": ["phone", "balcony"],
+      "comprension": [
+        {"pregunta": "What did the wave take from Ben?", "opciones": ["His phone", "His hat", "His wallet"], "respuesta": "His phone"},
+        {"pregunta": "What is Ben going to buy?", "opciones": ["A waterproof bag", "A new phone", "A bigger hotel room"], "respuesta": "A waterproof bag"}
+      ]
+    },
+    "reading": {
+      "texto": "It is the end of a busy month for everyone. Ben's trip to Cartagena wasn't perfect — he lost his phone in the sea, but the food was better than he expected. Sofía finished her biggest project yet: a logo for a client who wanted 'more blue, but less blue' at the same time. There wasn't much time to rest, but there was always coffee. Next month, the friends are going to meet in Bogotá, and this time, Ben is going to bring a waterproof bag. Some things change; others, like Ben's bad luck with phones, probably won't.",
+      "preguntas": [
+        {"afirmacion": "Ben's food in Cartagena was worse than he expected.", "respuesta": "false"},
+        {"afirmacion": "Sofía finished her biggest project yet.", "respuesta": "true"},
+        {"afirmacion": "The friends are going to meet in Medellín next month.", "respuesta": "false"}
+      ]
+    }
+  }
+}

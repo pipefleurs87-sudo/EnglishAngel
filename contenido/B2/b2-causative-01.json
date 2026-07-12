@@ -1,0 +1,98 @@
+{
+  "id": "b2-causative-01",
+  "nivel": "B2",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Causative — Have / Get Something Done",
+  "habilidades": ["grammar", "vocabulary", "writing", "speaking"],
+  "vocabulario": [
+    {"bandera": "servicio", "palabra": "have your hair cut", "traduccion": "cortarse el pelo (te lo hace otra persona)"},
+    {"bandera": "servicio", "palabra": "get your car fixed", "traduccion": "hacer arreglar el carro"},
+    {"bandera": "servicio", "palabra": "have your logo designed", "traduccion": "mandar a diseñar el logo"},
+    {"bandera": "servicio", "palabra": "get your teeth checked", "traduccion": "hacerse revisar los dientes"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Sofía had her website redesigned last month."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Ben gets his hair cut every three weeks."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "We're having the office painted this weekend."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "They had their photos taken by a professional."},
+    {"id": "s5", "forma": "negativo", "oracion": "Sofía didn't have her logo designed by an agency; she did it herself."},
+    {"id": "s6", "forma": "negativo", "oracion": "Ben doesn't get his shoes repaired, he just buys new ones."},
+    {"id": "s7", "forma": "negativo", "oracion": "We haven't had the car serviced this year."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Where did you have your website designed?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Do you get your teeth checked every year?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Have they had the roof fixed yet?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Did Sofía have her website redesigned? Yes, she did."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Does Ben get his hair cut often? Yes, he does."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Have you had your car serviced this year? No, I haven't."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: Your new website looks amazing. Did you build it yourself?",
+        "Sofía: No, I **had it designed** by a friend — I just gave her the ideas.",
+        "Kenji: Smart. I always **get my photos edited** by someone else too, I have no eye for it.",
+        "Sofía: Exactly. You don't have to do everything yourself — just **have it done** well."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I designed my logo by a professional.",
+        "opcion_b": "I had my logo designed by a professional.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Use have/get something done when someone else does a job for you — the subject arranges it, but doesn't do the action.",
+      "tabla": {
+        "titulo": "Who really does the action?",
+        "encabezados": ["Structure", "Example", "Who does it?"],
+        "filas": [
+          ["have + object + past participle", "I had my hair cut", "A hairdresser, not me"],
+          ["get + object + past participle (more informal)", "I got my car fixed", "A mechanic, not me"],
+          ["Compare: I cut my hair", "I cut my hair myself", "Me"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Sofía ___ her website redesigned last month.", "opciones": ["had", "did", "made"], "respuesta": "had"},
+        {"tipo": "multiple_choice", "pregunta": "Ben gets his hair ___ every three weeks.", "opciones": ["cut", "cuts", "cutting"], "respuesta": "cut"},
+        {"tipo": "multiple_choice", "pregunta": "We're having the office ___ this weekend.", "opciones": ["painted", "painting", "paint"], "respuesta": "painted"},
+        {"tipo": "true_false", "afirmacion": "'I had my logo designed' means I designed it myself.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "Causative 'have/get something done' uses the past participle of the verb.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Get' is more informal than 'have' in this structure.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "Sofía had her website ___ (redesign) last month.", "respuesta": "redesigned"},
+        {"tipo": "gap_fill", "texto": "We're getting the office ___ (paint) this weekend.", "respuesta": "painted"},
+        {"tipo": "gap_fill", "texto": "They had their photos ___ (take) by a professional.", "respuesta": "taken"},
+        {"tipo": "unscramble", "palabras": ["Sofía", "had", "her", "logo", "designed", "by", "a", "friend"], "respuesta": "Sofía had her logo designed by a friend"},
+        {"tipo": "unscramble", "palabras": ["Ben", "gets", "his", "hair", "cut", "every", "month"], "respuesta": "Ben gets his hair cut every month"},
+        {"tipo": "correct_mistake", "texto_con_error": "I designed my logo by a professional.", "respuesta": "I had my logo designed by a professional."},
+        {"tipo": "transformation", "oracion_base": "A friend designed Sofía's logo.", "instruccion": "Rewrite using the causative (Sofía as subject).", "respuesta": "Sofía had her logo designed by a friend."},
+        {"tipo": "transformation", "oracion_base": "A mechanic fixed our car.", "instruccion": "Rewrite using 'get' causative.", "respuesta": "We got our car fixed."},
+        {"tipo": "transformation", "oracion_base": "Did Sofía have her website redesigned?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, she did."},
+        {"tipo": "write_opposite", "oracion_base": "Sofía had her logo designed by an agency.", "instruccion": "Write the negative form.", "respuesta": "Sofía didn't have her logo designed by an agency."},
+        {"tipo": "short_answer_production", "pregunta": "Do you get your hair cut often? (short answer, Yes)", "respuesta": "Yes, I do."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Your website looks so professional now.",
+        "Sofía: Thanks, I had it redesigned by a friend from design school.",
+        "Kenji: I need to get my resume looked at by someone too. I always mess up the formatting.",
+        "Sofía: I know someone who does that. She helped me get my portfolio organized last year.",
+        "Kenji: Perfect. I'll have her check it before I apply anywhere."
+      ],
+      "gaps": ["redesigned", "resume", "portfolio", "apply"],
+      "comprension": [
+        {"pregunta": "Who redesigned Sofía's website?", "opciones": ["A friend from design school", "Sofía herself", "A random agency"], "respuesta": "A friend from design school"},
+        {"pregunta": "What does Kenji want help with?", "opciones": ["His resume formatting", "His website", "His logo"], "respuesta": "His resume formatting"}
+      ]
+    },
+    "reading": {
+      "texto": "When Sofía started her studio, she tried to do everything herself — design, invoicing, even her own website. Three years later, she's learned to delegate. She had her website redesigned by a friend from design school, gets her invoices handled by an accountant twice a month, and even has her social media managed by an intern on weekends. 'I used to think doing it all myself made me a real professional,' she told Kenji. 'Now I know a real professional knows when to have something done by someone better at it.'",
+      "preguntas": [
+        {"afirmacion": "Sofía designed her own website when her studio started.", "respuesta": "true"},
+        {"afirmacion": "An accountant now handles her invoices.", "respuesta": "true"},
+        {"afirmacion": "Sofía manages her own social media every day.", "respuesta": "false"},
+        {"afirmacion": "Sofía believes real professionals never delegate.", "respuesta": "false"}
+      ]
+    }
+  }
+}

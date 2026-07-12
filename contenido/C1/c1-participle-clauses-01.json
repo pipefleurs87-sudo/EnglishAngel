@@ -1,0 +1,94 @@
+{
+  "id": "c1-participle-clauses-01",
+  "nivel": "C1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Participle Clauses",
+  "habilidades": ["grammar", "writing", "reading"],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Having finished the report, Sofía went home early."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Walking down the street, Kenji saw an old friend."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Exhausted from the trip, Ben fell asleep immediately."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Having lost his phone three times, Ben finally bought a case."},
+    {"id": "s5", "forma": "negativo", "oracion": "Not having checked the weather, Ben got soaked."},
+    {"id": "s6", "forma": "negativo", "oracion": "Not knowing the address, Kenji asked a stranger."},
+    {"id": "s7", "forma": "negativo", "oracion": "Not having finished on time, Sofía apologized to the client."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Having finished the report, did Sofía go home?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "What happened, having lost his phone again?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Why, not knowing the address, did Kenji ask a stranger?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Did Sofía go home after finishing? Yes, having finished, she left."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Did Ben get wet? Yes, not having checked the weather, he did."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Did Kenji find his friend? Yes, walking down the street, he did."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: **Having finished** the report, I'm finally going home.",
+        "Kenji: **Walking** here, I saw Ben running into a store, soaked.",
+        "Ben: **Not having checked** the weather, I got caught in the rain. Again.",
+        "Abuela Carmen: **Having heard** this story before, I brought you an umbrella just in case."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "Finished the report, Sofía went home early.",
+        "opcion_b": "Having finished the report, Sofía went home early.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Participle clauses replace a full relative or adverbial clause with a shorter -ing or -ed phrase — common in written English to avoid repeating the subject twice.",
+      "tabla": {
+        "titulo": "Participle clauses — a shorter way to connect ideas",
+        "encabezados": ["Full clause", "Participle clause"],
+        "filas": [
+          ["After she had finished the report, Sofía went home.", "Having finished the report, Sofía went home."],
+          ["While he was walking down the street, Kenji saw a friend.", "Walking down the street, Kenji saw a friend."],
+          ["Because he was exhausted, Ben fell asleep.", "Exhausted from the trip, Ben fell asleep."],
+          ["Because he hadn't checked the weather, Ben got soaked.", "Not having checked the weather, Ben got soaked."]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "___ finished the report, Sofía went home early.", "opciones": ["Having", "Have", "Has"], "respuesta": "Having"},
+        {"tipo": "multiple_choice", "pregunta": "___ down the street, Kenji saw an old friend.", "opciones": ["Walking", "Walked", "Walk"], "respuesta": "Walking"},
+        {"tipo": "multiple_choice", "pregunta": "___ from the trip, Ben fell asleep immediately.", "opciones": ["Exhausted", "Exhausting", "Exhaust"], "respuesta": "Exhausted"},
+        {"tipo": "true_false", "afirmacion": "Participle clauses are more common in written English than in casual speech.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Having finished' refers to an action completed before the main clause.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Exhausted' in 'Exhausted from the trip' is a present participle.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Not ___ (have, check) the weather, Ben got soaked.", "respuesta": "having checked"},
+        {"tipo": "gap_fill", "texto": "Not ___ (know) the address, Kenji asked a stranger.", "respuesta": "knowing"},
+        {"tipo": "gap_fill", "texto": "___ (have, lose) his phone three times, Ben finally bought a case.", "respuesta": "Having lost"},
+        {"tipo": "unscramble", "palabras": ["having", "finished", "the", "report", "Sofía", "went", "home", "early"], "respuesta": "having finished the report Sofía went home early"},
+        {"tipo": "unscramble", "palabras": ["walking", "down", "the", "street", "Kenji", "saw", "an", "old", "friend"], "respuesta": "walking down the street Kenji saw an old friend"},
+        {"tipo": "correct_mistake", "texto_con_error": "Finished the report, Sofía went home early.", "respuesta": "Having finished the report, Sofía went home early."},
+        {"tipo": "transformation", "oracion_base": "After she had finished the report, Sofía went home.", "instruccion": "Rewrite as a participle clause.", "respuesta": "Having finished the report, Sofía went home."},
+        {"tipo": "transformation", "oracion_base": "Because he was exhausted from the trip, Ben fell asleep immediately.", "instruccion": "Rewrite as a participle clause.", "respuesta": "Exhausted from the trip, Ben fell asleep immediately."},
+        {"tipo": "transformation", "oracion_base": "Did Sofía go home after finishing the report?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, she did."},
+        {"tipo": "write_opposite", "oracion_base": "Having checked the weather, Ben stayed dry.", "instruccion": "Write the negative version (he didn't check).", "respuesta": "Not having checked the weather, Ben got soaked."},
+        {"tipo": "short_answer_production", "pregunta": "Having finished your English studies today, what will you do next?", "respuesta": "Having finished, I'll go for a walk."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: Having finished the report, I'm finally going home.",
+        "Kenji: Walking here, I saw Ben running into a store, soaked.",
+        "Ben: Not having checked the weather, I got caught in the rain. Again.",
+        "Sofía: Having lost three phones this year, you'd think you'd check the forecast by now.",
+        "Ben: Exhausted from arguing with the universe, I've simply given up trying.",
+        "Abuela Carmen: Having heard this story before, I brought an umbrella just in case."
+      ],
+      "gaps": ["finished", "soaked", "forecast", "umbrella"],
+      "comprension": [
+        {"pregunta": "Why did Ben get soaked?", "opciones": ["He didn't check the weather", "He forgot his umbrella at home", "He walked too slowly"], "respuesta": "He didn't check the weather"},
+        {"pregunta": "What did Abuela Carmen bring?", "opciones": ["An umbrella", "A raincoat", "Nothing"], "respuesta": "An umbrella"}
+      ]
+    },
+    "reading": {
+      "texto": "Having heard the same story about Ben and the rain more times than she can count, Abuela Carmen has started carrying a spare umbrella in her bag, just in case. Walking to the market last week, she ran into him exactly as predicted — soaked, laughing at himself, having once again ignored the forecast. 'Not having checked the weather is basically your whole personality now,' she told him, handing over the umbrella. Having accepted it without argument, Ben promised — not for the first time — that this would be the last time. Having heard that particular promise before too, Abuela Carmen simply smiled and kept walking.",
+      "preguntas": [
+        {"afirmacion": "Abuela Carmen now carries a spare umbrella.", "respuesta": "true"},
+        {"afirmacion": "Ben had checked the weather forecast that day.", "respuesta": "false"},
+        {"afirmacion": "Ben refused to take the umbrella.", "respuesta": "false"},
+        {"afirmacion": "This was the first time Ben promised to check the weather.", "respuesta": "false"}
+      ]
+    }
+  }
+}

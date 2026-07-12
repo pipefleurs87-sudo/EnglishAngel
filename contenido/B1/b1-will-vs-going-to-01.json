@@ -1,0 +1,101 @@
+{
+  "id": "b1-will-vs-going-to-01",
+  "nivel": "B1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Will vs Going to — Plans, Decisions & Promises",
+  "habilidades": ["grammar", "listening", "reading", "writing"],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "I'm going to travel to Cartagena in December — I bought the tickets."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "You know what? I'll go with you! Decided. Just now."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "I think Colombia will win tomorrow."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Look at those clouds — it's going to rain."},
+    {"id": "s5", "forma": "afirmativo", "oracion": "I'll always remember this trip."},
+    {"id": "s6", "forma": "negativo", "oracion": "I won't tell anyone. I promise."},
+    {"id": "s7", "forma": "negativo", "oracion": "We aren't going to cook tonight; the fridge is empty."},
+    {"id": "s8", "forma": "negativo", "oracion": "It won't be easy, but we'll try."},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Will you help me with this exercise?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "What are you going to do in December?"},
+    {"id": "s11", "forma": "interrogativo", "oracion": "Do you think it will rain tomorrow?"},
+    {"id": "s12", "forma": "short_answer", "oracion": "Will you come to the party? Yes, I will."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Are you going to study tonight? No, I'm not."},
+    {"id": "s14", "forma": "short_answer", "oracion": "Will it rain? I think it will."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: In December **I'm going to travel** to Cartagena. Tickets: bought. Hotel: booked. Spreadsheet: ready.",
+        "Ben: Sounds fun! You know what? **I'll go** with you! Decided. Just now.",
+        "Kenji: And that is exactly the difference. Sofía planned it — Ben just decided it this second.",
+        "Abuela Carmen: And I **will always be** here waiting... with soup. That's a promise."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "Look at those clouds — it will rain.",
+        "opcion_b": "Look at those clouds — it's going to rain.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Use 'going to' for plans you already made and predictions you can see coming; use 'will' for decisions made right now, opinions about the future, and promises.",
+      "tabla": {
+        "titulo": "will vs going to — who decides, and when?",
+        "encabezados": ["Situation", "Form", "Example"],
+        "filas": [
+          ["Plan already made", "going to", "I'm going to travel in December (tickets bought)"],
+          ["Decision right now", "will ('ll)", "You know what? I'll go with you!"],
+          ["Prediction with evidence", "going to", "Look at those clouds — it's going to rain"],
+          ["Prediction from opinion", "will (I think...)", "I think Colombia will win"],
+          ["Promise / offer", "will / won't", "I'll help you. I won't tell anyone."],
+          ["Negatives", "won't · am/is/are not going to", "We aren't going to cook tonight"]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "The phone is ringing! — Don't worry, I ___ answer it.", "opciones": ["will", "am going to", "going to"], "respuesta": "will"},
+        {"tipo": "multiple_choice", "pregunta": "Look at those clouds. It ___ rain.", "opciones": ["will", "is going to", "won't"], "respuesta": "is going to"},
+        {"tipo": "multiple_choice", "pregunta": "I bought the tickets. We ___ travel in December.", "opciones": ["are going to", "will", "would"], "respuesta": "are going to"},
+        {"tipo": "multiple_choice", "pregunta": "I think our team ___ win tomorrow.", "opciones": ["is going to", "won't", "will"], "respuesta": "will"},
+        {"tipo": "true_false", "afirmacion": "'Will' is used for decisions made at the moment of speaking.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Going to' is only for predictions without evidence.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "I promise I ___ (not / tell) anyone.", "respuesta": "won't tell"},
+        {"tipo": "gap_fill", "texto": "She ___ (be) going to study medicine — she has already chosen the university.", "respuesta": "is"},
+        {"tipo": "gap_fill", "texto": "You know what? I ___ (help) you right now.", "respuesta": "will help"},
+        {"tipo": "unscramble", "palabras": ["I", "think", "it", "will", "rain", "tomorrow"], "respuesta": "I think it will rain tomorrow"},
+        {"tipo": "unscramble", "palabras": ["are", "you", "going", "to", "tell", "her"], "respuesta": "Are you going to tell her"},
+        {"tipo": "correct_mistake", "texto_con_error": "Look at those clouds — it will rain.", "respuesta": "Look at those clouds — it's going to rain."},
+        {"tipo": "correct_mistake", "texto_con_error": "We will to travel in December.", "respuesta": "We will travel in December."},
+        {"tipo": "correct_mistake", "texto_con_error": "I don't will tell anyone.", "respuesta": "I won't tell anyone."},
+        {"tipo": "transformation", "oracion_base": "I will study tonight.", "instruccion": "Write the negative form.", "respuesta": "I won't study tonight."},
+        {"tipo": "transformation", "oracion_base": "They are going to move to Cali.", "instruccion": "Write the yes/no question.", "respuesta": "Are they going to move to Cali?"},
+        {"tipo": "transformation", "oracion_base": "Will you come to my party?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, I will."},
+        {"tipo": "write_opposite", "oracion_base": "It's going to rain.", "instruccion": "Write the negative form.", "respuesta": "It isn't going to rain."},
+        {"tipo": "write_opposite", "oracion_base": "She won't pass the exam.", "instruccion": "Write the affirmative form.", "respuesta": "She will pass the exam."},
+        {"tipo": "short_answer_production", "pregunta": "Will you practice English tomorrow? (short answer)", "respuesta": "Yes, I will."},
+        {"tipo": "short_answer_production", "pregunta": "Are you going to sleep early tonight? (short answer, No)", "respuesta": "No, I'm not."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: OK, December trip. I'm going to book the boat tour tomorrow.",
+        "Ben: I'll carry all the bags! I'm strong and reliable.",
+        "Kenji: I think you'll drop the bags in the sea, Ben.",
+        "Ben: That happened one time!",
+        "Abuela Carmen: Children, I'll make the sancocho for the trip. And Ben — you aren't going to carry the pot.",
+        "Ben: ...Fair. That's fair."
+      ],
+      "gaps": ["boat", "bags", "sea", "sancocho"],
+      "comprension": [
+        {"pregunta": "What is Sofía going to book tomorrow?", "opciones": ["The boat tour", "The hotel", "The tickets"], "respuesta": "The boat tour"},
+        {"pregunta": "Who will make the sancocho?", "opciones": ["Abuela Carmen", "Ben", "Kenji"], "respuesta": "Abuela Carmen"}
+      ]
+    },
+    "reading": {
+      "texto": "Ben's New Year plan, written in his notebook: 'This year is going to be different. I'm going to learn salsa — I have already paid for ten classes. I'm going to save money for a new camera. And I'm not going to lose my phone again.' Under the plan, there is a phone number and a note in different ink: 'Kenji, if you find this notebook, I'll buy you dinner. I lost it on the bus. Again. Some things will never change.'",
+      "preguntas": [
+        {"afirmacion": "Ben is going to learn salsa.", "respuesta": "true"},
+        {"afirmacion": "He has already paid for the classes.", "respuesta": "true"},
+        {"afirmacion": "Ben is going to buy a new phone.", "respuesta": "false"},
+        {"afirmacion": "Kenji wrote the New Year plan.", "respuesta": "false"}
+      ]
+    }
+  }
+}

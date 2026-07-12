@@ -1,0 +1,97 @@
+{
+  "id": "b2-modals-deduction-past-01",
+  "nivel": "B2",
+  "arquetipo": "modales",
+  "tema": "Modals of Deduction — Past (must have / might have / can't have)",
+  "habilidades": ["grammar", "listening", "reading", "writing"],
+  "vocabulario": [
+    {"bandera": "~95% seguro (pasado)", "palabra": "must have + participio", "traduccion": "debió haber (casi seguro)"},
+    {"bandera": "~95% seguro que no (pasado)", "palabra": "can't have + participio", "traduccion": "no puede haber (casi seguro que no)"},
+    {"bandera": "~50% posible (pasado)", "palabra": "might / could have + participio", "traduccion": "puede que haya / podría haber"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Ben must have dropped his phone in the sea again."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Someone might have taken the wrong bag by mistake."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "She could have forgotten the meeting."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "They must have left already — the lights are off."},
+    {"id": "s5", "forma": "negativo", "oracion": "It can't have been Sofía; she was with me all afternoon."},
+    {"id": "s6", "forma": "negativo", "oracion": "He can't have finished already — it's only been five minutes."},
+    {"id": "s7", "forma": "negativo", "oracion": "They might not have received the message."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Could he have missed the bus?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Do you think she might have forgotten?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Might they have left without us?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Did Ben lose it on purpose? He can't have — he loved that phone."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Could she have called earlier? She might have."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Did they forget the address? They must have."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: Ben's not answering his phone.",
+        "Sofía: He **must have lost** it again.",
+        "Kenji: It's only been a week since the last one!",
+        "Abuela Carmen: He **can't have learned** his lesson yet, then."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "He must lost his phone yesterday.",
+        "opcion_b": "He must have lost his phone yesterday.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "To guess about something in the past, add 'have' between the modal and the past participle — must have, might have, can't have.",
+      "tabla": {
+        "titulo": "Guessing about the past",
+        "encabezados": ["Certainty", "Structure", "Example"],
+        "filas": [
+          ["~95% sure (yes)", "must have + participle", "He must have lost it"],
+          ["~95% sure (no)", "can't have + participle", "She can't have known"],
+          ["~50% possible", "might/could have + participle", "They might have left already"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Ben ___ lost his phone again.", "opciones": ["must have", "must", "have must"], "respuesta": "must have"},
+        {"tipo": "multiple_choice", "pregunta": "It ___ have been Sofía, she was with me.", "opciones": ["can't", "mustn't", "doesn't"], "respuesta": "can't"},
+        {"tipo": "multiple_choice", "pregunta": "They ___ have left without us — maybe.", "opciones": ["might", "must be", "can"], "respuesta": "might"},
+        {"tipo": "true_false", "afirmacion": "'He must lost it' is correct.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'Must have + participle' guesses about the past.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Can't have' is the negative form of 'must have' for deduction.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "She ___ have forgotten the meeting. (almost sure)", "respuesta": "must"},
+        {"tipo": "gap_fill", "texto": "It ___ have been him, he was working. (almost sure NOT)", "respuesta": "can't"},
+        {"tipo": "gap_fill", "texto": "They ___ have missed the bus. (possible)", "respuesta": "might"},
+        {"tipo": "unscramble", "palabras": ["he", "must", "have", "dropped", "his", "phone", "again"], "respuesta": "he must have dropped his phone again"},
+        {"tipo": "unscramble", "palabras": ["it", "can't", "have", "been", "Sofía"], "respuesta": "it can't have been Sofía"},
+        {"tipo": "correct_mistake", "texto_con_error": "He must lost his phone yesterday.", "respuesta": "He must have lost his phone yesterday."},
+        {"tipo": "transformation", "oracion_base": "I'm almost sure Ben dropped his phone.", "instruccion": "Rewrite using 'must have'.", "respuesta": "Ben must have dropped his phone."},
+        {"tipo": "transformation", "oracion_base": "I'm almost sure it wasn't Sofía.", "instruccion": "Rewrite using 'can't have'.", "respuesta": "It can't have been Sofía."},
+        {"tipo": "transformation", "oracion_base": "Maybe they missed the bus.", "instruccion": "Rewrite using 'might have'.", "respuesta": "They might have missed the bus."},
+        {"tipo": "write_opposite", "oracion_base": "He must have finished.", "instruccion": "Write the negative deduction (use 'can't have').", "respuesta": "He can't have finished."},
+        {"tipo": "short_answer_production", "pregunta": "Do you think Ben lost his phone on purpose? (short answer, No)", "respuesta": "No, he can't have."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: Ben still isn't answering.",
+        "Kenji: He must have lost his phone again — it's the third time this year.",
+        "Sofía: Or his battery might have died. He never charges it.",
+        "Abuela Carmen: It can't have died, he charged it at my house this morning.",
+        "Kenji: Then he must have dropped it somewhere. Classic Ben."
+      ],
+      "gaps": ["lost", "battery", "charged", "dropped"],
+      "comprension": [
+        {"pregunta": "What does Kenji think happened to Ben's phone?", "opciones": ["He lost it again", "He sold it", "He broke it on purpose"], "respuesta": "He lost it again"},
+        {"pregunta": "Why can't the battery have died, according to Abuela Carmen?", "opciones": ["He charged it at her house that morning", "He bought a new battery", "He never uses it"], "respuesta": "He charged it at her house that morning"}
+      ]
+    },
+    "reading": {
+      "texto": "By the time Ben finally called back, everyone had a theory. Sofía was sure he must have left his phone at the beach — again. Kenji thought he might have dropped it on the bus, since Ben always sits by the window with the door open. Abuela Carmen refused to guess: 'He can't have lost it the same way twice,' she said, 'even Ben isn't that unlucky.' When Ben finally explained, the truth was worse than any of their guesses: he had lent it to a stranger to make a call and never got it back. 'You must have known better than that,' Abuela Carmen sighed.",
+      "preguntas": [
+        {"afirmacion": "Sofía thought Ben must have left his phone at the beach.", "respuesta": "true"},
+        {"afirmacion": "Kenji was sure Ben sold his phone.", "respuesta": "false"},
+        {"afirmacion": "Ben actually lent his phone to a stranger.", "respuesta": "true"},
+        {"afirmacion": "Abuela Carmen believed he lost it the same way as before.", "respuesta": "false"}
+      ]
+    }
+  }
+}

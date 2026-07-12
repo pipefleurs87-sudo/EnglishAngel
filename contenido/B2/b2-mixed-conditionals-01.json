@@ -1,0 +1,90 @@
+{
+  "id": "b2-mixed-conditionals-01",
+  "nivel": "B2",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Mixed Conditionals",
+  "habilidades": ["grammar", "writing", "speaking"],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "If Sofía hadn't studied design, she wouldn't be running her own studio now."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "If Abuela Carmen hadn't sold mangoes as a girl, she wouldn't be so proud of her garden today."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "If Ben had bought that waterproof case, he would still have his phone."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "If Kenji hadn't decided to study abroad, he wouldn't be in Colombia right now."},
+    {"id": "s5", "forma": "negativo", "oracion": "If she hadn't moved to Medellín, she wouldn't know Ben and Kenji now."},
+    {"id": "s6", "forma": "negativo", "oracion": "If Ben hadn't lost his phone again, he wouldn't be borrowing mine right now."},
+    {"id": "s7", "forma": "negativo", "oracion": "If they hadn't missed the flight, they wouldn't still be at the airport."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Would you be here now if you hadn't taken that job?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "If you hadn't studied English, would you understand this?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Would Sofía have her own studio if she hadn't studied design?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Would Sofía be a designer now if she hadn't studied it? No, she wouldn't."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Would Ben still have his phone if he'd bought a case? Yes, he would."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Is Kenji in Colombia because he studied abroad? Yes, he is."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: If I hadn't applied for the exchange program, I wouldn't be sitting here right now.",
+        "Sofía: And **if I hadn't studied** design, I **wouldn't have** a studio to invite you to.",
+        "Ben: And if I hadn't lost my phone yesterday, I wouldn't be borrowing yours right now.",
+        "Sofía: Ben, that one's just today's problem, not a life philosophy."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "If she didn't study design, she wouldn't have run her studio now.",
+        "opcion_b": "If she hadn't studied design, she wouldn't be running her studio now.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Mixed conditionals combine a past condition with a present result (or the reverse) — a past action still affects how things are right now.",
+      "tabla": {
+        "titulo": "Mixed conditional — past cause, present result",
+        "encabezados": ["If-clause (past)", "Result (present)", "Example"],
+        "filas": [
+          ["if + past perfect (had + participle)", "would + infinitive (now)", "If she hadn't studied design, she wouldn't be a designer now"]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "If Sofía ___ studied design, she wouldn't be running her studio now.", "opciones": ["hadn't", "didn't", "hasn't"], "respuesta": "hadn't"},
+        {"tipo": "multiple_choice", "pregunta": "If Kenji hadn't applied, he ___ be in Colombia now.", "opciones": ["wouldn't", "won't", "didn't"], "respuesta": "wouldn't"},
+        {"tipo": "multiple_choice", "pregunta": "Mixed conditionals combine a past condition with a ___ result.", "opciones": ["present", "future", "past"], "respuesta": "present"},
+        {"tipo": "true_false", "afirmacion": "Mixed conditionals always use the same tense in both clauses.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'If she hadn't studied design, she wouldn't be a designer now' mixes past and present.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "The if-clause in this type uses the past perfect.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "If Abuela Carmen ___ (not/sell) mangoes as a girl, she wouldn't be so proud today.", "respuesta": "hadn't sold"},
+        {"tipo": "gap_fill", "texto": "If Ben ___ (buy) that case, he would still have his phone.", "respuesta": "had bought"},
+        {"tipo": "gap_fill", "texto": "If they ___ (not/miss) the flight, they wouldn't still be at the airport.", "respuesta": "hadn't missed"},
+        {"tipo": "unscramble", "palabras": ["if", "she", "hadn't", "studied", "design", "she", "wouldn't", "be", "a", "designer", "now"], "respuesta": "if she hadn't studied design she wouldn't be a designer now"},
+        {"tipo": "unscramble", "palabras": ["if", "Kenji", "hadn't", "applied", "he", "wouldn't", "be", "here"], "respuesta": "if Kenji hadn't applied he wouldn't be here"},
+        {"tipo": "correct_mistake", "texto_con_error": "If she didn't study design, she wouldn't have run her studio now.", "respuesta": "If she hadn't studied design, she wouldn't be running her studio now."},
+        {"tipo": "transformation", "oracion_base": "Sofía studied design. That's why she has a studio now.", "instruccion": "Combine into a mixed conditional.", "respuesta": "If Sofía hadn't studied design, she wouldn't have a studio now."},
+        {"tipo": "transformation", "oracion_base": "Kenji applied for the exchange. That's why he's in Colombia now.", "instruccion": "Combine into a mixed conditional.", "respuesta": "If Kenji hadn't applied for the exchange, he wouldn't be in Colombia now."},
+        {"tipo": "write_opposite", "oracion_base": "If Ben had bought the case, he would still have his phone.", "instruccion": "Write the real situation as two simple statements (he DIDN'T buy it).", "respuesta": "Ben didn't buy the case, so he doesn't have his phone."},
+        {"tipo": "short_answer_production", "pregunta": "If you had started English years ago, would you understand this now? (short answer, Yes)", "respuesta": "Yes, I would."},
+        {"tipo": "short_answer_production", "pregunta": "If Sofía hadn't studied design, would she have her own studio? (short answer, No)", "respuesta": "No, she wouldn't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Sometimes I think about how different my life would be if I hadn't applied for this exchange.",
+        "Sofía: If you hadn't applied, you wouldn't be sitting in my studio right now, complaining about the rain.",
+        "Kenji: True. And if you hadn't studied design, none of us would have anywhere nice to sit.",
+        "Ben: And if I hadn't lost my phone, I wouldn't be so bored right now.",
+        "Sofía: Ben, that's not a mixed conditional, that's just Tuesday."
+      ],
+      "gaps": ["applied", "studio", "design", "bored"],
+      "comprension": [
+        {"pregunta": "What does Kenji say would be different if he hadn't applied for the exchange?", "opciones": ["He wouldn't be in Sofía's studio now", "He would speak better Spanish", "He would be richer"], "respuesta": "He wouldn't be in Sofía's studio now"},
+        {"pregunta": "Why is Ben bored?", "opciones": ["He lost his phone", "It's raining", "He has no work"], "respuesta": "He lost his phone"}
+      ]
+    },
+    "reading": {
+      "texto": "Abuela Carmen likes to remind her grandchildren that small past decisions shape a whole present. 'If I hadn't sold mangoes on that corner as a girl,' she tells Sofía, 'I wouldn't know how to run a business today — and you wouldn't have learned it from me.' Sofía agrees: if her grandmother hadn't taught her to negotiate prices at twelve years old, she probably wouldn't be as confident with clients now. Even Kenji has his own version: if he hadn't spent a summer failing at every conversation in Spanish class, he wouldn't be nearly fluent today. Some presents only make sense once you look back at the past that built them.",
+      "preguntas": [
+        {"afirmacion": "Abuela Carmen sold mangoes as a girl.", "respuesta": "true"},
+        {"afirmacion": "Sofía learned to negotiate prices from her grandmother.", "respuesta": "true"},
+        {"afirmacion": "Kenji found Spanish easy from the very beginning.", "respuesta": "false"},
+        {"afirmacion": "The text says presents have nothing to do with the past.", "respuesta": "false"}
+      ]
+    }
+  }
+}

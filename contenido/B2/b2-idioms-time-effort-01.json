@@ -1,0 +1,103 @@
+{
+  "id": "b2-idioms-time-effort-01",
+  "nivel": "B2",
+  "arquetipo": "vocabulario",
+  "tema": "Idioms — Time & Effort (Abuela Carmen's Wisdom)",
+  "habilidades": ["vocabulary", "reading", "speaking", "listening"],
+  "vocabulario": [
+    {"bandera": "contra el tiempo", "palabra": "against the clock", "traduccion": "contra el tiempo / con poco tiempo"},
+    {"bandera": "muy raramente", "palabra": "once in a blue moon", "traduccion": "muy de vez en cuando"},
+    {"bandera": "trabajar hasta tarde", "palabra": "burn the midnight oil", "traduccion": "quemarse las pestañas / trabajar hasta tarde"},
+    {"bandera": "justo a tiempo", "palabra": "in the nick of time", "traduccion": "justo a tiempo"},
+    {"bandera": "desde cero", "palabra": "from scratch", "traduccion": "desde cero"},
+    {"bandera": "pasa rápido", "palabra": "time flies", "traduccion": "el tiempo vuela"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Kenji burned the midnight oil before his Spanish exam."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Ben arrived in the nick of time, as always."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Sofía built her studio from scratch."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Time flies when you're with good friends."},
+    {"id": "s5", "forma": "negativo", "oracion": "Ben doesn't work against the clock; he just runs out of time naturally."},
+    {"id": "s6", "forma": "negativo", "oracion": "Sofía doesn't burn the midnight oil often; she prefers mornings."},
+    {"id": "s7", "forma": "negativo", "oracion": "We didn't finish the project from scratch; we reused an old design."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Did you finish the report in the nick of time?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "How often do you see snow — once in a blue moon?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Did you build this from scratch?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Did Kenji burn the midnight oil? Yes, he did."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Did Ben arrive on time? Just in the nick of time."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Does time fly when you're busy? Yes, it does."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Abuela Carmen: You look tired, Kenji.",
+        "Kenji: I **burned the midnight oil** studying for tomorrow's exam.",
+        "Abuela Carmen: Ben, on the other hand, will finish everything **against the clock**, **in the nick of time**, same as always.",
+        "Ben: I prefer to think of it as efficient. **Time flies** either way."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I only see a blue moon once in a blue moon.",
+        "opcion_b": "I only visit my hometown once in a blue moon.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Idioms about time and effort describe urgency, rarity or hard work using images that have nothing literally to do with clocks or moons — the meaning is entirely figurative.",
+      "tabla": {
+        "titulo": "Time idioms — literal image vs. real meaning",
+        "encabezados": ["Idiom", "Literal image", "Real meaning"],
+        "filas": [
+          ["against the clock", "racing a clock", "working with very little time left"],
+          ["once in a blue moon", "a rare colored moon", "very rarely"],
+          ["burn the midnight oil", "oil lamps at midnight", "work late into the night"],
+          ["in the nick of time", "an old measuring notch", "just before it's too late"],
+          ["from scratch", "starting from a mark on the ground", "from the very beginning, with nothing prepared"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Kenji ___ the midnight oil before his exam.", "opciones": ["burned", "cut", "paid"], "respuesta": "burned"},
+        {"tipo": "multiple_choice", "pregunta": "Ben arrived ___ time, as always.", "opciones": ["in the nick of", "once in a blue", "against the"], "respuesta": "in the nick of"},
+        {"tipo": "multiple_choice", "pregunta": "Sofía built her studio ___ scratch.", "opciones": ["from", "against", "in"], "respuesta": "from"},
+        {"tipo": "true_false", "afirmacion": "'Once in a blue moon' means very often.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'Burn the midnight oil' means to work late into the night.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'In the nick of time' means much too late.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "We're working ___ the clock to finish this.", "respuesta": "against"},
+        {"tipo": "gap_fill", "texto": "Sofía doesn't ___ the midnight oil often.", "respuesta": "burn"},
+        {"tipo": "gap_fill", "texto": "Time ___ when you're with good friends.", "respuesta": "flies"},
+        {"tipo": "unscramble", "palabras": ["Ben", "arrived", "in", "the", "nick", "of", "time"], "respuesta": "Ben arrived in the nick of time"},
+        {"tipo": "unscramble", "palabras": ["Sofía", "built", "her", "studio", "from", "scratch"], "respuesta": "Sofía built her studio from scratch"},
+        {"tipo": "correct_mistake", "texto_con_error": "I only see a blue moon once in a blue moon.", "respuesta": "I only visit my hometown once in a blue moon."},
+        {"tipo": "transformation", "oracion_base": "Kenji studied very late into the night.", "instruccion": "Rewrite using 'burn the midnight oil'.", "respuesta": "Kenji burned the midnight oil."},
+        {"tipo": "transformation", "oracion_base": "Sofía started her studio with nothing prepared.", "instruccion": "Rewrite using 'from scratch'.", "respuesta": "Sofía started her studio from scratch."},
+        {"tipo": "transformation", "oracion_base": "Did Kenji burn the midnight oil?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, he did."},
+        {"tipo": "write_opposite", "oracion_base": "Ben always arrives in the nick of time.", "instruccion": "Write the negative form.", "respuesta": "Ben doesn't always arrive in the nick of time."},
+        {"tipo": "short_answer_production", "pregunta": "Have you ever had to work against the clock? (short answer)", "respuesta": "Yes, I have."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Abuela Carmen: You look tired, Kenji.",
+        "Kenji: I burned the midnight oil studying for tomorrow's exam.",
+        "Abuela Carmen: Ben, on the other hand, will finish everything against the clock, in the nick of time, same as always.",
+        "Ben: I prefer to think of it as efficient.",
+        "Sofía: Efficient is building something from scratch the night before?",
+        "Ben: Time flies either way, doesn't it?"
+      ],
+      "gaps": ["tired", "clock", "scratch", "flies"],
+      "comprension": [
+        {"pregunta": "What did Kenji do before the exam?", "opciones": ["Burned the midnight oil studying", "Slept early", "Went out with friends"], "respuesta": "Burned the midnight oil studying"},
+        {"pregunta": "How does Ben usually finish his work?", "opciones": ["Against the clock, in the nick of time", "Days in advance", "With Sofía's help"], "respuesta": "Against the clock, in the nick of time"}
+      ]
+    },
+    "reading": {
+      "texto": "Abuela Carmen has a theory about time: some people, like Kenji, burn the midnight oil preparing for everything days in advance, just in case. Others, like Ben, seem to thrive working against the clock, somehow finishing everything in the nick of time and never a minute later. 'I built my whole business from scratch,' she tells them both, 'and I learned this: it doesn't matter which kind of person you are, as long as you finish.' She only gives this speech once in a blue moon — mostly, she says, because nobody needs to hear it twice. Time flies regardless of how you use it, she adds. Better to use it your own way.",
+      "preguntas": [
+        {"afirmacion": "Kenji prepares for things well in advance.", "respuesta": "true"},
+        {"afirmacion": "Ben usually finishes things days early.", "respuesta": "false"},
+        {"afirmacion": "Abuela Carmen built her business from scratch.", "respuesta": "true"},
+        {"afirmacion": "Abuela Carmen gives this speech every single day.", "respuesta": "false"}
+      ]
+    }
+  }
+}

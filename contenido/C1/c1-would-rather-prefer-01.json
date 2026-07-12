@@ -1,0 +1,98 @@
+{
+  "id": "c1-would-rather-prefer-01",
+  "nivel": "C1",
+  "arquetipo": "modales",
+  "tema": "Would Rather / Would Prefer",
+  "habilidades": ["grammar", "speaking", "writing"],
+  "vocabulario": [
+    {"bandera": "preferencia propia (infinitivo sin to)", "palabra": "would rather + bare infinitive", "traduccion": "preferiría (+ verbo sin 'to')"},
+    {"bandera": "preferencia sobre otra persona (pasado simple)", "palabra": "would rather + subject + past simple", "traduccion": "preferiría que (alguien) hiciera algo"},
+    {"bandera": "preferencia formal", "palabra": "would prefer + to-infinitive", "traduccion": "preferiría (+ 'to' + verbo)"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "I'd rather stay home tonight."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Sofía would rather work alone than in a big team."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "I'd rather you called me tomorrow."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Ben would prefer to fix it himself."},
+    {"id": "s5", "forma": "negativo", "oracion": "I'd rather not talk about it right now."},
+    {"id": "s6", "forma": "negativo", "oracion": "Sofía would rather not take on new clients this month."},
+    {"id": "s7", "forma": "negativo", "oracion": "I'd rather you didn't tell Ben yet."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Would you rather stay or go?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Would you prefer to call or email?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Would you rather I called you later?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Would you rather stay home? Yes, I would."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Would you prefer to email? Yes, I would."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Would you rather I left now? Yes, please."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: Would you rather work from home or from the studio today?",
+        "Sofía: I'd rather **work** from home, honestly. Fewer interruptions.",
+        "Ben: I'd rather you **didn't ask** me that today. I haven't decided which mess to deal with first.",
+        "Abuela Carmen: I would **prefer that** all three of you simply decide something, for once."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I'd rather to stay home tonight.",
+        "opcion_b": "I'd rather stay home tonight.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "'Would rather' expresses a preference — bare infinitive for your own action, but past simple when the preference is about someone else's action; 'would prefer' works the same way but with a to-infinitive.",
+      "tabla": {
+        "titulo": "Would rather vs would prefer",
+        "encabezados": ["Structure", "Use", "Example"],
+        "filas": [
+          ["would rather + bare infinitive", "your own preferred action", "I'd rather stay home."],
+          ["would rather + subject + past simple", "preference about someone else's action", "I'd rather you called tomorrow."],
+          ["would prefer + to-infinitive", "more formal preference", "Ben would prefer to fix it himself."]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "I'd rather ___ home tonight.", "opciones": ["stay", "to stay", "staying"], "respuesta": "stay"},
+        {"tipo": "multiple_choice", "pregunta": "I'd rather you ___ me tomorrow.", "opciones": ["called", "call", "to call"], "respuesta": "called"},
+        {"tipo": "multiple_choice", "pregunta": "Ben would prefer ___ it himself.", "opciones": ["to fix", "fix", "fixing"], "respuesta": "to fix"},
+        {"tipo": "true_false", "afirmacion": "'Would rather' is followed by a bare infinitive when talking about your own action.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "When 'would rather' refers to someone else's action, it uses the past simple.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Would prefer' is followed by the bare infinitive, just like 'would rather'.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "I'd rather ___ (not/talk) about it right now.", "respuesta": "not talk"},
+        {"tipo": "gap_fill", "texto": "Sofía would rather ___ (not/take) on new clients this month.", "respuesta": "not take"},
+        {"tipo": "gap_fill", "texto": "I'd rather you ___ (not/tell) Ben yet.", "respuesta": "didn't tell"},
+        {"tipo": "unscramble", "palabras": ["I'd", "rather", "stay", "home", "tonight"], "respuesta": "I'd rather stay home tonight"},
+        {"tipo": "unscramble", "palabras": ["Ben", "would", "prefer", "to", "fix", "it", "himself"], "respuesta": "Ben would prefer to fix it himself"},
+        {"tipo": "correct_mistake", "texto_con_error": "I'd rather to stay home tonight.", "respuesta": "I'd rather stay home tonight."},
+        {"tipo": "transformation", "oracion_base": "I prefer staying home tonight over going out.", "instruccion": "Rewrite using 'would rather'.", "respuesta": "I'd rather stay home tonight."},
+        {"tipo": "transformation", "oracion_base": "I want you to call me tomorrow, not today.", "instruccion": "Rewrite using 'would rather + past simple'.", "respuesta": "I'd rather you called me tomorrow."},
+        {"tipo": "transformation", "oracion_base": "Would you rather stay or go?", "instruccion": "Answer with a short answer (stay).", "respuesta": "I'd rather stay."},
+        {"tipo": "write_opposite", "oracion_base": "I'd rather talk about it now.", "instruccion": "Write the negative form.", "respuesta": "I'd rather not talk about it now."},
+        {"tipo": "short_answer_production", "pregunta": "Would you rather study grammar or vocabulary today?", "respuesta": "I'd rather study vocabulary today."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Would you rather work from home or from the studio today?",
+        "Sofía: I'd rather work from home, honestly. Fewer interruptions.",
+        "Ben: I'd rather you didn't ask me that today.",
+        "Kenji: That bad?",
+        "Ben: I'd prefer not to talk about it, if that's alright.",
+        "Abuela Carmen: I would prefer that all three of you simply decide something, for once."
+      ],
+      "gaps": ["home", "interruptions", "ask", "decide"],
+      "comprension": [
+        {"pregunta": "Where would Sofía rather work today?", "opciones": ["From home", "From the studio", "She doesn't care"], "respuesta": "From home"},
+        {"pregunta": "What does Ben prefer not to do?", "opciones": ["Talk about his day", "Work from home", "Answer Kenji's question about location"], "respuesta": "Talk about his day"}
+      ]
+    },
+    "reading": {
+      "texto": "Given the choice, Sofía would always rather work from home — fewer interruptions, better coffee, no small talk in the hallway. Kenji, on the other hand, would prefer to be surrounded by people; silence makes him restless. Ben rarely has a strong preference either way, though today he'd clearly rather not discuss whatever happened before he arrived. Abuela Carmen, watching all three of them dance around a simple scheduling question, finally said what she'd rather they all understood: it doesn't matter where you work, as long as the work actually gets done. Nobody argued with that.",
+      "preguntas": [
+        {"afirmacion": "Sofía would rather work from home.", "respuesta": "true"},
+        {"afirmacion": "Kenji prefers working alone in silence.", "respuesta": "false"},
+        {"afirmacion": "Ben clearly wanted to discuss what happened.", "respuesta": "false"},
+        {"afirmacion": "Abuela Carmen said the location doesn't matter as long as work gets done.", "respuesta": "true"}
+      ]
+    }
+  }
+}

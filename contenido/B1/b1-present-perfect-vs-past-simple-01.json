@@ -1,0 +1,113 @@
+{
+  "id": "b1-present-perfect-vs-past-simple-01",
+  "nivel": "B1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Present Perfect vs Past Simple — Which One?",
+  "habilidades": ["grammar", "vocabulary", "listening", "reading", "writing"],
+  "vocabulario": [
+    {"bandera": "past", "palabra": "yesterday", "traduccion": "ayer"},
+    {"bandera": "past", "palabra": "last year", "traduccion": "el año pasado"},
+    {"bandera": "past", "palabra": "two days ago", "traduccion": "hace dos días"},
+    {"bandera": "past", "palabra": "in 2020", "traduccion": "en 2020"},
+    {"bandera": "past", "palabra": "when I was a child", "traduccion": "cuando era niño/a"},
+    {"bandera": "past", "palabra": "last night", "traduccion": "anoche"},
+    {"bandera": "perfect", "palabra": "ever / never", "traduccion": "alguna vez / nunca"},
+    {"bandera": "perfect", "palabra": "already / yet", "traduccion": "ya / todavía"},
+    {"bandera": "perfect", "palabra": "just", "traduccion": "recién / hace un momento"},
+    {"bandera": "perfect", "palabra": "for / since", "traduccion": "durante / desde"},
+    {"bandera": "perfect", "palabra": "twice / three times", "traduccion": "dos / tres veces (en la vida)"},
+    {"bandera": "perfect", "palabra": "this week", "traduccion": "esta semana (aún abierta)"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "I have been to Madrid twice. I went there in 2020 and 2023."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Ben has broken his arm three times in his life."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Ben broke his arm last year."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Sofía has already sent the email. She sent it this morning."},
+    {"id": "s5", "forma": "negativo", "oracion": "I haven't seen that movie yet."},
+    {"id": "s6", "forma": "negativo", "oracion": "I didn't see the movie last night."},
+    {"id": "s7", "forma": "negativo", "oracion": "Kenji hasn't visited Cartagena yet, but he visited Bogotá in May."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Have you ever been to Madrid?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "When did you go there?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Has she sent the email yet?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Have you finished? Yes, I have — I finished an hour ago."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Did you go out last night? No, I didn't."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Has Ben ever broken a bone? Yes, he has."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: **Have you ever eaten** at that new restaurant?",
+        "Sofía: Yes! I **have been** there twice. I **went** on Friday... and I **went back** on Saturday. No regrets.",
+        "Ben: I **have never tried** it... because I **lost** my wallet last week.",
+        "Abuela Carmen: I **have cooked** ten thousand dinners in my life, and nobody ever **paid** me. Invite her, Ben."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I have visited Paris last year.",
+        "opcion_b": "I visited Paris last year.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Choose past simple when the moment is closed (yesterday, in 2020, ago); choose present perfect when the time is still open or the exact moment doesn't matter.",
+      "tabla": {
+        "titulo": "Which one? Follow the time signal",
+        "encabezados": ["Signal", "Tense", "Example"],
+        "filas": [
+          ["Finished moment: yesterday, last year, in 2020, ago", "PAST SIMPLE", "I went to Madrid in 2020"],
+          ["Open time / whole life: ever, never, already, yet, just, for, since", "PRESENT PERFECT", "I have been to Madrid twice"],
+          ["The interview rule", "perfect opens, past gives the details", "Have you ever been...? Yes — I went in 2020"],
+          ["The news rule", "perfect announces, past explains", "Ben has broken his arm! He fell off a hammock"],
+          ["Same fact, two frames", "life vs moment", "I have seen that movie (life) · I saw it last night (moment)"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "I ___ Paris last year.", "opciones": ["visited", "have visited", "have visit"], "respuesta": "visited"},
+        {"tipo": "multiple_choice", "pregunta": "I ___ Paris three times in my life.", "opciones": ["visited", "have visited", "was visiting"], "respuesta": "have visited"},
+        {"tipo": "multiple_choice", "pregunta": "When ___ you go there?", "opciones": ["have", "has", "did"], "respuesta": "did"},
+        {"tipo": "multiple_choice", "pregunta": "She hasn't finished ___.", "opciones": ["yesterday", "yet", "last night"], "respuesta": "yet"},
+        {"tipo": "true_false", "afirmacion": "With finished time expressions (yesterday, in 2020, ago) we use past simple.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'I have seen him yesterday' is correct.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Ben ___ (break) his arm last year.", "respuesta": "broke"},
+        {"tipo": "gap_fill", "texto": "Ben ___ (break) his arm three times in his life.", "respuesta": "has broken"},
+        {"tipo": "gap_fill", "texto": "Kenji hasn't visited Cartagena ___.", "respuesta": "yet"},
+        {"tipo": "unscramble", "palabras": ["I", "have", "been", "to", "Madrid", "twice"], "respuesta": "I have been to Madrid twice"},
+        {"tipo": "unscramble", "palabras": ["when", "did", "you", "go", "there"], "respuesta": "When did you go there"},
+        {"tipo": "correct_mistake", "texto_con_error": "I have visited Paris last year.", "respuesta": "I visited Paris last year."},
+        {"tipo": "correct_mistake", "texto_con_error": "Did you ever been to Europe?", "respuesta": "Have you ever been to Europe?"},
+        {"tipo": "correct_mistake", "texto_con_error": "We have saw that movie already.", "respuesta": "We have seen that movie already."},
+        {"tipo": "transformation", "oracion_base": "You have been to Madrid.", "instruccion": "Ask for the specific moment (use 'when' + past simple).", "respuesta": "When did you go to Madrid?"},
+        {"tipo": "transformation", "oracion_base": "Have you ever tried sushi? (Yes — last month)", "instruccion": "Answer with the short answer + the detail in past simple.", "respuesta": "Yes, I have. I tried it last month."},
+        {"tipo": "transformation", "oracion_base": "She has sent the email.", "instruccion": "Write the negative form.", "respuesta": "She hasn't sent the email."},
+        {"tipo": "write_opposite", "oracion_base": "They went out last night.", "instruccion": "Write the negative form.", "respuesta": "They didn't go out last night."},
+        {"tipo": "write_opposite", "oracion_base": "He has already finished.", "instruccion": "Write the negative form (use 'yet').", "respuesta": "He hasn't finished yet."},
+        {"tipo": "short_answer_production", "pregunta": "Have you ever been to Madrid? (short answer)", "respuesta": "Yes, I have."},
+        {"tipo": "short_answer_production", "pregunta": "Did you study English yesterday? (short answer, No)", "respuesta": "No, I didn't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: Ben, have you found your wallet yet?",
+        "Ben: Yes, I have! I found it this morning. It was in the fridge.",
+        "Kenji: The fridge? How did it get there?",
+        "Ben: I put it there on Tuesday... next to the cheese. Don't ask.",
+        "Abuela Carmen: I have seen many strange things in my life, but I have never seen a wallet in a fridge.",
+        "Sofía: You have now, Abuela. You have now."
+      ],
+      "gaps": ["wallet", "morning", "fridge", "Tuesday"],
+      "comprension": [
+        {"pregunta": "Where did Ben find his wallet?", "opciones": ["In the fridge", "In his room", "At the restaurant"], "respuesta": "In the fridge"},
+        {"pregunta": "When did he put it there?", "opciones": ["On Tuesday", "This morning", "Last year"], "respuesta": "On Tuesday"}
+      ]
+    },
+    "reading": {
+      "texto": "Sofía's client interview, part two. 'Have you ever worked with a difficult client?' they asked her. 'Yes, I have,' she said. 'Last year, a client changed the logo eleven times. He asked for more blue, but less blue. I finished the project in December, and I have never used that shade of blue again.' 'And have you ever missed a deadline?' 'No, I haven't. I have been a designer for seven years, and I delivered every single project on time. Even the blue one.'",
+      "preguntas": [
+        {"afirmacion": "Sofía has worked with a difficult client.", "respuesta": "true"},
+        {"afirmacion": "The client changed the logo three times.", "respuesta": "false"},
+        {"afirmacion": "She finished the blue project in December.", "respuesta": "true"},
+        {"afirmacion": "Sofía has missed many deadlines.", "respuesta": "false"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "id": "b2-modals-deduction-present-01",
+  "nivel": "B2",
+  "arquetipo": "modales",
+  "tema": "Modals of Deduction — Present (must / might / could / can't)",
+  "habilidades": ["grammar", "speaking", "listening", "reading"],
+  "vocabulario": [
+    {"bandera": "~95% seguro", "palabra": "must", "traduccion": "debe ser (casi seguro)"},
+    {"bandera": "~95% seguro que no", "palabra": "can't", "traduccion": "no puede ser (casi seguro que no)"},
+    {"bandera": "~50% posible", "palabra": "might / could / may", "traduccion": "puede que / podría ser"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Kenji must be tired — he's been studying all night."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "That might be Sofía's car outside."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "This could be a mistake."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "She must know the answer; she always does."},
+    {"id": "s5", "forma": "negativo", "oracion": "It can't be Ben — he's still at the beach."},
+    {"id": "s6", "forma": "negativo", "oracion": "She can't be at home; the lights are off."},
+    {"id": "s7", "forma": "negativo", "oracion": "This might not be the right address."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Could this be the wrong bus?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Might she be at work already?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Do you think it must be Kenji at the door?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Is that Sofía's car? It must be."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Could it be a scam? It might be."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Is Ben home? He can't be — I just saw him at the beach."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: Someone left flowers at my door. There's no note.",
+        "Kenji: It **must be** Ben — he does things like that.",
+        "Sofía: It **can't be** Ben, he doesn't even remember my birthday.",
+        "Abuela Carmen: It **might be** that new neighbor. He seems interested in someone."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "She mustn't be home; the lights are off.",
+        "opcion_b": "She can't be home; the lights are off.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "We use modals like must, might, could and can't to guess how sure we are about something happening right now — not to talk about rules or obligation.",
+      "tabla": {
+        "titulo": "How sure are you?",
+        "encabezados": ["Certainty", "Modal", "Example"],
+        "filas": [
+          ["~95% sure (yes)", "must", "She must be tired"],
+          ["~95% sure (no)", "can't — NOT mustn't", "She can't be tired, she just woke up"],
+          ["~50% possible", "might / could / may", "It might rain later"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Kenji ___ be tired — he's been studying all night.", "opciones": ["must", "mustn't", "don't"], "respuesta": "must"},
+        {"tipo": "multiple_choice", "pregunta": "It ___ be Ben — he's at the beach right now.", "opciones": ["can't", "mustn't", "isn't"], "respuesta": "can't"},
+        {"tipo": "multiple_choice", "pregunta": "That ___ be Sofía's car, I'm not sure.", "opciones": ["might", "must", "can't"], "respuesta": "might"},
+        {"tipo": "true_false", "afirmacion": "'She mustn't be home' means the same as 'She can't be home' (deduction).", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "We use 'must' when we are almost 100% sure something is true.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Might' and 'could' show about 50% certainty.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "She ___ be at home; the lights are off. (almost sure NOT)", "respuesta": "can't"},
+        {"tipo": "gap_fill", "texto": "This ___ be the wrong address. (possible)", "respuesta": "might"},
+        {"tipo": "gap_fill", "texto": "He ___ know the answer, he always does. (almost sure)", "respuesta": "must"},
+        {"tipo": "unscramble", "palabras": ["it", "can't", "be", "Ben", "he's", "at", "the", "beach"], "respuesta": "it can't be Ben he's at the beach"},
+        {"tipo": "unscramble", "palabras": ["that", "might", "be", "Sofía's", "car"], "respuesta": "that might be Sofía's car"},
+        {"tipo": "correct_mistake", "texto_con_error": "She mustn't be tired, she just woke up.", "respuesta": "She can't be tired, she just woke up."},
+        {"tipo": "transformation", "oracion_base": "I'm 95% sure Kenji is tired.", "instruccion": "Rewrite using 'must'.", "respuesta": "Kenji must be tired."},
+        {"tipo": "transformation", "oracion_base": "I'm 95% sure it isn't Ben.", "instruccion": "Rewrite using 'can't'.", "respuesta": "It can't be Ben."},
+        {"tipo": "transformation", "oracion_base": "Maybe it's a mistake.", "instruccion": "Rewrite using 'might' or 'could'.", "respuesta": "It might be a mistake."},
+        {"tipo": "write_opposite", "oracion_base": "She must be tired.", "instruccion": "Write the negative deduction (use 'can't', not 'mustn't').", "respuesta": "She can't be tired."},
+        {"tipo": "short_answer_production", "pregunta": "Do you think it might rain later? (short answer, Yes)", "respuesta": "Yes, it might."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: There's a note on my door but no name.",
+        "Kenji: It must be from someone who knows where you live.",
+        "Sofía: Very funny. It can't be Ben, he can barely find his own house.",
+        "Kenji: True. It might be your new neighbor — he asked about you yesterday.",
+        "Sofía: Really? He must be shy, then, if he didn't sign it.",
+        "Kenji: Or he might just be bad at handwriting."
+      ],
+      "gaps": ["note", "shy", "handwriting", "neighbor"],
+      "comprension": [
+        {"pregunta": "Why does Sofía think it can't be Ben?", "opciones": ["He can barely find his own house", "He's at the beach", "He doesn't write notes"], "respuesta": "He can barely find his own house"},
+        {"pregunta": "Who might have left the note?", "opciones": ["The new neighbor", "Kenji", "Abuela Carmen"], "respuesta": "The new neighbor"}
+      ]
+    },
+    "reading": {
+      "texto": "Sofía found a mysterious note on her door and spent the afternoon guessing who left it. 'It must be someone close,' she told Kenji, 'because whoever it was knows exactly which apartment is mine.' Kenji disagreed: 'It could be anyone — half the building knows where you live since your birthday party.' They both agreed it couldn't be Ben, who once got lost looking for the elevator in his own building. By evening, Sofía decided it must be her new neighbor, who she'd seen watching her from his balcony more than once. 'He might just be too shy to sign his name,' she said, smiling.",
+      "preguntas": [
+        {"afirmacion": "Sofía thinks the note must be from someone close.", "respuesta": "true"},
+        {"afirmacion": "Kenji is sure it was the new neighbor.", "respuesta": "false"},
+        {"afirmacion": "They agree it can't be Ben.", "respuesta": "true"},
+        {"afirmacion": "Sofía is certain the neighbor is too shy to say hello.", "respuesta": "false"}
+      ]
+    }
+  }
+}

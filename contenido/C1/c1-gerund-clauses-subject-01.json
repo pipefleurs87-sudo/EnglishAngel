@@ -1,0 +1,92 @@
+{
+  "id": "c1-gerund-clauses-subject-01",
+  "nivel": "C1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Gerund Clauses as Subject",
+  "habilidades": ["grammar", "writing", "speaking"],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Ben losing his phone again surprised no one."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Your finishing the project early impressed the client."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Kenji studying every night finally paid off."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Sofía's taking on extra clients worried Abuela Carmen a little."},
+    {"id": "s5", "forma": "negativo", "oracion": "Ben not checking the weather caused the whole problem."},
+    {"id": "s6", "forma": "negativo", "oracion": "Your not calling me back was a bit worrying."},
+    {"id": "s7", "forma": "negativo", "oracion": "Kenji's not giving up surprised everyone."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Does it bother you, Ben losing his phone so often?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Was it your finishing early that impressed them?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Did Kenji's studying every night really pay off?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Did Ben losing his phone surprise you? No, not really."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Did your finishing early impress the client? Yes, it did."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Did Kenji's studying pay off? Yes, it did."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: **Your finishing** the report early really impressed the client.",
+        "Kenji: Honestly, **me finishing** early surprised me too.",
+        "Ben: **Ben losing** his phone again surprised absolutely nobody, for the record.",
+        "Abuela Carmen: At least you're self-aware. That's something."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "Ben lose his phone again surprised no one.",
+        "opcion_b": "Ben losing his phone again surprised no one.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "A gerund clause can act as the whole subject of a sentence — formally with a possessive ('your finishing') or, much more commonly in speech, with the plain pronoun or noun ('you finishing').",
+      "tabla": {
+        "titulo": "Gerund clause as subject — formal vs everyday",
+        "encabezados": ["Formal (possessive)", "Everyday (common/object form)", "Meaning"],
+        "filas": [
+          ["Your finishing early impressed them.", "You finishing early impressed them.", "the fact that you finished early"],
+          ["Ben's losing his phone surprised no one.", "Ben losing his phone surprised no one.", "the fact that Ben lost his phone"]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Ben ___ his phone again surprised no one.", "opciones": ["losing", "lose", "lost"], "respuesta": "losing"},
+        {"tipo": "multiple_choice", "pregunta": "___ finishing the project early impressed the client.", "opciones": ["Your", "You are", "You've"], "respuesta": "Your"},
+        {"tipo": "multiple_choice", "pregunta": "Kenji ___ every night finally paid off.", "opciones": ["studying", "study", "studied"], "respuesta": "studying"},
+        {"tipo": "true_false", "afirmacion": "A gerund clause can function as the subject of a sentence.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Your finishing early' is the more formal version of 'you finishing early'.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "Gerund clauses as subject always need the base form of the verb, not -ing.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Sofía's ___ (take) on extra clients worried Abuela Carmen a little.", "respuesta": "taking"},
+        {"tipo": "gap_fill", "texto": "Ben ___ (not/check) the weather caused the whole problem.", "respuesta": "not checking"},
+        {"tipo": "gap_fill", "texto": "Your ___ (not/call) me back was a bit worrying.", "respuesta": "not calling"},
+        {"tipo": "unscramble", "palabras": ["Ben", "losing", "his", "phone", "again", "surprised", "no", "one"], "respuesta": "Ben losing his phone again surprised no one"},
+        {"tipo": "unscramble", "palabras": ["your", "finishing", "the", "project", "early", "impressed", "the", "client"], "respuesta": "your finishing the project early impressed the client"},
+        {"tipo": "correct_mistake", "texto_con_error": "Ben lose his phone again surprised no one.", "respuesta": "Ben losing his phone again surprised no one."},
+        {"tipo": "transformation", "oracion_base": "The fact that Ben lost his phone again surprised no one.", "instruccion": "Rewrite using a gerund clause as subject.", "respuesta": "Ben losing his phone again surprised no one."},
+        {"tipo": "transformation", "oracion_base": "The fact that you finished early impressed the client.", "instruccion": "Rewrite using a gerund clause (formal, possessive).", "respuesta": "Your finishing early impressed the client."},
+        {"tipo": "transformation", "oracion_base": "Did Kenji's studying pay off?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, it did."},
+        {"tipo": "write_opposite", "oracion_base": "Ben checking the weather prevented the problem.", "instruccion": "Write the negative form.", "respuesta": "Ben not checking the weather caused the problem."},
+        {"tipo": "short_answer_production", "pregunta": "Does someone constantly being late bother you? (short answer)", "respuesta": "Yes, it does."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: Your finishing the report early really impressed the client.",
+        "Kenji: Honestly, me finishing early surprised me too.",
+        "Ben: Ben losing his phone again surprised absolutely nobody, for the record.",
+        "Sofía: At least you know yourself, Ben.",
+        "Ben: Self-awareness is my whole personality at this point.",
+        "Kenji: Your saying that out loud is somehow both funny and sad."
+      ],
+      "gaps": ["impressed", "surprised", "nobody", "funny"],
+      "comprension": [
+        {"pregunta": "What impressed the client?", "opciones": ["Kenji finishing the report early", "Sofía's new design", "Ben's punctuality"], "respuesta": "Kenji finishing the report early"},
+        {"pregunta": "What surprised nobody, according to Ben?", "opciones": ["Ben losing his phone again", "Kenji's Spanish", "Sofía's new client"], "respuesta": "Ben losing his phone again"}
+      ]
+    },
+    "reading": {
+      "texto": "Sofía has started keeping a private list of things that no longer surprise her. Ben losing his phone tops it, followed closely by him arriving fifteen minutes late to everything that isn't actually urgent. Kenji finishing his assignments early, on the other hand, still catches her off guard every time — his studying every single night finally paying off feels less like a surprise and more like something she should have expected from the start. Your growing used to someone, she's realized, changes what surprises you about them. Their being exactly who they always were stops being news, and starts being comfort.",
+      "preguntas": [
+        {"afirmacion": "Ben losing his phone is on Sofía's list of surprises.", "respuesta": "false"},
+        {"afirmacion": "Kenji finishing assignments early still surprises her sometimes.", "respuesta": "true"},
+        {"afirmacion": "Sofía says getting used to someone changes what surprises you.", "respuesta": "true"},
+        {"afirmacion": "The text says familiarity always feels uncomfortable.", "respuesta": "false"}
+      ]
+    }
+  }
+}

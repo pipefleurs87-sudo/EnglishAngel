@@ -1,0 +1,92 @@
+{
+  "id": "c1-cleft-sentences-01",
+  "nivel": "C1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Cleft Sentences — It-Clefts & What-Clefts",
+  "habilidades": ["grammar", "writing", "speaking"],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "It was Ben who lost the phone, not Kenji."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "What Sofía needs is more time, not more money."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "It's the deadline that worries me the most."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "What surprised everyone was how calm Ben stayed."},
+    {"id": "s5", "forma": "negativo", "oracion": "It wasn't Sofía who forgot the meeting."},
+    {"id": "s6", "forma": "negativo", "oracion": "What I don't need is another delay."},
+    {"id": "s7", "forma": "negativo", "oracion": "It isn't the money that matters to her."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Was it Ben who suggested the change?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "What is it that bothers you the most?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Isn't it strange that nobody noticed?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Was it Ben who lost the phone? Yes, it was."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Is it the deadline that worries you? Yes, it is."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Was it Kenji who called? No, it wasn't."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: Everyone's blaming me for the delay.",
+        "Sofía: **It was Ben** who missed the deadline, not you.",
+        "Kenji: Really? **What I heard** was completely different.",
+        "Sofía: What you heard was wrong. It's time someone corrected the story."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "Ben was who lost the phone.",
+        "opcion_b": "It was Ben who lost the phone.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Cleft sentences split one idea into two clauses to put a single piece of information in the spotlight — 'it was X who...' or 'what I need is...' — instead of just stating it plainly.",
+      "tabla": {
+        "titulo": "Two ways to build a cleft sentence",
+        "encabezados": ["Type", "Structure", "Example"],
+        "filas": [
+          ["It-cleft", "It + be + [focus] + who/that + rest", "It was Ben who lost the phone."],
+          ["What-cleft (pseudo-cleft)", "What + [rest] + be + [focus]", "What Sofía needs is more time."]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "___ was Ben who lost the phone.", "opciones": ["It", "What", "That"], "respuesta": "It"},
+        {"tipo": "multiple_choice", "pregunta": "___ Sofía needs is more time.", "opciones": ["What", "It", "Who"], "respuesta": "What"},
+        {"tipo": "multiple_choice", "pregunta": "It's the deadline ___ worries me.", "opciones": ["that", "what", "who"], "respuesta": "that"},
+        {"tipo": "true_false", "afirmacion": "'It was Ben who lost the phone' puts emphasis on 'Ben'.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "A what-cleft always starts with 'It'.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "Cleft sentences are used to highlight one specific piece of information.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "___ was Ben who suggested the change.", "respuesta": "It"},
+        {"tipo": "gap_fill", "texto": "___ surprised everyone was how calm Ben stayed.", "respuesta": "What"},
+        {"tipo": "gap_fill", "texto": "It isn't the money ___ matters to her.", "respuesta": "that"},
+        {"tipo": "unscramble", "palabras": ["it", "was", "Ben", "who", "lost", "the", "phone"], "respuesta": "it was Ben who lost the phone"},
+        {"tipo": "unscramble", "palabras": ["what", "Sofía", "needs", "is", "more", "time"], "respuesta": "what Sofía needs is more time"},
+        {"tipo": "correct_mistake", "texto_con_error": "Ben was who lost the phone.", "respuesta": "It was Ben who lost the phone."},
+        {"tipo": "transformation", "oracion_base": "Ben lost the phone, not Kenji.", "instruccion": "Rewrite as an it-cleft to emphasize 'Ben'.", "respuesta": "It was Ben who lost the phone."},
+        {"tipo": "transformation", "oracion_base": "Sofía needs more time, not more money.", "instruccion": "Rewrite as a what-cleft.", "respuesta": "What Sofía needs is more time, not more money."},
+        {"tipo": "transformation", "oracion_base": "Was it Ben who lost the phone?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, it was."},
+        {"tipo": "write_opposite", "oracion_base": "It was Sofía who forgot the meeting.", "instruccion": "Write the negative form.", "respuesta": "It wasn't Sofía who forgot the meeting."},
+        {"tipo": "short_answer_production", "pregunta": "What is it that bothers you the most about deadlines?", "respuesta": "What bothers me the most is the pressure."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Everyone's blaming me for the delay.",
+        "Sofía: It was Ben who missed the deadline, not you.",
+        "Kenji: Really? What I heard was completely different.",
+        "Sofía: What you heard was wrong.",
+        "Kenji: Then it's Ben who should explain, not me.",
+        "Sofía: Exactly. It's about time someone corrected the story."
+      ],
+      "gaps": ["blaming", "deadline", "heard", "explain"],
+      "comprension": [
+        {"pregunta": "Who actually missed the deadline?", "opciones": ["Ben", "Kenji", "Sofía"], "respuesta": "Ben"},
+        {"pregunta": "What does Sofía say about what Kenji heard?", "opciones": ["It was wrong", "It was correct", "She doesn't know"], "respuesta": "It was wrong"}
+      ]
+    },
+    "reading": {
+      "texto": "By the time the story reached the whole office, it was Kenji everyone blamed for the missed deadline — not Ben, who had actually forgotten to send the final files. What bothered Sofía most wasn't the mistake itself, but how quickly the wrong version spread. It was she who finally sat everyone down and corrected it. 'It's Ben who needs to send an apology email,' she said, 'not Kenji, who did nothing wrong.' What surprised her afterward was how relieved Kenji looked — he'd been carrying the blame silently for two full days.",
+      "preguntas": [
+        {"afirmacion": "Ben actually forgot to send the final files.", "respuesta": "true"},
+        {"afirmacion": "Kenji was the one who missed the deadline.", "respuesta": "false"},
+        {"afirmacion": "Sofía corrected the story for everyone.", "respuesta": "true"},
+        {"afirmacion": "Kenji didn't feel any relief after the story was corrected.", "respuesta": "false"}
+      ]
+    }
+  }
+}

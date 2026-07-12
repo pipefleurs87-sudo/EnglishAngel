@@ -1,0 +1,116 @@
+{
+  "id": "b1-passive-voice-01",
+  "nivel": "B1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Passive Voice — Present, Past & Perfect",
+  "habilidades": ["grammar", "vocabulary", "listening", "reading", "writing"],
+  "vocabulario": [
+    {"bandera": "ew/own", "palabra": "grow · grew · grown", "traduccion": "cultivar / crecer"},
+    {"bandera": "2 forms", "palabra": "make · made · made", "traduccion": "hacer / fabricar"},
+    {"bandera": "2 forms", "palabra": "build · built · built", "traduccion": "construir"},
+    {"bandera": "2 forms", "palabra": "sell · sold · sold", "traduccion": "vender"},
+    {"bandera": "2 forms", "palabra": "find · found · found", "traduccion": "encontrar"},
+    {"bandera": "i-o-en", "palabra": "steal · stole · stolen", "traduccion": "robar"},
+    {"bandera": "i-o-en", "palabra": "speak · spoke · spoken", "traduccion": "hablar"},
+    {"bandera": "i-o-en", "palabra": "break · broke · broken", "traduccion": "romper"},
+    {"bandera": "i-o-en", "palabra": "write · wrote · written", "traduccion": "escribir"},
+    {"bandera": "-ed", "palabra": "invent · invented · invented", "traduccion": "inventar"},
+    {"bandera": "-ed", "palabra": "produce · produced · produced", "traduccion": "producir"},
+    {"bandera": "-ed", "palabra": "export · exported · exported", "traduccion": "exportar"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Coffee is grown in Colombia."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "This house was built in 1980."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "The logo is being changed by the client. Again."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Coffee has been grown here since 1900."},
+    {"id": "s5", "forma": "afirmativo", "oracion": "The beans were being dried when it started to rain."},
+    {"id": "s6", "forma": "negativo", "oracion": "Rice isn't grown in the desert."},
+    {"id": "s7", "forma": "negativo", "oracion": "The email wasn't sent yesterday."},
+    {"id": "s8", "forma": "negativo", "oracion": "The rule has never been broken."},
+    {"id": "s9", "forma": "negativo", "oracion": "The room isn't being used right now."},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Where is coffee grown?"},
+    {"id": "s11", "forma": "interrogativo", "oracion": "Was this house built in 1980?"},
+    {"id": "s12", "forma": "interrogativo", "oracion": "Has the email been sent?"},
+    {"id": "s13", "forma": "short_answer", "oracion": "Is coffee grown in Colombia? Yes, it is."},
+    {"id": "s14", "forma": "short_answer", "oracion": "Was the window broken by the ball? Yes, it was."},
+    {"id": "s15", "forma": "short_answer", "oracion": "Has the task been finished? No, it hasn't."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: Did you know? Coffee **is grown** in 22 departments of Colombia. I read it in a museum!",
+        "Sofía: This logo **was designed** by me... and it **is being changed** by the client. Again.",
+        "Ben: My phone **was stolen**! ...No, wait. It **has been found**. It was in my pocket.",
+        "Abuela Carmen: In this house, dinner **is served** at seven. The rule **was made** in 1985, and it **has never been broken**."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "This house built in 1980.",
+        "opcion_b": "This house was built in 1980.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "The passive voice puts the spotlight on what receives the action, not on who does it — and it always needs two pieces: the verb 'to be' + a past participle.",
+      "tabla": {
+        "titulo": "One sentence through the tenses: coffee + grow",
+        "encabezados": ["Tense", "Passive = be + participle", "Example"],
+        "filas": [
+          ["Present simple", "is / are + grown", "Coffee is grown in Colombia"],
+          ["Present continuous", "is / are being + grown", "A new blend is being grown this year"],
+          ["Past simple", "was / were + grown", "This coffee was grown by my grandfather"],
+          ["Past continuous", "was / were being + grown", "The beans were being grown organically"],
+          ["Present perfect", "has / have been + grown", "Coffee has been grown here since 1900"],
+          ["Active vs Passive", "doer in focus → receiver in focus", "Farmers grow coffee → Coffee is grown (by farmers)"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Coffee ___ in Colombia.", "opciones": ["is grown", "is grow", "grows itself"], "respuesta": "is grown"},
+        {"tipo": "multiple_choice", "pregunta": "This house ___ in 1980.", "opciones": ["is being built", "was built", "has built"], "respuesta": "was built"},
+        {"tipo": "multiple_choice", "pregunta": "The email hasn't ___ yet.", "opciones": ["being sent", "be sent", "been sent"], "respuesta": "been sent"},
+        {"tipo": "multiple_choice", "pregunta": "Right now, the logo ___ by the client.", "opciones": ["is being changed", "is changed", "was changed"], "respuesta": "is being changed"},
+        {"tipo": "true_false", "afirmacion": "The passive voice always needs the verb 'to be' + a past participle.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'The window broke by the ball' is a correct passive sentence.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Spanish ___ (speak) in Colombia. — present simple passive", "respuesta": "is spoken"},
+        {"tipo": "gap_fill", "texto": "The beans ___ (dry) when it started to rain. — past continuous passive", "respuesta": "were being dried"},
+        {"tipo": "gap_fill", "texto": "Coffee ___ (grow) here since 1900. — present perfect passive", "respuesta": "has been grown"},
+        {"tipo": "unscramble", "palabras": ["coffee", "is", "grown", "in", "Colombia"], "respuesta": "Coffee is grown in Colombia"},
+        {"tipo": "unscramble", "palabras": ["was", "this", "house", "built", "in", "1980"], "respuesta": "Was this house built in 1980"},
+        {"tipo": "correct_mistake", "texto_con_error": "This house built in 1980.", "respuesta": "This house was built in 1980."},
+        {"tipo": "correct_mistake", "texto_con_error": "The email has been send.", "respuesta": "The email has been sent."},
+        {"tipo": "correct_mistake", "texto_con_error": "The dinner is serving at seven.", "respuesta": "The dinner is served at seven."},
+        {"tipo": "transformation", "oracion_base": "Farmers grow coffee.", "instruccion": "Change to passive voice (keep 'by farmers').", "respuesta": "Coffee is grown by farmers."},
+        {"tipo": "transformation", "oracion_base": "Somebody stole my phone.", "instruccion": "Change to passive voice (omit 'somebody').", "respuesta": "My phone was stolen."},
+        {"tipo": "transformation", "oracion_base": "The client is changing the logo.", "instruccion": "Change to passive voice.", "respuesta": "The logo is being changed by the client."},
+        {"tipo": "write_opposite", "oracion_base": "The rule has been broken.", "instruccion": "Write the negative form.", "respuesta": "The rule hasn't been broken."},
+        {"tipo": "write_opposite", "oracion_base": "The room isn't being used.", "instruccion": "Write the affirmative form.", "respuesta": "The room is being used."},
+        {"tipo": "short_answer_production", "pregunta": "Is coffee grown in Colombia? (short answer)", "respuesta": "Yes, it is."},
+        {"tipo": "short_answer_production", "pregunta": "Was your house built by the Romans? (short answer, No)", "respuesta": "No, it wasn't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Welcome to my coffee tour! First fact: coffee was brought to Colombia in the 18th century.",
+        "Sofía: Nice fact. Where is it grown today?",
+        "Kenji: It is grown in 22 departments. And the best beans are picked by hand, one by one.",
+        "Ben: And then what happens?",
+        "Kenji: The beans are dried in the sun, and the coffee is exported to the whole world.",
+        "Abuela Carmen: And in this house, it has been prepared the same way since 1985. Cups are on the table!"
+      ],
+      "gaps": ["brought", "hand", "dried", "exported"],
+      "comprension": [
+        {"pregunta": "How are the best beans picked?", "opciones": ["By hand", "By machine", "By robots"], "respuesta": "By hand"},
+        {"pregunta": "When was coffee brought to Colombia?", "opciones": ["In the 18th century", "In 1985", "In 1900"], "respuesta": "In the 18th century"}
+      ]
+    },
+    "reading": {
+      "texto": "The old house on the corner has a story. It was built in 1923 by an Italian architect who never saw it finished. For decades, it was used as a school, and thousands of children were taught there — Abuela Carmen was one of them. Then it was abandoned for twenty years. Today, everything is different: the house is being restored by a group of young artists. The walls have been painted, the garden has been replanted, and a new roof is being installed this month. 'Beautiful things are not destroyed,' says Abuela Carmen. 'They are just forgotten for a while.'",
+      "preguntas": [
+        {"afirmacion": "The house was built by an Italian architect.", "respuesta": "true"},
+        {"afirmacion": "It was used as a hospital for decades.", "respuesta": "false"},
+        {"afirmacion": "The house is being restored by young artists.", "respuesta": "true"},
+        {"afirmacion": "The garden hasn't been replanted yet.", "respuesta": "false"}
+      ]
+    }
+  }
+}

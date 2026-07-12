@@ -1,0 +1,100 @@
+{
+  "id": "c1-subjunctive-01",
+  "nivel": "C1",
+  "arquetipo": "modales",
+  "tema": "Subjunctive — Formal & Literary Register (C1–C2)",
+  "habilidades": ["grammar", "writing", "speaking", "reading"],
+  "vocabulario": [
+    {"bandera": "sugerir (subjuntivo)", "palabra": "suggest (that)", "traduccion": "sugerir que"},
+    {"bandera": "exigir (subjuntivo)", "palabra": "demand (that)", "traduccion": "exigir que"},
+    {"bandera": "recomendar (subjuntivo)", "palabra": "recommend (that)", "traduccion": "recomendar que"},
+    {"bandera": "insistir (subjuntivo)", "palabra": "insist (that)", "traduccion": "insistir en que"},
+    {"bandera": "formulaico", "palabra": "if I were you / so be it", "traduccion": "expresiones fijas en subjuntivo"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "The teacher suggested that Kenji study a bit more before the exam."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "It's essential that everyone be on time tomorrow."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "If I were you, I would apologize first."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "The board demanded that the report be finished by Friday."},
+    {"id": "s5", "forma": "negativo", "oracion": "The manager insisted that we not move the deadline."},
+    {"id": "s6", "forma": "negativo", "oracion": "It's important that Ben not forget his passport this time."},
+    {"id": "s7", "forma": "negativo", "oracion": "I wouldn't say that, if I were you."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Did the teacher suggest that Kenji study more?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Is it essential that everyone be present?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "What would you do if you were in Ben's position?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Did she recommend that he apply again? Yes, she did."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Is it necessary that the report be finished today? Yes, it is."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Would you accept, if you were her? Yes, I would."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: The client suggested that we **start** the project earlier.",
+        "Kenji: Did he insist that it **be** finished by June?",
+        "Sofía: He did. And honestly, **if I were** him, I'd have asked for more time.",
+        "Abuela Carmen: In my day, nobody suggested — they demanded, and you obeyed. So be it, I suppose things change."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "The teacher suggested that Kenji studies more.",
+        "opcion_b": "The teacher suggested that Kenji study more.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "The subjunctive marks something as necessary, demanded, or hypothetical — in formal English it drops the usual -s and can look identical to the base form of the verb.",
+      "tabla": {
+        "titulo": "Mandative subjunctive vs. the everyday alternative",
+        "encabezados": ["Formal / written", "Common in speech (esp. British English)", "Meaning"],
+        "filas": [
+          ["I suggest that he study more.", "I suggest that he should study more.", "recommendation"],
+          ["It's essential that she be present.", "It's essential that she is present. (less formal)", "necessity"],
+          ["The board demanded that it be finished.", "The board demanded it should be finished.", "demand"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "The teacher suggested that Kenji ___ more.", "opciones": ["study", "studies", "studied"], "respuesta": "study", "tambien_valido": "'that Kenji should study more' is also correct, especially in British English."},
+        {"tipo": "multiple_choice", "pregunta": "It's essential that everyone ___ on time.", "opciones": ["be", "is", "was"], "respuesta": "be"},
+        {"tipo": "multiple_choice", "pregunta": "If I ___ you, I would apologize first.", "opciones": ["were", "was", "am"], "respuesta": "were", "tambien_valido": "'If I was you' is common in casual speech, but 'were' is the standard subjunctive form."},
+        {"tipo": "true_false", "afirmacion": "The mandative subjunctive uses the bare form of the verb, without -s.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'If I were you' uses 'were' because it's about the present.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Should + verb' is a common spoken alternative to the formal subjunctive.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "The board demanded that the report ___ (be) finished by Friday.", "respuesta": "be"},
+        {"tipo": "gap_fill", "texto": "It's important that Ben ___ (not/forget) his passport.", "respuesta": "not forget"},
+        {"tipo": "gap_fill", "texto": "The manager insisted that we ___ (not/move) the deadline.", "respuesta": "not move"},
+        {"tipo": "unscramble", "palabras": ["it's", "essential", "that", "everyone", "be", "on", "time"], "respuesta": "it's essential that everyone be on time"},
+        {"tipo": "unscramble", "palabras": ["if", "I", "were", "you", "I", "would", "apologize"], "respuesta": "if I were you I would apologize"},
+        {"tipo": "correct_mistake", "texto_con_error": "The teacher suggested that Kenji studies more.", "respuesta": "The teacher suggested that Kenji study more.", "tambien_valido": "'that Kenji should study more' is also acceptable, especially in speech."},
+        {"tipo": "transformation", "oracion_base": "Kenji should study more, in the teacher's opinion.", "instruccion": "Rewrite as a formal suggestion using the subjunctive.", "respuesta": "The teacher suggested that Kenji study more."},
+        {"tipo": "transformation", "oracion_base": "Everyone must be on time.", "instruccion": "Rewrite using 'It's essential that...'.", "respuesta": "It's essential that everyone be on time."},
+        {"tipo": "transformation", "oracion_base": "Is it necessary that the report be finished today?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, it is."},
+        {"tipo": "write_opposite", "oracion_base": "It's important that Ben remember his passport.", "instruccion": "Write the negative subjunctive form.", "respuesta": "It's important that Ben not forget his passport."},
+        {"tipo": "short_answer_production", "pregunta": "If you were the teacher, would you suggest more practice? (short answer)", "respuesta": "Yes, I would."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: The client suggested that we start the project earlier.",
+        "Kenji: Did he insist that it be finished by June?",
+        "Sofía: He did. If I were him, I'd have asked for more time.",
+        "Abuela Carmen: In my day, nobody suggested — they demanded.",
+        "Kenji: And now?",
+        "Abuela Carmen: Now everyone says 'I suggest that you should,' and somehow it still works."
+      ],
+      "gaps": ["suggested", "insist", "demanded", "suggest"],
+      "comprension": [
+        {"pregunta": "What did the client suggest?", "opciones": ["Starting the project earlier", "Cancelling the project", "Hiring more people"], "respuesta": "Starting the project earlier"},
+        {"pregunta": "What would Sofía have done if she were the client?", "opciones": ["Asked for more time", "Finished early", "Said nothing"], "respuesta": "Asked for more time"}
+      ]
+    },
+    "reading": {
+      "texto": "Abuela Carmen has strong opinions about how English has softened over the decades. 'When I first learned this language,' she tells Kenji, 'people demanded that things be done, and that was that. Now everyone suggests, and half the time they add should just to sound less bossy.' She isn't wrong: the formal subjunctive — I suggest that he study, it's essential that she be present — has quietly become optional in everyday speech, replaced by should almost everywhere except legal documents and very formal writing. Kenji finds this comforting. 'So if I were you isn't a mistake,' she tells him. 'It's tradition. Use whichever one makes you sound like yourself.'",
+      "preguntas": [
+        {"afirmacion": "Abuela Carmen says English used to sound less formal.", "respuesta": "false"},
+        {"afirmacion": "She says 'should' has replaced the subjunctive in much everyday speech.", "respuesta": "true"},
+        {"afirmacion": "The subjunctive is still common in very formal writing and legal documents.", "respuesta": "true"},
+        {"afirmacion": "She tells Kenji that 'if I were you' is a mistake.", "respuesta": "false"}
+      ]
+    }
+  }
+}

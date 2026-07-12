@@ -1,0 +1,99 @@
+{
+  "id": "b1-used-to-01",
+  "nivel": "B1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Used to — Past Habits That Are Gone",
+  "habilidades": ["grammar", "listening", "reading", "writing"],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Abuela Carmen used to live in the countryside."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "I used to play soccer every Sunday."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Ben used to have long hair — there are photos."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "People used to write letters by hand."},
+    {"id": "s5", "forma": "negativo", "oracion": "She didn't use to like coffee. Now she drinks three cups a day."},
+    {"id": "s6", "forma": "negativo", "oracion": "I didn't use to speak English."},
+    {"id": "s7", "forma": "negativo", "oracion": "We didn't use to have internet at home."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Did you use to play with your cousins?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Where did she use to live?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Did people use to dance more?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Did you use to play soccer? Yes, I did."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Did Ben use to have long hair? Yes, he did."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Did she use to like coffee? No, she didn't."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Abuela Carmen: I **used to live** in the countryside. We **used to swim** in the river and dance cumbia every Saturday.",
+        "Kenji: **Did you use to** have electricity?",
+        "Abuela Carmen: Electricity? We **used to have** stars, my dear.",
+        "Ben: I **used to have** long hair. — Sofía: And we **used to think** it was a good idea. We don't anymore."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I use to play soccer when I was a kid.",
+        "opcion_b": "I used to play soccer when I was a kid.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "'Used to' describes habits and situations that were true in the past but are not true anymore — I used to..., but now I don't.",
+      "tabla": {
+        "titulo": "used to + base verb",
+        "encabezados": ["Form", "Structure", "Example"],
+        "filas": [
+          ["Affirmative", "used to + base verb", "She used to live in the countryside"],
+          ["Negative", "didn't use to (no -d!)", "I didn't use to like coffee"],
+          ["Question", "Did + subject + use to...? (no -d!)", "Did you use to play outside?"],
+          ["Short answer", "Yes, I did. / No, she didn't.", "Did you use to...? Yes, I did."],
+          ["Meaning", "past habit or state, no longer true", "I used to..., but now I don't"],
+          ["Trap", "'used to' has NO present form", "Now: I usually walk · Past: I used to walk"]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "I ___ play soccer when I was a kid.", "opciones": ["used to", "use to", "using to"], "respuesta": "used to"},
+        {"tipo": "multiple_choice", "pregunta": "She didn't ___ like coffee.", "opciones": ["used to", "use to", "uses to"], "respuesta": "use to"},
+        {"tipo": "multiple_choice", "pregunta": "___ you use to play with your cousins?", "opciones": ["Do", "Have", "Did"], "respuesta": "Did"},
+        {"tipo": "true_false", "afirmacion": "In negatives and questions, 'used to' loses the -d: didn't use to, Did you use to...?", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Used to' can describe present habits.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Abuela Carmen ___ (live) in the countryside when she was young. (used to)", "respuesta": "used to live"},
+        {"tipo": "gap_fill", "texto": "We ___ (not / have) internet at home. (use to)", "respuesta": "didn't use to have"},
+        {"tipo": "gap_fill", "texto": "Where did she ___ (live) before Medellín? (use to)", "respuesta": "use to live"},
+        {"tipo": "unscramble", "palabras": ["Ben", "used", "to", "have", "long", "hair"], "respuesta": "Ben used to have long hair"},
+        {"tipo": "unscramble", "palabras": ["did", "you", "use", "to", "play", "outside"], "respuesta": "Did you use to play outside"},
+        {"tipo": "correct_mistake", "texto_con_error": "I use to play soccer when I was a kid.", "respuesta": "I used to play soccer when I was a kid."},
+        {"tipo": "correct_mistake", "texto_con_error": "She didn't used to like coffee.", "respuesta": "She didn't use to like coffee."},
+        {"tipo": "correct_mistake", "texto_con_error": "Did they used to dance cumbia?", "respuesta": "Did they use to dance cumbia?"},
+        {"tipo": "transformation", "oracion_base": "People used to write letters.", "instruccion": "Write the negative form.", "respuesta": "People didn't use to write letters."},
+        {"tipo": "transformation", "oracion_base": "She used to live in the countryside.", "instruccion": "Write the yes/no question.", "respuesta": "Did she use to live in the countryside?"},
+        {"tipo": "transformation", "oracion_base": "Did you use to play soccer?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, I did."},
+        {"tipo": "write_opposite", "oracion_base": "I used to like reggaeton.", "instruccion": "Write the negative form.", "respuesta": "I didn't use to like reggaeton."},
+        {"tipo": "write_opposite", "oracion_base": "Ben didn't use to travel.", "instruccion": "Write the affirmative form.", "respuesta": "Ben used to travel."},
+        {"tipo": "short_answer_production", "pregunta": "Did you use to watch cartoons? (short answer)", "respuesta": "Yes, I did."},
+        {"tipo": "short_answer_production", "pregunta": "Did you use to speak English as a baby? (short answer, No)", "respuesta": "No, I didn't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Abuela, what did you use to do on Saturdays?",
+        "Abuela Carmen: We used to go to the river in the morning and dance cumbia at night.",
+        "Sofía: Did you use to cook with your mother?",
+        "Abuela Carmen: Every day. We didn't use to buy bread — we used to make it.",
+        "Ben: I used to make bread too! Once. It was... technically bread.",
+        "Abuela Carmen: My dear, some people used to call that a brick."
+      ],
+      "gaps": ["river", "cumbia", "bread", "brick"],
+      "comprension": [
+        {"pregunta": "What did Abuela Carmen use to do on Saturday nights?", "opciones": ["Dance cumbia", "Make bread", "Watch TV"], "respuesta": "Dance cumbia"},
+        {"pregunta": "What did people use to call Ben's bread?", "opciones": ["A brick", "A cake", "Delicious"], "respuesta": "A brick"}
+      ]
+    },
+    "reading": {
+      "texto": "Medellín used to be a very different city. Abuela Carmen remembers: 'The metro didn't use to exist — we used to take old buses that broke down every week. People used to carry umbrellas every day, because you never knew. And on Sundays, the whole neighborhood used to eat together in the street.' Some things have changed: now there is a metro, and the buses are new. But some things haven't: 'We still eat together on Sundays,' she says. 'Some habits are too delicious to lose.'",
+      "preguntas": [
+        {"afirmacion": "The metro used to exist when Abuela Carmen was young.", "respuesta": "false"},
+        {"afirmacion": "The old buses used to break down every week.", "respuesta": "true"},
+        {"afirmacion": "The neighborhood used to eat together on Sundays.", "respuesta": "true"},
+        {"afirmacion": "The Sunday tradition has disappeared.", "respuesta": "false"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "a1-review-grand-01",
+  "nivel": "A1",
+  "arquetipo": "joined_exercise",
+  "tema": "A1 Grand Review — All Topics Together",
+  "habilidades": ["grammar", "listening", "reading", "writing"],
+  "banco_oraciones": [
+    {"id": "s1", "oracion": "The people in Medellín are very friendly."},
+    {"id": "s2", "oracion": "Look! Ben is recording a video right now."},
+    {"id": "s3", "oracion": "A designer is a person who creates beautiful things."},
+    {"id": "s4", "oracion": "Kenji loves Sofía's photos. He looks at them every day."},
+    {"id": "s5", "oracion": "Where do you live? I live near the park."},
+    {"id": "s6", "oracion": "Carmen is the woman who gives the best advice."},
+    {"id": "s7", "oracion": "You should visit us in December — we can show you the city."}
+  ],
+  "fases": {
+    "inicio": {
+      "banner_diagnostico": {
+        "opcion_a": "The people in Medellín is very friendly.",
+        "opcion_b": "The people in Medellín are very friendly.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "This is everything A1 gave you, working together: identity, routines, what's happening now, rules, advice and descriptions — one level, one story.",
+      "tabla": {
+        "titulo": "your A1 map",
+        "encabezados": ["Topic", "Key example"],
+        "filas": [
+          ["To be & pronouns", "She is a designer"],
+          ["Present simple", "She works every day"],
+          ["Present continuous", "She is working now"],
+          ["Modals", "You should visit"],
+          ["Relative clauses", "a person who designs"],
+          ["Prepositions", "on Monday at nine"]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "combina": ["present continuous", "present simple"], "pregunta": "Look! Ben ___ a video right now.", "opciones": ["is recording", "records", "record"], "respuesta": "is recording"},
+        {"tipo": "multiple_choice", "combina": ["relative clauses"], "pregunta": "A designer is a person ___ creates beautiful things.", "opciones": ["who", "which", "where"], "respuesta": "who"},
+        {"tipo": "multiple_choice", "combina": ["object pronouns", "present simple"], "pregunta": "Kenji loves Sofía's photos. He looks at ___ every day.", "opciones": ["them", "they", "their"], "respuesta": "them"},
+        {"tipo": "true_false", "combina": ["relative clauses"], "afirmacion": "'A library is a place where you can read' is correct.", "respuesta": "true"},
+        {"tipo": "true_false", "combina": ["relative clauses"], "afirmacion": "We use 'which' for people.", "respuesta": "false"},
+        {"tipo": "gap_fill", "combina": ["present continuous", "to be"], "texto": "Sofía is busy now — she ___ working on a poster.", "respuesta": "is"},
+        {"tipo": "gap_fill", "combina": ["relative clauses"], "texto": "Carmen is the woman ___ gives the best advice.", "respuesta": "who"},
+        {"tipo": "gap_fill", "combina": ["prepositions", "frequency"], "texto": "Ben never arrives ___ time for class.", "respuesta": "on"},
+        {"tipo": "unscramble", "combina": ["relative clauses", "present simple"], "palabras": ["who", "is", "Kenji", "student", "a", "studies", "hard"], "respuesta": "Kenji is a student who studies hard."},
+        {"tipo": "unscramble", "combina": ["present continuous"], "palabras": ["is", "now", "Sofía", "working"], "respuesta": "Sofía is working now."},
+        {"tipo": "correct_mistake", "combina": ["to be"], "texto_con_error": "The people is very friendly.", "respuesta": "The people are very friendly."},
+        {"tipo": "correct_mistake", "combina": ["object pronouns"], "texto_con_error": "I see she every day.", "respuesta": "I see her every day."},
+        {"tipo": "correct_mistake", "combina": ["wh- questions"], "texto_con_error": "Where you live?", "respuesta": "Where do you live?"},
+        {"tipo": "transformation", "combina": ["present continuous", "present simple"], "oracion_base": "Sofía designs posters.", "instruccion": "Say it is happening right now (add 'right now').", "respuesta": "Sofía is designing posters right now."},
+        {"tipo": "transformation", "combina": ["relative clauses"], "oracion_base": "A teacher is a person. A teacher helps students.", "instruccion": "Combine the two sentences with 'who'.", "respuesta": "A teacher is a person who helps students."},
+        {"tipo": "write_opposite", "combina": ["frequency"], "oracion_base": "Ben always arrives early.", "instruccion": "Write the opposite with 'never'.", "respuesta": "Ben never arrives early."},
+        {"tipo": "short_answer_production", "combina": ["relative clauses"], "pregunta": "Describe your city: 'My city is a place where...'", "respuesta": "My city is a place where people are friendly."},
+        {"tipo": "short_answer_production", "combina": ["present continuous"], "pregunta": "What are you doing right now? (I am...)", "respuesta": "I am studying English."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: Kenji, what are you doing? We have to leave at seven!",
+        "Kenji: I'm packing my camera. Ben is recording a goodbye video in the garden.",
+        "Sofía: Of course he is. He never does anything on time.",
+        "Carmen: Boys! You should eat something before the trip.",
+        "Kenji: Carmen, you are the person who taught me the most important word in Spanish.",
+        "Carmen: Which word?",
+        "Kenji: Familia. This is a house where everyone is family."
+      ],
+      "gaps": ["camera", "family"],
+      "comprension": [
+        {"pregunta": "What is Ben doing in the garden?", "opciones": ["Recording a goodbye video", "Eating arepas", "Packing his camera"], "respuesta": "Recording a goodbye video"},
+        {"pregunta": "What does Kenji call Carmen's house?", "opciones": ["A house where everyone is family", "A place where nobody eats", "A school for Spanish"], "respuesta": "A house where everyone is family"}
+      ]
+    },
+    "reading": {
+      "texto": "It is Kenji's last week in Medellín, and everyone is busy. Sofía is designing a photo album — she is the friend who never forgets a detail. Ben is planning the party, which is dangerous, because Ben can't plan anything. Carmen is cooking all day; you can smell the arepas from the street. 'You shouldn't be sad,' she tells Kenji. 'People who love each other always meet again.' Kenji smiles. He has to go home, but he knows this is not a goodbye. It is a 'see you later'.",
+      "preguntas": [
+        {"afirmacion": "Sofía is designing a photo album.", "respuesta": "true"},
+        {"afirmacion": "Ben is very good at planning parties.", "respuesta": "false"},
+        {"afirmacion": "Kenji thinks this is a final goodbye.", "respuesta": "false"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "id": "b1-present-perfect-bucket-list-01",
+  "nivel": "B1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Present Perfect — The Bucket List (already / yet)",
+  "habilidades": ["grammar", "vocabulary", "listening", "reading", "writing"],
+  "vocabulario": [
+    {"bandera": "★", "palabra": "be · was/were · been", "traduccion": "ser / estar"},
+    {"bandera": "★", "palabra": "do · did · done", "traduccion": "hacer"},
+    {"bandera": "★", "palabra": "see · saw · seen", "traduccion": "ver"},
+    {"bandera": "★", "palabra": "eat · ate · eaten", "traduccion": "comer"},
+    {"bandera": "★", "palabra": "get · got · gotten", "traduccion": "conseguir"},
+    {"bandera": "i-o-en", "palabra": "write · wrote · written", "traduccion": "escribir"},
+    {"bandera": "i-o-en", "palabra": "ride · rode · ridden", "traduccion": "montar"},
+    {"bandera": "i-a-u", "palabra": "swim · swam · swum", "traduccion": "nadar"},
+    {"bandera": "ew/own", "palabra": "fly · flew · flown", "traduccion": "volar"},
+    {"bandera": "2 forms", "palabra": "win · won · won", "traduccion": "ganar"},
+    {"bandera": "-ed", "palabra": "try · tried · tried", "traduccion": "intentar / probar"},
+    {"bandera": "-ed", "palabra": "climb · climbed · climbed", "traduccion": "escalar"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "I have already gotten a tattoo."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Sofía has already run half a marathon."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Kenji has already eaten hormigas culonas."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Abuela Carmen has done everything on her list."},
+    {"id": "s5", "forma": "negativo", "oracion": "I haven't written a book yet."},
+    {"id": "s6", "forma": "negativo", "oracion": "Ben hasn't shown the tattoo to his mum yet."},
+    {"id": "s7", "forma": "negativo", "oracion": "We haven't climbed a volcano yet."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Have you finished your bucket list yet?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Has Kenji tried mondongo yet?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "What have you already done this year?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Have you gotten a tattoo? Yes, I have."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Has she written her book yet? No, she hasn't."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Have they flown in a helicopter? No, they haven't."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: Bucket list check! I **have already run** a marathon. Well... half. OK, a quarter.",
+        "Ben: I **have already gotten** a tattoo — a tiny map of Colombia. I **haven't shown** it to my mum **yet**.",
+        "Kenji: I **have already eaten** hormigas culonas. I **haven't tried** mondongo **yet**. I need time.",
+        "Abuela Carmen: I **have done** everything on my list. So I **have started** a new list."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I have saw that movie.",
+        "opcion_b": "I have seen that movie.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "The present perfect (have + third form) talks about your life results up to now — perfect for a bucket list: what you have already done and what you haven't done yet.",
+      "tabla": {
+        "titulo": "have / has + third form (participle)",
+        "encabezados": ["Form", "Structure", "Example"],
+        "filas": [
+          ["Affirmative + already", "have/has + already + participle", "I have already gotten a tattoo"],
+          ["Negative + yet", "haven't/hasn't + participle + yet", "I haven't written a book yet"],
+          ["Question", "Have/Has + subject + participle (+ yet)?", "Have you finished your list yet?"],
+          ["Short answer", "Yes, I have. / No, she hasn't.", "Have you tried it? Yes, I have."],
+          ["already = done ✓", "before the participle", "She has already visited Peru"],
+          ["yet = pending ⧗", "at the end of negatives and questions", "Have you eaten yet?"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "I have already ___ a tattoo.", "opciones": ["gotten", "got it", "getting"], "respuesta": "gotten"},
+        {"tipo": "multiple_choice", "pregunta": "I haven't written a book ___.", "opciones": ["already", "yet", "never"], "respuesta": "yet"},
+        {"tipo": "multiple_choice", "pregunta": "She has ___ visited Peru — twice!", "opciones": ["yet", "ever", "already"], "respuesta": "already"},
+        {"tipo": "true_false", "afirmacion": "'Already' goes with things you have done; 'yet' goes with pending things in negatives and questions.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "The present perfect uses the second form of the verb: 'I have wrote'.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Kenji has already ___ (eat) hormigas culonas.", "respuesta": "eaten"},
+        {"tipo": "gap_fill", "texto": "We haven't ___ (climb) a volcano yet.", "respuesta": "climbed"},
+        {"tipo": "gap_fill", "texto": "___ you finished your bucket list yet?", "respuesta": "Have"},
+        {"tipo": "unscramble", "palabras": ["I", "haven't", "written", "a", "book", "yet"], "respuesta": "I haven't written a book yet"},
+        {"tipo": "unscramble", "palabras": ["she", "has", "already", "run", "a", "marathon"], "respuesta": "She has already run a marathon"},
+        {"tipo": "correct_mistake", "texto_con_error": "I have saw that movie three times.", "respuesta": "I have seen that movie three times."},
+        {"tipo": "correct_mistake", "texto_con_error": "Ben hasn't showed the tattoo to his mum yet.", "respuesta": "Ben hasn't shown the tattoo to his mum yet."},
+        {"tipo": "correct_mistake", "texto_con_error": "I have already wrote two chapters.", "respuesta": "I have already written two chapters."},
+        {"tipo": "transformation", "oracion_base": "I have already tried mondongo.", "instruccion": "Write the negative form (use 'yet').", "respuesta": "I haven't tried mondongo yet."},
+        {"tipo": "transformation", "oracion_base": "She has finished her list.", "instruccion": "Write the yes/no question (use 'yet').", "respuesta": "Has she finished her list yet?"},
+        {"tipo": "transformation", "oracion_base": "Have you gotten a tattoo?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, I have."},
+        {"tipo": "write_opposite", "oracion_base": "I have already swum with dolphins.", "instruccion": "Write the negative form (use 'yet').", "respuesta": "I haven't swum with dolphins yet."},
+        {"tipo": "write_opposite", "oracion_base": "They haven't flown in a helicopter yet.", "instruccion": "Write the affirmative form (use 'already').", "respuesta": "They have already flown in a helicopter."},
+        {"tipo": "short_answer_production", "pregunta": "Have you eaten breakfast today? (short answer)", "respuesta": "Yes, I have."},
+        {"tipo": "short_answer_production", "pregunta": "Have you climbed Everest? (short answer, No)", "respuesta": "No, I haven't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: OK, team bucket list. Kenji, what have you already done in Colombia?",
+        "Kenji: I have already ridden a chiva, and I have already swum in the Caribbean.",
+        "Ben: Impressive. I haven't ridden a chiva yet. Is it safe?",
+        "Kenji: Ben, you have already fallen off a hammock. Nothing is safe for you.",
+        "Abuela Carmen: I have won three dance competitions, and I haven't finished yet.",
+        "Sofía: Abuela has already done more things than all of us together!"
+      ],
+      "gaps": ["chiva", "Caribbean", "hammock", "competitions"],
+      "comprension": [
+        {"pregunta": "What has Kenji already done in Colombia?", "opciones": ["Ridden a chiva", "Written a book", "Gotten a tattoo"], "respuesta": "Ridden a chiva"},
+        {"pregunta": "How many dance competitions has Abuela Carmen won?", "opciones": ["Three", "Two", "None"], "respuesta": "Three"}
+      ]
+    },
+    "reading": {
+      "texto": "Ben's bucket list is a small notebook with two columns. The left column says DONE: 'I have already gotten a tattoo (a tiny map of Colombia). I have already swum in two oceans. I have already eaten the spiciest taco in Mexico — and survived.' The right column says NOT YET: 'I haven't written my travel book yet, but I have already written the title: Clumsy Around the World. I haven't shown my tattoo to my mum yet. And I haven't learned to dance salsa yet — Abuela Carmen says there is no hope, but she has agreed to try one more time.'",
+      "preguntas": [
+        {"afirmacion": "Ben has already gotten a tattoo.", "respuesta": "true"},
+        {"afirmacion": "He has already written his travel book.", "respuesta": "false"},
+        {"afirmacion": "He has already eaten a very spicy taco in Mexico.", "respuesta": "true"},
+        {"afirmacion": "Ben has already shown the tattoo to his mum.", "respuesta": "false"}
+      ]
+    }
+  }
+}

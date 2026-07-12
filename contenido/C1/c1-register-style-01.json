@@ -1,0 +1,103 @@
+{
+  "id": "c1-register-style-01",
+  "nivel": "C1",
+  "arquetipo": "funcional_skills",
+  "tema": "Register & Style — Formal vs Informal Rewriting (C1–C2, capstone)",
+  "habilidades": ["writing", "speaking", "reading"],
+  "vocabulario": [
+    {"bandera": "informal → formal", "palabra": "get → receive / obtain", "traduccion": "conseguir → recibir / obtener"},
+    {"bandera": "informal → formal", "palabra": "a lot of → a great deal of / numerous", "traduccion": "mucho → una gran cantidad de"},
+    {"bandera": "informal → formal", "palabra": "find out → discover / ascertain", "traduccion": "descubrir → averiguar (formal)"},
+    {"bandera": "informal → formal", "palabra": "but → however", "traduccion": "pero → sin embargo"},
+    {"bandera": "informal → formal", "palabra": "kids → children", "traduccion": "chicos → niños (formal)"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "We received a great deal of positive feedback on the proposal."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "The team was informed of the delay yesterday."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "I would be grateful if you could confirm the details."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "The company regrets any inconvenience this may have caused."},
+    {"id": "s5", "forma": "negativo", "oracion": "We did not receive substantial feedback on this occasion."},
+    {"id": "s6", "forma": "negativo", "oracion": "The client was not entirely satisfied with the outcome."},
+    {"id": "s7", "forma": "negativo", "oracion": "This information should not be shared outside the team."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Could you possibly clarify this point for us?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Would it be possible to reschedule the meeting?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Might I ask when the report will be ready?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Was the feedback positive? It was, on the whole."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Would rescheduling be possible? It would, certainly."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Has the client been informed? They have, yes."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: I need to email this client, but 'hey, got your message, will get back to you soon' feels too casual.",
+        "Kenji: Try: 'Thank you for your message. I will respond **in due course**.'",
+        "Ben: That sounds like a robot wrote it.",
+        "Abuela Carmen: Somewhere between a robot and a text message is where most emails should live."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "Hey, just wanted to check if you got my email lol.",
+        "opcion_b": "I'm writing to follow up on my previous email.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Register is the level of formality you choose for a situation — the same idea can be expressed casually or formally, and choosing correctly matters as much as choosing correctly grammatically.",
+      "tabla": {
+        "titulo": "Informal vs formal — same idea, different register",
+        "encabezados": ["Informal", "Formal", "Context"],
+        "filas": [
+          ["got", "received", "emails, reports"],
+          ["a lot of", "a great deal of / numerous", "essays, formal writing"],
+          ["find out", "discover / ascertain", "reports, investigations"],
+          ["but", "however", "essays, formal writing"],
+          ["kids", "children", "formal/professional contexts"],
+          ["I need", "I would be grateful if", "polite requests"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Which is more formal: 'We got a lot of feedback' or ___?", "opciones": ["We received a great deal of feedback", "We got tons of feedback", "We got loads of feedback"], "respuesta": "We received a great deal of feedback"},
+        {"tipo": "multiple_choice", "pregunta": "'Could you possibly clarify this point?' is an example of ___ register.", "opciones": ["formal, polite", "very informal", "rude"], "respuesta": "formal, polite"},
+        {"tipo": "multiple_choice", "pregunta": "'Hey, got your email lol' is appropriate for ___.", "opciones": ["a casual chat with a friend", "a professional email", "a formal report"], "respuesta": "a casual chat with a friend"},
+        {"tipo": "true_false", "afirmacion": "'However' is more formal than 'but'.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "Register only matters in spoken English, not in writing.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "The same idea can be expressed at different levels of formality.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "We ___ a great deal of positive feedback. (formal for 'got')", "respuesta": "received"},
+        {"tipo": "gap_fill", "texto": "The client was not entirely ___ with the outcome. (formal for 'happy')", "respuesta": "satisfied"},
+        {"tipo": "gap_fill", "texto": "___ the results were still positive overall. (formal for 'but')", "respuesta": "However"},
+        {"tipo": "unscramble", "palabras": ["I", "would", "be", "grateful", "if", "you", "could", "confirm", "the", "details"], "respuesta": "I would be grateful if you could confirm the details"},
+        {"tipo": "unscramble", "palabras": ["the", "team", "was", "informed", "of", "the", "delay", "yesterday"], "respuesta": "the team was informed of the delay yesterday"},
+        {"tipo": "correct_mistake", "texto_con_error": "Hey, just wanted to check if you got my email lol. (in a professional email)", "respuesta": "I'm writing to follow up on my previous email."},
+        {"tipo": "transformation", "oracion_base": "We got a lot of positive feedback.", "instruccion": "Rewrite in a formal register.", "respuesta": "We received a great deal of positive feedback."},
+        {"tipo": "transformation", "oracion_base": "Can you tell me when it's ready?", "instruccion": "Rewrite as a polite, formal request.", "respuesta": "Could you possibly tell me when it will be ready?"},
+        {"tipo": "transformation", "oracion_base": "Would rescheduling be possible?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, it would."},
+        {"tipo": "write_opposite", "oracion_base": "I would be grateful if you could confirm the details.", "instruccion": "Rewrite the same request in a casual, informal register.", "respuesta": "Can you just confirm the details?"},
+        {"tipo": "short_answer_production", "pregunta": "Rewrite 'thanks a lot' in a more formal register.", "respuesta": "Thank you very much / I am very grateful."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: I need to email this client, but 'hey, got your message, will get back to you soon' feels too casual.",
+        "Kenji: Try: 'Thank you for your message. I will respond in due course.'",
+        "Ben: That sounds like a robot wrote it.",
+        "Sofía: Somewhere in between, then.",
+        "Kenji: 'Thanks for your message — I'll get back to you shortly.' Warmer, still professional.",
+        "Abuela Carmen: Now THAT sounds like a person wrote it."
+      ],
+      "gaps": ["casual", "robot", "between", "person"],
+      "comprension": [
+        {"pregunta": "What does Ben think of Kenji's very formal suggestion?", "opciones": ["It sounds like a robot wrote it", "It's perfect", "It's too casual"], "respuesta": "It sounds like a robot wrote it"},
+        {"pregunta": "What does Abuela Carmen think of the final version?", "opciones": ["It sounds like a person wrote it", "It's too formal", "It's too casual"], "respuesta": "It sounds like a person wrote it"}
+      ]
+    },
+    "reading": {
+      "texto": "Sofía has learned, slowly, that the biggest mistake in professional writing isn't grammar — it's register. Her first client emails, years ago, swung wildly between 'hey, got your message!' and paragraphs so formal they sounded translated from a legal document. Somewhere in between, she's found, is where real professional writing lives: warm enough to sound human, careful enough to sound competent. She still runs tricky emails past Kenji, who tends toward the overly formal, and Ben, who tends toward the overly casual — between the two of them, she usually lands somewhere sensible. Abuela Carmen's only rule, repeated for years: 'If you wouldn't say it to a stranger's face, don't write it to a stranger either — in either direction.'",
+      "preguntas": [
+        {"afirmacion": "Sofía's early emails were sometimes too formal and sometimes too casual.", "respuesta": "true"},
+        {"afirmacion": "She believes the best register is the most formal one possible.", "respuesta": "false"},
+        {"afirmacion": "Kenji tends to write too casually, according to the text.", "respuesta": "false"},
+        {"afirmacion": "Abuela Carmen's rule is about matching how you'd speak to a stranger.", "respuesta": "true"}
+      ]
+    }
+  }
+}

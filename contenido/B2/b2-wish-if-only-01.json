@@ -1,0 +1,93 @@
+{
+  "id": "b2-wish-if-only-01",
+  "nivel": "B2",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Wish / If Only — Regrets & Change",
+  "habilidades": ["grammar", "speaking", "writing"],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "I wish I had more free time."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Ben wishes he had bought that waterproof case."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "If only Kenji spoke Spanish more fluently."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Sofía wishes her studio were bigger."},
+    {"id": "s5", "forma": "negativo", "oracion": "I wish I didn't have so much work this week."},
+    {"id": "s6", "forma": "negativo", "oracion": "Ben wishes he hadn't taken his phone into the water."},
+    {"id": "s7", "forma": "negativo", "oracion": "If only Sofía didn't have to work every weekend."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Do you wish you had studied a different career?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "What do you wish you could change about your job?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Does Ben wish he had bought that case?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Do you wish you had more time? Yes, I do."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Does Ben wish he hadn't lost his phone? Yes, he does."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Does Kenji wish he spoke better Spanish? Yes, he does."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Ben: **I wish** I hadn't taken my phone into the water.",
+        "Abuela Carmen: **I wish** you would listen to me before, not after.",
+        "Kenji: **I wish** I spoke Spanish as well as I understand it.",
+        "Abuela Carmen: If only wishing fixed phones and grammar both."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I wish I have more free time.",
+        "opcion_b": "I wish I had more free time.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Wish and if only express that we want something to be different from how it really is — right now (past simple) or in the past (past perfect).",
+      "tabla": {
+        "titulo": "Wish / If only — three patterns",
+        "encabezados": ["Time", "Structure", "Example"],
+        "filas": [
+          ["Present situation you want different", "wish/if only + past simple", "I wish I had more time"],
+          ["Past situation you regret", "wish/if only + past perfect", "I wish I hadn't said that"],
+          ["Someone else's behavior you want to change", "wish + would + infinitive", "I wish he would call more often"]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "I wish I ___ more free time.", "opciones": ["had", "have", "having"], "respuesta": "had"},
+        {"tipo": "multiple_choice", "pregunta": "Ben wishes he ___ bought that case.", "opciones": ["had", "has", "have"], "respuesta": "had"},
+        {"tipo": "multiple_choice", "pregunta": "I wish he ___ call more often.", "opciones": ["would", "will", "wish"], "respuesta": "would"},
+        {"tipo": "true_false", "afirmacion": "'I wish I have more time' is correct.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'Wish + past perfect' talks about a past regret.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'If only' can be used the same way as 'I wish'.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "I wish I ___ (have) more free time.", "respuesta": "had"},
+        {"tipo": "gap_fill", "texto": "Ben wishes he ___ (not/take) his phone into the water.", "respuesta": "hadn't taken"},
+        {"tipo": "gap_fill", "texto": "If only Kenji ___ (speak) Spanish more fluently.", "respuesta": "spoke"},
+        {"tipo": "unscramble", "palabras": ["I", "wish", "I", "had", "more", "free", "time"], "respuesta": "I wish I had more free time"},
+        {"tipo": "unscramble", "palabras": ["Ben", "wishes", "he", "hadn't", "taken", "his", "phone"], "respuesta": "Ben wishes he hadn't taken his phone"},
+        {"tipo": "correct_mistake", "texto_con_error": "I wish I have more free time.", "respuesta": "I wish I had more free time."},
+        {"tipo": "transformation", "oracion_base": "I don't have much free time. I want it to be different.", "instruccion": "Rewrite as a wish.", "respuesta": "I wish I had more free time."},
+        {"tipo": "transformation", "oracion_base": "Ben took his phone into the water. He regrets it.", "instruccion": "Rewrite as a wish about the past.", "respuesta": "Ben wishes he hadn't taken his phone into the water."},
+        {"tipo": "transformation", "oracion_base": "Do you wish you had more time?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, I do."},
+        {"tipo": "write_opposite", "oracion_base": "I wish I had more free time.", "instruccion": "Write the opposite wish (you have too much free time).", "respuesta": "I wish I had less free time."},
+        {"tipo": "short_answer_production", "pregunta": "Do you wish you had studied a different career? (short answer, No)", "respuesta": "No, I don't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Ben: I wish I hadn't taken my phone into the water.",
+        "Abuela Carmen: I wish you would learn from your mistakes a little faster.",
+        "Kenji: I wish I spoke Spanish as well as I understand it — everyone talks so fast.",
+        "Sofía: If only wishing actually fixed anything. Come on, let's get you a new case, Ben.",
+        "Ben: I wish today had gone differently, honestly.",
+        "Sofía: Don't we all, Ben. Don't we all."
+      ],
+      "gaps": ["water", "faster", "understand", "case"],
+      "comprension": [
+        {"pregunta": "What does Ben wish?", "opciones": ["He hadn't taken his phone into the water", "He had more money", "He lived somewhere else"], "respuesta": "He hadn't taken his phone into the water"},
+        {"pregunta": "What does Kenji wish about his Spanish?", "opciones": ["He spoke it as well as he understands it", "He never started learning it", "He could write it better"], "respuesta": "He spoke it as well as he understands it"}
+      ]
+    },
+    "reading": {
+      "texto": "Everyone in the group has a wish they repeat like a small prayer. Ben wishes he hadn't taken his phone into the water — again — and says it every time with the same tired honesty. Kenji wishes his spoken Spanish matched his listening; he understands almost everything now, but the words still arrive too slowly when it's his turn to speak. Sofía wishes she had more hours in the day, though she admits that if she had them, she'd probably just fill them with more work. Abuela Carmen just wishes the three of them would learn a little faster — from their mistakes, from each other, from her stories. 'If only wishing did the learning for you,' she says, 'I'd have retired years ago.'",
+      "preguntas": [
+        {"afirmacion": "Ben wishes he hadn't taken his phone into the water.", "respuesta": "true"},
+        {"afirmacion": "Kenji says his spoken Spanish is better than his listening.", "respuesta": "false"},
+        {"afirmacion": "Sofía believes extra hours would mostly go to more work.", "respuesta": "true"},
+        {"afirmacion": "Abuela Carmen says wishing does the learning for you.", "respuesta": "false"}
+      ]
+    }
+  }
+}

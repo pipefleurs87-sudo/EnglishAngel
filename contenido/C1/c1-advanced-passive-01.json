@@ -1,0 +1,92 @@
+{
+  "id": "c1-advanced-passive-01",
+  "nivel": "C1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Advanced Passive — Reporting Verbs & Passive Infinitives",
+  "habilidades": ["grammar", "writing", "reading"],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "It is said that the recipe is over a hundred years old."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Ben is believed to have left the country, according to the rumors."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "The report is expected to be finished by Friday."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "It was reported that the client had cancelled the contract."},
+    {"id": "s5", "forma": "negativo", "oracion": "It isn't thought that the delay was Sofía's fault."},
+    {"id": "s6", "forma": "negativo", "oracion": "Kenji isn't known to arrive late."},
+    {"id": "s7", "forma": "negativo", "oracion": "The problem wasn't believed to be serious at first."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Is it said that this dish takes hours to prepare?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Is Ben believed to have left already?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Is the report expected to be finished by Friday?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Is it said to be very old? Yes, it is."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Is he believed to have left? Yes, he is."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Is the report expected to be finished? Yes, it is."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: Is it true the recipe is over a hundred years old?",
+        "Abuela Carmen: **It is said to be**, though nobody can prove it anymore.",
+        "Sofía: The client **is believed to have** cancelled — I still haven't confirmed it.",
+        "Kenji: It's **expected to be** a difficult conversation either way."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "It is said the recipe is old since a hundred years.",
+        "opcion_b": "It is said that the recipe is over a hundred years old.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Passive structures with reporting verbs ('it is said that...', 'he is believed to...') let you report something without naming who said it — common in news, academic writing, and gossip alike.",
+      "tabla": {
+        "titulo": "Two passive patterns for reporting",
+        "encabezados": ["Pattern", "Example"],
+        "filas": [
+          ["It + be + reporting verb + that...", "It is said that the recipe is very old."],
+          ["Subject + be + reporting verb + to + infinitive", "Ben is believed to have left the country."]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "It ___ said that the recipe is over a hundred years old.", "opciones": ["is", "was", "has"], "respuesta": "is"},
+        {"tipo": "multiple_choice", "pregunta": "Ben ___ believed to have left the country.", "opciones": ["is", "has", "was being"], "respuesta": "is"},
+        {"tipo": "multiple_choice", "pregunta": "The report is expected ___ finished by Friday.", "opciones": ["to be", "to have", "being"], "respuesta": "to be"},
+        {"tipo": "true_false", "afirmacion": "'It is said that...' is used to report something without naming the source.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Ben is believed to have left' means Ben left in the past, according to belief.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "Passive reporting structures always require naming who said it.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "It ___ (report, past) that the client had cancelled.", "respuesta": "was reported"},
+        {"tipo": "gap_fill", "texto": "Kenji ___ (not/know) to arrive late.", "respuesta": "isn't known"},
+        {"tipo": "gap_fill", "texto": "The problem ___ (not/believe) to be serious at first.", "respuesta": "wasn't believed"},
+        {"tipo": "unscramble", "palabras": ["it", "is", "said", "that", "the", "recipe", "is", "very", "old"], "respuesta": "it is said that the recipe is very old"},
+        {"tipo": "unscramble", "palabras": ["Ben", "is", "believed", "to", "have", "left", "the", "country"], "respuesta": "Ben is believed to have left the country"},
+        {"tipo": "correct_mistake", "texto_con_error": "It is said the recipe is old since a hundred years.", "respuesta": "It is said that the recipe is over a hundred years old."},
+        {"tipo": "transformation", "oracion_base": "People say the recipe is over a hundred years old.", "instruccion": "Rewrite using 'It is said that...'.", "respuesta": "It is said that the recipe is over a hundred years old."},
+        {"tipo": "transformation", "oracion_base": "People believe Ben left the country.", "instruccion": "Rewrite using 'Ben is believed to have...'.", "respuesta": "Ben is believed to have left the country."},
+        {"tipo": "transformation", "oracion_base": "Is the report expected to be finished by Friday?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, it is."},
+        {"tipo": "write_opposite", "oracion_base": "The problem was believed to be serious.", "instruccion": "Write the negative form.", "respuesta": "The problem wasn't believed to be serious."},
+        {"tipo": "short_answer_production", "pregunta": "Is it said that your city has the best food in the country? (short answer)", "respuesta": "Yes, it is."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Is it true the recipe is over a hundred years old?",
+        "Abuela Carmen: It is said to be, though nobody can prove it anymore.",
+        "Sofía: The client is believed to have cancelled — I still haven't confirmed it.",
+        "Kenji: It's expected to be a difficult conversation either way.",
+        "Abuela Carmen: It is also said that difficult conversations taste better with mango.",
+        "Sofía: I'll take any comfort I can get right now."
+      ],
+      "gaps": ["hundred", "cancelled", "difficult", "mango"],
+      "comprension": [
+        {"pregunta": "How old is the recipe said to be?", "opciones": ["Over a hundred years old", "Fifty years old", "Nobody knows"], "respuesta": "Over a hundred years old"},
+        {"pregunta": "What is the client believed to have done?", "opciones": ["Cancelled the contract", "Signed a new deal", "Moved abroad"], "respuesta": "Cancelled the contract"}
+      ]
+    },
+    "reading": {
+      "texto": "It is said that Abuela Carmen's mango recipe is over a hundred years old, passed down from a great-grandmother nobody in the family ever actually met. It is also rumored, though never confirmed, that she once changed a single ingredient and refused to tell anyone which one. Sofía is believed to have tried for years to recreate it exactly; she is known to have failed every single time, always missing some detail she can't quite name. The recipe is expected to be written down properly one day, Abuela Carmen always says — just not yet. It is thought, privately, that she enjoys being the only one who truly knows it.",
+      "preguntas": [
+        {"afirmacion": "The recipe is said to be over a hundred years old.", "respuesta": "true"},
+        {"afirmacion": "Abuela Carmen has confirmed exactly which ingredient she changed.", "respuesta": "false"},
+        {"afirmacion": "Sofía has successfully recreated the recipe exactly.", "respuesta": "false"},
+        {"afirmacion": "The recipe has already been written down properly.", "respuesta": "false"}
+      ]
+    }
+  }
+}

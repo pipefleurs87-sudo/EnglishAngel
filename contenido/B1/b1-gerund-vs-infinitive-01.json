@@ -1,0 +1,114 @@
+{
+  "id": "b1-gerund-vs-infinitive-01",
+  "nivel": "B1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Gerund vs Infinitive — enjoy reading, want to read",
+  "habilidades": ["grammar", "vocabulary", "listening", "reading", "writing"],
+  "vocabulario": [
+    {"bandera": "+ing", "palabra": "enjoy", "traduccion": "disfrutar"},
+    {"bandera": "+ing", "palabra": "avoid", "traduccion": "evitar"},
+    {"bandera": "+ing", "palabra": "finish", "traduccion": "terminar"},
+    {"bandera": "+ing", "palabra": "keep", "traduccion": "seguir (haciendo)"},
+    {"bandera": "+ing", "palabra": "mind", "traduccion": "importar / molestar"},
+    {"bandera": "+ing", "palabra": "suggest", "traduccion": "sugerir"},
+    {"bandera": "+to", "palabra": "want", "traduccion": "querer"},
+    {"bandera": "+to", "palabra": "need", "traduccion": "necesitar"},
+    {"bandera": "+to", "palabra": "decide", "traduccion": "decidir"},
+    {"bandera": "+to", "palabra": "hope", "traduccion": "esperar (anhelar)"},
+    {"bandera": "+to", "palabra": "promise", "traduccion": "prometer"},
+    {"bandera": "+to", "palabra": "learn", "traduccion": "aprender"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "I enjoy reading before bed."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Kenji wants to visit every region of Colombia."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Sofía decided to open her own studio."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Ben keeps losing his phone."},
+    {"id": "s5", "forma": "negativo", "oracion": "She doesn't want to move to another city."},
+    {"id": "s6", "forma": "negativo", "oracion": "I don't enjoy running in the rain."},
+    {"id": "s7", "forma": "negativo", "oracion": "He didn't promise to come."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Do you enjoy learning English?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "What do you want to do this weekend?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Do you mind closing the window?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Do you enjoy cooking? Yes, I do."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Does she want to travel? Yes, she does."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Did they decide to stay? No, they didn't."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: I **enjoy learning** Spanish, but I **want to speak** it faster!",
+        "Sofía: Then **keep practicing**. I **decided to study** design at 17, and I haven't stopped drawing since.",
+        "Ben: I **avoid making** plans. Plans **need to be** flexible... like me.",
+        "Abuela Carmen: Ben, you **promised to fix** my radio in March. **Do you mind finishing** it... this year?"
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I enjoy to read.",
+        "opcion_b": "I enjoy reading.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Some verbs are followed by -ing (enjoy reading) and others by to + verb (want to read) — the first verb decides the form of the second.",
+      "tabla": {
+        "titulo": "Which form comes next? The first verb decides",
+        "encabezados": ["Group", "Verbs", "Example"],
+        "filas": [
+          ["Verbs + -ing (gerund)", "enjoy, finish, avoid, keep, mind, suggest", "I enjoy reading · He keeps losing his phone"],
+          ["Verbs + to (infinitive)", "want, need, decide, hope, promise, learn", "I want to travel · She decided to stay"],
+          ["Both, same meaning", "like, love, start, begin", "I love dancing = I love to dance"],
+          ["After prepositions → -ing", "good at, interested in, before, after", "She is good at drawing"],
+          ["Purpose → to", "answers 'why?'", "I study English to get a better job"],
+          ["Trap", "stop + -ing ≠ stop + to", "He stopped smoking (quit) · He stopped to smoke (paused for it)"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "I enjoy ___ before bed.", "opciones": ["reading", "to read", "read"], "respuesta": "reading"},
+        {"tipo": "multiple_choice", "pregunta": "Kenji wants ___ every region of Colombia.", "opciones": ["visiting", "to visit", "visit"], "respuesta": "to visit"},
+        {"tipo": "multiple_choice", "pregunta": "Ben keeps ___ his phone.", "opciones": ["to lose", "lose", "losing"], "respuesta": "losing"},
+        {"tipo": "multiple_choice", "pregunta": "I study English ___ a better job.", "opciones": ["for get", "to get", "getting"], "respuesta": "to get"},
+        {"tipo": "true_false", "afirmacion": "After 'enjoy', 'avoid' and 'finish', the next verb takes -ing.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'I want going home' is correct.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "She decided ___ (open) her own studio.", "respuesta": "to open"},
+        {"tipo": "gap_fill", "texto": "I don't mind ___ (wait).", "respuesta": "waiting"},
+        {"tipo": "gap_fill", "texto": "He promised ___ (fix) the radio in March.", "respuesta": "to fix"},
+        {"tipo": "unscramble", "palabras": ["I", "enjoy", "learning", "English"], "respuesta": "I enjoy learning English"},
+        {"tipo": "unscramble", "palabras": ["do", "you", "want", "to", "travel", "next", "year"], "respuesta": "Do you want to travel next year"},
+        {"tipo": "correct_mistake", "texto_con_error": "I enjoy to read before bed.", "respuesta": "I enjoy reading before bed."},
+        {"tipo": "correct_mistake", "texto_con_error": "She wants visiting Japan.", "respuesta": "She wants to visit Japan."},
+        {"tipo": "correct_mistake", "texto_con_error": "I'm interested in learn photography.", "respuesta": "I'm interested in learning photography."},
+        {"tipo": "transformation", "oracion_base": "She enjoys cooking.", "instruccion": "Write the negative form.", "respuesta": "She doesn't enjoy cooking."},
+        {"tipo": "transformation", "oracion_base": "They decided to stay.", "instruccion": "Write the yes/no question.", "respuesta": "Did they decide to stay?"},
+        {"tipo": "transformation", "oracion_base": "Do you enjoy learning English?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, I do."},
+        {"tipo": "write_opposite", "oracion_base": "I want to move to another city.", "instruccion": "Write the negative form.", "respuesta": "I don't want to move to another city."},
+        {"tipo": "write_opposite", "oracion_base": "He doesn't keep practicing.", "instruccion": "Write the affirmative form.", "respuesta": "He keeps practicing."},
+        {"tipo": "short_answer_production", "pregunta": "Do you enjoy studying grammar? (short answer)", "respuesta": "Yes, I do."},
+        {"tipo": "short_answer_production", "pregunta": "Do you want to repeat this exercise? (short answer, No)", "respuesta": "No, I don't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: Kenji, what do you hope to do before you go back to Japan?",
+        "Kenji: I hope to see whales in the Pacific! And I want to learn one vallenato song.",
+        "Ben: I suggest starting with the whales. I tried singing vallenato once... my neighbors keep talking about it.",
+        "Abuela Carmen: He means they keep complaining about it.",
+        "Kenji: I don't mind being bad at first. I enjoy trying new things!",
+        "Abuela Carmen: That's the spirit. Now, who wants to eat?"
+      ],
+      "gaps": ["whales", "vallenato", "complaining", "trying"],
+      "comprension": [
+        {"pregunta": "What does Kenji hope to do?", "opciones": ["See whales in the Pacific", "Buy a guitar", "Move to Japan"], "respuesta": "See whales in the Pacific"},
+        {"pregunta": "What does Kenji enjoy?", "opciones": ["Trying new things", "Singing perfectly", "Complaining"], "respuesta": "Trying new things"}
+      ]
+    },
+    "reading": {
+      "texto": "Sofía's advice column for young designers: 'People often ask me how to start. First: if you enjoy drawing, keep drawing — talent is just practice that refused to stop. Second: decide to learn something new every month; I learned to use five programs by promising to master one at a time. Third: avoid comparing your first steps with someone else's twentieth year. And last: don't stop asking questions. I hope to keep learning until I'm ninety — like my grandmother, who started painting at seventy and doesn't plan to stop.'",
+      "preguntas": [
+        {"afirmacion": "Sofía says talent is practice that refused to stop.", "respuesta": "true"},
+        {"afirmacion": "She suggests learning ten programs at the same time.", "respuesta": "false"},
+        {"afirmacion": "Her grandmother started painting at seventy.", "respuesta": "true"},
+        {"afirmacion": "Sofía plans to stop learning at forty.", "respuesta": "false"}
+      ]
+    }
+  }
+}

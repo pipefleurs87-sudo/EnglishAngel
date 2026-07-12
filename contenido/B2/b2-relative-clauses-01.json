@@ -1,0 +1,104 @@
+{
+  "id": "b2-relative-clauses-01",
+  "nivel": "B2",
+  "arquetipo": "clausulas_relativas",
+  "tema": "Relative Clauses — Non-Defining & Advanced Structures",
+  "habilidades": ["grammar", "reading", "writing", "speaking"],
+  "vocabulario": [
+    {"bandera": "people (subject)", "palabra": "who", "traduccion": "que / quien (sujeto, persona)"},
+    {"bandera": "things", "palabra": "which", "traduccion": "que / el cual (cosa)"},
+    {"bandera": "possession", "palabra": "whose", "traduccion": "cuyo/a"},
+    {"bandera": "place", "palabra": "where", "traduccion": "donde"},
+    {"bandera": "time", "palabra": "when", "traduccion": "cuando"},
+    {"bandera": "defining only, no commas", "palabra": "that", "traduccion": "que (personas o cosas, sin comas)"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "My sister, who lives in Bogotá, is a doctor."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "The house, which was built in 1920, needs repairs."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Abuela Carmen, whose garden is famous in the neighborhood, grows the best tomatoes."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Medellín, where Sofía was born, is called the city of eternal spring."},
+    {"id": "s5", "forma": "negativo", "oracion": "The book, which I didn't finish, is still on my desk."},
+    {"id": "s6", "forma": "negativo", "oracion": "My neighbor, who doesn't speak English, asked me to translate."},
+    {"id": "s7", "forma": "negativo", "oracion": "The restaurant, which isn't open on Mondays, has the best arepas."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Is this the man who called you yesterday?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Do you know the woman whose car is parked outside?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Isn't this the café where we met Kenji?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Is Sofía the designer who made this logo? Yes, she is."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Was the house, which cost a fortune, worth it? No, it wasn't."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Do you know the reason why he left? No, I don't."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: Sofía, who is the woman who designed that mural downtown?",
+        "Sofía: That's my friend Valentina, **whose** studio is two blocks from mine.",
+        "Kenji: And the building **where** she works — is that the one with the yellow door?",
+        "Sofía: Yes! The place **where** all the artists meet on Fridays."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "My sister, that lives in Bogotá, is a doctor.",
+        "opcion_b": "My sister, who lives in Bogotá, is a doctor.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Relative clauses add extra information about a person, thing, place or time without starting a new sentence — commas mean 'extra info', no commas mean 'necessary info'.",
+      "tabla": {
+        "titulo": "Which relative word — and do you need commas?",
+        "encabezados": ["Word", "Refers to", "Example"],
+        "filas": [
+          ["who", "people (subject)", "The man who called is my uncle"],
+          ["which", "things", "The car, which is new, broke down"],
+          ["whose", "possession", "The woman whose dog barked all night"],
+          ["where", "places", "The city where I was born"],
+          ["when", "time", "The year when we met"],
+          ["that", "people/things — defining only, NO commas", "The book that I read"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "The man ___ called you yesterday is my brother.", "opciones": ["who", "which", "whose"], "respuesta": "who"},
+        {"tipo": "multiple_choice", "pregunta": "Medellín, ___ is called the city of eternal spring, is in Colombia.", "opciones": ["that", "which", "who"], "respuesta": "which"},
+        {"tipo": "multiple_choice", "pregunta": "This is the house ___ garden is famous.", "opciones": ["who", "whose", "where"], "respuesta": "whose"},
+        {"tipo": "true_false", "afirmacion": "'The house, that was built in 1920, needs repairs' is correct.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "We use commas for non-defining relative clauses (extra info).", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'That' can be used in a non-defining relative clause.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "The café ___ we met Kenji is closed today.", "respuesta": "where"},
+        {"tipo": "gap_fill", "texto": "My neighbor, ___ doesn't speak English, asked me to translate.", "respuesta": "who"},
+        {"tipo": "gap_fill", "texto": "2020 was the year ___ everything changed.", "respuesta": "when"},
+        {"tipo": "unscramble", "palabras": ["is", "this", "the", "man", "who", "called", "you"], "respuesta": "is this the man who called you"},
+        {"tipo": "unscramble", "palabras": ["the", "book", "which", "I", "didn't", "finish", "is", "on", "my", "desk"], "respuesta": "the book which I didn't finish is on my desk"},
+        {"tipo": "correct_mistake", "texto_con_error": "The book, that I didn't finish, is on my desk.", "respuesta": "The book, which I didn't finish, is on my desk."},
+        {"tipo": "transformation", "oracion_base": "The woman is my teacher. She lives next door.", "instruccion": "Combine into one sentence using 'who'.", "respuesta": "The woman who lives next door is my teacher."},
+        {"tipo": "transformation", "oracion_base": "This is the restaurant. We had our first date there.", "instruccion": "Combine using 'where'.", "respuesta": "This is the restaurant where we had our first date."},
+        {"tipo": "transformation", "oracion_base": "Is this the man who called you yesterday?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, it is."},
+        {"tipo": "write_opposite", "oracion_base": "My neighbor, who doesn't speak English, asked me to translate.", "instruccion": "Write the affirmative form ('speaks' instead of 'doesn't speak').", "respuesta": "My neighbor, who speaks English, asked me to translate."},
+        {"tipo": "short_answer_production", "pregunta": "Do you know someone whose name you always forget? (short answer, Yes)", "respuesta": "Yes, I do."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Sofía, who is the woman who painted that mural downtown?",
+        "Sofía: That's Valentina, whose studio is two blocks from mine.",
+        "Kenji: And the café where all the artists meet — is that the one with the yellow door?",
+        "Sofía: Yes, that's the place where we go every Friday.",
+        "Kenji: I'd love to meet people who love art as much as you do.",
+        "Sofía: Then come with me — that's exactly why I'm inviting you."
+      ],
+      "gaps": ["painted", "studio", "yellow", "Friday"],
+      "comprension": [
+        {"pregunta": "Who is Valentina?", "opciones": ["The woman who painted the mural", "Sofía's sister", "A tourist"], "respuesta": "The woman who painted the mural"},
+        {"pregunta": "Where do the artists meet?", "opciones": ["A café with a yellow door", "Sofía's studio", "The mural"], "respuesta": "A café with a yellow door"}
+      ]
+    },
+    "reading": {
+      "texto": "Medellín, which used to be one of the most dangerous cities in the world, is now known as a hub for design and innovation. Sofía, who has lived here her whole life, says the neighborhood where she grew up changed completely in twenty years. The comuna where she was born, which many tourists visit today for its outdoor escalators, was once a place few people wanted to enter. 'The people who transformed this city,' she says, 'are the same people whose grandparents lived through the hardest years. That's a story worth telling.'",
+      "preguntas": [
+        {"afirmacion": "Medellín is now known as a hub for design and innovation.", "respuesta": "true"},
+        {"afirmacion": "Sofía moved to Medellín two years ago.", "respuesta": "false"},
+        {"afirmacion": "Tourists visit the comuna for its outdoor escalators.", "respuesta": "true"},
+        {"afirmacion": "Sofía says the people who transformed the city are strangers to her.", "respuesta": "false"}
+      ]
+    }
+  }
+}

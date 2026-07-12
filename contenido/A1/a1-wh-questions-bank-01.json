@@ -1,0 +1,223 @@
+{
+  "id": "a1-wh-questions-bank-01",
+  "nivel": "A1",
+  "arquetipo": "funcional_skills",
+  "tema": "Wh- Questions — Question Bank (you / he-she)",
+  "habilidades": [
+    "grammar",
+    "listening",
+    "reading",
+    "writing"
+  ],
+  "banco_oraciones": [
+    {
+      "id": "s1",
+      "oracion": "What do you do? What does she do?"
+    },
+    {
+      "id": "s2",
+      "oracion": "Where do you live? Where does he live?"
+    },
+    {
+      "id": "s3",
+      "oracion": "When do you start work? When does the class start?"
+    },
+    {
+      "id": "s4",
+      "oracion": "Who do you live with? Who does he know here?"
+    },
+    {
+      "id": "s5",
+      "oracion": "Why do you study English? Why does she travel so much?"
+    },
+    {
+      "id": "s6",
+      "oracion": "How do you feel today? How does he go to work?"
+    },
+    {
+      "id": "s7",
+      "oracion": "How often do you exercise? How often does she call her family?"
+    },
+    {
+      "id": "s8",
+      "oracion": "What time does the film start?"
+    },
+    {
+      "id": "s9",
+      "oracion": "How much does it cost? How many languages does Kenji speak?"
+    }
+  ],
+  "fases": {
+    "inicio": {
+      "banner_diagnostico": {
+        "opcion_a": "Where he works?",
+        "opcion_b": "Where does he work?",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Each wh- word asks for different information; in the present simple we use 'do' (you/we/they) and 'does' (he/she/it) + the base verb.",
+      "tabla": {
+        "titulo": "One question with each wh- (you / he-she)",
+        "encabezados": [
+          "Wh-",
+          "2nd person (you)",
+          "3rd person (he/she)"
+        ],
+        "filas": [
+          [
+            "What",
+            "What do you do?",
+            "What does she do?"
+          ],
+          [
+            "Where",
+            "Where do you live?",
+            "Where does he live?"
+          ],
+          [
+            "When",
+            "When do you work?",
+            "When does she start?"
+          ],
+          [
+            "Who",
+            "Who do you know?",
+            "Who does he live with?"
+          ],
+          [
+            "Why",
+            "Why do you study?",
+            "Why does she travel?"
+          ],
+          [
+            "How",
+            "How do you feel?",
+            "How does he go to work?"
+          ],
+          [
+            "How often",
+            "How often do you read?",
+            "How often does she call?"
+          ]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {
+          "tipo": "multiple_choice",
+          "pregunta": "___ do you live? — In Medellín.",
+          "opciones": [
+            "What",
+            "Where",
+            "When"
+          ],
+          "respuesta": "Where"
+        },
+        {
+          "tipo": "multiple_choice",
+          "pregunta": "___ does she start work? — At eight.",
+          "opciones": [
+            "Where",
+            "When",
+            "Who"
+          ],
+          "respuesta": "When"
+        },
+        {
+          "tipo": "true_false",
+          "afirmacion": "With he/she/it we use 'does': 'What does he do?'.",
+          "respuesta": "true"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "___ do you feel today? — I feel great. (how)",
+          "respuesta": "How"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "Why ___ she travel so much? (do/does)",
+          "respuesta": "does"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "How ___ languages does Kenji speak? (quantity)",
+          "respuesta": "many"
+        },
+        {
+          "tipo": "correct_mistake",
+          "texto_con_error": "Where he works?",
+          "respuesta": "Where does he work?"
+        },
+        {
+          "tipo": "transformation",
+          "oracion_base": "She lives in Bogotá.",
+          "instruccion": "Ask about the place (Where + does).",
+          "respuesta": "Where does she live?"
+        },
+        {
+          "tipo": "transformation",
+          "oracion_base": "He goes to work by bus.",
+          "instruccion": "Ask about the manner (How + does).",
+          "respuesta": "How does he go to work?"
+        },
+        {
+          "tipo": "short_answer_production",
+          "pregunta": "Write a 'What' question about your father (3rd person).",
+          "respuesta": "What does your father do?"
+        }
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: I love asking questions! Where do you live, Ben?",
+        "Ben: I live in London.",
+        "Kenji: What do you do there?",
+        "Ben: I work in a bookshop.",
+        "Kenji: How often do you travel?",
+        "Ben: Twice a year. Why do you ask so many questions?!"
+      ],
+      "gaps": [
+        "live",
+        "work"
+      ],
+      "comprension": [
+        {
+          "pregunta": "Where does Ben live?",
+          "opciones": [
+            "In Medellín",
+            "In London",
+            "In Tokyo"
+          ],
+          "respuesta": "In London"
+        },
+        {
+          "pregunta": "How often does Ben travel?",
+          "opciones": [
+            "Every week",
+            "Twice a year",
+            "Never"
+          ],
+          "respuesta": "Twice a year"
+        }
+      ]
+    },
+    "reading": {
+      "texto": "Kenji is curious about everyone. To his teacher he asks: 'What do you do at the weekend? Where do you go? Who do you meet?' To his friend he asks: 'What does Ben do? Where does he live? How often does he travel?' His questions never stop. 'You know,' says Sofía, 'a good question opens a door. And you, Kenji, open a hundred doors a day!'",
+      "preguntas": [
+        {
+          "afirmacion": "Kenji asks a lot of questions.",
+          "respuesta": "true"
+        },
+        {
+          "afirmacion": "Kenji never asks about his friends.",
+          "respuesta": "false"
+        },
+        {
+          "afirmacion": "Sofía says a good question opens a door.",
+          "respuesta": "true"
+        }
+      ]
+    }
+  }
+}

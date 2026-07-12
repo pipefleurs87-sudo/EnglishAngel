@@ -1,0 +1,109 @@
+{
+  "id": "b1-present-perfect-ever-experiences-01",
+  "nivel": "B1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Have You Ever...? — Experiences (details in past simple)",
+  "habilidades": ["grammar", "vocabulary", "listening", "reading", "writing", "speaking"],
+  "vocabulario": [
+    {"bandera": "★", "palabra": "be · was/were · been", "traduccion": "estar / haber estado"},
+    {"bandera": "★", "palabra": "see · saw · seen", "traduccion": "ver"},
+    {"bandera": "i-o-en", "palabra": "break · broke · broken", "traduccion": "romper(se)"},
+    {"bandera": "i-o-en", "palabra": "drive · drove · driven", "traduccion": "conducir"},
+    {"bandera": "i-a-u", "palabra": "sing · sang · sung", "traduccion": "cantar"},
+    {"bandera": "2 forms", "palabra": "meet · met · met", "traduccion": "conocer"},
+    {"bandera": "2 forms", "palabra": "win · won · won", "traduccion": "ganar"},
+    {"bandera": "2 forms", "palabra": "lose · lost · lost", "traduccion": "perder"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "I have been to Europe. I went to Madrid in 2020."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Ben has broken his arm. He fell off a hammock last year."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Abuela Carmen has won a cumbia competition. It was in 1975."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Kenji has sung karaoke in three languages."},
+    {"id": "s5", "forma": "negativo", "oracion": "I have never seen snow."},
+    {"id": "s6", "forma": "negativo", "oracion": "Sofía has never driven a motorcycle."},
+    {"id": "s7", "forma": "negativo", "oracion": "They haven't met a famous person."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Have you ever been to Europe?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Has Ben ever broken a bone?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Have you ever lost your keys at midnight?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Have you ever been to Europe? Yes, I have. I went in 2020."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Have you ever sung karaoke? No, I haven't."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Has she ever won a prize? Yes, she has. She won it in 1975."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: **Have you ever been** to Europe, Sofía?",
+        "Sofía: **Yes, I have.** I **went** to Madrid in 2020, for a design conference.",
+        "Ben: **Have you ever broken** a bone? I have... I **broke** my arm last year. I **fell** off a hammock. A hammock, Kenji.",
+        "Abuela Carmen: I **have never broken** anything. But **have you ever won** a cumbia competition? I **did** — in 1975."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "Have you ever went to Europe?",
+        "opcion_b": "Have you ever been to Europe?",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "'Have you ever...?' asks if something happened in your life at least once — and when the answer is yes, you tell the details in past simple: Yes, I have. I went in 2020.",
+      "tabla": {
+        "titulo": "The experience question — and the switch to past",
+        "encabezados": ["Piece", "Structure", "Example"],
+        "filas": [
+          ["The question", "Have you ever + participle?", "Have you ever been to Europe?"],
+          ["Yes → details in PAST", "Yes, I have. + past simple story", "Yes, I have. I went in 2020."],
+          ["No", "No, I haven't. / I have never + participle", "I have never seen snow"],
+          ["ever", "only in questions", "Have you ever won a prize?"],
+          ["never", "negative idea in affirmative form", "She has never driven a motorcycle"],
+          ["Why two tenses?", "perfect = your life · past = the specific moment", "I have been to Europe · I went in 2020"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Have you ever ___ to Europe?", "opciones": ["been", "went", "go"], "respuesta": "been"},
+        {"tipo": "multiple_choice", "pregunta": "Yes, I have. I ___ in 2020.", "opciones": ["have gone", "went", "have been"], "respuesta": "went"},
+        {"tipo": "multiple_choice", "pregunta": "I have ___ seen snow in my life.", "opciones": ["ever", "yet", "never"], "respuesta": "never"},
+        {"tipo": "true_false", "afirmacion": "After 'Yes, I have', we tell the details (when, where) in past simple.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Ever' is used in affirmative sentences: 'I have ever been to Peru'.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Has Ben ever ___ (break) a bone?", "respuesta": "broken"},
+        {"tipo": "gap_fill", "texto": "Yes, he has. He ___ (break) his arm last year.", "respuesta": "broke"},
+        {"tipo": "gap_fill", "texto": "Abuela Carmen won the competition. It ___ (be) in 1975.", "respuesta": "was"},
+        {"tipo": "unscramble", "palabras": ["have", "you", "ever", "sung", "karaoke"], "respuesta": "Have you ever sung karaoke"},
+        {"tipo": "unscramble", "palabras": ["I", "have", "never", "driven", "a", "motorcycle"], "respuesta": "I have never driven a motorcycle"},
+        {"tipo": "correct_mistake", "texto_con_error": "Have you ever went to Europe?", "respuesta": "Have you ever been to Europe?"},
+        {"tipo": "correct_mistake", "texto_con_error": "Yes, I have. I have gone to Madrid in 2020.", "respuesta": "Yes, I have. I went to Madrid in 2020."},
+        {"tipo": "correct_mistake", "texto_con_error": "She has never wons a prize.", "respuesta": "She has never won a prize."},
+        {"tipo": "transformation", "oracion_base": "You have met a famous person.", "instruccion": "Write the experience question (use 'ever').", "respuesta": "Have you ever met a famous person?"},
+        {"tipo": "transformation", "oracion_base": "Have you ever seen snow?", "instruccion": "Answer No with 'never'.", "respuesta": "No, I have never seen snow."},
+        {"tipo": "transformation", "oracion_base": "Have you ever been to Europe? (Yes — Madrid, 2020)", "instruccion": "Answer with the short answer + the detail in past simple.", "respuesta": "Yes, I have. I went to Madrid in 2020."},
+        {"tipo": "write_opposite", "oracion_base": "I have never sung karaoke.", "instruccion": "Write the affirmative form.", "respuesta": "I have sung karaoke."},
+        {"tipo": "write_opposite", "oracion_base": "Kenji has tried hormigas culonas.", "instruccion": "Write it with 'never'.", "respuesta": "Kenji has never tried hormigas culonas."},
+        {"tipo": "short_answer_production", "pregunta": "Have you ever lost your phone? (short answer)", "respuesta": "Yes, I have."},
+        {"tipo": "short_answer_production", "pregunta": "Have you ever driven a Formula 1 car? (short answer, No)", "respuesta": "No, I haven't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Question game! Have you ever sung karaoke, Sofía?",
+        "Sofía: Yes, I have. I sang 'Vivir Mi Vida' at my cousin's wedding in 2023. Twice.",
+        "Ben: Have you ever won anything, Kenji?",
+        "Kenji: Yes, I have! I won a photography contest when I was fifteen.",
+        "Sofía: And you, Abuela? Have you ever met anyone famous?",
+        "Abuela Carmen: Yes, I have. I met Gabriel García Márquez at a market in 1982. He bought mangoes. I sold them to him."
+      ],
+      "gaps": ["karaoke", "wedding", "contest", "mangoes"],
+      "comprension": [
+        {"pregunta": "When did Sofía sing at the wedding?", "opciones": ["In 2023", "In 1982", "When she was fifteen"], "respuesta": "In 2023"},
+        {"pregunta": "What did Abuela Carmen sell to the famous writer?", "opciones": ["Mangoes", "Arepas", "Coffee"], "respuesta": "Mangoes"}
+      ]
+    },
+    "reading": {
+      "texto": "Kenji's blog, this week: 'Have you ever...? — The interview'. I asked my three favorite people about their lives. Sofía has been to Europe: she went to Madrid in 2020 for a conference and she loved the museums. Ben has broken three bones in his life: he broke the last one when he fell off a hammock — nobody knows how it was possible. And Abuela Carmen? She has met a Nobel Prize winner. 'I met him in 1982,' she told me. 'He bought my mangoes and said they were the best in Colombia.' I have never met anyone famous... but I have met Abuela Carmen, and I think that counts.",
+      "preguntas": [
+        {"afirmacion": "Sofía went to Madrid in 2020.", "respuesta": "true"},
+        {"afirmacion": "Ben has never broken a bone.", "respuesta": "false"},
+        {"afirmacion": "Abuela Carmen met the writer in 1982.", "respuesta": "true"},
+        {"afirmacion": "Kenji has met many famous people.", "respuesta": "false"}
+      ]
+    }
+  }
+}

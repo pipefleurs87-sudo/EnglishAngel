@@ -1,0 +1,93 @@
+{
+  "id": "c1-ellipsis-substitution-01",
+  "nivel": "C1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Ellipsis & Substitution",
+  "habilidades": ["grammar", "speaking", "writing"],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Sofía can speak French, and so can Kenji."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "I think so."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Ben wanted to leave early, and so did Kenji."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "She finished her coffee and then did the same with mine."},
+    {"id": "s5", "forma": "negativo", "oracion": "I hope not."},
+    {"id": "s6", "forma": "negativo", "oracion": "Sofía doesn't like early meetings, and neither does Ben."},
+    {"id": "s7", "forma": "negativo", "oracion": "I don't think so."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Do you think it will rain? I hope not."},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Can Sofía speak French? I think so."},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Did Ben want to leave early? I believe so."},
+    {"id": "s11", "forma": "short_answer", "oracion": "Will it rain tomorrow? I hope not."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Can Kenji speak French too? Yes, so can he."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Did Ben want to leave? Yes, and so did Kenji."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: Sofía can speak French, **and so can I**, actually.",
+        "Ben: Really? I had no idea. Will it rain later?",
+        "Sofía: **I hope not**, we have plans outside.",
+        "Abuela Carmen: **I think so**, actually. Bring an umbrella. I always do."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "Sofía can speak French, and Kenji can too so.",
+        "opcion_b": "Sofía can speak French, and so can Kenji.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Ellipsis and substitution let you avoid repeating a whole verb phrase — 'so can I', 'I think so', 'neither does she' — by replacing it with a short, economical structure.",
+      "tabla": {
+        "titulo": "Ellipsis & substitution shortcuts",
+        "encabezados": ["Pattern", "Example"],
+        "filas": [
+          ["so + auxiliary + subject", "Sofía can speak French, and so can Kenji."],
+          ["neither/nor + auxiliary + subject", "Sofía doesn't like meetings, and neither does Ben."],
+          ["verb + so / not (belief, opinion)", "Will it rain? I hope not. / I think so."]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Sofía can speak French, and ___ Kenji.", "opciones": ["so can", "can so", "so does"], "respuesta": "so can"},
+        {"tipo": "multiple_choice", "pregunta": "Will it rain? I hope ___.", "opciones": ["not", "no", "don't"], "respuesta": "not"},
+        {"tipo": "multiple_choice", "pregunta": "Sofía doesn't like early meetings, and ___ Ben.", "opciones": ["neither does", "so does", "neither do"], "respuesta": "neither does"},
+        {"tipo": "true_false", "afirmacion": "'So can I' repeats the full verb phrase instead of shortening it.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'I think so' is a short way of avoiding repeating a whole clause.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Neither does she' is used to agree with a negative statement.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "Ben wanted to leave early, and ___ Kenji.", "respuesta": "so did"},
+        {"tipo": "gap_fill", "texto": "I don't think ___.", "respuesta": "so"},
+        {"tipo": "gap_fill", "texto": "Can Sofía speak French? I think ___.", "respuesta": "so"},
+        {"tipo": "unscramble", "palabras": ["Sofía", "can", "speak", "French", "and", "so", "can", "Kenji"], "respuesta": "Sofía can speak French and so can Kenji"},
+        {"tipo": "unscramble", "palabras": ["Sofía", "doesn't", "like", "early", "meetings", "and", "neither", "does", "Ben"], "respuesta": "Sofía doesn't like early meetings and neither does Ben"},
+        {"tipo": "correct_mistake", "texto_con_error": "Sofía can speak French, and Kenji can too so.", "respuesta": "Sofía can speak French, and so can Kenji."},
+        {"tipo": "transformation", "oracion_base": "Sofía can speak French. Kenji can speak French too.", "instruccion": "Combine using 'so can'.", "respuesta": "Sofía can speak French, and so can Kenji."},
+        {"tipo": "transformation", "oracion_base": "Sofía doesn't like early meetings. Ben doesn't like them either.", "instruccion": "Combine using 'neither does'.", "respuesta": "Sofía doesn't like early meetings, and neither does Ben."},
+        {"tipo": "transformation", "oracion_base": "Will it rain tomorrow?", "instruccion": "Answer briefly expressing hope that it won't.", "respuesta": "I hope not."},
+        {"tipo": "write_opposite", "oracion_base": "I think so.", "instruccion": "Write the negative form (you don't believe it).", "respuesta": "I don't think so."},
+        {"tipo": "short_answer_production", "pregunta": "Do you think English gets easier at C1? Answer briefly.", "respuesta": "I think so."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Sofía can speak French, and so can I, actually.",
+        "Ben: Really? I had no idea. Will it rain later?",
+        "Sofía: I hope not, we have plans outside.",
+        "Abuela Carmen: I think so, actually. Bring an umbrella.",
+        "Ben: Sofía doesn't trust the forecast, and neither do I anymore.",
+        "Kenji: Neither does anyone in this group, honestly."
+      ],
+      "gaps": ["French", "rain", "umbrella", "forecast"],
+      "comprension": [
+        {"pregunta": "Who else can speak French, besides Sofía?", "opciones": ["Kenji", "Ben", "Abuela Carmen"], "respuesta": "Kenji"},
+        {"pregunta": "What does Abuela Carmen think will happen?", "opciones": ["It will rain", "It will be sunny", "She doesn't know"], "respuesta": "It will rain"}
+      ]
+    },
+    "reading": {
+      "texto": "Nobody in the group fully trusts the weather forecast anymore, and neither, frankly, does Abuela Carmen — though she's usually right anyway. 'Will it rain today?' Kenji asked before their walk. 'I think so,' she said, already reaching for her umbrella. Sofía hoped not; she had plans that only worked if it stayed dry. It didn't. Ben, who'd left his umbrella at home again, got soaked — and so, predictably, did his phone, safely tucked in his pocket as always. 'I told you so,' Abuela Carmen didn't say, mostly because she didn't need to.",
+      "preguntas": [
+        {"afirmacion": "Abuela Carmen trusts the forecast completely.", "respuesta": "false"},
+        {"afirmacion": "Sofía hoped it would rain.", "respuesta": "false"},
+        {"afirmacion": "Ben's phone got wet again.", "respuesta": "true"},
+        {"afirmacion": "Abuela Carmen said 'I told you so' out loud.", "respuesta": "false"}
+      ]
+    }
+  }
+}

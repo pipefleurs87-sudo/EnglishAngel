@@ -1,0 +1,116 @@
+{
+  "id": "a2-comparatives-superlatives-01",
+  "nivel": "A2",
+  "arquetipo": "comparativos",
+  "tema": "Comparatives & Superlatives — The Great Dilemmas of Life",
+  "habilidades": ["grammar", "vocabulary", "listening", "reading", "writing", "speaking"],
+  "vocabulario": [
+    {"bandera": "irreg", "palabra": "good · better · the best", "traduccion": "bueno"},
+    {"bandera": "irreg", "palabra": "bad · worse · the worst", "traduccion": "malo"},
+    {"bandera": "-er", "palabra": "cheap · cheaper · the cheapest", "traduccion": "barato"},
+    {"bandera": "-er", "palabra": "fast · faster · the fastest", "traduccion": "rápido"},
+    {"bandera": "-er ×2", "palabra": "big · bigger · the biggest", "traduccion": "grande"},
+    {"bandera": "-ier", "palabra": "healthy · healthier · the healthiest", "traduccion": "saludable"},
+    {"bandera": "-ier", "palabra": "easy · easier · the easiest", "traduccion": "fácil"},
+    {"bandera": "more", "palabra": "delicious · more delicious · the most delicious", "traduccion": "delicioso"},
+    {"bandera": "more", "palabra": "entertaining · more entertaining · the most entertaining", "traduccion": "entretenido"},
+    {"bandera": "more", "palabra": "fun · more fun · the most fun", "traduccion": "divertido"},
+    {"bandera": "more", "palabra": "relaxing · more relaxing · the most relaxing", "traduccion": "relajante"},
+    {"bandera": "more", "palabra": "interesting · more interesting · the most interesting", "traduccion": "interesante"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Pizza is more delicious than a burger — that's science."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Homemade food is healthier than fast food."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "YouTube is as entertaining as Netflix."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Ice cream is the best dessert in the world."},
+    {"id": "s5", "forma": "afirmativo", "oracion": "Shopping is less relaxing than sleeping."},
+    {"id": "s6", "forma": "negativo", "oracion": "A burger isn't as delicious as pizza."},
+    {"id": "s7", "forma": "negativo", "oracion": "Fast food isn't healthier than homemade food."},
+    {"id": "s8", "forma": "negativo", "oracion": "Texting isn't better than calling; it's just easier."},
+    {"id": "s9", "forma": "negativo", "oracion": "Winter isn't the worst season — Monday is the worst 'season'."},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Is tea healthier than coffee?"},
+    {"id": "s11", "forma": "interrogativo", "oracion": "Which is more entertaining: YouTube or Netflix?"},
+    {"id": "s12", "forma": "interrogativo", "oracion": "Is dancing as fun as singing karaoke?"},
+    {"id": "s13", "forma": "interrogativo", "oracion": "What is the most delicious food in your country?"},
+    {"id": "s14", "forma": "short_answer", "oracion": "Is pizza better than a burger? Yes, it is."},
+    {"id": "s15", "forma": "short_answer", "oracion": "Is fast food as healthy as homemade food? No, it isn't."},
+    {"id": "s16", "forma": "short_answer", "oracion": "Are cats easier than dogs? Yes, they are."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: Serious question: is YouTube **more entertaining than** Netflix?",
+        "Ben: YouTube! It's **cheaper**... well, it's free. But pizza vs burger is **the most difficult** dilemma.",
+        "Sofía: Easy — pizza is **more delicious than** a burger, and homemade pizza is **the best** of all.",
+        "Abuela Carmen: You are all wrong. Sleeping is **better than** shopping, YouTube and pizza... together!"
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "Pizza is more better than a burger.",
+        "opcion_b": "Pizza is better than a burger.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Comparatives and superlatives let you settle real-life dilemmas — saying which of two things is better, worse or equal, and which one is the champion of all.",
+      "tabla": {
+        "titulo": "Five ways to compare",
+        "encabezados": ["Structure", "Form", "Example"],
+        "filas": [
+          ["Superiority", "adj-er than / more + adj + than", "Pizza is more delicious than a burger"],
+          ["Inferiority", "less + adj + than", "Chocolate is less refreshing than ice cream"],
+          ["Equality", "as + adj + as", "Tea is as healthy as coffee"],
+          ["Superlative (top)", "the adj-est / the most + adj", "Sleeping is the most relaxing plan of all"],
+          ["Superlative (bottom)", "the least + adj", "Monday is the least fun day of the week"],
+          ["Spelling & irregulars", "big → bigger · easy → easier · good → better · bad → worse", "the biggest, the easiest, the best, the worst"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Pizza is ___ than a burger.", "opciones": ["more delicious", "deliciouser", "most delicious"], "respuesta": "more delicious"},
+        {"tipo": "multiple_choice", "pregunta": "Sleeping is ___ activity of all.", "opciones": ["the most relaxing", "the more relaxing", "most relaxing"], "respuesta": "the most relaxing"},
+        {"tipo": "multiple_choice", "pregunta": "Tea is ___ healthy as coffee.", "opciones": ["as", "more", "than"], "respuesta": "as"},
+        {"tipo": "multiple_choice", "pregunta": "Monday is ___ fun day of the week.", "opciones": ["the least", "less", "the less"], "respuesta": "the least"},
+        {"tipo": "true_false", "afirmacion": "'Good' and 'bad' are irregular: better / the best, worse / the worst.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'More better' is correct in English.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Homemade food is ___ (healthy) than fast food.", "respuesta": "healthier"},
+        {"tipo": "gap_fill", "texto": "Ice cream is ___ (good) than chocolate. Discuss!", "respuesta": "better"},
+        {"tipo": "gap_fill", "texto": "That was ___ (bad) movie of the year.", "respuesta": "the worst"},
+        {"tipo": "unscramble", "palabras": ["is", "shopping", "as", "fun", "as", "sleeping"], "respuesta": "Is shopping as fun as sleeping"},
+        {"tipo": "unscramble", "palabras": ["YouTube", "is", "more", "entertaining", "than", "Netflix"], "respuesta": "YouTube is more entertaining than Netflix"},
+        {"tipo": "correct_mistake", "texto_con_error": "Pizza is more better than a burger.", "respuesta": "Pizza is better than a burger."},
+        {"tipo": "correct_mistake", "texto_con_error": "This is the most easy exercise.", "respuesta": "This is the easiest exercise."},
+        {"tipo": "correct_mistake", "texto_con_error": "A burger is deliciouser than a hot dog.", "respuesta": "A burger is more delicious than a hot dog."},
+        {"tipo": "transformation", "oracion_base": "Fast food is cheaper than homemade food.", "instruccion": "Write the negative form.", "respuesta": "Fast food isn't cheaper than homemade food."},
+        {"tipo": "transformation", "oracion_base": "Dancing is as fun as karaoke.", "instruccion": "Write the yes/no question.", "respuesta": "Is dancing as fun as karaoke?"},
+        {"tipo": "transformation", "oracion_base": "Is coffee better than tea?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, it is."},
+        {"tipo": "write_opposite", "oracion_base": "Summer is the best season.", "instruccion": "Write the opposite (use 'worst').", "respuesta": "Summer is the worst season."},
+        {"tipo": "write_opposite", "oracion_base": "Cats are easier than dogs.", "instruccion": "Write the opposite (use 'more difficult').", "respuesta": "Cats are more difficult than dogs."},
+        {"tipo": "short_answer_production", "pregunta": "Is pizza more delicious than a burger? (short answer)", "respuesta": "Yes, it is."},
+        {"tipo": "short_answer_production", "pregunta": "Is fast food as healthy as homemade food? (short answer, No)", "respuesta": "No, it isn't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: OK, final question: ice cream or chocolate?",
+        "Sofía: Ice cream is more refreshing than chocolate, but chocolate is the most romantic gift.",
+        "Ben: For me, ice cream is the best dessert in the world. Chocolate is less exciting.",
+        "Kenji: Interesting... and tea or coffee?",
+        "Abuela Carmen: In this house, coffee is the king. Tea is as healthy as coffee, but it isn't as delicious!"
+      ],
+      "gaps": ["refreshing", "best", "exciting", "healthy"],
+      "comprension": [
+        {"pregunta": "What does Ben think is the best dessert in the world?", "opciones": ["ice cream", "chocolate", "pizza"], "respuesta": "ice cream"},
+        {"pregunta": "Does Abuela Carmen think tea is as delicious as coffee?", "opciones": ["No, she doesn't", "Yes, she does", "She prefers tea"], "respuesta": "No, she doesn't"}
+      ]
+    },
+    "reading": {
+      "texto": "Kenji writes a blog about his life in Colombia. This week's post: 'The Great Dilemmas of Life'. After three months of serious research, here are my results. Pizza vs burger: pizza is more delicious, but a burger is easier to eat on the bus. YouTube vs Netflix: YouTube is cheaper (it's free!), but Netflix is better for movie nights. Fast food vs homemade food: fast food is faster, obviously, but Abuela Carmen's beans are the most delicious food in Colombia — maybe in the world. Shopping vs sleeping: sleeping is less expensive and more relaxing. Final conclusion: the best things in life are free... like sleeping and YouTube.",
+      "preguntas": [
+        {"afirmacion": "Kenji thinks pizza is more delicious than a burger.", "respuesta": "true"},
+        {"afirmacion": "Netflix is cheaper than YouTube.", "respuesta": "false"},
+        {"afirmacion": "Kenji thinks Abuela Carmen's beans are the most delicious food in Colombia.", "respuesta": "true"},
+        {"afirmacion": "According to Kenji, shopping is more relaxing than sleeping.", "respuesta": "false"}
+      ]
+    }
+  }
+}

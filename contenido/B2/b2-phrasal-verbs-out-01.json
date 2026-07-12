@@ -1,0 +1,102 @@
+{
+  "id": "b2-phrasal-verbs-out-01",
+  "nivel": "B2",
+  "arquetipo": "vocabulario",
+  "tema": "Phrasal Verbs with OUT",
+  "habilidades": ["vocabulary", "speaking", "listening", "reading"],
+  "vocabulario": [
+    {"bandera": "descubrir", "palabra": "find out", "traduccion": "descubrir / enterarse"},
+    {"bandera": "resolver/entender", "palabra": "work out / figure out", "traduccion": "resolver / entender"},
+    {"bandera": "quedarse sin algo", "palabra": "run out (of)", "traduccion": "quedarse sin (algo)"},
+    {"bandera": "repartir", "palabra": "hand out", "traduccion": "repartir"},
+    {"bandera": "destacar", "palabra": "stand out", "traduccion": "destacar / sobresalir"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Sofía found out about the meeting too late."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Kenji worked out a way to fix the schedule."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "They ran out of coffee this morning."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Ben's designs always stand out."},
+    {"id": "s5", "forma": "negativo", "oracion": "We didn't figure out the problem in time."},
+    {"id": "s6", "forma": "negativo", "oracion": "Sofía didn't hand out the flyers yet."},
+    {"id": "s7", "forma": "negativo", "oracion": "I couldn't work out the answer alone."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Did you find out what happened?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "How did you figure it out?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Have they run out of milk again?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Did Sofía find out in time? Yes, she did."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Did you figure out the problem? Yes, I did."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Have they run out of coffee? Yes, they have."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: I finally **figured out** why my Spanish sounds so formal.",
+        "Sofía: How did you **find** that **out**?",
+        "Kenji: Abuela Carmen pointed it out. I only learned textbook phrases.",
+        "Sofía: Well, you're **working it out** — that's what matters."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I found out the answer, I've known it for years.",
+        "opcion_b": "I found out the answer just now, after searching for hours.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Phrasal verbs with 'out' often describe discovering, solving, running out of something, or standing apart from others.",
+      "tabla": {
+        "titulo": "OUT — discovering, solving, finishing, standing apart",
+        "encabezados": ["Phrasal verb", "Meaning", "Example"],
+        "filas": [
+          ["find out", "discover (a fact)", "I found out the truth"],
+          ["work out / figure out", "solve, understand", "We worked it out together"],
+          ["run out (of)", "have none left", "We ran out of time"],
+          ["hand out", "distribute", "She handed out the papers"],
+          ["stand out", "be noticeably different/better", "His work stands out"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Sofía ___ about the meeting too late.", "opciones": ["found out", "worked out", "handed out"], "respuesta": "found out"},
+        {"tipo": "multiple_choice", "pregunta": "They ___ of coffee this morning.", "opciones": ["ran out", "found out", "stood out"], "respuesta": "ran out"},
+        {"tipo": "multiple_choice", "pregunta": "Ben's designs always ___.", "opciones": ["stand out", "run out", "hand out"], "respuesta": "stand out"},
+        {"tipo": "true_false", "afirmacion": "'Find out' means to already know something for a long time.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'Run out of' means to have none left.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Stand out' means to be noticeably different or better.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "Kenji ___ (work, past) out a way to fix the schedule.", "respuesta": "worked"},
+        {"tipo": "gap_fill", "texto": "We didn't ___ out the problem in time.", "respuesta": "figure"},
+        {"tipo": "gap_fill", "texto": "Sofía didn't ___ out the flyers yet.", "respuesta": "hand"},
+        {"tipo": "unscramble", "palabras": ["Sofía", "found", "out", "about", "the", "meeting", "too", "late"], "respuesta": "Sofía found out about the meeting too late"},
+        {"tipo": "unscramble", "palabras": ["they", "ran", "out", "of", "coffee", "this", "morning"], "respuesta": "they ran out of coffee this morning"},
+        {"tipo": "correct_mistake", "texto_con_error": "I found out the answer, I've known it for years.", "respuesta": "I found out the answer just now, after searching for hours."},
+        {"tipo": "transformation", "oracion_base": "Sofía discovered the truth too late.", "instruccion": "Rewrite using 'find out'.", "respuesta": "Sofía found out the truth too late."},
+        {"tipo": "transformation", "oracion_base": "We solved the problem together.", "instruccion": "Rewrite using 'work out' or 'figure out'.", "respuesta": "We worked out the problem together."},
+        {"tipo": "transformation", "oracion_base": "Did you find out what happened?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, I did."},
+        {"tipo": "write_opposite", "oracion_base": "We ran out of coffee.", "instruccion": "Write a sentence meaning the opposite (we still have plenty).", "respuesta": "We didn't run out of coffee."},
+        {"tipo": "short_answer_production", "pregunta": "Have you ever run out of time during a test? (short answer)", "respuesta": "Yes, I have."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: I finally figured out why my Spanish sounds so formal.",
+        "Sofía: How did you find that out?",
+        "Kenji: Abuela Carmen pointed it out during lunch.",
+        "Sofía: What did she say?",
+        "Kenji: That I only learned textbook phrases. I need to hang out with more people, not just study grammar.",
+        "Sofía: Well, you're working it out. That's what matters."
+      ],
+      "gaps": ["formal", "pointed", "textbook", "working"],
+      "comprension": [
+        {"pregunta": "Who pointed out Kenji's problem?", "opciones": ["Abuela Carmen", "Sofía", "Ben"], "respuesta": "Abuela Carmen"},
+        {"pregunta": "What does Kenji need to do, according to Abuela Carmen?", "opciones": ["Spend more time with people, not just study grammar", "Study more grammar", "Move back to Japan"], "respuesta": "Spend more time with people, not just study grammar"}
+      ]
+    },
+    "reading": {
+      "texto": "It took Kenji almost a year to figure out why his Spanish sounded stiff, even though his grammar was nearly perfect. He found out the answer during a long lunch with Abuela Carmen, who pointed out that he'd learned every rule in the book but never learned how people actually talk. She handed him a list of expressions she used every day — nothing from any textbook. Kenji ran out of paper taking notes. Months later, his Spanish still isn't perfect, but it stands out for a different reason now: it sounds like someone who actually talks to people, not just someone who studied a language.",
+      "preguntas": [
+        {"afirmacion": "Kenji's Spanish grammar was nearly perfect.", "respuesta": "true"},
+        {"afirmacion": "Abuela Carmen gave Kenji a list of textbook phrases.", "respuesta": "false"},
+        {"afirmacion": "Kenji ran out of paper taking notes.", "respuesta": "true"},
+        {"afirmacion": "Kenji's Spanish now sounds like a textbook.", "respuesta": "false"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "a2-going-to-future-01",
+  "nivel": "A2",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Going to — Plans, Decisions & Predictions",
+  "habilidades": ["grammar", "vocabulary", "listening", "reading", "writing"],
+  "vocabulario": [
+    {"bandera": "🌙", "palabra": "tonight", "traduccion": "esta noche"},
+    {"bandera": "☀️", "palabra": "tomorrow", "traduccion": "mañana"},
+    {"bandera": "🌅", "palabra": "tomorrow morning", "traduccion": "mañana por la mañana"},
+    {"bandera": "🎉", "palabra": "this weekend", "traduccion": "este fin de semana"},
+    {"bandera": "📆", "palabra": "on Saturday", "traduccion": "el sábado"},
+    {"bandera": "📅", "palabra": "next week", "traduccion": "la próxima semana"},
+    {"bandera": "🗓️", "palabra": "next month", "traduccion": "el próximo mes"},
+    {"bandera": "🎆", "palabra": "next year", "traduccion": "el próximo año"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "I'm going to study English tonight."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "We're going on a date on the weekend."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Sofía is going to travel to Cartagena next month."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Look at those clouds — it's going to rain."},
+    {"id": "s5", "forma": "afirmativo", "oracion": "He's going to score! The goalkeeper is on the floor!"},
+    {"id": "s6", "forma": "negativo", "oracion": "I'm not going to watch the game tonight."},
+    {"id": "s7", "forma": "negativo", "oracion": "Ben isn't going to forget the umbrella this time."},
+    {"id": "s8", "forma": "negativo", "oracion": "We aren't going to cook; we're going to order pizza."},
+    {"id": "s9", "forma": "interrogativo", "oracion": "What are you going to do this weekend?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Is it going to rain tomorrow?"},
+    {"id": "s11", "forma": "interrogativo", "oracion": "Who is going to win the match?"},
+    {"id": "s12", "forma": "interrogativo", "oracion": "Are you going to study tonight?"},
+    {"id": "s13", "forma": "short_answer", "oracion": "Are you going to travel next year? Yes, I am."},
+    {"id": "s14", "forma": "short_answer", "oracion": "Is it going to rain? Yes, it is."},
+    {"id": "s15", "forma": "short_answer", "oracion": "Is Ben going to remember the umbrella? No, he isn't."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: I have plans! **I'm going to** redesign my studio **this weekend**.",
+        "Ben: **We're going on a date** on Saturday... I mean, **I'm going to** ask her first.",
+        "Kenji: Look at those clouds. **It's going to rain** on your date, Ben.",
+        "Abuela Carmen: And Ben **is going to** forget his umbrella. That's not a prediction — that's experience."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I going to study tonight.",
+        "opcion_b": "I'm going to study tonight.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "We use 'going to' for plans and decisions already made, and for predictions when you can see the evidence — dark clouds, a losing team.",
+      "tabla": {
+        "titulo": "be + going to + verb",
+        "encabezados": ["Form", "Structure", "Example"],
+        "filas": [
+          ["Affirmative", "am / is / are + going to + verb", "I'm going to study tonight"],
+          ["Negative", "am / is / are + not + going to + verb", "We aren't going to cook"],
+          ["Question", "Am / Is / Are + subject + going to...?", "Are you going to travel next year?"],
+          ["Short answer", "Yes, I am. / No, she isn't.", "Is it going to rain? Yes, it is."],
+          ["Prediction with evidence", "you can SEE it coming", "Look at those clouds — it's going to rain!"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "I ___ going to study tonight.", "opciones": ["am", "is", "are"], "respuesta": "am"},
+        {"tipo": "multiple_choice", "pregunta": "Look at those clouds! It ___ rain.", "opciones": ["is going to", "go to", "going to"], "respuesta": "is going to"},
+        {"tipo": "multiple_choice", "pregunta": "We're going ___ a date on the weekend.", "opciones": ["on", "to", "at"], "respuesta": "on"},
+        {"tipo": "true_false", "afirmacion": "We use 'going to' for plans and decisions we already made.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'I going to study' is correct — the verb 'be' is not necessary.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Sofía ___ (be) going to travel to Cartagena next month.", "respuesta": "is"},
+        {"tipo": "gap_fill", "texto": "We ___ (not / be) going to cook tonight; we're going to order pizza.", "respuesta": "aren't"},
+        {"tipo": "gap_fill", "texto": "What ___ you going to do this weekend?", "respuesta": "are"},
+        {"tipo": "unscramble", "palabras": ["I'm", "going", "to", "study", "English", "tonight"], "respuesta": "I'm going to study English tonight"},
+        {"tipo": "unscramble", "palabras": ["is", "it", "going", "to", "rain", "tomorrow"], "respuesta": "Is it going to rain tomorrow"},
+        {"tipo": "correct_mistake", "texto_con_error": "I going to study tonight.", "respuesta": "I'm going to study tonight."},
+        {"tipo": "correct_mistake", "texto_con_error": "She is going to studies medicine.", "respuesta": "She is going to study medicine."},
+        {"tipo": "correct_mistake", "texto_con_error": "Are you going to coming to the party?", "respuesta": "Are you going to come to the party?"},
+        {"tipo": "transformation", "oracion_base": "Ben is going to forget the umbrella.", "instruccion": "Write the negative form.", "respuesta": "Ben isn't going to forget the umbrella."},
+        {"tipo": "transformation", "oracion_base": "They are going to win the match.", "instruccion": "Write the yes/no question.", "respuesta": "Are they going to win the match?"},
+        {"tipo": "transformation", "oracion_base": "Is it going to rain tomorrow?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, it is."},
+        {"tipo": "write_opposite", "oracion_base": "I'm going to watch the game tonight.", "instruccion": "Write the negative form.", "respuesta": "I'm not going to watch the game tonight."},
+        {"tipo": "write_opposite", "oracion_base": "We aren't going to travel next year.", "instruccion": "Write the affirmative form.", "respuesta": "We are going to travel next year."},
+        {"tipo": "short_answer_production", "pregunta": "Are you going to study English tonight? (short answer)", "respuesta": "Yes, I am."},
+        {"tipo": "short_answer_production", "pregunta": "Is your team going to win this weekend? (short answer, No)", "respuesta": "No, it isn't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: What are you going to do this weekend?",
+        "Ben: I'm going on a date on Saturday. We're going to have a picnic in the park.",
+        "Kenji: A picnic? Look at the sky, Ben. It's going to rain!",
+        "Ben: No, no. The app says it's going to be sunny.",
+        "Abuela Carmen: Ben, my knee hurts. That means it's going to rain. Take an umbrella.",
+        "Ben: OK, OK... I'm going to take the umbrella!"
+      ],
+      "gaps": ["date", "picnic", "rain", "umbrella"],
+      "comprension": [
+        {"pregunta": "What is Ben going to do on Saturday?", "opciones": ["Have a picnic", "Watch a match", "Study English"], "respuesta": "Have a picnic"},
+        {"pregunta": "Why does Abuela Carmen think it's going to rain?", "opciones": ["Her knee hurts", "The app says it", "She saw the news"], "respuesta": "Her knee hurts"}
+      ]
+    },
+    "reading": {
+      "texto": "Sofía loves plans. Every Sunday night, she writes her list for the week. This week is special: 'On Monday, I'm going to present my new design to a client from Bogotá. On Wednesday, Kenji and I are going to visit a photography exhibition. On Friday, I'm not going to work late — I'm going to have dinner with Abuela Carmen. And on Saturday... Ben and his date are going to need help, so we're all going to wait near the park. Just in case.' At the bottom of the list, there is one more line: 'Prediction: Ben is going to be fine. Probably.'",
+      "preguntas": [
+        {"afirmacion": "Sofía is going to present a design on Monday.", "respuesta": "true"},
+        {"afirmacion": "She is going to work late on Friday.", "respuesta": "false"},
+        {"afirmacion": "Kenji and Sofía are going to visit a science museum.", "respuesta": "false"},
+        {"afirmacion": "Sofía predicts that Ben is going to be fine.", "respuesta": "true"}
+      ]
+    }
+  }
+}

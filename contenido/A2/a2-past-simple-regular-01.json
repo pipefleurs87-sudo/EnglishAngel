@@ -1,0 +1,114 @@
+{
+  "id": "a2-past-simple-regular-01",
+  "nivel": "A2",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Past Simple — Regular Verbs (-ed) & Time Expressions",
+  "habilidades": ["grammar", "vocabulary", "listening", "reading", "writing", "speaking"],
+  "vocabulario": [
+    {"bandera": "/t/", "palabra": "worked", "traduccion": "trabajó"},
+    {"bandera": "/t/", "palabra": "watched", "traduccion": "vio / miró"},
+    {"bandera": "/t/", "palabra": "danced", "traduccion": "bailó"},
+    {"bandera": "/t/", "palabra": "finished", "traduccion": "terminó"},
+    {"bandera": "/d/", "palabra": "played", "traduccion": "jugó / tocó"},
+    {"bandera": "/d/", "palabra": "lived", "traduccion": "vivió"},
+    {"bandera": "/d/", "palabra": "enjoyed", "traduccion": "disfrutó"},
+    {"bandera": "/d/", "palabra": "studied", "traduccion": "estudió"},
+    {"bandera": "/ɪd/", "palabra": "visited", "traduccion": "visitó"},
+    {"bandera": "/ɪd/", "palabra": "wanted", "traduccion": "quiso"},
+    {"bandera": "/ɪd/", "palabra": "needed", "traduccion": "necesitó"},
+    {"bandera": "/ɪd/", "palabra": "decided", "traduccion": "decidió"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "I watched a movie last night."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Sofía finished a big design project a week ago."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Kenji visited the Gold Museum two days ago."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Abuela Carmen danced all night on her last birthday."},
+    {"id": "s5", "forma": "afirmativo", "oracion": "Ben worked as a tour guide in Cartagena last winter."},
+    {"id": "s6", "forma": "negativo", "oracion": "I didn't work last Sunday. I stayed at home."},
+    {"id": "s7", "forma": "negativo", "oracion": "Sofía didn't travel last winter. She stayed in Medellín."},
+    {"id": "s8", "forma": "negativo", "oracion": "They didn't watch the game yesterday."},
+    {"id": "s9", "forma": "negativo", "oracion": "Kenji didn't study last night; he was very tired."},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Did you watch the game last night?"},
+    {"id": "s11", "forma": "interrogativo", "oracion": "Where did you travel last winter?"},
+    {"id": "s12", "forma": "interrogativo", "oracion": "How did you celebrate your last birthday?"},
+    {"id": "s13", "forma": "interrogativo", "oracion": "Did Kenji visit the museum two days ago?"},
+    {"id": "s14", "forma": "short_answer", "oracion": "Did you enjoy the party? Yes, I did."},
+    {"id": "s15", "forma": "short_answer", "oracion": "Did Ben travel last Christmas? No, he didn't."},
+    {"id": "s16", "forma": "short_answer", "oracion": "Did they play football yesterday? Yes, they did."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: I visited the Gold Museum **two days ago**. It was amazing!",
+        "Sofía: **A week ago** I finished a big project. I celebrated with my family.",
+        "Ben: **Last Christmas** I stayed in a tiny hostel in Cartagena... I missed my family a lot.",
+        "Abuela Carmen: On **my last birthday** I danced all night. And **last winter** I traveled to the coast!"
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I visit my grandma last week.",
+        "opcion_b": "I visited my grandma last week.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "We use the past simple with -ed verbs to report finished actions at a specific past time — usually with a time expression like last night or two days ago.",
+      "tabla": {
+        "titulo": "-ed pronunciation: /t/ · /d/ · /ɪd/",
+        "encabezados": ["Sound", "When", "Examples"],
+        "filas": [
+          ["/t/", "after soft (voiceless) sounds: p, k, s, sh, ch, f", "worked, watched, finished, danced"],
+          ["/d/", "after vowels and voiced sounds", "played, lived, enjoyed, studied"],
+          ["/ɪd/", "after t and d — adds an extra syllable", "visited, wanted, needed, decided"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "I ___ a movie last night.", "opciones": ["watched", "watch", "watches"], "respuesta": "watched"},
+        {"tipo": "multiple_choice", "pregunta": "How do you pronounce the -ed in 'wanted'?", "opciones": ["/t/", "/d/", "/ɪd/"], "respuesta": "/ɪd/"},
+        {"tipo": "multiple_choice", "pregunta": "Kenji visited the museum ___.", "opciones": ["two days ago", "tomorrow", "next week"], "respuesta": "two days ago"},
+        {"tipo": "true_false", "afirmacion": "The -ed in 'played' sounds /ɪd/, with an extra syllable.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "Time expressions like 'last night' and 'a week ago' usually go with the past simple.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "Sofía ___ (finish) her project a week ago.", "respuesta": "finished"},
+        {"tipo": "gap_fill", "texto": "We ___ (dance) all night at the party last Christmas.", "respuesta": "danced"},
+        {"tipo": "gap_fill", "texto": "They ___ (not / watch) the game yesterday.", "respuesta": "didn't watch"},
+        {"tipo": "unscramble", "palabras": ["I", "visited", "my", "grandma", "last", "week"], "respuesta": "I visited my grandma last week"},
+        {"tipo": "unscramble", "palabras": ["did", "you", "enjoy", "the", "party", "last", "night"], "respuesta": "Did you enjoy the party last night"},
+        {"tipo": "correct_mistake", "texto_con_error": "I visit my grandma last week.", "respuesta": "I visited my grandma last week."},
+        {"tipo": "correct_mistake", "texto_con_error": "Ben didn't stayed at the hotel.", "respuesta": "Ben didn't stay at the hotel."},
+        {"tipo": "correct_mistake", "texto_con_error": "Did you watched the movie last night?", "respuesta": "Did you watch the movie last night?"},
+        {"tipo": "transformation", "oracion_base": "Sofía finished her project.", "instruccion": "Write the negative form.", "respuesta": "Sofía didn't finish her project."},
+        {"tipo": "transformation", "oracion_base": "They played football yesterday.", "instruccion": "Write the yes/no question.", "respuesta": "Did they play football yesterday?"},
+        {"tipo": "transformation", "oracion_base": "Did Kenji visit the museum two days ago?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, he did."},
+        {"tipo": "write_opposite", "oracion_base": "I worked last Sunday.", "instruccion": "Write the negative form.", "respuesta": "I didn't work last Sunday."},
+        {"tipo": "write_opposite", "oracion_base": "Abuela Carmen didn't travel last winter.", "instruccion": "Write the affirmative form.", "respuesta": "Abuela Carmen traveled last winter."},
+        {"tipo": "short_answer_production", "pregunta": "Did you study English last night? (short answer)", "respuesta": "Yes, I did."},
+        {"tipo": "short_answer_production", "pregunta": "Did your friends visit you last weekend? (short answer)", "respuesta": "No, they didn't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: Kenji, what did you do last weekend?",
+        "Kenji: I visited a coffee farm near Medellín. I loved it!",
+        "Sofía: Did you try the coffee?",
+        "Kenji: Yes, I did! I talked with the farmers and watched the whole process.",
+        "Sofía: I stayed at home. I cleaned my apartment and watched a movie.",
+        "Kenji: Did you enjoy it?",
+        "Sofía: Yes, I did. Sometimes a quiet weekend is perfect."
+      ],
+      "gaps": ["visited", "talked", "cleaned", "enjoy"],
+      "comprension": [
+        {"pregunta": "Where did Kenji go last weekend?", "opciones": ["a coffee farm", "the beach", "a museum"], "respuesta": "a coffee farm"},
+        {"pregunta": "What did Sofía do last weekend?", "opciones": ["She traveled to the coast", "She stayed at home", "She visited the farm"], "respuesta": "She stayed at home"}
+      ]
+    },
+    "reading": {
+      "texto": "Last Christmas, Ben stayed in Cartagena. He rented a small room in the old city and worked as a tour guide for two weeks. Every morning, he talked with tourists from many countries. Two days ago, he called his family in England: 'I missed you last Christmas,' he said, 'but I really enjoyed my time here. The people treated me like family.' Last night, Sofía and Kenji organized a small party for him, and they danced until midnight.",
+      "preguntas": [
+        {"afirmacion": "Ben stayed in Cartagena last Christmas.", "respuesta": "true"},
+        {"afirmacion": "Ben worked as a taxi driver.", "respuesta": "false"},
+        {"afirmacion": "Ben called his family two days ago.", "respuesta": "true"},
+        {"afirmacion": "The party finished early in the evening.", "respuesta": "false"}
+      ]
+    }
+  }
+}

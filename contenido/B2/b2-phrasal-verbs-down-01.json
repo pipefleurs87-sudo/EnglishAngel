@@ -1,0 +1,103 @@
+{
+  "id": "b2-phrasal-verbs-down-01",
+  "nivel": "B2",
+  "arquetipo": "vocabulario",
+  "tema": "Phrasal Verbs with DOWN",
+  "habilidades": ["vocabulary", "speaking", "listening", "reading"],
+  "vocabulario": [
+    {"bandera": "relajarse", "palabra": "calm down", "traduccion": "calmarse"},
+    {"bandera": "decepcionar", "palabra": "let down", "traduccion": "decepcionar / fallarle a alguien"},
+    {"bandera": "averiarse / venirse abajo", "palabra": "break down", "traduccion": "averiarse (máquina) / venirse abajo"},
+    {"bandera": "rechazar una oferta", "palabra": "turn down", "traduccion": "rechazar (una oferta)"},
+    {"bandera": "anotar", "palabra": "write down", "traduccion": "anotar"},
+    {"bandera": "ir más despacio", "palabra": "slow down", "traduccion": "ir más despacio"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Sofía turned down the first offer she received."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Ben's car broke down on the way to the coast."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Kenji always writes down new phrasal verbs."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "You should slow down before the curve."},
+    {"id": "s5", "forma": "negativo", "oracion": "Sofía didn't let her client down; she finished on time."},
+    {"id": "s6", "forma": "negativo", "oracion": "Ben doesn't calm down easily when he loses something."},
+    {"id": "s7", "forma": "negativo", "oracion": "I didn't write down the address."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Did the car break down again?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Why did she turn down such a good offer?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Can you calm down for a second?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Did Ben let the team down? No, he didn't."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Did the car break down? Yes, it did."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Did Sofía turn down the offer? Yes, she did."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Ben: The car **broke down** again. Third time this month.",
+        "Sofía: **Calm down**, we'll figure it out.",
+        "Ben: I am calm! I just need to **write down** the mechanic's number.",
+        "Kenji: Maybe you should **turn down** every trip that involves a car from now on."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "She turned down the job offer because it went underground.",
+        "opcion_b": "She turned down the job offer because the salary was too low.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Phrasal verbs with 'down' often describe reducing, refusing, breaking, or recording something — not literally moving downward.",
+      "tabla": {
+        "titulo": "DOWN — reducing, refusing, breaking, recording",
+        "encabezados": ["Phrasal verb", "Meaning", "Example"],
+        "filas": [
+          ["calm down", "become less angry/upset", "Calm down, it's okay"],
+          ["let down", "disappoint", "Don't let me down"],
+          ["break down", "stop working (machine) / lose emotional control", "The car broke down"],
+          ["turn down", "refuse an offer", "She turned down the job"],
+          ["write down", "note something on paper", "Write down the address"],
+          ["slow down", "reduce speed", "Slow down, it's icy"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Sofía ___ the first offer she received.", "opciones": ["turned down", "wrote down", "calmed down"], "respuesta": "turned down"},
+        {"tipo": "multiple_choice", "pregunta": "Ben's car ___ on the way to the coast.", "opciones": ["broke down", "let down", "slowed down"], "respuesta": "broke down"},
+        {"tipo": "multiple_choice", "pregunta": "Kenji always ___ new phrasal verbs.", "opciones": ["writes down", "turns down", "breaks down"], "respuesta": "writes down"},
+        {"tipo": "true_false", "afirmacion": "'Turn down' means to accept an offer.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'Break down' can describe a machine that stops working.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Calm down' means to become more upset.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "You should ___ down before the curve.", "respuesta": "slow"},
+        {"tipo": "gap_fill", "texto": "Sofía didn't let her client ___.", "respuesta": "down"},
+        {"tipo": "gap_fill", "texto": "I didn't ___ down the address.", "respuesta": "write"},
+        {"tipo": "unscramble", "palabras": ["Ben's", "car", "broke", "down", "again"], "respuesta": "Ben's car broke down again"},
+        {"tipo": "unscramble", "palabras": ["Sofía", "turned", "down", "the", "first", "offer"], "respuesta": "Sofía turned down the first offer"},
+        {"tipo": "correct_mistake", "texto_con_error": "She turned up the job offer because the salary was too low.", "respuesta": "She turned down the job offer because the salary was too low."},
+        {"tipo": "transformation", "oracion_base": "Sofía refused the first offer.", "instruccion": "Rewrite using 'turn down'.", "respuesta": "Sofía turned down the first offer."},
+        {"tipo": "transformation", "oracion_base": "The car stopped working on the way to the coast.", "instruccion": "Rewrite using 'break down'.", "respuesta": "The car broke down on the way to the coast."},
+        {"tipo": "transformation", "oracion_base": "Did the car break down again?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, it did."},
+        {"tipo": "write_opposite", "oracion_base": "Sofía let her client down.", "instruccion": "Write the negative form.", "respuesta": "Sofía didn't let her client down."},
+        {"tipo": "short_answer_production", "pregunta": "Have you ever turned down a job offer? (short answer)", "respuesta": "No, I haven't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Ben: The car broke down right before the bridge.",
+        "Sofía: Calm down, we'll call someone.",
+        "Ben: I am calm. I already wrote down the mechanic's number.",
+        "Kenji: Maybe it's time to turn down every plan involving your car.",
+        "Ben: Harsh, but maybe fair."
+      ],
+      "gaps": ["broke", "calm", "wrote", "turn"],
+      "comprension": [
+        {"pregunta": "Where did the car break down?", "opciones": ["Right before the bridge", "At the beach", "In front of Sofía's studio"], "respuesta": "Right before the bridge"},
+        {"pregunta": "What did Ben already do?", "opciones": ["Wrote down the mechanic's number", "Called a taxi", "Fixed the car himself"], "respuesta": "Wrote down the mechanic's number"}
+      ]
+    },
+    "reading": {
+      "texto": "Ben's car has broken down four times this year, and each time follows the same pattern: he calls Sofía, she tells him to calm down, and he insists he already is. Last month he finally wrote down every mechanic's number he's ever used, just in case. Kenji has suggested, more than once, that Ben turn down any trip that requires driving more than twenty minutes. Ben always refuses — not because he loves the car, but because he refuses to let his own bad luck slow him down completely.",
+      "preguntas": [
+        {"afirmacion": "Ben's car has broken down four times this year.", "respuesta": "true"},
+        {"afirmacion": "Ben always admits he isn't calm.", "respuesta": "false"},
+        {"afirmacion": "Kenji has suggested Ben avoid long drives.", "respuesta": "true"},
+        {"afirmacion": "Ben has decided to stop driving completely.", "respuesta": "false"}
+      ]
+    }
+  }
+}

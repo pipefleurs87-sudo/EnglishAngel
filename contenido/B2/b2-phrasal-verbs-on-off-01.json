@@ -1,0 +1,102 @@
+{
+  "id": "b2-phrasal-verbs-on-off-01",
+  "nivel": "B2",
+  "arquetipo": "vocabulario",
+  "tema": "Phrasal Verbs with ON vs OFF",
+  "habilidades": ["vocabulary", "speaking", "listening", "reading"],
+  "vocabulario": [
+    {"bandera": "encender", "palabra": "turn on", "traduccion": "encender"},
+    {"bandera": "apagar", "palabra": "turn off", "traduccion": "apagar"},
+    {"bandera": "continuar", "palabra": "carry on / go on", "traduccion": "continuar"},
+    {"bandera": "cancelar", "palabra": "call off", "traduccion": "cancelar"},
+    {"bandera": "depender/contar con", "palabra": "depend on / count on", "traduccion": "depender de / contar con"},
+    {"bandera": "posponer", "palabra": "put off", "traduccion": "posponer"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Sofía turned on the lights before anyone arrived."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Ben turned off his phone to focus, for once."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "They decided to carry on with the project despite the delay."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "You can always count on Abuela Carmen for good advice."},
+    {"id": "s5", "forma": "negativo", "oracion": "They didn't call off the meeting, just postponed it."},
+    {"id": "s6", "forma": "negativo", "oracion": "Sofía doesn't put off important decisions."},
+    {"id": "s7", "forma": "negativo", "oracion": "Ben didn't turn off his phone in time — it rang during the meeting."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Did you turn off the lights before leaving?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Why did they call off the event?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Can I count on you tomorrow?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Did they call off the trip? Yes, they did."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Can Ben count on Sofía? Yes, he can."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Did you put off the meeting? No, we didn't."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: Did you **turn off** the stove before we left?",
+        "Ben: I think so. Or maybe I **turned it on**. It's hard to remember.",
+        "Kenji: We should probably go back and check, then.",
+        "Sofía: We can't keep **putting off** important checks like this, Ben."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "Please close the lights when you leave.",
+        "opcion_b": "Please turn off the lights when you leave.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "'On' and 'off' are opposites in phrasal verbs too — turning something on/off, calling a plan on/off, or depending on someone all use this same pair of particles.",
+      "tabla": {
+        "titulo": "ON vs OFF — clear opposites",
+        "encabezados": ["ON", "OFF", "Meaning"],
+        "filas": [
+          ["turn on", "turn off", "activate / deactivate a device"],
+          ["carry on / go on", "—", "continue (no direct OFF opposite)"],
+          ["depend on / count on", "—", "rely on someone"],
+          ["—", "call off", "cancel a plan"],
+          ["—", "put off", "postpone"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Sofía ___ the lights before anyone arrived.", "opciones": ["turned on", "turned off", "called off"], "respuesta": "turned on"},
+        {"tipo": "multiple_choice", "pregunta": "They didn't ___ the meeting, just postponed it.", "opciones": ["call off", "turn on", "carry on"], "respuesta": "call off"},
+        {"tipo": "multiple_choice", "pregunta": "You can always ___ Abuela Carmen for good advice.", "opciones": ["count on", "turn off", "call off"], "respuesta": "count on"},
+        {"tipo": "true_false", "afirmacion": "'Turn off the lights' is more natural in English than 'close the lights'.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Call off' means to continue with a plan.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'Put off' means to postpone something.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "Ben ___ (turn, past) off his phone to focus.", "respuesta": "turned"},
+        {"tipo": "gap_fill", "texto": "They decided to ___ on with the project.", "respuesta": "carry"},
+        {"tipo": "gap_fill", "texto": "Can I ___ on you tomorrow?", "respuesta": "count"},
+        {"tipo": "unscramble", "palabras": ["please", "turn", "off", "the", "lights", "when", "you", "leave"], "respuesta": "please turn off the lights when you leave"},
+        {"tipo": "unscramble", "palabras": ["they", "didn't", "call", "off", "the", "meeting"], "respuesta": "they didn't call off the meeting"},
+        {"tipo": "correct_mistake", "texto_con_error": "Please close the lights when you leave.", "respuesta": "Please turn off the lights when you leave."},
+        {"tipo": "transformation", "oracion_base": "Sofía activated the lights.", "instruccion": "Rewrite using 'turn on'.", "respuesta": "Sofía turned on the lights."},
+        {"tipo": "transformation", "oracion_base": "They cancelled the event.", "instruccion": "Rewrite using 'call off'.", "respuesta": "They called off the event."},
+        {"tipo": "transformation", "oracion_base": "Can I count on you tomorrow?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, you can."},
+        {"tipo": "write_opposite", "oracion_base": "Ben turned on his phone.", "instruccion": "Write the opposite action.", "respuesta": "Ben turned off his phone."},
+        {"tipo": "short_answer_production", "pregunta": "Do you always turn off your phone at night? (short answer)", "respuesta": "No, I don't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: Did you turn off the stove before we left?",
+        "Ben: I think so. Or maybe I turned it on.",
+        "Kenji: We should go back and check.",
+        "Sofía: We can't keep putting off important checks like this.",
+        "Ben: Fine, let's go back. We can always count on my memory being terrible."
+      ],
+      "gaps": ["stove", "check", "off", "memory"],
+      "comprension": [
+        {"pregunta": "What is Ben not sure about?", "opciones": ["Whether he turned off the stove", "Whether he locked the door", "Whether he brought his keys"], "respuesta": "Whether he turned off the stove"},
+        {"pregunta": "What does Sofía say they can't keep doing?", "opciones": ["Putting off important checks", "Turning off the lights", "Calling off plans"], "respuesta": "Putting off important checks"}
+      ]
+    },
+    "reading": {
+      "texto": "Every trip with Ben includes at least one moment of doubt: did he turn off the stove, the iron, the lights? Sofía has learned to count on this happening and always double-checks before they leave. Once, they had to call off an entire dinner reservation just to drive back and confirm the stove really was off (it was). Kenji finds the whole ritual entertaining — in Japan, he says, nobody would dream of putting off a safety check the way Ben does. But somehow, nothing has ever actually gone wrong, and Sofía suspects that's exactly why Ben keeps carrying on the same way.",
+      "preguntas": [
+        {"afirmacion": "Sofía always double-checks before they leave.", "respuesta": "true"},
+        {"afirmacion": "They once called off a dinner reservation to check the stove.", "respuesta": "true"},
+        {"afirmacion": "The stove was actually left on that time.", "respuesta": "false"},
+        {"afirmacion": "Kenji finds Ben's habit completely normal in Japan.", "respuesta": "false"}
+      ]
+    }
+  }
+}

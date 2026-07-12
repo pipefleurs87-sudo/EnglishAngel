@@ -1,0 +1,105 @@
+{
+  "id": "b2-phrasal-verbs-get-01",
+  "nivel": "B2",
+  "arquetipo": "vocabulario",
+  "tema": "Phrasal Verbs — GET: One Verb, Many Meanings",
+  "habilidades": ["vocabulary", "speaking", "listening", "reading"],
+  "vocabulario": [
+    {"bandera": "levantarse", "palabra": "get up", "traduccion": "levantarse (de la cama)"},
+    {"bandera": "librarse sin consecuencias", "palabra": "get away with", "traduccion": "salirse con la suya"},
+    {"bandera": "llevarse bien / progresar", "palabra": "get on (with)", "traduccion": "llevarse bien / progresar"},
+    {"bandera": "superar algo difícil", "palabra": "get over", "traduccion": "superar (algo difícil)"},
+    {"bandera": "terminar/sobrevivir algo", "palabra": "get through", "traduccion": "terminar / lograr pasar por algo"},
+    {"bandera": "arreglárselas con poco", "palabra": "get by", "traduccion": "arreglárselas (con poco)"},
+    {"bandera": "entender", "palabra": "get it", "traduccion": "entenderlo"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Ben gets up at noon whenever he can."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Sofía and Kenji get on really well."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "It took Ben weeks to get over losing his phone."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "We got through the whole exam in an hour."},
+    {"id": "s5", "forma": "negativo", "oracion": "Ben didn't get away with forgetting the meeting again."},
+    {"id": "s6", "forma": "negativo", "oracion": "Kenji doesn't get by on his Spanish alone; he still needs English."},
+    {"id": "s7", "forma": "negativo", "oracion": "I don't get it — can you explain again?"},
+    {"id": "s8", "forma": "interrogativo", "oracion": "What time do you usually get up?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "How do you get on with your new neighbors?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Did Ben ever get over losing that first phone?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Do you get on well with Kenji? Yes, I do."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Did you get through the exam? Yes, I did."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Do you get it now? Yes, I do."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: Ben, how did you **get away with** missing the meeting again?",
+        "Ben: I didn't, actually — Sofía **got on** my case about it all day.",
+        "Sofía: Someone has to. He needs to **get over** the idea that deadlines are optional.",
+        "Ben: I'm **getting there**. Slowly."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I need to get over to the new phone.",
+        "opcion_b": "I need to get over losing my phone.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "'Get' changes meaning completely depending on the word that follows it — the particle is not decoration, it's the meaning.",
+      "tabla": {
+        "titulo": "GET + particle = a whole new verb",
+        "encabezados": ["Phrasal verb", "Meaning", "Example"],
+        "filas": [
+          ["get up", "leave bed", "I get up at 7"],
+          ["get away with", "do something wrong with no punishment", "He got away with it"],
+          ["get on (with)", "have a good relationship / progress", "We get on really well"],
+          ["get over", "recover from something difficult", "She got over the loss"],
+          ["get through", "finish or survive something hard", "We got through the exam"],
+          ["get by", "manage with little", "I get by on a small salary"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Ben ___ at noon whenever he can.", "opciones": ["gets up", "gets over", "gets by"], "respuesta": "gets up"},
+        {"tipo": "multiple_choice", "pregunta": "It took Ben weeks to ___ losing his phone.", "opciones": ["get over", "get up", "get on"], "respuesta": "get over"},
+        {"tipo": "multiple_choice", "pregunta": "Sofía and Kenji ___ really well.", "opciones": ["get on", "get by", "get away"], "respuesta": "get on"},
+        {"tipo": "true_false", "afirmacion": "'Get over' means to recover from something difficult.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Get away with' means to do something wrong and be punished for it.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'Get by' means to manage with very little.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "I don't ___ it, can you explain again?", "respuesta": "get"},
+        {"tipo": "gap_fill", "texto": "We ___ (get, past) through the whole exam in an hour.", "respuesta": "got"},
+        {"tipo": "gap_fill", "texto": "Kenji doesn't ___ by on his Spanish alone.", "respuesta": "get"},
+        {"tipo": "unscramble", "palabras": ["Ben", "gets", "up", "at", "noon"], "respuesta": "Ben gets up at noon"},
+        {"tipo": "unscramble", "palabras": ["we", "got", "through", "the", "exam", "in", "an", "hour"], "respuesta": "we got through the exam in an hour"},
+        {"tipo": "correct_mistake", "texto_con_error": "Ben didn't get away for forgetting the meeting.", "respuesta": "Ben didn't get away with forgetting the meeting."},
+        {"tipo": "transformation", "oracion_base": "I want to leave bed early tomorrow.", "instruccion": "Rewrite using 'get up'.", "respuesta": "I want to get up early tomorrow."},
+        {"tipo": "transformation", "oracion_base": "Ben recovered from losing his phone eventually.", "instruccion": "Rewrite using 'get over'.", "respuesta": "Ben got over losing his phone eventually."},
+        {"tipo": "transformation", "oracion_base": "Do you get on well with Kenji?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, I do."},
+        {"tipo": "write_opposite", "oracion_base": "I get it now.", "instruccion": "Write the negative form.", "respuesta": "I don't get it now."},
+        {"tipo": "short_answer_production", "pregunta": "Did you get through the exam? (short answer, Yes)", "respuesta": "Yes, I did."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: How do you get by without a working phone, Ben?",
+        "Ben: Honestly, I don't know. I just get on with things.",
+        "Sofía: He's still not over losing it, though.",
+        "Ben: I am getting over it! Slowly.",
+        "Kenji: You said that last time too.",
+        "Ben: And I'll get through this one too. I always do."
+      ],
+      "gaps": ["by", "phone", "over", "through"],
+      "comprension": [
+        {"pregunta": "How does Ben say he's managing without his phone?", "opciones": ["He just gets on with things", "He bought a new one immediately", "He borrowed Kenji's"], "respuesta": "He just gets on with things"},
+        {"pregunta": "Is Ben fully over losing his phone, according to Sofía?", "opciones": ["No, not yet", "Yes, completely", "She doesn't know"], "respuesta": "No, not yet"}
+      ]
+    },
+    "reading": {
+      "texto": "Ben has a theory about phrasal verbs with 'get': they follow him around like his phone problems. He gets up late most days, gets by without much money, and somehow always gets away with being late to things that actually matter. When Sofía teases him about losing another phone, he insists he's getting over it — even though this is the fourth time this year. Kenji, ever the optimist, says Ben will eventually get through this phase and become more careful. Sofía isn't so sure. 'Some people never really get it,' she says. 'And I think Ben might be one of them.'",
+      "preguntas": [
+        {"afirmacion": "Ben gets up early every day.", "respuesta": "false"},
+        {"afirmacion": "Ben says he is getting over losing his phone.", "respuesta": "true"},
+        {"afirmacion": "This is the first time Ben has lost a phone this year.", "respuesta": "false"},
+        {"afirmacion": "Sofía is confident Ben will change.", "respuesta": "false"}
+      ]
+    }
+  }
+}

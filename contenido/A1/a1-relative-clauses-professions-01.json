@@ -1,0 +1,308 @@
+{
+  "id": "a1-relative-clauses-professions-01",
+  "nivel": "A1",
+  "arquetipo": "clausulas_relativas",
+  "tema": "Relative Clauses — Defining People (a person who...)",
+  "habilidades": [
+    "grammar",
+    "vocabulary",
+    "listening",
+    "reading",
+    "writing"
+  ],
+  "vocabulario": [
+    {
+      "palabra": "Actor",
+      "traduccion": "acts in films"
+    },
+    {
+      "palabra": "Baker",
+      "traduccion": "makes bread"
+    },
+    {
+      "palabra": "Carpenter",
+      "traduccion": "works with wood"
+    },
+    {
+      "palabra": "Doctor",
+      "traduccion": "helps sick people"
+    },
+    {
+      "palabra": "Electrician",
+      "traduccion": "fixes electric things"
+    },
+    {
+      "palabra": "Farmer",
+      "traduccion": "grows food"
+    },
+    {
+      "palabra": "Gardener",
+      "traduccion": "takes care of plants"
+    },
+    {
+      "palabra": "Hairdresser",
+      "traduccion": "cuts hair"
+    },
+    {
+      "palabra": "Interpreter",
+      "traduccion": "translates languages"
+    },
+    {
+      "palabra": "Journalist",
+      "traduccion": "writes the news"
+    },
+    {
+      "palabra": "Kindergarten teacher",
+      "traduccion": "teaches young children"
+    },
+    {
+      "palabra": "Lawyer",
+      "traduccion": "defends people in court"
+    },
+    {
+      "palabra": "Mechanic",
+      "traduccion": "fixes cars"
+    },
+    {
+      "palabra": "Nurse",
+      "traduccion": "takes care of patients"
+    },
+    {
+      "palabra": "Optician",
+      "traduccion": "tests your eyes"
+    },
+    {
+      "palabra": "Pilot",
+      "traduccion": "flies planes"
+    },
+    {
+      "palabra": "Queen",
+      "traduccion": "rules a country"
+    },
+    {
+      "palabra": "Receptionist",
+      "traduccion": "welcomes guests"
+    },
+    {
+      "palabra": "Singer",
+      "traduccion": "sings songs"
+    },
+    {
+      "palabra": "Teacher",
+      "traduccion": "teaches students"
+    },
+    {
+      "palabra": "Usher",
+      "traduccion": "shows people their seats"
+    },
+    {
+      "palabra": "Vet",
+      "traduccion": "takes care of animals"
+    },
+    {
+      "palabra": "Waiter",
+      "traduccion": "serves food in a restaurant"
+    },
+    {
+      "palabra": "X-ray technician",
+      "traduccion": "takes x-rays"
+    },
+    {
+      "palabra": "Yoga teacher",
+      "traduccion": "teaches yoga"
+    },
+    {
+      "palabra": "Zookeeper",
+      "traduccion": "looks after zoo animals"
+    }
+  ],
+  "banco_oraciones": [
+    {
+      "id": "s1",
+      "forma": "afirmativo",
+      "oracion": "A carpenter is a person who works with wood."
+    },
+    {
+      "id": "s2",
+      "forma": "afirmativo",
+      "oracion": "A vet is a person who takes care of animals."
+    },
+    {
+      "id": "s3",
+      "forma": "negativo",
+      "oracion": "A pilot is not a person who cooks food."
+    },
+    {
+      "id": "s4",
+      "forma": "negativo",
+      "oracion": "A lawyer isn't a person who cuts hair."
+    },
+    {
+      "id": "s5",
+      "forma": "interrogativo",
+      "oracion": "What do you call a person who flies planes?"
+    },
+    {
+      "id": "s6",
+      "forma": "interrogativo",
+      "oracion": "Is a nurse a person who helps sick people?"
+    },
+    {
+      "id": "s7",
+      "forma": "short_answer",
+      "oracion": "Is a baker a person who makes bread? Yes, he is."
+    },
+    {
+      "id": "s8",
+      "forma": "short_answer",
+      "oracion": "Is a mechanic a person who teaches? No, he isn't."
+    }
+  ],
+  "fases": {
+    "inicio": {
+      "banner_diagnostico": {
+        "opcion_a": "A carpenter is a person which works with wood.",
+        "opcion_b": "A carpenter is a person who works with wood.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "We use 'who' to define a person by what they do: 'a person who + verb' (a person who works, who teaches, who helps).",
+      "tabla": {
+        "titulo": "a person who + action",
+        "encabezados": [
+          "Profession",
+          "Definition"
+        ],
+        "filas": [
+          [
+            "A carpenter",
+            "is a person who works with wood"
+          ],
+          [
+            "A teacher",
+            "is a person who teaches students"
+          ],
+          [
+            "A doctor",
+            "is a person who helps sick people"
+          ],
+          [
+            "A pilot",
+            "is a person who flies planes"
+          ]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {
+          "tipo": "multiple_choice",
+          "pregunta": "A doctor is a person ___ helps sick people.",
+          "opciones": [
+            "which",
+            "who",
+            "where"
+          ],
+          "respuesta": "who"
+        },
+        {
+          "tipo": "true_false",
+          "afirmacion": "We use 'who' for people and 'which/that' for things.",
+          "respuesta": "true"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "A carpenter is a person who ___ with wood.",
+          "respuesta": "works"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "A baker is a person who ___ bread.",
+          "respuesta": "makes"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "A pilot is a person who ___ planes.",
+          "respuesta": "flies"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "A teacher is a person who ___ students.",
+          "respuesta": "teaches"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "A mechanic is a person who ___ cars.",
+          "respuesta": "fixes"
+        },
+        {
+          "tipo": "correct_mistake",
+          "texto_con_error": "A nurse is a person which takes care of patients.",
+          "respuesta": "A nurse is a person who takes care of patients."
+        },
+        {
+          "tipo": "transformation",
+          "oracion_base": "A gardener. He takes care of plants.",
+          "instruccion": "Join them into a definition with 'who'.",
+          "respuesta": "A gardener is a person who takes care of plants."
+        },
+        {
+          "tipo": "short_answer_production",
+          "pregunta": "What do you call a person who cuts hair?",
+          "respuesta": "A hairdresser is a person who cuts hair."
+        }
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Let's play a game! I describe a job, and you guess.",
+        "Ben: Okay, go!",
+        "Kenji: It's a person who works with wood.",
+        "Ben: That's easy — a carpenter!",
+        "Kenji: Yes! Now, a person who takes care of animals?",
+        "Ben: A vet! I love this game."
+      ],
+      "gaps": [
+        "wood",
+        "animals"
+      ],
+      "comprension": [
+        {
+          "pregunta": "A person who works with wood is a...",
+          "opciones": [
+            "farmer",
+            "carpenter",
+            "doctor"
+          ],
+          "respuesta": "carpenter"
+        },
+        {
+          "pregunta": "A person who takes care of animals is a...",
+          "opciones": [
+            "vet",
+            "waiter",
+            "pilot"
+          ],
+          "respuesta": "vet"
+        }
+      ]
+    },
+    "reading": {
+      "texto": "Kenji loves guessing games. 'A doctor is a person who helps sick people,' he says. 'A teacher is a person who teaches students, and a pilot is a person who flies planes.' Ben laughs. 'And you? What do you want to be?' Kenji thinks. 'I want to be an interpreter — a person who translates languages. That way, I can talk to everyone in the world!'",
+      "preguntas": [
+        {
+          "afirmacion": "A pilot is a person who flies planes.",
+          "respuesta": "true"
+        },
+        {
+          "afirmacion": "Kenji wants to be a doctor.",
+          "respuesta": "false"
+        },
+        {
+          "afirmacion": "An interpreter is a person who translates languages.",
+          "respuesta": "true"
+        }
+      ]
+    }
+  }
+}

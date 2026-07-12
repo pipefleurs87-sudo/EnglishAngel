@@ -1,0 +1,82 @@
+{
+  "id": "a1-review-modals-preps-01",
+  "nivel": "A1",
+  "arquetipo": "joined_exercise",
+  "tema": "A1 Review — Modals & Prepositions: Advice, Duties, Time & Place",
+  "habilidades": ["grammar", "listening", "reading", "writing"],
+  "banco_oraciones": [
+    {"id": "s1", "oracion": "Sofía can swim very well, but she can't sing."},
+    {"id": "s2", "oracion": "Ben has to work on Monday at nine in the morning."},
+    {"id": "s3", "oracion": "You should visit Cartagena in December."},
+    {"id": "s4", "oracion": "I must clean my room on Saturday."},
+    {"id": "s5", "oracion": "Kenji would like to live in Medellín."},
+    {"id": "s6", "oracion": "The keys are on the table, under your notebook."}
+  ],
+  "fases": {
+    "inicio": {
+      "banner_diagnostico": {
+        "opcion_a": "I must to clean my room on Saturday.",
+        "opcion_b": "I must clean my room on Saturday.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Modals say what we can do, must do and should do; prepositions say where and when — together they organize real life.",
+      "tabla": {
+        "titulo": "modals — the map",
+        "encabezados": ["Modal", "Use", "Example"],
+        "filas": [
+          ["can", "ability", "She can swim"],
+          ["must", "duty", "I must clean"],
+          ["have to", "obligation", "He has to work"],
+          ["should", "advice", "You should rest"],
+          ["would like", "wish", "I'd like to travel"]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "combina": ["can"], "pregunta": "Sofía ___ swim very well.", "opciones": ["can", "cans", "can to"], "respuesta": "can"},
+        {"tipo": "multiple_choice", "combina": ["prepositions of time"], "pregunta": "Ben has to work ___ Monday.", "opciones": ["on", "in", "at"], "respuesta": "on"},
+        {"tipo": "multiple_choice", "combina": ["should", "prepositions of time"], "pregunta": "You ___ visit Cartagena in December.", "opciones": ["should", "should to", "must to"], "respuesta": "should"},
+        {"tipo": "true_false", "combina": ["can"], "afirmacion": "'She cans dance' is correct.", "respuesta": "false"},
+        {"tipo": "true_false", "combina": ["prepositions of time"], "afirmacion": "We use 'at' with exact times, like 'at 7 o'clock'.", "respuesta": "true"},
+        {"tipo": "gap_fill", "combina": ["would like"], "texto": "Kenji would like ___ visit Japan with Sofía.", "respuesta": "to"},
+        {"tipo": "gap_fill", "combina": ["prepositions of place"], "texto": "The keys are ___ the table.", "respuesta": "on"},
+        {"tipo": "gap_fill", "combina": ["have to"], "texto": "Carmen has ___ take her medicine at eight.", "respuesta": "to"},
+        {"tipo": "unscramble", "combina": ["must"], "palabras": ["must", "I", "room", "clean", "my"], "respuesta": "I must clean my room."},
+        {"tipo": "unscramble", "combina": ["can", "prepositions of place"], "palabras": ["can", "the", "meet", "We", "at", "park"], "respuesta": "We can meet at the park."},
+        {"tipo": "correct_mistake", "combina": ["can"], "texto_con_error": "Kenji can to speak three languages.", "respuesta": "Kenji can speak three languages."},
+        {"tipo": "correct_mistake", "combina": ["prepositions of time"], "texto_con_error": "The meeting is in Monday at the morning.", "respuesta": "The meeting is on Monday in the morning."},
+        {"tipo": "correct_mistake", "combina": ["should"], "texto_con_error": "You should eats more vegetables.", "respuesta": "You should eat more vegetables."},
+        {"tipo": "transformation", "combina": ["must"], "oracion_base": "I clean the kitchen.", "instruccion": "Add obligation with 'must'.", "respuesta": "I must clean the kitchen."},
+        {"tipo": "transformation", "combina": ["have to", "prepositions of time"], "oracion_base": "She works on Saturdays.", "instruccion": "Make it an obligation with 'has to'.", "respuesta": "She has to work on Saturdays."},
+        {"tipo": "write_opposite", "combina": ["should"], "oracion_base": "You should arrive late.", "instruccion": "Write the opposite advice (early).", "respuesta": "You should arrive early."},
+        {"tipo": "short_answer_production", "combina": ["can"], "pregunta": "What can you do very well? (I can...)", "respuesta": "I can cook very well."},
+        {"tipo": "short_answer_production", "combina": ["have to", "prepositions of time"], "pregunta": "What time do you have to start work or school? (I have to start at...)", "respuesta": "I have to start at eight o'clock."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Ben: Carmen, I have a job interview on Friday. Any advice?",
+        "Carmen: Of course. You should arrive early — at least fifteen minutes before.",
+        "Ben: I know, I know. I always have to run because I get up late.",
+        "Carmen: Then you must change your alarm, Ben. And you should wear the blue shirt.",
+        "Ben: Can I wear my boots?",
+        "Carmen: No, you can't! Put them under the bed and forget them."
+      ],
+      "gaps": ["early", "alarm"],
+      "comprension": [
+        {"pregunta": "When is Ben's interview?", "opciones": ["On Friday", "On Monday", "In December"], "respuesta": "On Friday"},
+        {"pregunta": "What does Carmen say about the boots?", "opciones": ["He can't wear them", "He should wear them", "He has to clean them"], "respuesta": "He can't wear them"}
+      ]
+    },
+    "reading": {
+      "texto": "Carmen's house has rules, and everyone knows them. You must take off your shoes at the door. You have to wash your cup after coffee. You shouldn't touch the plants on the balcony — they are her babies. But there are nice rules too: you can dance in the kitchen, you can stay for dinner on Sundays, and you should always ask for a second arepa, because it makes her happy. Kenji would like to live there forever.",
+      "preguntas": [
+        {"afirmacion": "You must take off your shoes at the door.", "respuesta": "true"},
+        {"afirmacion": "You can touch the plants on the balcony.", "respuesta": "false"},
+        {"afirmacion": "Kenji would like to live in Carmen's house.", "respuesta": "true"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "id": "b2-linkers-01",
+  "nivel": "B2",
+  "arquetipo": "funcional_skills",
+  "tema": "Linking Words — Contrast, Addition, Cause, Result & More",
+  "habilidades": ["writing", "speaking", "reading"],
+  "vocabulario": [
+    {"bandera": "contraste", "palabra": "although / even though", "traduccion": "aunque"},
+    {"bandera": "contraste", "palabra": "however / nevertheless", "traduccion": "sin embargo"},
+    {"bandera": "adición", "palabra": "moreover / furthermore", "traduccion": "además"},
+    {"bandera": "ejemplificación", "palabra": "for example / such as", "traduccion": "por ejemplo / tal como"},
+    {"bandera": "causa", "palabra": "because of / due to", "traduccion": "debido a / por causa de"},
+    {"bandera": "consecuencia", "palabra": "therefore / as a result", "traduccion": "por lo tanto / como resultado"},
+    {"bandera": "cierre", "palabra": "in conclusion / to sum up", "traduccion": "en conclusión / en resumen"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Although Ben lost his phone again, he stayed calm."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Sofía finished the project; moreover, she did it early."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "There are many phrasal verbs, such as 'get up' and 'look up'."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "The flight was delayed due to bad weather."},
+    {"id": "s5", "forma": "negativo", "oracion": "Sofía didn't finish on time; however, the client didn't mind."},
+    {"id": "s6", "forma": "negativo", "oracion": "Kenji doesn't understand everything; nevertheless, he keeps trying."},
+    {"id": "s7", "forma": "negativo", "oracion": "The trip wasn't cancelled, even though it rained all day."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Why did you leave, even though the party had just started?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Didn't they still go out, despite the rain?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Can you give an example, such as a specific situation?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Was the meeting cancelled because of the storm? Yes, it was."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Did they finish, in spite of the delay? Yes, they did."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Is there a clear result, therefore? Yes, there is."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: My essays feel choppy — short sentence, short sentence, short sentence.",
+        "Sofía: You need linkers. **Although** and **however** are your best friends for contrast.",
+        "Kenji: And when I want to add another point?",
+        "Sofía: **Moreover**, **furthermore**, **in addition**. Pick one and stick with it in the same paragraph."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "The trip was expensive, however, we decided to go.",
+        "opcion_b": "The trip was expensive. However, we decided to go.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Linking words connect ideas and show the relationship between them — contrast, addition, cause, result or example — and each one has its own punctuation rules.",
+      "tabla": {
+        "titulo": "Linkers by function",
+        "encabezados": ["Function", "Linkers", "Example"],
+        "filas": [
+          ["Contrast", "although, even though, however, nevertheless", "Although it rained, we went out."],
+          ["Addition", "moreover, furthermore, in addition", "She's talented; moreover, she works hard."],
+          ["Example", "for example, for instance, such as", "Many jobs, such as design, need creativity."],
+          ["Cause", "because of, due to", "The delay was due to the weather."],
+          ["Result", "therefore, as a result, consequently", "It rained; as a result, we stayed home."],
+          ["Conclusion", "in conclusion, to sum up", "In conclusion, the plan worked."]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "___ Ben lost his phone again, he stayed calm.", "opciones": ["Although", "Therefore", "For example"], "respuesta": "Although"},
+        {"tipo": "multiple_choice", "pregunta": "Sofía finished the project; ___, she did it early.", "opciones": ["moreover", "however", "because"], "respuesta": "moreover"},
+        {"tipo": "multiple_choice", "pregunta": "The flight was delayed ___ bad weather.", "opciones": ["due to", "although", "therefore"], "respuesta": "due to"},
+        {"tipo": "true_false", "afirmacion": "'However' usually starts a new sentence or clause, not the middle of one without punctuation.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Such as' introduces an example.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Therefore' shows contrast.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Kenji doesn't understand everything; ___, he keeps trying.", "respuesta": "nevertheless"},
+        {"tipo": "gap_fill", "texto": "There are many phrasal verbs, ___ 'get up' and 'look up'.", "respuesta": "such as"},
+        {"tipo": "gap_fill", "texto": "It rained all day; ___, they cancelled the trip.", "respuesta": "as a result"},
+        {"tipo": "unscramble", "palabras": ["although", "it", "rained", "we", "went", "out"], "respuesta": "although it rained we went out"},
+        {"tipo": "unscramble", "palabras": ["the", "delay", "was", "due", "to", "the", "weather"], "respuesta": "the delay was due to the weather"},
+        {"tipo": "correct_mistake", "texto_con_error": "The trip was expensive, however, we decided to go.", "respuesta": "The trip was expensive. However, we decided to go."},
+        {"tipo": "transformation", "oracion_base": "It rained. We went out anyway.", "instruccion": "Combine using 'although'.", "respuesta": "Although it rained, we went out."},
+        {"tipo": "transformation", "oracion_base": "She's talented. She also works hard.", "instruccion": "Combine using 'moreover'.", "respuesta": "She's talented; moreover, she works hard."},
+        {"tipo": "transformation", "oracion_base": "It rained. We stayed home.", "instruccion": "Combine using 'as a result'.", "respuesta": "It rained; as a result, we stayed home."},
+        {"tipo": "write_opposite", "oracion_base": "Because of the storm, the flight was cancelled.", "instruccion": "Write a sentence using 'in spite of' instead (the flight was NOT cancelled).", "respuesta": "In spite of the storm, the flight wasn't cancelled."},
+        {"tipo": "short_answer_production", "pregunta": "Give one example of a linker of contrast.", "respuesta": "However."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: My essays feel choppy — short sentence, short sentence, short sentence.",
+        "Sofía: You need linkers. 'Although' and 'however' are your best friends for contrast.",
+        "Kenji: And when I want to add another point?",
+        "Sofía: 'Moreover', 'furthermore', 'in addition'. Pick one and stick with it in the same paragraph.",
+        "Kenji: What about giving an example?",
+        "Sofía: 'For example' or 'such as'. Simple as that."
+      ],
+      "gaps": ["choppy", "contrast", "paragraph", "example"],
+      "comprension": [
+        {"pregunta": "What does Sofía suggest for contrast?", "opciones": ["Although and however", "Moreover and furthermore", "For example and such as"], "respuesta": "Although and however"},
+        {"pregunta": "What does Sofía suggest for giving an example?", "opciones": ["For example or such as", "Therefore", "In conclusion"], "respuesta": "For example or such as"}
+      ]
+    },
+    "reading": {
+      "texto": "Sofía has read enough of Kenji's essays to know his one weakness: linkers. His ideas are always good, but they arrive one after another with no connection, like a list instead of an argument. 'Although your grammar is strong,' she told him once, 'your paragraphs don't flow.' She made him a short list: although and however for contrast, moreover and in addition for adding a point, for example and such as when he needs proof, and therefore or as a result when one idea causes another. Kenji printed it and taped it above his desk. Weeks later, his essays still aren't perfect — however, they finally sound like arguments instead of lists.",
+      "preguntas": [
+        {"afirmacion": "Sofía says Kenji's ideas are usually weak.", "respuesta": "false"},
+        {"afirmacion": "Sofía gave Kenji a short list of linkers.", "respuesta": "true"},
+        {"afirmacion": "Kenji ignored the list completely.", "respuesta": "false"},
+        {"afirmacion": "His essays now sound like arguments instead of lists.", "respuesta": "true"}
+      ]
+    }
+  }
+}

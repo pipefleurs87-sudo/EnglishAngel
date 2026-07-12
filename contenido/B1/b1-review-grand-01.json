@@ -1,0 +1,96 @@
+{
+  "id": "b1-review-grand-01",
+  "nivel": "B1",
+  "arquetipo": "joined_exercise",
+  "tema": "B1 Grand Review — All Topics Together",
+  "habilidades": ["grammar", "listening", "reading", "writing"],
+  "banco_oraciones": [
+    {"id": "s1", "oracion": "Abuela Carmen used to sell mangoes at the market every morning."},
+    {"id": "s2", "oracion": "In 1982, she sold mangoes to Gabriel García Márquez himself."},
+    {"id": "s3", "oracion": "She has never forgotten his kind smile."},
+    {"id": "s4", "oracion": "Carmen has been living in Medellín since 1975, the year she won a cumbia contest."},
+    {"id": "s5", "oracion": "If she could travel back in time, she would dance at that contest again."},
+    {"id": "s6", "oracion": "The winning dance was passed down to Sofía, quietly, over the years."},
+    {"id": "s7", "oracion": "Sofía has always loved to dance, but she rarely admits it in public."},
+    {"id": "s8", "oracion": "Next year, the family is going to celebrate Carmen's story with a big party."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Carmen: Sit down, everyone. I want to tell you something I've never told you before.",
+        "Sofía: Abuela, what is it?",
+        "Carmen: In 1982, I **sold** mangoes to a famous writer. Gabriel García Márquez, in person!",
+        "Kenji (on video call): Carmen, you are full of surprises."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I have met him in 1982.",
+        "opcion_b": "I met him in 1982.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "This is everything B1 gave you, working together: real conditions, finished and unfinished pasts, passive facts and future plans — one level, one story.",
+      "tabla": {
+        "titulo": "your B1 map",
+        "encabezados": ["Topic", "Key example"],
+        "filas": [
+          ["Conditionals", "If I had time, I would travel more"],
+          ["Present perfect", "She has already run a marathon"],
+          ["Present perfect continuous", "He has been studying for six months"],
+          ["Present perfect vs past simple", "I've been to Madrid. I went in 2020"],
+          ["Passive voice", "Coffee is grown in Colombia"],
+          ["Will vs going to", "I'll help you! / I'm going to travel in June"],
+          ["Used to", "She used to live in the countryside"],
+          ["Gerund vs infinitive", "I enjoy reading / I want to read"],
+          ["Adverbs of manner", "She finished the report quickly"]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "combina": ["present perfect vs past simple"], "pregunta": "In 1982, she ___ mangoes to García Márquez.", "opciones": ["has sold", "sold", "was selling"], "respuesta": "sold"},
+        {"tipo": "multiple_choice", "combina": ["used to"], "pregunta": "Carmen ___ live in the countryside before Medellín.", "opciones": ["used to", "uses to", "use to"], "respuesta": "used to"},
+        {"tipo": "multiple_choice", "combina": ["conditionals"], "pregunta": "If she ___ time, she would travel more.", "opciones": ["has", "had", "will have"], "respuesta": "had"},
+        {"tipo": "true_false", "combina": ["passive voice"], "afirmacion": "'Coffee is grown in Colombia' is passive voice.", "respuesta": "true"},
+        {"tipo": "true_false", "combina": ["will vs going to"], "afirmacion": "We use 'going to' for a decision made at the moment of speaking.", "respuesta": "false"},
+        {"tipo": "gap_fill", "combina": ["present perfect continuous"], "texto": "Carmen ___ (live) in Medellín since 1975.", "respuesta": "has been living"},
+        {"tipo": "gap_fill", "combina": ["gerund vs infinitive"], "texto": "Sofía has always loved ___ (dance), but she rarely admits it.", "respuesta": "dancing"},
+        {"tipo": "gap_fill", "combina": ["adverbs of manner"], "texto": "She danced so ___ (careful) that nobody noticed her mistake.", "respuesta": "carefully"},
+        {"tipo": "unscramble", "combina": ["present perfect"], "palabras": ["never", "She", "kind", "smile", "forgotten", "his", "has"], "respuesta": "She has never forgotten his kind smile"},
+        {"tipo": "unscramble", "combina": ["passive voice"], "palabras": ["down", "was", "dance", "The", "winning", "passed"], "respuesta": "The winning dance was passed down"},
+        {"tipo": "correct_mistake", "combina": ["present perfect vs past simple"], "texto_con_error": "I have met him in 1982.", "respuesta": "I met him in 1982."},
+        {"tipo": "correct_mistake", "combina": ["used to"], "texto_con_error": "She didn't used to dance in public.", "respuesta": "She didn't use to dance in public."},
+        {"tipo": "correct_mistake", "combina": ["will vs going to"], "texto_con_error": "Look at those clouds — it will rain!", "respuesta": "Look at those clouds — it's going to rain!"},
+        {"tipo": "transformation", "combina": ["conditionals"], "oracion_base": "She doesn't have time, so she doesn't travel more.", "instruccion": "Rewrite as a second conditional.", "respuesta": "If she had time, she would travel more."},
+        {"tipo": "transformation", "combina": ["passive voice"], "oracion_base": "They passed the winning dance down to Sofía.", "instruccion": "Rewrite in the passive voice.", "respuesta": "The winning dance was passed down to Sofía."},
+        {"tipo": "write_opposite", "combina": ["used to"], "oracion_base": "Carmen used to live in the countryside.", "instruccion": "Write the negative.", "respuesta": "Carmen didn't use to live in the countryside."},
+        {"tipo": "short_answer_production", "combina": ["present perfect"], "pregunta": "What is something you have never forgotten?", "respuesta": "(respuesta libre, ej. I have never forgotten my first day of school.)"},
+        {"tipo": "short_answer_production", "combina": ["gerund vs infinitive", "adverbs of manner"], "pregunta": "What do you enjoy doing carefully, and why?", "respuesta": "(respuesta libre, ej. I enjoy cooking carefully because I love good food.)"}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Carmen: Sit down, everyone. I want to tell you something I've never told you before.",
+        "Sofía: Abuela, what is it?",
+        "Carmen: In 1982, I sold mangoes to a famous writer. Gabriel García Márquez, in person!",
+        "Ben: No way! What did he say?",
+        "Carmen: He said my mangoes were the sweetest in Colombia. I've been proud of that for over forty years.",
+        "Sofía: And is it true you won a cumbia contest?",
+        "Carmen: In 1975! If I had the energy, I would dance right now.",
+        "Ben: Please don't. My back still hurts from the last party."
+      ],
+      "gaps": ["mangoes", "cumbia"],
+      "comprension": [
+        {"pregunta": "Who did Carmen sell mangoes to in 1982?", "opciones": ["Gabriel García Márquez", "A famous singer", "A tourist"], "respuesta": "Gabriel García Márquez"},
+        {"pregunta": "What did Carmen win in 1975?", "opciones": ["A cumbia contest", "A cooking contest", "A dance scholarship"], "respuesta": "A cumbia contest"}
+      ]
+    },
+    "reading": {
+      "texto": "Abuela Carmen has lived many lives inside one life. She has been living in Medellín since 1975, the year she won a cumbia contest that people still talk about. Before that, she used to sell mangoes at the market every morning, and once, in 1982, she sold a bag of mangoes to Gabriel García Márquez himself. She has never forgotten his kind smile. If she could go back, she says she would dance at that contest again — carefully, but without fear. Next year, the family is going to celebrate her story with a big party, and this time, everyone is going to dance.",
+      "preguntas": [
+        {"afirmacion": "Carmen has been living in Medellín since 1975.", "respuesta": "true"},
+        {"afirmacion": "Carmen sold mangoes to a famous singer.", "respuesta": "false"},
+        {"afirmacion": "The family's party has already happened.", "respuesta": "false"}
+      ]
+    }
+  }
+}

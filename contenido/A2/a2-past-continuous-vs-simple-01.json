@@ -1,0 +1,99 @@
+{
+  "id": "a2-past-continuous-vs-simple-01",
+  "nivel": "A2",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Past Continuous vs Past Simple — when / while",
+  "habilidades": ["grammar", "listening", "reading", "writing"],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "I was having dinner when Dani called."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "My aunt was visiting the US when she met her husband."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Ben was walking on the beach when a wave destroyed his phone."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "While I was cooking, Kenji was studying Spanish."},
+    {"id": "s5", "forma": "negativo", "oracion": "I wasn't listening when the teacher explained the exercise."},
+    {"id": "s6", "forma": "negativo", "oracion": "They weren't sleeping at midnight; they were watching a movie."},
+    {"id": "s7", "forma": "negativo", "oracion": "Sofía wasn't working when you called her."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "What were you doing when I called you?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Was it raining when you left home?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "What was she doing while you were cooking?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Were you sleeping when I called? Yes, I was."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Was Ben paying attention? No, he wasn't."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Were they studying at 9 p.m.? Yes, they were."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Ben: I **was walking** on the beach **when** a wave **destroyed** my phone. The new one.",
+        "Sofía: I **was having** dinner **when** you **called** me to tell me, Ben. Twice.",
+        "Kenji: I **was studying** Spanish **while** my host family **was cooking**. Multitasking!",
+        "Abuela Carmen: I **was visiting** the US **when** I **met** my husband. He **was trying** to order coffee... in very bad Spanish."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "They was watching TV when the lights went out.",
+        "opcion_b": "They were watching TV when the lights went out.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Past continuous sets the scene — what was already happening — and past simple is the event that interrupted it: I was having dinner when Dani called.",
+      "tabla": {
+        "titulo": "The scene and the interruption",
+        "encabezados": ["Piece", "Form", "Example"],
+        "filas": [
+          ["The scene in motion", "was / were + verb-ing", "I was having dinner"],
+          ["The interruption", "past simple", "...when Dani called"],
+          ["when", "+ the short action that cuts in", "I was walking when it started to rain"],
+          ["while", "+ the long action (or two scenes at once)", "While I was cooking, she was studying"],
+          ["Negative", "wasn't / weren't + verb-ing", "I wasn't listening, sorry"],
+          ["Question", "Was / Were + subject + verb-ing?", "What were you doing at 9 p.m.?"]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "I ___ dinner when Dani called.", "opciones": ["was having", "had", "have"], "respuesta": "was having"},
+        {"tipo": "multiple_choice", "pregunta": "They ___ TV when the lights went out.", "opciones": ["was watching", "were watching", "watched"], "respuesta": "were watching"},
+        {"tipo": "multiple_choice", "pregunta": "My aunt was visiting the US ___ she met her husband.", "opciones": ["while", "during", "when"], "respuesta": "when"},
+        {"tipo": "true_false", "afirmacion": "Past continuous describes the scene in progress; past simple is the interruption.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "We use past continuous for the short action that interrupts.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "I ___ (sleep) when the phone rang.", "respuesta": "was sleeping"},
+        {"tipo": "gap_fill", "texto": "While I was cooking, Kenji ___ (study) Spanish.", "respuesta": "was studying"},
+        {"tipo": "gap_fill", "texto": "Ben was walking on the beach when a wave ___ (destroy) his phone.", "respuesta": "destroyed"},
+        {"tipo": "unscramble", "palabras": ["I", "was", "having", "dinner", "when", "Dani", "called"], "respuesta": "I was having dinner when Dani called"},
+        {"tipo": "unscramble", "palabras": ["what", "were", "you", "doing", "at", "nine"], "respuesta": "What were you doing at nine"},
+        {"tipo": "correct_mistake", "texto_con_error": "They was watching TV when the lights went out.", "respuesta": "They were watching TV when the lights went out."},
+        {"tipo": "correct_mistake", "texto_con_error": "I was walk to school when I saw the accident.", "respuesta": "I was walking to school when I saw the accident."},
+        {"tipo": "correct_mistake", "texto_con_error": "When I was young, I was going to the beach every summer.", "respuesta": "When I was young, I went to the beach every summer."},
+        {"tipo": "transformation", "oracion_base": "She was sleeping when I arrived.", "instruccion": "Write the negative form.", "respuesta": "She wasn't sleeping when I arrived."},
+        {"tipo": "transformation", "oracion_base": "They were studying at 9 p.m.", "instruccion": "Write the yes/no question.", "respuesta": "Were they studying at 9 p.m.?"},
+        {"tipo": "transformation", "oracion_base": "Was it raining when you left home?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, it was."},
+        {"tipo": "write_opposite", "oracion_base": "I was listening to the teacher.", "instruccion": "Write the negative form.", "respuesta": "I wasn't listening to the teacher."},
+        {"tipo": "write_opposite", "oracion_base": "Ben wasn't paying attention.", "instruccion": "Write the affirmative form.", "respuesta": "Ben was paying attention."},
+        {"tipo": "short_answer_production", "pregunta": "Were you sleeping at 6 a.m. today? (short answer)", "respuesta": "Yes, I was."},
+        {"tipo": "short_answer_production", "pregunta": "Was it raining when you woke up? (short answer, No)", "respuesta": "No, it wasn't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Abuela Carmen, how did you meet your husband?",
+        "Abuela Carmen: Ah! I was visiting the US when I met him. I was working in a café in Miami that summer.",
+        "Sofía: What was he doing there?",
+        "Abuela Carmen: He was trying to order a coffee in very bad Spanish. Everyone was laughing, but he wasn't giving up.",
+        "Ben: So what happened?",
+        "Abuela Carmen: While he was practicing the word 'cortadito', I fell in love. True story."
+      ],
+      "gaps": ["visiting", "café", "Spanish", "laughing"],
+      "comprension": [
+        {"pregunta": "Where was Abuela Carmen working when she met her husband?", "opciones": ["In a café in Miami", "In a school in Bogotá", "In a market in Medellín"], "respuesta": "In a café in Miami"},
+        {"pregunta": "What was her future husband doing?", "opciones": ["Teaching Spanish", "Trying to order a coffee", "Laughing at everyone"], "respuesta": "Trying to order a coffee"}
+      ]
+    },
+    "reading": {
+      "texto": "Last Saturday, Ben had one of his classic days. At 10 a.m., he was walking on the beach when a wave destroyed his phone — the new one. At noon, he was eating lunch when a seagull stole his sandwich. In the afternoon, while he was taking a nap under a palm tree, a coconut fell... and missed his head by two centimeters. 'I wasn't even doing anything dangerous!' he told Sofía later. 'That's the problem, Ben,' she said. 'While you were sleeping, the universe was working.'",
+      "preguntas": [
+        {"afirmacion": "Ben was walking on the beach when a wave destroyed his phone.", "respuesta": "true"},
+        {"afirmacion": "A seagull stole his phone.", "respuesta": "false"},
+        {"afirmacion": "The coconut hit Ben's head.", "respuesta": "false"},
+        {"afirmacion": "Sofía says the universe was working while Ben was sleeping.", "respuesta": "true"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "id": "b2-modals-obligation-past-01",
+  "nivel": "B2",
+  "arquetipo": "modales",
+  "tema": "Modals of Obligation — Past (had to / didn't have to / needn't have)",
+  "habilidades": ["grammar", "speaking", "writing", "reading"],
+  "vocabulario": [
+    {"bandera": "obligación pasada", "palabra": "had to", "traduccion": "tuvo que (era obligatorio)"},
+    {"bandera": "no era necesario", "palabra": "didn't have to", "traduccion": "no tuvo que (no era necesario)"},
+    {"bandera": "lo hizo pero no hacía falta", "palabra": "needn't have + participio", "traduccion": "no hacía falta que (lo hizo, mas fue innecesario)"},
+    {"bandera": "prohibición pasada", "palabra": "couldn't / wasn't allowed to", "traduccion": "no se le permitió / no pudo"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Ben had to buy a new phone."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Sofía had to work all weekend to finish the project."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Kenji needn't have brought an umbrella — it didn't rain."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "We had to wait two hours at the airport."},
+    {"id": "s5", "forma": "negativo", "oracion": "Sofía didn't have to pay for the taxi; her client covered it."},
+    {"id": "s6", "forma": "negativo", "oracion": "We didn't have to wear a uniform at that school."},
+    {"id": "s7", "forma": "negativo", "oracion": "Ben didn't have to explain twice; everyone understood."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Did you have to work last Saturday?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Did she have to ask permission first?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Why did they have to leave so early?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Did Ben have to buy a new phone? Yes, he did."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Did you have to pay? No, I didn't."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Did Kenji need the umbrella? No, he needn't have brought it."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: I brought an umbrella just in case.",
+        "Sofía: You **needn't have** — it hasn't rained here in weeks.",
+        "Kenji: Better safe than sorry! Did you **have to bring** anything special for the trip?",
+        "Sofía: I **had to bring** my whole design kit. Nothing 'just in case' about that."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I mustn't pay, my client covered it.",
+        "opcion_b": "I didn't have to pay, my client covered it.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "In the past, 'had to' shows obligation, 'didn't have to' shows it wasn't necessary, and 'needn't have' shows you did something that turned out to be unnecessary.",
+      "tabla": {
+        "titulo": "Past obligation — three different ideas",
+        "encabezados": ["Meaning", "Structure", "Example"],
+        "filas": [
+          ["It was necessary", "had to", "I had to work Saturday"],
+          ["It wasn't necessary (and maybe didn't happen)", "didn't have to", "I didn't have to pay"],
+          ["You did it, but it wasn't necessary", "needn't have + participle", "You needn't have brought an umbrella"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Ben ___ buy a new phone after losing his.", "opciones": ["had to", "didn't have to", "needn't have"], "respuesta": "had to"},
+        {"tipo": "multiple_choice", "pregunta": "Sofía ___ pay for the taxi, her client covered it.", "opciones": ["had to", "didn't have to", "mustn't"], "respuesta": "didn't have to"},
+        {"tipo": "multiple_choice", "pregunta": "Kenji ___ brought an umbrella, it didn't rain.", "opciones": ["needn't have", "didn't have to", "mustn't"], "respuesta": "needn't have"},
+        {"tipo": "true_false", "afirmacion": "'Didn't have to' means it was forbidden.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'Needn't have + participle' means you did something unnecessary.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Had to' shows past obligation.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "We ___ wait two hours at the airport. (it was necessary)", "respuesta": "had to"},
+        {"tipo": "gap_fill", "texto": "She ___ ask permission, it was her own decision. (not necessary)", "respuesta": "didn't have to"},
+        {"tipo": "gap_fill", "texto": "You ___ have worried, everything was fine. (unnecessary, but you did it)", "respuesta": "needn't"},
+        {"tipo": "unscramble", "palabras": ["Ben", "had", "to", "buy", "a", "new", "phone"], "respuesta": "Ben had to buy a new phone"},
+        {"tipo": "unscramble", "palabras": ["Sofía", "didn't", "have", "to", "pay", "for", "the", "taxi"], "respuesta": "Sofía didn't have to pay for the taxi"},
+        {"tipo": "correct_mistake", "texto_con_error": "I mustn't pay, my client covered it.", "respuesta": "I didn't have to pay, my client covered it."},
+        {"tipo": "transformation", "oracion_base": "It was necessary for Sofía to work all weekend.", "instruccion": "Rewrite using 'had to'.", "respuesta": "Sofía had to work all weekend."},
+        {"tipo": "transformation", "oracion_base": "It wasn't necessary for us to wear a uniform.", "instruccion": "Rewrite using 'didn't have to'.", "respuesta": "We didn't have to wear a uniform."},
+        {"tipo": "transformation", "oracion_base": "Kenji brought an umbrella, but it was unnecessary.", "instruccion": "Rewrite using 'needn't have'.", "respuesta": "Kenji needn't have brought an umbrella."},
+        {"tipo": "write_opposite", "oracion_base": "We had to wait two hours.", "instruccion": "Write the negative form (it wasn't necessary).", "respuesta": "We didn't have to wait two hours."},
+        {"tipo": "short_answer_production", "pregunta": "Did you have to work last Saturday? (short answer, No)", "respuesta": "No, I didn't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: I had to redo the whole logo three times for that client.",
+        "Kenji: That sounds exhausting. Did you have to start from zero?",
+        "Sofía: No, I didn't have to — I just adjusted the colors.",
+        "Kenji: I brought my umbrella for nothing today.",
+        "Sofía: You needn't have, it's been sunny all week.",
+        "Kenji: Better safe than sorry, as always."
+      ],
+      "gaps": ["redo", "colors", "umbrella", "sunny"],
+      "comprension": [
+        {"pregunta": "Did Sofía have to start the logo from zero?", "opciones": ["No, she just adjusted the colors", "Yes, three times", "No, the client did it"], "respuesta": "No, she just adjusted the colors"},
+        {"pregunta": "Why didn't Kenji need the umbrella?", "opciones": ["It's been sunny all week", "He forgot it", "It broke"], "respuesta": "It's been sunny all week"}
+      ]
+    },
+    "reading": {
+      "texto": "Sofía spent Saturday explaining her week to Kenji. 'I had to redo the client's logo three times,' she said, 'but I didn't have to start over completely — I just kept adjusting the colors until he was happy.' Kenji admitted he'd brought an umbrella that morning just in case. 'You needn't have,' Sofía laughed, 'it hasn't rained in Medellín for two weeks.' Kenji shrugged: growing up in Osaka, he'd learned that you never really know with weather — better to carry an umbrella you don't need than need one you didn't bring.",
+      "preguntas": [
+        {"afirmacion": "Sofía had to start the logo completely from zero.", "respuesta": "false"},
+        {"afirmacion": "Kenji brought an umbrella that turned out to be unnecessary.", "respuesta": "true"},
+        {"afirmacion": "It rained heavily that day in Medellín.", "respuesta": "false"},
+        {"afirmacion": "Kenji is originally from Osaka.", "respuesta": "true"}
+      ]
+    }
+  }
+}

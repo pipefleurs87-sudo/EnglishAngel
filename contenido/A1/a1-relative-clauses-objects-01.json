@@ -1,0 +1,255 @@
+{
+  "id": "a1-relative-clauses-objects-01",
+  "nivel": "A1",
+  "arquetipo": "clausulas_relativas",
+  "tema": "Relative Clauses — Objects to Work & Study (a thing that you use to...)",
+  "habilidades": [
+    "grammar",
+    "vocabulary",
+    "listening",
+    "reading",
+    "writing"
+  ],
+  "vocabulario": [
+    {
+      "palabra": "Pen",
+      "traduccion": "write"
+    },
+    {
+      "palabra": "Pencil",
+      "traduccion": "draw and write"
+    },
+    {
+      "palabra": "Notebook",
+      "traduccion": "write notes"
+    },
+    {
+      "palabra": "Computer",
+      "traduccion": "work and study"
+    },
+    {
+      "palabra": "Laptop",
+      "traduccion": "work anywhere"
+    },
+    {
+      "palabra": "Keyboard",
+      "traduccion": "type words"
+    },
+    {
+      "palabra": "Mouse",
+      "traduccion": "click and move"
+    },
+    {
+      "palabra": "Ruler",
+      "traduccion": "measure and draw lines"
+    },
+    {
+      "palabra": "Eraser",
+      "traduccion": "erase mistakes"
+    },
+    {
+      "palabra": "Calculator",
+      "traduccion": "do calculations"
+    },
+    {
+      "palabra": "Dictionary",
+      "traduccion": "check words"
+    },
+    {
+      "palabra": "Backpack",
+      "traduccion": "carry your things"
+    },
+    {
+      "palabra": "Printer",
+      "traduccion": "print documents"
+    },
+    {
+      "palabra": "Marker",
+      "traduccion": "write on the board"
+    }
+  ],
+  "banco_oraciones": [
+    {
+      "id": "s1",
+      "forma": "afirmativo",
+      "oracion": "A pen is a thing that you use to write."
+    },
+    {
+      "id": "s2",
+      "forma": "afirmativo",
+      "oracion": "A computer is a thing which you use to work and study."
+    },
+    {
+      "id": "s3",
+      "forma": "negativo",
+      "oracion": "A ruler is not a thing that you use to write."
+    },
+    {
+      "id": "s4",
+      "forma": "negativo",
+      "oracion": "A printer isn't a thing you use to cook."
+    },
+    {
+      "id": "s5",
+      "forma": "interrogativo",
+      "oracion": "What do you call a thing that you use to write?"
+    },
+    {
+      "id": "s6",
+      "forma": "interrogativo",
+      "oracion": "Is a dictionary a thing you use to check words?"
+    },
+    {
+      "id": "s7",
+      "forma": "short_answer",
+      "oracion": "Is a pen a thing you use to write? Yes, it is."
+    },
+    {
+      "id": "s8",
+      "forma": "short_answer",
+      "oracion": "Is a backpack a thing you use to cook? No, it isn't."
+    }
+  ],
+  "fases": {
+    "inicio": {
+      "banner_diagnostico": {
+        "opcion_a": "A pen is a thing who you use to write.",
+        "opcion_b": "A pen is a thing that you use to write.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "We use 'which' or 'that' (not 'who') to define a thing by its use: 'a thing that you use to + verb'.",
+      "tabla": {
+        "titulo": "a thing that you use to + action",
+        "encabezados": [
+          "Object",
+          "Definition"
+        ],
+        "filas": [
+          [
+            "A pen",
+            "is a thing that you use to write"
+          ],
+          [
+            "A computer",
+            "is a thing that you use to work"
+          ],
+          [
+            "A ruler",
+            "is a thing that you use to measure"
+          ],
+          [
+            "A dictionary",
+            "is a thing that you use to check words"
+          ]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {
+          "tipo": "multiple_choice",
+          "pregunta": "A pen is a thing ___ you use to write.",
+          "opciones": [
+            "who",
+            "that",
+            "where"
+          ],
+          "respuesta": "that"
+        },
+        {
+          "tipo": "true_false",
+          "afirmacion": "We use 'which' or 'that' for things, not 'who'.",
+          "respuesta": "true"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "A pen is a thing that you use to ___.",
+          "respuesta": "write"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "A dictionary is a thing that you use to check ___.",
+          "respuesta": "words"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "A printer is a thing that you use to ___ documents.",
+          "respuesta": "print"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "A backpack is a thing that you use to ___ your books.",
+          "respuesta": "carry"
+        },
+        {
+          "tipo": "correct_mistake",
+          "texto_con_error": "A computer is a thing who you use to work.",
+          "respuesta": "A computer is a thing that you use to work."
+        },
+        {
+          "tipo": "transformation",
+          "oracion_base": "A notebook. You use it to write notes.",
+          "instruccion": "Join them with 'that'.",
+          "respuesta": "A notebook is a thing that you use to write notes."
+        },
+        {
+          "tipo": "short_answer_production",
+          "pregunta": "What do you call a thing that you use to write?",
+          "respuesta": "A pen is a thing that you use to write."
+        }
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Last round! A thing that you use to write.",
+        "Ben: A pen!",
+        "Kenji: Correct. A thing that you use to check words?",
+        "Ben: A dictionary!",
+        "Kenji: And a thing that you use to carry your books?",
+        "Ben: A backpack! I win the game."
+      ],
+      "gaps": [
+        "write",
+        "check"
+      ],
+      "comprension": [
+        {
+          "pregunta": "A thing that you use to write is a...",
+          "opciones": [
+            "ruler",
+            "pen",
+            "mouse"
+          ],
+          "respuesta": "pen"
+        },
+        {
+          "pregunta": "A thing that you use to carry books is a...",
+          "opciones": [
+            "backpack",
+            "printer",
+            "keyboard"
+          ],
+          "respuesta": "backpack"
+        }
+      ]
+    },
+    "reading": {
+      "texto": "On Sofía's desk there are many useful things. A pen is a thing that she uses to write, and a notebook is a thing that she uses to take notes. Her computer is a thing that she uses to work, and a dictionary is a thing that she uses to check English words. 'What is the most important thing on your desk?' asks Kenji. 'My coffee!' Sofía laughs. 'It's a thing that I use to wake up!'",
+      "preguntas": [
+        {
+          "afirmacion": "A pen is a thing that Sofía uses to write.",
+          "respuesta": "true"
+        },
+        {
+          "afirmacion": "Sofía uses a dictionary to cook.",
+          "respuesta": "false"
+        },
+        {
+          "afirmacion": "Sofía jokes that coffee is a thing she uses to wake up.",
+          "respuesta": "true"
+        }
+      ]
+    }
+  }
+}

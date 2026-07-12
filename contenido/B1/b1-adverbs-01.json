@@ -1,0 +1,115 @@
+{
+  "id": "b1-adverbs-01",
+  "nivel": "B1",
+  "arquetipo": "comparativos",
+  "tema": "Adverbs of Manner — quickly, carefully & comparatives",
+  "habilidades": ["grammar", "vocabulary", "listening", "reading", "writing"],
+  "vocabulario": [
+    {"bandera": "-ly", "palabra": "quick → quickly", "traduccion": "rápido → rápidamente"},
+    {"bandera": "-ly", "palabra": "slow → slowly", "traduccion": "lento → lentamente"},
+    {"bandera": "-ly", "palabra": "careful → carefully", "traduccion": "cuidadoso → cuidadosamente"},
+    {"bandera": "-ly", "palabra": "loud → loudly", "traduccion": "fuerte → fuertemente (volumen)"},
+    {"bandera": "-ly", "palabra": "bad → badly", "traduccion": "malo → mal"},
+    {"bandera": "-ly", "palabra": "dangerous → dangerously", "traduccion": "peligroso → peligrosamente"},
+    {"bandera": "-ily", "palabra": "easy → easily", "traduccion": "fácil → fácilmente"},
+    {"bandera": "-ily", "palabra": "happy → happily", "traduccion": "feliz → felizmente"},
+    {"bandera": "irreg", "palabra": "good → well", "traduccion": "bueno → bien"},
+    {"bandera": "=", "palabra": "fast → fast", "traduccion": "rápido (no cambia)"},
+    {"bandera": "=", "palabra": "hard → hard", "traduccion": "duro / con esfuerzo (no cambia)"},
+    {"bandera": "=", "palabra": "early → early", "traduccion": "temprano (no cambia)"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "She quickly finished the report."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "She finished the report quickly."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Ben sings loudly in the shower."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Kenji speaks Spanish well."},
+    {"id": "s5", "forma": "afirmativo", "oracion": "Sofía works faster than anyone in her office."},
+    {"id": "s6", "forma": "negativo", "oracion": "He doesn't drive carefully at night."},
+    {"id": "s7", "forma": "negativo", "oracion": "They didn't work hard on this project."},
+    {"id": "s8", "forma": "negativo", "oracion": "I can't wake up early on Mondays."},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Do you speak English well?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Does she drive carefully?"},
+    {"id": "s11", "forma": "interrogativo", "oracion": "Who works the most carefully in your class?"},
+    {"id": "s12", "forma": "short_answer", "oracion": "Do you sing well? No, I don't."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Does Ben dance badly? Yes, he does... enthusiastically."},
+    {"id": "s14", "forma": "short_answer", "oracion": "Did they arrive early? Yes, they did."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: I work **quickly**, but I check everything **carefully**. Two adverbs, one designer.",
+        "Ben: I sing **loudly**. The neighbors say I sing **badly**. Both things can be true.",
+        "Kenji: And you can say it two ways: 'I **quickly** learned salsa' or 'I learned salsa **quickly**'. Before the verb, or at the end!",
+        "Abuela Carmen: And I dance **better than** all of you. **The most gracefully**, in fact. It was proven in 1975."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "She sings beautiful.",
+        "opcion_b": "She sings beautifully.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Adverbs of manner say HOW something is done — most end in -ly, and they can go before the verb or at the end of the sentence.",
+      "tabla": {
+        "titulo": "adjective → adverb (-ly)",
+        "encabezados": ["Rule", "Form", "Example"],
+        "filas": [
+          ["Formation", "adjective + -ly", "quick → quickly · careful → carefully"],
+          ["Spelling: -y → -ily", "easy → easily · happy → happily", "She passed the test easily"],
+          ["Irregulars", "good → well · fast → fast · hard → hard", "She speaks well · He runs fast"],
+          ["Position 1: before the verb", "subject + adverb + verb", "She quickly finished the report"],
+          ["Position 2: end of the sentence", "…verb + object + adverb", "She finished the report quickly"],
+          ["Comparative adverbs", "faster than · more carefully than · better / worse", "She works more carefully than me"],
+          ["Trap", "hard = duro · hardly = casi nada", "He works hard ≠ He hardly works"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "She sings ___.", "opciones": ["beautifully", "beautiful", "beauty"], "respuesta": "beautifully"},
+        {"tipo": "multiple_choice", "pregunta": "Kenji speaks Spanish very ___.", "opciones": ["good", "well", "goodly"], "respuesta": "well"},
+        {"tipo": "multiple_choice", "pregunta": "He works ___ than his brother.", "opciones": ["carefullier", "most carefully", "more carefully"], "respuesta": "more carefully"},
+        {"tipo": "multiple_choice", "pregunta": "'He hardly works' means ___.", "opciones": ["he works very little", "he works very hard", "he works with his hands"], "respuesta": "he works very little"},
+        {"tipo": "true_false", "afirmacion": "Adverbs can go before the verb or at the end of the sentence: 'She quickly finished' / 'She finished quickly'.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "The adverb of 'good' is 'goodly'.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Drive ___ (careful) — it's raining.", "respuesta": "carefully"},
+        {"tipo": "gap_fill", "texto": "She dances ___ (happy) at every party.", "respuesta": "happily"},
+        {"tipo": "gap_fill", "texto": "He runs ___ (fast) than me.", "respuesta": "faster"},
+        {"tipo": "unscramble", "palabras": ["she", "quickly", "finished", "the", "report"], "respuesta": "She quickly finished the report"},
+        {"tipo": "unscramble", "palabras": ["Ben", "sings", "loudly", "in", "the", "shower"], "respuesta": "Ben sings loudly in the shower"},
+        {"tipo": "correct_mistake", "texto_con_error": "She sings beautiful.", "respuesta": "She sings beautifully."},
+        {"tipo": "correct_mistake", "texto_con_error": "He speaks English very good.", "respuesta": "He speaks English very well."},
+        {"tipo": "correct_mistake", "texto_con_error": "They work hardly every day.", "respuesta": "They work hard every day."},
+        {"tipo": "transformation", "oracion_base": "She finished the report quickly.", "instruccion": "Move the adverb before the verb.", "respuesta": "She quickly finished the report."},
+        {"tipo": "transformation", "oracion_base": "He drives carefully.", "instruccion": "Write the negative form.", "respuesta": "He doesn't drive carefully."},
+        {"tipo": "transformation", "oracion_base": "Do you sing well?", "instruccion": "Answer with a short answer (No).", "respuesta": "No, I don't."},
+        {"tipo": "write_opposite", "oracion_base": "She works quickly.", "instruccion": "Write the opposite (use 'slowly').", "respuesta": "She works slowly."},
+        {"tipo": "write_opposite", "oracion_base": "Ben dances badly.", "instruccion": "Write the opposite (use 'well').", "respuesta": "Ben dances well."},
+        {"tipo": "short_answer_production", "pregunta": "Do you speak English well? (short answer)", "respuesta": "Yes, I do."},
+        {"tipo": "short_answer_production", "pregunta": "Did you wake up early today? (short answer, No)", "respuesta": "No, I didn't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: Team meeting! Kenji, you learned Spanish quickly. What's the secret?",
+        "Kenji: I practice daily, I listen carefully, and I make mistakes happily.",
+        "Ben: Then I'm doing great — I make mistakes more frequently than anyone!",
+        "Abuela Carmen: Making mistakes is fine, Ben. But you cut the onions dangerously. Slowly, my dear. Slowly.",
+        "Sofía: Meeting conclusion: practice daily, listen carefully, and cut onions slowly."
+      ],
+      "gaps": ["daily", "carefully", "happily", "slowly"],
+      "comprension": [
+        {"pregunta": "How often does Kenji practice?", "opciones": ["Daily", "Weekly", "Rarely"], "respuesta": "Daily"},
+        {"pregunta": "What is the advice for Ben about cutting onions?", "opciones": ["Slowly", "Quickly", "Loudly"], "respuesta": "Slowly"}
+      ]
+    },
+    "reading": {
+      "texto": "How do you learn a language well? Kenji wrote his method on one page. 'Listen carefully — more carefully than you speak. Practice daily, even badly: five bad minutes beat zero perfect ones. Speak bravely; people correct you kindly more often than you expect. Write slowly at first, then faster every week. And most importantly: compare yourself patiently — you will not improve as quickly as you want, but you will improve more steadily than you think.' Abuela Carmen read it and nodded wisely: 'The boy writes well.'",
+      "preguntas": [
+        {"afirmacion": "Kenji says you should listen more carefully than you speak.", "respuesta": "true"},
+        {"afirmacion": "He recommends practicing only when you can do it perfectly.", "respuesta": "false"},
+        {"afirmacion": "He says people usually correct you kindly.", "respuesta": "true"},
+        {"afirmacion": "Abuela Carmen thinks Kenji writes badly.", "respuesta": "false"}
+      ]
+    }
+  }
+}

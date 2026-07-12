@@ -1,0 +1,104 @@
+{
+  "id": "b2-phrasal-verbs-up-01",
+  "nivel": "B2",
+  "arquetipo": "vocabulario",
+  "tema": "Phrasal Verbs with UP",
+  "habilidades": ["vocabulary", "speaking", "listening", "reading"],
+  "vocabulario": [
+    {"bandera": "despertar", "palabra": "wake up", "traduccion": "despertarse"},
+    {"bandera": "crecer/madurar", "palabra": "grow up", "traduccion": "crecer / madurar"},
+    {"bandera": "rendirse", "palabra": "give up", "traduccion": "rendirse"},
+    {"bandera": "buscar información", "palabra": "look up", "traduccion": "buscar (diccionario/internet)"},
+    {"bandera": "aparecer/llegar", "palabra": "show up", "traduccion": "aparecer / llegar"},
+    {"bandera": "terminar inesperadamente", "palabra": "end up", "traduccion": "terminar (en algo inesperado)"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Ben woke up late again this morning."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Sofía grew up in Medellín."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Kenji always looks up new words he doesn't know."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "They ended up staying until midnight."},
+    {"id": "s5", "forma": "negativo", "oracion": "Ben didn't show up to the meeting on time."},
+    {"id": "s6", "forma": "negativo", "oracion": "Sofía never gives up on a difficult project."},
+    {"id": "s7", "forma": "negativo", "oracion": "We didn't clean up after the party."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "What time did you wake up?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Did Ben show up eventually?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Why did you give up so quickly?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Did Ben show up late? Yes, he did."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Does Sofía ever give up? No, she doesn't."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Did they clean up the studio? Yes, they did."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: You **woke up** late again, didn't you?",
+        "Ben: I didn't wake up late, I just **showed up** late. Different problem.",
+        "Kenji: Either way, we **ended up** starting the class without you.",
+        "Ben: I'll **look up** what I missed. I promise I won't **give up** on this course."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I looked up and saw the word in the sky.",
+        "opcion_b": "I looked up the word in the dictionary.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Phrasal verbs with 'up' rarely mean 'upward' — they usually describe completing, increasing, or discovering something.",
+      "tabla": {
+        "titulo": "UP — completing, increasing, discovering",
+        "encabezados": ["Phrasal verb", "Meaning", "Example"],
+        "filas": [
+          ["wake up", "stop sleeping", "I woke up at 7"],
+          ["grow up", "become an adult", "She grew up in Medellín"],
+          ["give up", "stop trying", "Don't give up!"],
+          ["look up", "search for information", "Look it up online"],
+          ["show up", "arrive, appear", "He showed up an hour late"],
+          ["end up", "reach an unexpected final situation", "We ended up walking home"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Ben ___ late again this morning.", "opciones": ["woke up", "grew up", "gave up"], "respuesta": "woke up"},
+        {"tipo": "multiple_choice", "pregunta": "Kenji always ___ new words he doesn't know.", "opciones": ["looks up", "shows up", "cleans up"], "respuesta": "looks up"},
+        {"tipo": "multiple_choice", "pregunta": "They ___ staying until midnight.", "opciones": ["ended up", "gave up", "woke up"], "respuesta": "ended up"},
+        {"tipo": "true_false", "afirmacion": "'Look up' usually means to search for information.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Give up' means to try harder.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'Show up' means to arrive somewhere.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "Sofía ___ (grow, past) up in Medellín.", "respuesta": "grew"},
+        {"tipo": "gap_fill", "texto": "We ___ (not/clean) up after the party.", "respuesta": "didn't clean"},
+        {"tipo": "gap_fill", "texto": "Did Ben ___ up eventually?", "respuesta": "show"},
+        {"tipo": "unscramble", "palabras": ["Ben", "woke", "up", "late", "again"], "respuesta": "Ben woke up late again"},
+        {"tipo": "unscramble", "palabras": ["they", "ended", "up", "staying", "until", "midnight"], "respuesta": "they ended up staying until midnight"},
+        {"tipo": "correct_mistake", "texto_con_error": "I looked up and saw the word in the dictionary.", "respuesta": "I looked up the word in the dictionary."},
+        {"tipo": "transformation", "oracion_base": "Ben arrived late to the meeting.", "instruccion": "Rewrite using 'show up'.", "respuesta": "Ben showed up late to the meeting."},
+        {"tipo": "transformation", "oracion_base": "Sofía never stops trying.", "instruccion": "Rewrite using 'give up' (negative).", "respuesta": "Sofía never gives up."},
+        {"tipo": "transformation", "oracion_base": "Did Ben show up late?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, he did."},
+        {"tipo": "write_opposite", "oracion_base": "Ben showed up on time.", "instruccion": "Write the negative form.", "respuesta": "Ben didn't show up on time."},
+        {"tipo": "short_answer_production", "pregunta": "What time did you wake up today?", "respuesta": "I woke up at seven."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: You woke up late again, I can tell.",
+        "Ben: I showed up on time, that's what matters.",
+        "Kenji: You ended up missing the first ten minutes.",
+        "Ben: I'll look up what I missed and catch up.",
+        "Sofía: Just don't give up on the whole course because of ten minutes.",
+        "Ben: Never. I'm growing up, slowly."
+      ],
+      "gaps": ["late", "missing", "up", "up"],
+      "comprension": [
+        {"pregunta": "What does Kenji say Ben ended up doing?", "opciones": ["Missing the first ten minutes", "Sleeping through class", "Leaving early"], "respuesta": "Missing the first ten minutes"},
+        {"pregunta": "What does Ben promise not to do?", "opciones": ["Give up on the course", "Wake up late again", "Show up late again"], "respuesta": "Give up on the course"}
+      ]
+    },
+    "reading": {
+      "texto": "Kenji grew up in Osaka, in a house where everyone woke up before sunrise. In Medellín, he's slowly given up on that habit — mornings here feel different, slower. He still looks up unfamiliar words constantly, filling his notebook with phrases he hears from Ben and Sofía. Sometimes he shows up to class early just to practice with whoever's there. Other times, a good conversation with Abuela Carmen means he ends up staying for hours, notebook forgotten on the table. He hasn't given up on becoming fluent — if anything, moving here just proved how much further he still has to go, and how much he enjoys the trip.",
+      "preguntas": [
+        {"afirmacion": "Kenji grew up in Osaka.", "respuesta": "true"},
+        {"afirmacion": "He has completely stopped waking up early since moving.", "respuesta": "false"},
+        {"afirmacion": "Kenji sometimes ends up staying for hours talking with Abuela Carmen.", "respuesta": "true"},
+        {"afirmacion": "Kenji has given up on becoming fluent.", "respuesta": "false"}
+      ]
+    }
+  }
+}

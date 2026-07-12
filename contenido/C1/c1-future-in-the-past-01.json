@@ -1,0 +1,93 @@
+{
+  "id": "c1-future-in-the-past-01",
+  "nivel": "C1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Future in the Past",
+  "habilidades": ["grammar", "writing", "speaking"],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Sofía was going to call the client, but she forgot."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Ben said he would arrive by six."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "By next year, Kenji will have been living here for two years."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "They were about to leave when the phone rang."},
+    {"id": "s5", "forma": "negativo", "oracion": "Sofía wasn't going to mention it, but she changed her mind."},
+    {"id": "s6", "forma": "negativo", "oracion": "Ben said he wouldn't be late this time."},
+    {"id": "s7", "forma": "negativo", "oracion": "They weren't about to give up so easily."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Was Sofía going to call the client?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Did Ben say he would arrive by six?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Were they about to leave when it happened?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Was Sofía going to call? Yes, she was."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Did Ben say he would come? Yes, he did."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Were they about to leave? Yes, they were."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: I **was going to** call the client this morning, but then everything happened at once.",
+        "Kenji: Ben said he **would help** with the report today.",
+        "Ben: I **was about to** start, actually, when Sofía's message came in.",
+        "Abuela Carmen: By the time you all finish deciding who was going to do what, the day will be over."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "Sofía will go to call the client, but she forgot.",
+        "opcion_b": "Sofía was going to call the client, but she forgot.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Future in the past describes a plan or prediction made from a point in the past — 'was going to', 'would', and 'was about to' all talk about a future that, seen from now, may or may not have actually happened.",
+      "tabla": {
+        "titulo": "Future in the past — three forms",
+        "encabezados": ["Structure", "Use", "Example"],
+        "filas": [
+          ["was/were going to", "a plan that may or may not have happened", "Sofía was going to call, but she forgot."],
+          ["would", "reporting a promise/prediction from the past", "Ben said he would arrive by six."],
+          ["was/were about to", "something on the point of happening", "They were about to leave when the phone rang."]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Sofía ___ call the client, but she forgot.", "opciones": ["was going to", "will", "is going to"], "respuesta": "was going to"},
+        {"tipo": "multiple_choice", "pregunta": "Ben said he ___ arrive by six.", "opciones": ["would", "will", "is"], "respuesta": "would"},
+        {"tipo": "multiple_choice", "pregunta": "They ___ leave when the phone rang.", "opciones": ["were about to", "are about to", "will be about to"], "respuesta": "were about to"},
+        {"tipo": "true_false", "afirmacion": "'Was going to' describes a past plan that may not have happened.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Would' can report a promise or prediction made in the past.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Was about to' means something happened a long time ago.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Sofía ___ (not/go, to) mention it, but she changed her mind.", "respuesta": "wasn't going to"},
+        {"tipo": "gap_fill", "texto": "Ben said he ___ (not/be) late this time.", "respuesta": "wouldn't be"},
+        {"tipo": "gap_fill", "texto": "They ___ (not/be, about to) give up so easily.", "respuesta": "weren't about to"},
+        {"tipo": "unscramble", "palabras": ["Sofía", "was", "going", "to", "call", "the", "client"], "respuesta": "Sofía was going to call the client"},
+        {"tipo": "unscramble", "palabras": ["they", "were", "about", "to", "leave", "when", "the", "phone", "rang"], "respuesta": "they were about to leave when the phone rang"},
+        {"tipo": "correct_mistake", "texto_con_error": "Sofía will go to call the client, but she forgot.", "respuesta": "Sofía was going to call the client, but she forgot."},
+        {"tipo": "transformation", "oracion_base": "Sofía planned to call the client, but forgot.", "instruccion": "Rewrite using 'was going to'.", "respuesta": "Sofía was going to call the client, but she forgot."},
+        {"tipo": "transformation", "oracion_base": "Ben promised he would arrive by six.", "instruccion": "Report this using 'said he would'.", "respuesta": "Ben said he would arrive by six."},
+        {"tipo": "transformation", "oracion_base": "Was Sofía going to call the client?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, she was."},
+        {"tipo": "write_opposite", "oracion_base": "They were about to leave.", "instruccion": "Write the negative form.", "respuesta": "They weren't about to leave."},
+        {"tipo": "short_answer_production", "pregunta": "What were you going to do this weekend before your plans changed?", "respuesta": "I was going to travel, but I stayed home instead."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: I was going to call the client this morning, but everything happened at once.",
+        "Kenji: Ben said he would help with the report today.",
+        "Ben: I was about to start, actually, when Sofía's message came in.",
+        "Sofía: By next year, Kenji will have been living here for two years, and Ben still won't have finished a single report on time.",
+        "Ben: Harsh, but probably accurate.",
+        "Abuela Carmen: By the time you all finish deciding who was going to do what, the day will be over."
+      ],
+      "gaps": ["client", "report", "started", "accurate"],
+      "comprension": [
+        {"pregunta": "What was Sofía going to do this morning?", "opciones": ["Call the client", "Finish a report", "Leave early"], "respuesta": "Call the client"},
+        {"pregunta": "What did Ben say he would do?", "opciones": ["Help with the report", "Call the client", "Leave the office"], "respuesta": "Help with the report"}
+      ]
+    },
+    "reading": {
+      "texto": "Every plan in this office seems to exist in two versions: the one that was going to happen, and the one that actually did. Sofía was going to call the client at nine; by noon, she still hadn't. Ben said he would finish his part of the report by lunch; Abuela Carmen predicts, with total confidence, that he won't. Kenji was about to remind everyone of their responsibilities when Ben's phone rang — of course it was the client, calling exactly the person nobody had called first. By next year, someone joked, they'd all have learned to just wait for the universe to sort out their to-do lists for them.",
+      "preguntas": [
+        {"afirmacion": "Sofía called the client at nine as planned.", "respuesta": "false"},
+        {"afirmacion": "Ben promised to finish his part of the report by lunch.", "respuesta": "true"},
+        {"afirmacion": "Kenji actually reminded everyone before Ben's phone rang.", "respuesta": "false"},
+        {"afirmacion": "The client called Ben.", "respuesta": "true"}
+      ]
+    }
+  }
+}

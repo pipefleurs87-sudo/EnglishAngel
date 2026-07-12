@@ -1,0 +1,117 @@
+{
+  "id": "a2-countables-some-any-01",
+  "nivel": "A2",
+  "arquetipo": "determinantes",
+  "tema": "Countable & Uncountable — a / some / any / much / many (Food)",
+  "habilidades": ["grammar", "vocabulary", "listening", "reading", "writing"],
+  "vocabulario": [
+    {"bandera": "🥛", "palabra": "milk", "traduccion": "leche · incontable"},
+    {"bandera": "🥚", "palabra": "eggs", "traduccion": "huevos · contable"},
+    {"bandera": "🧀", "palabra": "cheese", "traduccion": "queso · incontable"},
+    {"bandera": "🍎", "palabra": "apples", "traduccion": "manzanas · contable"},
+    {"bandera": "🍞", "palabra": "bread", "traduccion": "pan · incontable"},
+    {"bandera": "🧈", "palabra": "butter", "traduccion": "mantequilla · incontable"},
+    {"bandera": "🍚", "palabra": "rice", "traduccion": "arroz · incontable"},
+    {"bandera": "💧", "palabra": "water", "traduccion": "agua · incontable"},
+    {"bandera": "🧅", "palabra": "onions", "traduccion": "cebollas · contable"},
+    {"bandera": "🍅", "palabra": "tomatoes", "traduccion": "tomates · contable"},
+    {"bandera": "🍌", "palabra": "bananas", "traduccion": "bananos · contable"},
+    {"bandera": "🥕", "palabra": "carrots", "traduccion": "zanahorias · contable"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "There is some cheese in the fridge."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "I need some sugar for the cake."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "I have some friends in Cartagena."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "There is a lot of rice in the cupboard."},
+    {"id": "s5", "forma": "negativo", "oracion": "There isn't any milk left in the carton."},
+    {"id": "s6", "forma": "negativo", "oracion": "We don't have any eggs."},
+    {"id": "s7", "forma": "negativo", "oracion": "There isn't much bread for breakfast."},
+    {"id": "s8", "forma": "negativo", "oracion": "There aren't many apples in the basket."},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Is there any space left in the fridge?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Are there any apples in the fridge?"},
+    {"id": "s11", "forma": "interrogativo", "oracion": "How much butter do we need?"},
+    {"id": "s12", "forma": "interrogativo", "oracion": "Would you like some coffee?"},
+    {"id": "s13", "forma": "short_answer", "oracion": "Is there any milk left? No, there isn't."},
+    {"id": "s14", "forma": "short_answer", "oracion": "Are there any onions? Yes, there are."},
+    {"id": "s15", "forma": "short_answer", "oracion": "Would you like some coffee? Yes, please!"}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: Let's cook! There's **some** cheese and there are **some** tomatoes in the fridge.",
+        "Ben: Bad news... there isn't **any** milk. And there aren't **any** eggs.",
+        "Kenji: Is there **any** rice left? I can make onigiri!",
+        "Abuela Carmen: Would you like **some** coffee while you decide? There's **a lot of** coffee in this house!"
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "We don't have some eggs.",
+        "opcion_b": "We don't have any eggs.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "A/an, some and any talk about quantity without counting exactly — a/an for one countable thing, some for affirmatives and offers, any for negatives and questions.",
+      "tabla": {
+        "titulo": "a / an · some · any · much / many · a lot of — one at a time",
+        "encabezados": ["Word", "Use it for...", "Example"],
+        "filas": [
+          ["a / an", "ONE countable thing — 'a doctor' is any doctor; 'the doctor' is that specific one", "There is an apple. She is a doctor."],
+          ["some", "affirmative sentences — countable AND uncountable", "I need some sugar. I have some friends there."],
+          ["some (offers)", "questions that offer or request politely", "Would you like some coffee?"],
+          ["any", "negatives and questions — countable AND uncountable", "Is there any milk left? We don't have any eggs."],
+          ["much", "uncountable — negatives and questions", "There isn't much bread. How much rice?"],
+          ["many", "countable — negatives and questions", "How many apples are there?"],
+          ["a lot of", "affirmative sentences — both types", "There's a lot of juice."]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "I need ___ sugar for the cake.", "opciones": ["some", "any", "a"], "respuesta": "some"},
+        {"tipo": "multiple_choice", "pregunta": "We don't have ___ eggs.", "opciones": ["any", "some", "much"], "respuesta": "any"},
+        {"tipo": "multiple_choice", "pregunta": "She is ___ doctor — I don't know her name.", "opciones": ["a", "the", "an"], "respuesta": "a"},
+        {"tipo": "multiple_choice", "pregunta": "When Abuela Carmen was young, there weren't ___ supermarkets in her town.", "opciones": ["any", "some", "much"], "respuesta": "any", "combina": ["There is / There are", "Verb To Be — Past (was / were)"]},
+        {"tipo": "true_false", "afirmacion": "'Milk' is uncountable, so we ask 'How much milk?', not 'How many milk?'.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "We use 'some' in negative sentences.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Is there ___ milk left in the carton?", "respuesta": "any"},
+        {"tipo": "gap_fill", "texto": "Don't worry, there is ___ cheese in the fridge.", "respuesta": "some"},
+        {"tipo": "gap_fill", "texto": "How ___ apples are there in the basket?", "respuesta": "many"},
+        {"tipo": "unscramble", "palabras": ["is", "there", "any", "space", "left", "in", "the", "fridge"], "respuesta": "Is there any space left in the fridge"},
+        {"tipo": "unscramble", "palabras": ["would", "you", "like", "some", "coffee"], "respuesta": "Would you like some coffee"},
+        {"tipo": "correct_mistake", "texto_con_error": "We don't have some eggs.", "respuesta": "We don't have any eggs."},
+        {"tipo": "correct_mistake", "texto_con_error": "There isn't many milk in the fridge.", "respuesta": "There isn't much milk in the fridge."},
+        {"tipo": "correct_mistake", "texto_con_error": "There is a onion in the salad.", "respuesta": "There is an onion in the salad."},
+        {"tipo": "transformation", "oracion_base": "There is some juice in the fridge.", "instruccion": "Write the negative form.", "respuesta": "There isn't any juice in the fridge.", "combina": ["There is / There are"]},
+        {"tipo": "transformation", "oracion_base": "There are some tomatoes in the salad.", "instruccion": "Write the yes/no question.", "respuesta": "Are there any tomatoes in the salad?", "combina": ["There is / There are"]},
+        {"tipo": "transformation", "oracion_base": "Is there any rice left?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, there is."},
+        {"tipo": "write_opposite", "oracion_base": "There is a lot of bread.", "instruccion": "Write the negative form (use 'much').", "respuesta": "There isn't much bread."},
+        {"tipo": "write_opposite", "oracion_base": "There aren't any bananas.", "instruccion": "Write the affirmative form (use 'some').", "respuesta": "There are some bananas."},
+        {"tipo": "short_answer_production", "pregunta": "Are there any apples in your fridge? (short answer)", "respuesta": "Yes, there are."},
+        {"tipo": "short_answer_production", "pregunta": "Is there any milk left? (short answer, No)", "respuesta": "No, there isn't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: What's in the fridge? We need to make dinner.",
+        "Ben: There's some cheese and there are some tomatoes. But there isn't any milk.",
+        "Kenji: Are there any eggs?",
+        "Ben: No, there aren't. And there isn't much rice either.",
+        "Sofía: OK — eggs, milk and rice. Anything else?",
+        "Abuela Carmen: Would you like some coffee before you go? There's a lot of coffee in this house!"
+      ],
+      "gaps": ["cheese", "milk", "eggs", "rice"],
+      "comprension": [
+        {"pregunta": "What do they need to buy?", "opciones": ["Eggs, milk and rice", "Cheese and tomatoes", "Coffee and sugar"], "respuesta": "Eggs, milk and rice"},
+        {"pregunta": "Is there any cheese in the fridge?", "opciones": ["Yes, there is", "No, there isn't", "There isn't much"], "respuesta": "Yes, there is"}
+      ]
+    },
+    "reading": {
+      "texto": "Every Saturday, Abuela Carmen visits the market. She doesn't buy much: some fruit, some cheese, and a little bread. 'When I was a girl, there weren't any supermarkets,' she says. 'There was a market in the plaza, and there was a lot of noise! We didn't have much money, but there was always some food on the table.' Today there are three supermarkets in her neighborhood, but she still prefers the market. 'The supermarket tomatoes don't have any flavor,' she says. 'And at the market, my friend Rosa always gives me an extra apple.'",
+      "preguntas": [
+        {"afirmacion": "Abuela Carmen buys a lot of things at the market.", "respuesta": "false"},
+        {"afirmacion": "When she was a girl, there weren't any supermarkets.", "respuesta": "true"},
+        {"afirmacion": "Her family had a lot of money.", "respuesta": "false"},
+        {"afirmacion": "Rosa always gives her an extra apple.", "respuesta": "true"}
+      ]
+    }
+  }
+}

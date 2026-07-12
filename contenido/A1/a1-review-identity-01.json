@@ -1,0 +1,82 @@
+{
+  "id": "a1-review-identity-01",
+  "nivel": "A1",
+  "arquetipo": "joined_exercise",
+  "tema": "A1 Review — Identity: To Be, Pronouns & Demonstratives",
+  "habilidades": ["grammar", "listening", "reading", "writing"],
+  "banco_oraciones": [
+    {"id": "s1", "oracion": "This is my friend Kenji. He is from Japan."},
+    {"id": "s2", "oracion": "Sofía and I are designers. Our office is in Medellín."},
+    {"id": "s3", "oracion": "These are my parents. Their names are Ana and Luis."},
+    {"id": "s4", "oracion": "That woman is Carmen. She is Sofía's grandmother."},
+    {"id": "s5", "oracion": "Is this your camera? Yes, it is."},
+    {"id": "s6", "oracion": "We are not tourists. We are students."}
+  ],
+  "fases": {
+    "inicio": {
+      "banner_diagnostico": {
+        "opcion_a": "This is Sofía. Her is from Colombia.",
+        "opcion_b": "This is Sofía. She is from Colombia.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "We combine 'to be', pronouns and this/that/these/those to introduce and identify people and things — the language of meeting someone.",
+      "tabla": {
+        "titulo": "identity — the map",
+        "encabezados": ["Pronoun", "To be", "Possessive"],
+        "filas": [
+          ["I", "am", "my"],
+          ["you", "are", "your"],
+          ["he / she / it", "is", "his / her / its"],
+          ["we", "are", "our"],
+          ["they", "are", "their"]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "combina": ["demonstratives", "to be"], "pregunta": "___ is my friend Kenji. He is from Japan.", "opciones": ["This", "These", "Those"], "respuesta": "This"},
+        {"tipo": "multiple_choice", "combina": ["to be", "possessives"], "pregunta": "Sofía and I ___ designers. ___ office is in Medellín.", "opciones": ["are / Our", "is / Our", "are / We"], "respuesta": "are / Our"},
+        {"tipo": "multiple_choice", "combina": ["pronouns", "to be"], "pregunta": "That is Kenji's camera. ___ is Japanese.", "opciones": ["It", "He", "This"], "respuesta": "It"},
+        {"tipo": "true_false", "combina": ["demonstratives"], "afirmacion": "'These' is for one thing near you.", "respuesta": "false"},
+        {"tipo": "true_false", "combina": ["pronouns"], "afirmacion": "'They' can replace 'Kenji and Ben'.", "respuesta": "true"},
+        {"tipo": "gap_fill", "combina": ["demonstratives", "to be"], "texto": "This ___ my grandmother, Carmen.", "respuesta": "is"},
+        {"tipo": "gap_fill", "combina": ["possessives"], "texto": "Those women are teachers. ___ names are Ana and Luz.", "respuesta": "Their"},
+        {"tipo": "gap_fill", "combina": ["pronouns"], "texto": "Kenji is my friend. ___ is from Tokyo.", "respuesta": "He"},
+        {"tipo": "unscramble", "combina": ["demonstratives", "to be", "possessives"], "palabras": ["is", "This", "sister", "my"], "respuesta": "This is my sister."},
+        {"tipo": "unscramble", "combina": ["to be", "pronouns"], "palabras": ["are", "from", "We", "Colombia"], "respuesta": "We are from Colombia."},
+        {"tipo": "correct_mistake", "combina": ["pronouns", "to be"], "texto_con_error": "This is Sofía. Her is a designer.", "respuesta": "This is Sofía. She is a designer."},
+        {"tipo": "correct_mistake", "combina": ["demonstratives", "to be"], "texto_con_error": "These is my parents.", "respuesta": "These are my parents."},
+        {"tipo": "correct_mistake", "combina": ["possessives"], "texto_con_error": "I am Kenji. Mi family is in Japan.", "respuesta": "I am Kenji. My family is in Japan."},
+        {"tipo": "transformation", "combina": ["to be"], "oracion_base": "Sofía is Colombian.", "instruccion": "Make it negative.", "respuesta": "Sofía is not Colombian."},
+        {"tipo": "transformation", "combina": ["demonstratives", "to be"], "oracion_base": "This is your book.", "instruccion": "Turn it into a question.", "respuesta": "Is this your book?"},
+        {"tipo": "write_opposite", "combina": ["demonstratives"], "oracion_base": "This is my desk.", "instruccion": "Write the opposite: near → far.", "respuesta": "That is my desk."},
+        {"tipo": "short_answer_production", "combina": ["possessives", "to be"], "pregunta": "Who is your best friend? Answer with 'My best friend is...'", "respuesta": "My best friend is Ana."},
+        {"tipo": "short_answer_production", "combina": ["to be", "pronouns"], "pregunta": "Introduce yourself: name and nationality. (I am... / My name is...)", "respuesta": "I am Sofía and I am Colombian."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: Abuela, this is my friend Kenji. He is from Japan.",
+        "Carmen: Welcome, Kenji! Our house is your house.",
+        "Kenji: Thank you! Is this your garden? It is beautiful.",
+        "Carmen: Yes, it is. These flowers are my treasure.",
+        "Kenji: Your garden is amazing. My grandmother in Japan is a gardener too!",
+        "Carmen: Then we are friends already."
+      ],
+      "gaps": ["garden", "flowers"],
+      "comprension": [
+        {"pregunta": "Who is Kenji?", "opciones": ["Sofía's friend from Japan", "Carmen's gardener", "Sofía's brother"], "respuesta": "Sofía's friend from Japan"},
+        {"pregunta": "What is Carmen's treasure?", "opciones": ["Her flowers", "Her house", "Her camera"], "respuesta": "Her flowers"}
+      ]
+    },
+    "reading": {
+      "texto": "This is our group. Sofía is a designer from Medellín, and her desk is always perfectly organized. Kenji is a student from Japan; his questions are famous in class. Ben is British — those big boots by the door are his. And that wise woman in the kitchen? She is Carmen, Sofía's grandmother. Their house is small, but their hearts are enormous. We are not just classmates. We are a family.",
+      "preguntas": [
+        {"afirmacion": "Sofía's desk is always organized.", "respuesta": "true"},
+        {"afirmacion": "The big boots are Kenji's.", "respuesta": "false"},
+        {"afirmacion": "Carmen is Sofía's grandmother.", "respuesta": "true"}
+      ]
+    }
+  }
+}

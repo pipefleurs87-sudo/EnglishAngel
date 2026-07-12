@@ -1,0 +1,252 @@
+{
+  "id": "a1-present-simple-likes-01",
+  "nivel": "A1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Present Simple — Likes, Hobbies & Free Time",
+  "habilidades": [
+    "grammar",
+    "vocabulary",
+    "listening",
+    "reading",
+    "writing"
+  ],
+  "vocabulario": [
+    {
+      "palabra": "reading",
+      "traduccion": "leer"
+    },
+    {
+      "palabra": "cooking",
+      "traduccion": "cocinar"
+    },
+    {
+      "palabra": "dancing",
+      "traduccion": "bailar"
+    },
+    {
+      "palabra": "swimming",
+      "traduccion": "nadar"
+    },
+    {
+      "palabra": "playing football",
+      "traduccion": "jugar fútbol"
+    },
+    {
+      "palabra": "watching movies",
+      "traduccion": "ver películas"
+    },
+    {
+      "palabra": "listening to music",
+      "traduccion": "escuchar música"
+    },
+    {
+      "palabra": "travelling",
+      "traduccion": "viajar"
+    }
+  ],
+  "banco_oraciones": [
+    {
+      "id": "s1",
+      "forma": "afirmativo",
+      "oracion": "Sofía loves dancing and enjoys cooking."
+    },
+    {
+      "id": "s2",
+      "forma": "afirmativo",
+      "oracion": "Ben likes travelling, and Kenji likes reading."
+    },
+    {
+      "id": "s3",
+      "forma": "negativo",
+      "oracion": "Sofía doesn't like swimming in cold water."
+    },
+    {
+      "id": "s4",
+      "forma": "negativo",
+      "oracion": "I don't like watching TV, but I love music."
+    },
+    {
+      "id": "s5",
+      "forma": "interrogativo",
+      "oracion": "Do you like dancing? What does Ben like doing?"
+    },
+    {
+      "id": "s6",
+      "forma": "interrogativo",
+      "oracion": "Does Kenji like cooking?"
+    },
+    {
+      "id": "s7",
+      "forma": "short_answer",
+      "oracion": "Do you like reading? Yes, I do."
+    },
+    {
+      "id": "s8",
+      "forma": "short_answer",
+      "oracion": "Does Sofía like swimming? No, she doesn't."
+    }
+  ],
+  "fases": {
+    "inicio": {
+      "banner_diagnostico": {
+        "opcion_a": "I like read books.",
+        "opcion_b": "I like reading books.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "We use like/love/hate + a noun or a verb in '-ing' to talk about what we enjoy and our free time.",
+      "tabla": {
+        "titulo": "Preferences and structure",
+        "encabezados": [
+          "Preference",
+          "Structure",
+          "Example"
+        ],
+        "filas": [
+          [
+            "love ♥♥♥",
+            "love + -ing",
+            "I love dancing"
+          ],
+          [
+            "like ♥♥",
+            "like + -ing",
+            "She likes reading"
+          ],
+          [
+            "don't like ♥",
+            "don't like + -ing",
+            "I don't like cooking"
+          ],
+          [
+            "hate ✗",
+            "hate + -ing",
+            "He hates swimming"
+          ]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {
+          "tipo": "multiple_choice",
+          "pregunta": "Sofía loves ___.",
+          "opciones": [
+            "dance",
+            "dancing",
+            "to dancing"
+          ],
+          "respuesta": "dancing"
+        },
+        {
+          "tipo": "multiple_choice",
+          "pregunta": "___ Kenji like cooking?",
+          "opciones": [
+            "Do",
+            "Does",
+            "Is"
+          ],
+          "respuesta": "Does"
+        },
+        {
+          "tipo": "true_false",
+          "afirmacion": "After like/love/hate we often use the verb + '-ing': 'I like reading'.",
+          "respuesta": "true"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "Ben loves ___ to new countries. (travel)",
+          "respuesta": "travelling"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "___ you like listening to music? Yes, I do.",
+          "respuesta": "Do"
+        },
+        {
+          "tipo": "unscramble",
+          "palabras": [
+            "likes",
+            "Sofía",
+            "cooking",
+            "."
+          ],
+          "respuesta": "Sofía likes cooking."
+        },
+        {
+          "tipo": "correct_mistake",
+          "texto_con_error": "Kenji like reading books.",
+          "respuesta": "Kenji likes reading books."
+        },
+        {
+          "tipo": "transformation",
+          "oracion_base": "Sofía likes swimming.",
+          "instruccion": "Make it negative (use 'does not').",
+          "respuesta": "Sofía does not like swimming."
+        },
+        {
+          "tipo": "transformation",
+          "oracion_base": "You like dancing.",
+          "instruccion": "Turn it into a question (use 'do').",
+          "respuesta": "Do you like dancing?"
+        },
+        {
+          "tipo": "short_answer_production",
+          "pregunta": "Do you like cooking? (Answer: Yes, I do. / No, I don't.)",
+          "respuesta": "Yes, I do."
+        }
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: What do you like doing in your free time, Sofía?",
+        "Sofía: I love dancing! And I like cooking on Sundays.",
+        "Kenji: Do you like swimming?",
+        "Sofía: No, I don't. I hate cold water!",
+        "Kenji: And Ben?",
+        "Sofía: Ben loves travelling. He never stays in one place."
+      ],
+      "gaps": [
+        "dancing",
+        "cooking"
+      ],
+      "comprension": [
+        {
+          "pregunta": "What does Sofía love doing?",
+          "opciones": [
+            "Swimming",
+            "Dancing",
+            "Watching TV"
+          ],
+          "respuesta": "Dancing"
+        },
+        {
+          "pregunta": "Does Sofía like swimming?",
+          "opciones": [
+            "Yes, a lot",
+            "No, she hates cold water",
+            "Only in summer"
+          ],
+          "respuesta": "No, she hates cold water"
+        }
+      ]
+    },
+    "reading": {
+      "texto": "Everyone in the group likes different things. Sofía loves dancing and enjoys cooking on Sundays, but she doesn't like swimming because she hates cold water. Ben loves travelling; he never stays in one place. Kenji likes reading and listening to music. 'Do you like the same things?' asks the teacher. 'No,' they laugh, 'but we all love learning English!'",
+      "preguntas": [
+        {
+          "afirmacion": "Sofía loves dancing.",
+          "respuesta": "true"
+        },
+        {
+          "afirmacion": "Ben hates travelling.",
+          "respuesta": "false"
+        },
+        {
+          "afirmacion": "They all love learning English.",
+          "respuesta": "true"
+        }
+      ]
+    }
+  }
+}

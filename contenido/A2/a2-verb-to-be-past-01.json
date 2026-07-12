@@ -1,0 +1,105 @@
+{
+  "id": "a2-verb-to-be-past-01",
+  "nivel": "A2",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Verb To Be — Past (was / were)",
+  "habilidades": ["grammar", "vocabulary", "listening", "reading", "writing"],
+  "vocabulario": [
+    {"palabra": "difficult", "traduccion": "difícil"},
+    {"palabra": "unfair", "traduccion": "injusto"},
+    {"palabra": "peaceful", "traduccion": "tranquilo / pacífico"},
+    {"palabra": "dangerous", "traduccion": "peligroso"},
+    {"palabra": "exciting", "traduccion": "emocionante"},
+    {"palabra": "boring", "traduccion": "aburrido"},
+    {"palabra": "safe", "traduccion": "seguro"},
+    {"palabra": "proud", "traduccion": "orgulloso"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "The weekend was fantastic! The beach was beautiful."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "The players were sad after the game. The final score was 3-0."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Life for the slaves was very difficult and unfair."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "The Cold War was a long conflict between the USA and the USSR."},
+    {"id": "s5", "forma": "afirmativo", "oracion": "When Abuela Carmen was young, the streets were quiet and safe."},
+    {"id": "s6", "forma": "negativo", "oracion": "The players weren't happy after the game. They were very sad."},
+    {"id": "s7", "forma": "negativo", "oracion": "Life in the past wasn't easy for everyone."},
+    {"id": "s8", "forma": "negativo", "oracion": "Ben wasn't at the hostel yesterday. He was at the beach."},
+    {"id": "s9", "forma": "negativo", "oracion": "The Cold War wasn't a traditional war; the battles weren't direct."},
+    {"id": "s10", "forma": "interrogativo", "oracion": "How was your weekend? Was the beach beautiful?"},
+    {"id": "s11", "forma": "interrogativo", "oracion": "Were the players sad after the match?"},
+    {"id": "s12", "forma": "interrogativo", "oracion": "Was life better in the past? Kenji is curious about it."},
+    {"id": "s13", "forma": "interrogativo", "oracion": "Where were you last night?"},
+    {"id": "s14", "forma": "short_answer", "oracion": "Was the exam difficult? Yes, it was."},
+    {"id": "s15", "forma": "short_answer", "oracion": "Were you at the party? No, I wasn't."},
+    {"id": "s16", "forma": "short_answer", "oracion": "Was Ben in Bogotá? No, he wasn't. He was in Cartagena."},
+    {"id": "s17", "forma": "short_answer", "oracion": "Were the streets safe? Yes, they were."}
+  ],
+  "fases": {
+    "inicio": {
+      "banner_diagnostico": {
+        "opcion_a": "The players was sad after the game.",
+        "opcion_b": "The players were sad after the game.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "We use was and were to describe and give opinions about past events, people, and situations — the past version of am / is / are.",
+      "tabla": {
+        "titulo": "was / were",
+        "encabezados": ["Subject", "To be (past)", "Example"],
+        "filas": [
+          ["I / He / She / It", "was / wasn't", "The game was exciting"],
+          ["You / We / They", "were / weren't", "The players weren't happy"],
+          ["Questions", "Was / Were + subject...?", "Was the weekend good?"],
+          ["Short answers", "Yes/No + pronoun + was(n't)/were(n't)", "Were you tired? Yes, I was."]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "The weekend ___ fantastic! The beach was beautiful.", "opciones": ["was", "were", "is"], "respuesta": "was"},
+        {"tipo": "multiple_choice", "pregunta": "The players ___ sad after the game. They lost 3-0.", "opciones": ["was", "were", "are"], "respuesta": "were"},
+        {"tipo": "multiple_choice", "pregunta": "The Cold War ___ a conflict between the USA and the USSR.", "opciones": ["was", "were", "is"], "respuesta": "was"},
+        {"tipo": "true_false", "afirmacion": "We use 'were' with 'you', 'we' and 'they', and 'was' with 'I', 'he', 'she' and 'it'.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'The players was sad' is correct because the team is one group.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Life for the slaves ___ very difficult and unfair.", "respuesta": "was"},
+        {"tipo": "gap_fill", "texto": "Where ___ you last night? I called you three times!", "respuesta": "were"},
+        {"tipo": "gap_fill", "texto": "The streets ___ quiet and safe when Abuela Carmen was young.", "respuesta": "were"},
+        {"tipo": "unscramble", "palabras": ["the", "game", "was", "very", "exciting"], "respuesta": "The game was very exciting"},
+        {"tipo": "unscramble", "palabras": ["where", "were", "you", "yesterday"], "respuesta": "Where were you yesterday"},
+        {"tipo": "correct_mistake", "texto_con_error": "The players was sad after the game.", "respuesta": "The players were sad after the game."},
+        {"tipo": "correct_mistake", "texto_con_error": "Life in the past were more peaceful.", "respuesta": "Life in the past was more peaceful."},
+        {"tipo": "correct_mistake", "texto_con_error": "You was at the party last night?", "respuesta": "Were you at the party last night?"},
+        {"tipo": "transformation", "oracion_base": "The weekend was good.", "instruccion": "Write the negative form.", "respuesta": "The weekend wasn't good."},
+        {"tipo": "transformation", "oracion_base": "The players were happy.", "instruccion": "Write the yes/no question.", "respuesta": "Were the players happy?"},
+        {"tipo": "transformation", "oracion_base": "Was life difficult for the slaves?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, it was."},
+        {"tipo": "write_opposite", "oracion_base": "The hotel was expensive.", "instruccion": "Write the negative form.", "respuesta": "The hotel wasn't expensive."},
+        {"tipo": "write_opposite", "oracion_base": "The players weren't happy.", "instruccion": "Write the affirmative form.", "respuesta": "The players were happy."},
+        {"tipo": "short_answer_production", "pregunta": "Was the Cold War between the USA and the USSR? (short answer)", "respuesta": "Yes, it was."},
+        {"tipo": "short_answer_production", "pregunta": "Were you at school last Sunday? (short answer)", "respuesta": "No, I wasn't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: Hi Ben! How was your weekend?",
+        "Ben: It was fantastic! I was in Cartagena. The beach was beautiful.",
+        "Kenji: Were the hostels expensive?",
+        "Ben: No, they weren't. But they were full of tourists!",
+        "Sofía: And Kenji, how was the football game?",
+        "Kenji: Terrible. The players were so sad after the game. The final score was 3-0."
+      ],
+      "gaps": ["fantastic", "beautiful", "expensive", "sad"],
+      "comprension": [
+        {"pregunta": "Where was Ben at the weekend?", "opciones": ["Cartagena", "Bogotá", "Medellín"], "respuesta": "Cartagena"},
+        {"pregunta": "How were the players after the game?", "opciones": ["happy", "sad", "excited"], "respuesta": "sad"}
+      ]
+    },
+    "reading": {
+      "texto": "When Abuela Carmen was a girl, life was very different. There were no smartphones, and the streets were quiet. But life wasn't perfect in the past. For many people, like the slaves in colonial times, life was difficult and unfair. Later, in the 20th century, the world wasn't peaceful either: the Cold War was a long conflict between the USA and the USSR. Abuela Carmen says: 'The past wasn't better or worse — it was just different.'",
+      "preguntas": [
+        {"afirmacion": "When Abuela Carmen was a girl, the streets were quiet.", "respuesta": "true"},
+        {"afirmacion": "According to the text, life in the past was perfect.", "respuesta": "false"},
+        {"afirmacion": "The Cold War was between the USA and Japan.", "respuesta": "false"},
+        {"afirmacion": "Abuela Carmen thinks the past was better than the present.", "respuesta": "false"}
+      ]
+    }
+  }
+}

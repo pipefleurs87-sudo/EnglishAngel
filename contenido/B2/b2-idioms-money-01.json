@@ -1,0 +1,103 @@
+{
+  "id": "b2-idioms-money-01",
+  "nivel": "B2",
+  "arquetipo": "vocabulario",
+  "tema": "Idioms — Money & Business (Abuela Carmen's Wisdom)",
+  "habilidades": ["vocabulary", "reading", "speaking", "listening"],
+  "vocabulario": [
+    {"bandera": "muy caro", "palabra": "cost an arm and a leg", "traduccion": "costar un ojo de la cara"},
+    {"bandera": "recortar de forma riesgosa", "palabra": "cut corners", "traduccion": "recortar gastos/calidad de forma riesgosa"},
+    {"bandera": "quebrar", "palabra": "go bust / go under", "traduccion": "quebrar (un negocio)"},
+    {"bandera": "opción segura", "palabra": "safe bet", "traduccion": "apuesta segura"},
+    {"bandera": "pagar de más", "palabra": "pay through the nose", "traduccion": "pagar un dineral"},
+    {"bandera": "llegar a fin de mes", "palabra": "make ends meet", "traduccion": "llegar a fin de mes (financieramente)"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "That new phone cost Ben an arm and a leg."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Sofía's studio is a safe bet — she's never lost a client."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Abuela Carmen says cutting corners always costs more later."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "They paid through the nose for that apartment."},
+    {"id": "s5", "forma": "negativo", "oracion": "Sofía doesn't cut corners, even when a client is in a hurry."},
+    {"id": "s6", "forma": "negativo", "oracion": "The business didn't go under, despite the hard year."},
+    {"id": "s7", "forma": "negativo", "oracion": "We didn't make ends meet that first year of the studio."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Did that renovation cost an arm and a leg?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Is it a safe bet to invest in her studio?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "How do freelancers make ends meet in a slow month?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Did the business go bust? No, it didn't."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Did you pay through the nose for the flight? Yes, I did."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Is Sofía's studio a safe bet? Yes, it is."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: This new laptop **cost me an arm and a leg**.",
+        "Abuela Carmen: Then don't **cut corners** on the case — protect it, or you'll **pay through the nose** fixing it later.",
+        "Sofía: You always have a saying for everything.",
+        "Abuela Carmen: When you sold mangoes for thirty years, you learn every trick to **make ends meet**."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "The phone cost an arm and a leg, so now I only have one arm.",
+        "opcion_b": "The phone cost an arm and a leg, so I can't afford anything else this month.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Idioms about money describe cost, risk and survival using images (arms, legs, corners, noses) that have nothing literally to do with money — the meaning is entirely figurative.",
+      "tabla": {
+        "titulo": "Money idioms — literal image vs. real meaning",
+        "encabezados": ["Idiom", "Literal image", "Real meaning"],
+        "filas": [
+          ["cost an arm and a leg", "losing body parts", "be very expensive"],
+          ["cut corners", "taking a shortcut on a shape", "do something cheaply/badly to save money or time"],
+          ["go bust / go under", "sinking", "a business fails financially"],
+          ["pay through the nose", "an odd, painful image", "pay much more than something is worth"],
+          ["make ends meet", "two ends touching", "have just enough money to live on"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "That new phone ___ Ben an arm and a leg.", "opciones": ["cost", "paid", "made"], "respuesta": "cost"},
+        {"tipo": "multiple_choice", "pregunta": "Abuela Carmen says cutting corners always ___ more later.", "opciones": ["costs", "pays", "goes"], "respuesta": "costs"},
+        {"tipo": "multiple_choice", "pregunta": "They ___ through the nose for that apartment.", "opciones": ["paid", "cost", "cut"], "respuesta": "paid"},
+        {"tipo": "true_false", "afirmacion": "'Cost an arm and a leg' means something is very cheap.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'Cut corners' means to do something poorly to save time or money.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Go bust' means a business becomes very successful.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Sofía doesn't ___ corners, even in a hurry.", "respuesta": "cut"},
+        {"tipo": "gap_fill", "texto": "The business didn't go ___, despite the hard year.", "respuesta": "under"},
+        {"tipo": "gap_fill", "texto": "We didn't ___ ends meet that first year.", "respuesta": "make"},
+        {"tipo": "unscramble", "palabras": ["that", "new", "phone", "cost", "Ben", "an", "arm", "and", "a", "leg"], "respuesta": "that new phone cost Ben an arm and a leg"},
+        {"tipo": "unscramble", "palabras": ["they", "paid", "through", "the", "nose", "for", "that", "apartment"], "respuesta": "they paid through the nose for that apartment"},
+        {"tipo": "correct_mistake", "texto_con_error": "The phone cost an arm and a leg, so now I only have one arm.", "respuesta": "The phone cost an arm and a leg, so I can't afford anything else this month."},
+        {"tipo": "transformation", "oracion_base": "The laptop was extremely expensive.", "instruccion": "Rewrite using 'cost an arm and a leg'.", "respuesta": "The laptop cost an arm and a leg."},
+        {"tipo": "transformation", "oracion_base": "The company failed financially.", "instruccion": "Rewrite using 'go bust' or 'go under'.", "respuesta": "The company went bust."},
+        {"tipo": "transformation", "oracion_base": "Is it a safe bet to invest in her studio?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, it is."},
+        {"tipo": "write_opposite", "oracion_base": "Sofía cuts corners on every project.", "instruccion": "Write the negative form.", "respuesta": "Sofía doesn't cut corners on every project."},
+        {"tipo": "short_answer_production", "pregunta": "Have you ever paid through the nose for something? (short answer)", "respuesta": "Yes, I have."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: This new laptop cost me an arm and a leg.",
+        "Abuela Carmen: Then don't cut corners on the case — protect it, or you'll pay through the nose fixing it later.",
+        "Sofía: You always have a saying for everything.",
+        "Abuela Carmen: When you sold mangoes for thirty years, you learn every trick to make ends meet.",
+        "Sofía: Did you ever worry the stand would go bust?",
+        "Abuela Carmen: Every single week. And it never did."
+      ],
+      "gaps": ["laptop", "corners", "meet", "bust"],
+      "comprension": [
+        {"pregunta": "What does Abuela Carmen warn Sofía about?", "opciones": ["Cutting corners on the laptop case", "Spending too much on coffee", "Losing her clients"], "respuesta": "Cutting corners on the laptop case"},
+        {"pregunta": "Did Abuela Carmen's mango stand ever go bust?", "opciones": ["No, never", "Yes, once", "She doesn't remember"], "respuesta": "No, never"}
+      ]
+    },
+    "reading": {
+      "texto": "Abuela Carmen sold mangoes on the same corner for thirty years, and she says every idiom about money in English has a mango-stand equivalent in her own history. When Sofía complains that a new laptop cost her an arm and a leg, Abuela Carmen nods — she remembers years when a single bad harvest meant paying through the nose for fruit she used to grow herself. When people ask if her business ever nearly went bust, she just laughs: 'Every week felt like it might. And every week, somehow, we made ends meet.' Her one rule, repeated to Sofía more times than either can count: never cut corners on the thing your reputation depends on.",
+      "preguntas": [
+        {"afirmacion": "Abuela Carmen sold mangoes for thirty years.", "respuesta": "true"},
+        {"afirmacion": "She says her business never felt like it might fail.", "respuesta": "false"},
+        {"afirmacion": "Her business actually went bust at some point.", "respuesta": "false"},
+        {"afirmacion": "Her rule is to never cut corners on her reputation.", "respuesta": "true"}
+      ]
+    }
+  }
+}

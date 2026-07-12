@@ -1,0 +1,83 @@
+{
+  "id": "a1-review-present-simple-01",
+  "nivel": "A1",
+  "arquetipo": "joined_exercise",
+  "tema": "A1 Review — Present Simple: Routines, Frequency, Questions & Likes",
+  "habilidades": ["grammar", "listening", "reading", "writing"],
+  "banco_oraciones": [
+    {"id": "s1", "oracion": "Sofía always gets up at six and designs posters every day."},
+    {"id": "s2", "oracion": "Kenji doesn't understand Colombian jokes, but he always laughs."},
+    {"id": "s3", "oracion": "Does Carmen cook every day? Yes, she does."},
+    {"id": "s4", "oracion": "Where does Ben live? He never remembers his own address."},
+    {"id": "s5", "oracion": "Sofía loves dancing salsa, but she hates getting up late."},
+    {"id": "s6", "oracion": "Ben usually plays football on Sundays."}
+  ],
+  "fases": {
+    "inicio": {
+      "banner_diagnostico": {
+        "opcion_a": "Sofía works always in the morning.",
+        "opcion_b": "Sofía always works in the morning.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "The present simple, with frequency adverbs, questions and likes, is how we describe the life we live every day — routines, habits and tastes.",
+      "tabla": {
+        "titulo": "present simple — the complete map",
+        "encabezados": ["Use", "Example"],
+        "filas": [
+          ["Affirmative", "She works every day"],
+          ["Negative", "She doesn't work on Sundays"],
+          ["Question", "Does she work here?"],
+          ["Wh- question", "Where does she work?"],
+          ["Frequency", "She always works early"],
+          ["Likes", "She loves designing"]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "combina": ["routines", "third person"], "pregunta": "Kenji ___ up at 6:00 every day.", "opciones": ["gets", "get", "getting"], "respuesta": "gets"},
+        {"tipo": "multiple_choice", "combina": ["questions"], "pregunta": "___ Sofía like coffee?", "opciones": ["Does", "Do", "Is"], "respuesta": "Does"},
+        {"tipo": "multiple_choice", "combina": ["negatives"], "pregunta": "Ben ___ like mornings. He wakes up late.", "opciones": ["doesn't", "don't", "isn't"], "respuesta": "doesn't"},
+        {"tipo": "true_false", "combina": ["questions", "third person"], "afirmacion": "'Does she works here?' is correct.", "respuesta": "false"},
+        {"tipo": "true_false", "combina": ["frequency"], "afirmacion": "Adverbs like 'always' go before the main verb.", "respuesta": "true"},
+        {"tipo": "gap_fill", "combina": ["routines", "third person"], "texto": "Sofía ___ (design) posters every week.", "respuesta": "designs"},
+        {"tipo": "gap_fill", "combina": ["wh- questions"], "texto": "What time ___ Kenji start class?", "respuesta": "does"},
+        {"tipo": "gap_fill", "combina": ["frequency", "third person"], "texto": "Carmen never ___ (watch) TV at night.", "respuesta": "watches"},
+        {"tipo": "unscramble", "combina": ["frequency", "routines"], "palabras": ["usually", "Sofía", "early", "gets up"], "respuesta": "Sofía usually gets up early."},
+        {"tipo": "unscramble", "combina": ["wh- questions"], "palabras": ["does", "live", "Where", "Kenji"], "respuesta": "Where does Kenji live?"},
+        {"tipo": "correct_mistake", "combina": ["negatives", "third person"], "texto_con_error": "Kenji don't understand the joke.", "respuesta": "Kenji doesn't understand the joke."},
+        {"tipo": "correct_mistake", "combina": ["frequency"], "texto_con_error": "Ben plays never football.", "respuesta": "Ben never plays football."},
+        {"tipo": "correct_mistake", "combina": ["likes"], "texto_con_error": "Sofía likes dance salsa.", "respuesta": "Sofía likes dancing salsa."},
+        {"tipo": "transformation", "combina": ["questions"], "oracion_base": "Sofía works in Medellín.", "instruccion": "Turn it into a yes/no question.", "respuesta": "Does Sofía work in Medellín?"},
+        {"tipo": "transformation", "combina": ["negatives"], "oracion_base": "Kenji likes sushi.", "instruccion": "Make it negative.", "respuesta": "Kenji doesn't like sushi."},
+        {"tipo": "write_opposite", "combina": ["frequency"], "oracion_base": "Carmen always cooks dinner.", "instruccion": "Write the opposite frequency (never).", "respuesta": "Carmen never cooks dinner."},
+        {"tipo": "short_answer_production", "combina": ["routines", "frequency"], "pregunta": "What do you usually do on Sundays? (I usually...)", "respuesta": "I usually visit my family."},
+        {"tipo": "short_answer_production", "combina": ["likes", "third person"], "pregunta": "What does your best friend love doing? (He/She loves + -ing)", "respuesta": "She loves reading."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Sofía, what time do you get up?",
+        "Sofía: I always get up at six. I love the quiet morning.",
+        "Kenji: Six?! Ben never gets up before ten.",
+        "Sofía: I know! And he doesn't eat breakfast. He just runs to class.",
+        "Kenji: What does Carmen do in the morning?",
+        "Sofía: She waters her plants and cooks arepas. She never changes her routine."
+      ],
+      "gaps": ["six", "breakfast"],
+      "comprension": [
+        {"pregunta": "What time does Sofía get up?", "opciones": ["At six", "At ten", "At eight"], "respuesta": "At six"},
+        {"pregunta": "What does Carmen do every morning?", "opciones": ["She waters her plants and cooks", "She runs to class", "She watches TV"], "respuesta": "She waters her plants and cooks"}
+      ]
+    },
+    "reading": {
+      "texto": "Sofía's week is a perfect machine. She always gets up at six, drinks one black coffee and designs until noon. She doesn't work on Sundays — Sundays are for salsa. Kenji admires her discipline, but he doesn't copy it: he studies late and asks questions all day. 'Why does she never arrive late?' he wonders. Ben has a different theory: 'She is not human.' Carmen just smiles. She knows the secret: her granddaughter loves what she does.",
+      "preguntas": [
+        {"afirmacion": "Sofía works on Sundays.", "respuesta": "false"},
+        {"afirmacion": "Kenji studies late.", "respuesta": "true"},
+        {"afirmacion": "Sofía loves her work.", "respuesta": "true"}
+      ]
+    }
+  }
+}

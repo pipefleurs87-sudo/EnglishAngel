@@ -1,0 +1,217 @@
+{
+  "id": "a1-present-simple-wh-questions-01",
+  "nivel": "A1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Present Simple — Wh- Questions",
+  "habilidades": [
+    "grammar",
+    "listening",
+    "reading",
+    "writing"
+  ],
+  "banco_oraciones": [
+    {
+      "id": "s1",
+      "forma": "afirmativo",
+      "oracion": "I live in Medellín and work as a teacher."
+    },
+    {
+      "id": "s2",
+      "forma": "afirmativo",
+      "oracion": "Kenji studies English because he loves languages."
+    },
+    {
+      "id": "s3",
+      "forma": "negativo",
+      "oracion": "I don't know where Ben lives."
+    },
+    {
+      "id": "s4",
+      "forma": "negativo",
+      "oracion": "She doesn't understand why the class starts late."
+    },
+    {
+      "id": "s5",
+      "forma": "interrogativo",
+      "oracion": "Where do you live? What do you do?"
+    },
+    {
+      "id": "s6",
+      "forma": "interrogativo",
+      "oracion": "When does the class start? Why does Kenji study English?"
+    },
+    {
+      "id": "s7",
+      "forma": "short_answer",
+      "oracion": "Do you live here? Yes, I do."
+    },
+    {
+      "id": "s8",
+      "forma": "short_answer",
+      "oracion": "Does the class start at nine? No, it doesn't."
+    }
+  ],
+  "fases": {
+    "inicio": {
+      "banner_diagnostico": {
+        "opcion_a": "Where you live?",
+        "opcion_b": "Where do you live?",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "We use wh- words (what, where, when, why, how) + do/does to ask for information in the present simple: the wh- word comes first, then do/does.",
+      "tabla": {
+        "titulo": "Wh- words",
+        "encabezados": [
+          "Wh-",
+          "Meaning",
+          "Example"
+        ],
+        "filas": [
+          [
+            "What",
+            "what",
+            "What do you do?"
+          ],
+          [
+            "Where",
+            "where",
+            "Where do you live?"
+          ],
+          [
+            "When",
+            "when",
+            "When does it start?"
+          ],
+          [
+            "Why",
+            "why",
+            "Why do you study?"
+          ],
+          [
+            "How",
+            "how",
+            "How do you feel?"
+          ]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {
+          "tipo": "multiple_choice",
+          "pregunta": "___ do you live?",
+          "opciones": [
+            "What",
+            "Where",
+            "When"
+          ],
+          "respuesta": "Where"
+        },
+        {
+          "tipo": "multiple_choice",
+          "pregunta": "Where ___ Kenji live?",
+          "opciones": [
+            "do",
+            "does",
+            "is"
+          ],
+          "respuesta": "does"
+        },
+        {
+          "tipo": "true_false",
+          "afirmacion": "In a wh- question, the wh- word comes first and then 'do' or 'does': 'Where do you live?'.",
+          "respuesta": "true"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "___ time does the class start? (at what time?)",
+          "respuesta": "What"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "Why ___ Kenji study English?",
+          "respuesta": "does"
+        },
+        {
+          "tipo": "unscramble",
+          "palabras": [
+            "do",
+            "Where",
+            "live",
+            "you",
+            "?"
+          ],
+          "respuesta": "Where do you live?"
+        },
+        {
+          "tipo": "correct_mistake",
+          "texto_con_error": "What you do every day?",
+          "respuesta": "What do you do every day?"
+        },
+        {
+          "tipo": "transformation",
+          "oracion_base": "You live in Bogotá.",
+          "instruccion": "Ask about the place (use 'Where').",
+          "respuesta": "Where do you live?"
+        },
+        {
+          "tipo": "short_answer_production",
+          "pregunta": "Where do you live? (Answer with a full sentence.)",
+          "respuesta": "I live in Medellín."
+        }
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Where do you live, Ben?",
+        "Ben: I live in London, but now I'm in Cartagena.",
+        "Kenji: What do you do in London?",
+        "Ben: I work in a bookshop. And you?",
+        "Kenji: I'm a student. Why do you travel so much?",
+        "Ben: Because I love to see new places!"
+      ],
+      "gaps": [
+        "live",
+        "work"
+      ],
+      "comprension": [
+        {
+          "pregunta": "Where does Ben live?",
+          "opciones": [
+            "In Cartagena",
+            "In London",
+            "In Tokyo"
+          ],
+          "respuesta": "In London"
+        },
+        {
+          "pregunta": "What does Ben do?",
+          "opciones": [
+            "He is a student",
+            "He works in a bookshop",
+            "He is a teacher"
+          ],
+          "respuesta": "He works in a bookshop"
+        }
+      ]
+    },
+    "reading": {
+      "texto": "Kenji is curious, so he always asks questions. 'Where do you live? What do you do? Why do you study English?' Sofía laughs. 'You ask a lot of questions!' she says. 'I live in Medellín, I work as a designer, and I study English for my job.' Kenji smiles. 'How do you find the time?' Sofía answers, 'I don't sleep much!'",
+      "preguntas": [
+        {
+          "afirmacion": "Kenji asks a lot of questions.",
+          "respuesta": "true"
+        },
+        {
+          "afirmacion": "Sofía works as a teacher.",
+          "respuesta": "false"
+        },
+        {
+          "afirmacion": "Sofía studies English for her job.",
+          "respuesta": "true"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "id": "c1-emphatic-structures-01",
+  "nivel": "C1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Emphatic Structures — do/does/did & so/such",
+  "habilidades": ["grammar", "speaking", "writing"],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "I DO understand why you're upset."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "She DOES care about this project, even if it doesn't look like it."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "It was such a good day that nobody wanted to leave."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "The exam was so difficult that half the class failed."},
+    {"id": "s5", "forma": "negativo", "oracion": "It wasn't such a bad idea after all."},
+    {"id": "s6", "forma": "negativo", "oracion": "The traffic wasn't so bad that we missed the flight."},
+    {"id": "s7", "forma": "negativo", "oracion": "It didn't seem such a big deal at the time."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Do you really understand, or are you just saying that?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Was it such a good day that you didn't want to leave?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Did the exam really matter that much to you?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Do you actually understand? I DO understand, yes."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Was the exam that hard? Yes, it was so hard that half the class failed."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Did you enjoy the day? I DID enjoy it, actually."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: You never seem to care about the results.",
+        "Sofía: I **DO care**, Kenji. I just don't panic out loud like you do.",
+        "Ben: It was **such a** stressful week that I actually finished something early, for once.",
+        "Abuela Carmen: The pressure **DID do** something good, then. Write that down before it disappears."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I really understand why you're upset.",
+        "opcion_b": "I DO understand why you're upset.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Adding do/does/did before the base verb, or using so/such before an adjective or noun, adds emphasis — it insists on something that might be doubted.",
+      "tabla": {
+        "titulo": "Two ways to add emphasis",
+        "encabezados": ["Tool", "Structure", "Example"],
+        "filas": [
+          ["do/does/did + base verb", "stressed auxiliary + verb", "I DO understand you."],
+          ["so + adjective (+ that)", "so + adj + that + result", "It was so difficult that everyone struggled."],
+          ["such (a/an) + adjective + noun (+ that)", "such + noun phrase + that + result", "It was such a good day that nobody left."]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "I ___ understand why you're upset.", "opciones": ["DO", "am", "have"], "respuesta": "DO"},
+        {"tipo": "multiple_choice", "pregunta": "It was ___ good day that nobody wanted to leave.", "opciones": ["such a", "so", "very"], "respuesta": "such a"},
+        {"tipo": "multiple_choice", "pregunta": "The exam was ___ difficult that half the class failed.", "opciones": ["so", "such", "such a"], "respuesta": "so"},
+        {"tipo": "true_false", "afirmacion": "'I DO understand' is more emphatic than 'I understand'.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'So' is used directly before a noun (so a good day).", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'Such' is used before an adjective + noun combination (such a good day).", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "She ___ care about this project, even if it doesn't show.", "respuesta": "DOES"},
+        {"tipo": "gap_fill", "texto": "The traffic wasn't ___ bad that we missed the flight.", "respuesta": "so"},
+        {"tipo": "gap_fill", "texto": "It wasn't ___ bad idea after all.", "respuesta": "such a"},
+        {"tipo": "unscramble", "palabras": ["I", "DO", "understand", "why", "you're", "upset"], "respuesta": "I DO understand why you're upset"},
+        {"tipo": "unscramble", "palabras": ["it", "was", "such", "a", "good", "day", "that", "nobody", "left"], "respuesta": "it was such a good day that nobody left"},
+        {"tipo": "correct_mistake", "texto_con_error": "It was so good day that nobody wanted to leave.", "respuesta": "It was such a good day that nobody wanted to leave."},
+        {"tipo": "transformation", "oracion_base": "I really do understand you.", "instruccion": "Rewrite with emphatic stress using DO.", "respuesta": "I DO understand you."},
+        {"tipo": "transformation", "oracion_base": "The exam was very difficult; half the class failed.", "instruccion": "Combine using 'so...that'.", "respuesta": "The exam was so difficult that half the class failed."},
+        {"tipo": "transformation", "oracion_base": "It was a very good day; nobody wanted to leave.", "instruccion": "Combine using 'such a...that'.", "respuesta": "It was such a good day that nobody wanted to leave."},
+        {"tipo": "write_opposite", "oracion_base": "It was such a bad idea.", "instruccion": "Write a version meaning the opposite (it wasn't bad).", "respuesta": "It wasn't such a bad idea after all."},
+        {"tipo": "short_answer_production", "pregunta": "Do you really enjoy studying grammar? (answer with emphasis using DO)", "respuesta": "Yes, I DO enjoy it."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: You never seem to care about the results.",
+        "Sofía: I DO care, Kenji. I just don't panic out loud like you do.",
+        "Ben: It was such a stressful week that I actually finished something early, for once.",
+        "Kenji: That IS surprising, coming from you.",
+        "Sofía: The pressure did do something good, then.",
+        "Ben: Don't get used to it. It was such a rare event."
+      ],
+      "gaps": ["care", "stressful", "surprising", "rare"],
+      "comprension": [
+        {"pregunta": "Does Sofía care about the results?", "opciones": ["Yes, she does, even if it doesn't show", "No, not at all", "She's not sure"], "respuesta": "Yes, she does, even if it doesn't show"},
+        {"pregunta": "What happened because of the stressful week, according to Ben?", "opciones": ["He finished something early", "He quit the project", "He got sick"], "respuesta": "He finished something early"}
+      ]
+    },
+    "reading": {
+      "texto": "Kenji has always assumed Sofía doesn't worry about deadlines — she never raises her voice, never seems rattled. 'I DO worry,' she told him once, 'I just don't show it the way you do.' It was such a strange thing to hear that Kenji actually stopped and reconsidered everything he thought he knew about her. The week that followed was so demanding that even Sofía's calm cracked a little — she DID admit, finally, that it had been hard. Ben, of all people, finished his part early that week, which was such a rare event that Abuela Carmen wrote the date down, just so nobody would forget it happened.",
+      "preguntas": [
+        {"afirmacion": "Sofía told Kenji she doesn't worry about deadlines.", "respuesta": "false"},
+        {"afirmacion": "Kenji reconsidered what he thought about Sofía.", "respuesta": "true"},
+        {"afirmacion": "Sofía admitted the week had been hard.", "respuesta": "true"},
+        {"afirmacion": "Ben finishing early was a common occurrence.", "respuesta": "false"}
+      ]
+    }
+  }
+}

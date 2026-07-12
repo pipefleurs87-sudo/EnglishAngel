@@ -1,0 +1,245 @@
+{
+  "id": "a1-modal-have-to-01",
+  "nivel": "A1",
+  "arquetipo": "modales",
+  "tema": "Modal 'Have to' — Obligations at Work & School",
+  "habilidades": [
+    "grammar",
+    "vocabulary",
+    "listening",
+    "reading",
+    "writing"
+  ],
+  "vocabulario": [
+    {
+      "palabra": "be on time",
+      "traduccion": "ser puntual"
+    },
+    {
+      "palabra": "study for an exam",
+      "traduccion": "estudiar para un examen"
+    },
+    {
+      "palabra": "wear a uniform",
+      "traduccion": "usar uniforme"
+    },
+    {
+      "palabra": "finish the report",
+      "traduccion": "terminar el informe"
+    },
+    {
+      "palabra": "attend meetings",
+      "traduccion": "asistir a reuniones"
+    },
+    {
+      "palabra": "do homework",
+      "traduccion": "hacer la tarea"
+    },
+    {
+      "palabra": "follow the rules",
+      "traduccion": "seguir las reglas"
+    },
+    {
+      "palabra": "take notes",
+      "traduccion": "tomar apuntes"
+    }
+  ],
+  "banco_oraciones": [
+    {
+      "id": "s1",
+      "forma": "afirmativo",
+      "oracion": "I have to be on time, and Sofía has to finish the report."
+    },
+    {
+      "id": "s2",
+      "forma": "afirmativo",
+      "oracion": "Students have to do their homework every day."
+    },
+    {
+      "id": "s3",
+      "forma": "negativo",
+      "oracion": "Ben doesn't have to wear a uniform."
+    },
+    {
+      "id": "s4",
+      "forma": "negativo",
+      "oracion": "We don't have to work on Sundays."
+    },
+    {
+      "id": "s5",
+      "forma": "interrogativo",
+      "oracion": "Do you have to study tonight? Does she have to attend the meeting?"
+    },
+    {
+      "id": "s6",
+      "forma": "interrogativo",
+      "oracion": "Why do we have to follow so many rules?"
+    },
+    {
+      "id": "s7",
+      "forma": "short_answer",
+      "oracion": "Do you have to work today? Yes, I do."
+    },
+    {
+      "id": "s8",
+      "forma": "short_answer",
+      "oracion": "Does he have to wear a suit? No, he doesn't."
+    }
+  ],
+  "fases": {
+    "inicio": {
+      "banner_diagnostico": {
+        "opcion_a": "She have to work on Saturday.",
+        "opcion_b": "She has to work on Saturday.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "We use 'have to / has to' for obligations that come from outside (rules at work or school); with he/she/it we use 'has to'.",
+      "tabla": {
+        "titulo": "have to / has to",
+        "encabezados": [
+          "Subject",
+          "Form",
+          "Example"
+        ],
+        "filas": [
+          [
+            "I / You / We / They",
+            "have to",
+            "I have to study"
+          ],
+          [
+            "He / She / It",
+            "has to",
+            "She has to work"
+          ],
+          [
+            "Negative",
+            "don't / doesn't have to",
+            "He doesn't have to wait"
+          ],
+          [
+            "Question",
+            "Do / Does ... have to?",
+            "Do you have to go?"
+          ]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {
+          "tipo": "multiple_choice",
+          "pregunta": "She ___ work on Saturday.",
+          "opciones": [
+            "have to",
+            "has to",
+            "haves to"
+          ],
+          "respuesta": "has to"
+        },
+        {
+          "tipo": "true_false",
+          "afirmacion": "With he/she/it, we use 'has to', not 'have to'.",
+          "respuesta": "true"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "I have to ___ for my exam tonight. (estudiar)",
+          "respuesta": "study"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "I have to be at the office ___ nine o'clock.",
+          "respuesta": "at",
+          "combina": [
+            "preposiciones de tiempo",
+            "have to"
+          ]
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "During the exam, students have to sit ___ their chairs and stay quiet.",
+          "respuesta": "on",
+          "combina": [
+            "preposiciones de lugar",
+            "have to"
+          ]
+        },
+        {
+          "tipo": "correct_mistake",
+          "texto_con_error": "He have to finish the report.",
+          "respuesta": "He has to finish the report."
+        },
+        {
+          "tipo": "transformation",
+          "oracion_base": "Sofía finishes the report.",
+          "instruccion": "Add obligation with 'has to'.",
+          "respuesta": "Sofía has to finish the report."
+        },
+        {
+          "tipo": "transformation",
+          "oracion_base": "You have to study.",
+          "instruccion": "Turn it into a question (use 'do').",
+          "respuesta": "Do you have to study?"
+        },
+        {
+          "tipo": "short_answer_production",
+          "pregunta": "Do you have to work tomorrow? (Answer: Yes, I do. / No, I don't.)",
+          "respuesta": "Yes, I do."
+        }
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Ben, do you have to work today?",
+        "Ben: Yes, I do. I have to finish a report before five.",
+        "Kenji: Do you have to wear a suit?",
+        "Ben: No, I don't have to. My office is relaxed.",
+        "Kenji: Lucky you! I have to study for an exam.",
+        "Ben: Then you have to be at the library early!"
+      ],
+      "gaps": [
+        "report",
+        "study"
+      ],
+      "comprension": [
+        {
+          "pregunta": "Does Ben have to wear a suit?",
+          "opciones": [
+            "Yes, always",
+            "No, he doesn't have to",
+            "Only on Mondays"
+          ],
+          "respuesta": "No, he doesn't have to"
+        },
+        {
+          "pregunta": "What does Kenji have to do?",
+          "opciones": [
+            "Finish a report",
+            "Study for an exam",
+            "Go to a meeting"
+          ],
+          "respuesta": "Study for an exam"
+        }
+      ]
+    },
+    "reading": {
+      "texto": "Ben and Kenji are both busy. Ben has to work in an office; he has to finish reports and attend meetings, but he doesn't have to wear a uniform. Kenji is a student, so he has to do homework, take notes, and follow the school rules. 'We have to work hard,' says Ben, 'but we don't have to do it alone. That's why we have friends.'",
+      "preguntas": [
+        {
+          "afirmacion": "Ben has to attend meetings.",
+          "respuesta": "true"
+        },
+        {
+          "afirmacion": "Ben has to wear a uniform.",
+          "respuesta": "false"
+        },
+        {
+          "afirmacion": "Kenji has to do homework and take notes.",
+          "respuesta": "true"
+        }
+      ]
+    }
+  }
+}

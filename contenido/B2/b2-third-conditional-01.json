@@ -1,0 +1,92 @@
+{
+  "id": "b2-third-conditional-01",
+  "nivel": "B2",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Third Conditional — If I Had Known",
+  "habilidades": ["grammar", "writing", "speaking", "listening"],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "If Ben had checked the weather, he wouldn't have gone swimming with his phone."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "If I had known about the meeting, I would have come."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "If Sofía had taken the earlier flight, she would have arrived on time."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "If they had studied harder, they would have passed the exam."},
+    {"id": "s5", "forma": "negativo", "oracion": "If Ben hadn't been so careless, he wouldn't have lost his phone."},
+    {"id": "s6", "forma": "negativo", "oracion": "If I hadn't missed the bus, I wouldn't have been late."},
+    {"id": "s7", "forma": "negativo", "oracion": "If she hadn't forgotten her keys, she wouldn't have called a locksmith."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "What would you have done if you had lost your phone?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Would you have come if you had known about the party?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "If you had seen the wave, would you have moved?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Would Ben have kept his phone if he'd been more careful? Yes, he would have."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Would you have come to the party? No, I wouldn't have."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Would they have passed if they'd studied? Yes, they would have."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: **If you had checked** the weather, you **wouldn't have lost** your phone.",
+        "Ben: If I had checked the weather every single time, I'd never leave the house.",
+        "Kenji: **If I had been** there, I **would have held** it for you.",
+        "Ben: If you had been there, you probably would have lost your phone too — waves don't discriminate."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "If Ben checked the weather, he wouldn't lose his phone.",
+        "opcion_b": "If Ben had checked the weather, he wouldn't have lost his phone.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "The third conditional imagines a different past — if something had happened differently, a different result would have happened too. It's used for regrets and hypothetical pasts, not real possibilities.",
+      "tabla": {
+        "titulo": "Third conditional — an imaginary past",
+        "encabezados": ["Part", "Structure", "Example"],
+        "filas": [
+          ["If clause", "if + past perfect (had + participle)", "if he had checked"],
+          ["Result clause", "would have + participle", "he wouldn't have lost it"],
+          ["Compare: 2nd conditional (imaginary present/future)", "if + past simple, would + infinitive", "if he checked, he wouldn't lose it"]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "If Ben ___ the weather, he wouldn't have lost his phone.", "opciones": ["had checked", "checked", "checks"], "respuesta": "had checked"},
+        {"tipo": "multiple_choice", "pregunta": "If I had known, I ___ come.", "opciones": ["would have", "would", "will have"], "respuesta": "would have"},
+        {"tipo": "multiple_choice", "pregunta": "If she ___ studied, she would have passed.", "opciones": ["had", "has", "did"], "respuesta": "had"},
+        {"tipo": "true_false", "afirmacion": "The third conditional talks about a real possibility in the future.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'If he had checked' uses the past perfect.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "The result clause uses 'would have + past participle'.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "If Ben ___ (check) the weather, he wouldn't have lost his phone.", "respuesta": "had checked"},
+        {"tipo": "gap_fill", "texto": "If I ___ (know) about the meeting, I would have come.", "respuesta": "had known"},
+        {"tipo": "gap_fill", "texto": "If they had studied, they ___ (pass) the exam.", "respuesta": "would have passed"},
+        {"tipo": "unscramble", "palabras": ["if", "I", "had", "known", "I", "would", "have", "come"], "respuesta": "if I had known I would have come"},
+        {"tipo": "unscramble", "palabras": ["if", "Ben", "had", "checked", "he", "wouldn't", "have", "lost", "his", "phone"], "respuesta": "if Ben had checked he wouldn't have lost his phone"},
+        {"tipo": "correct_mistake", "texto_con_error": "If Ben checked the weather, he wouldn't have lost his phone.", "respuesta": "If Ben had checked the weather, he wouldn't have lost his phone."},
+        {"tipo": "transformation", "oracion_base": "Ben didn't check the weather. He lost his phone.", "instruccion": "Combine into a third conditional sentence.", "respuesta": "If Ben had checked the weather, he wouldn't have lost his phone."},
+        {"tipo": "transformation", "oracion_base": "I didn't know about the meeting. I didn't come.", "instruccion": "Combine into a third conditional sentence.", "respuesta": "If I had known about the meeting, I would have come."},
+        {"tipo": "transformation", "oracion_base": "Would Ben have kept his phone if he had been careful?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, he would have."},
+        {"tipo": "write_opposite", "oracion_base": "If she hadn't forgotten her keys, she wouldn't have called a locksmith.", "instruccion": "Write the affirmative if-clause form (she DID forget).", "respuesta": "If she had forgotten her keys, she would have called a locksmith."},
+        {"tipo": "short_answer_production", "pregunta": "If you had seen the wave, would you have moved? (short answer, Yes)", "respuesta": "Yes, I would have."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: If you had held your phone tighter, you wouldn't have lost it.",
+        "Ben: If I had eyes on the back of my head, I would have seen the wave coming too.",
+        "Sofía: If you had listened to Abuela Carmen, you would have left your phone on the sand.",
+        "Ben: If I had left it on the sand, someone would have stolen it instead.",
+        "Kenji: Ben, there was no version of that day where you kept your phone."
+      ],
+      "gaps": ["tighter", "eyes", "sand", "stolen"],
+      "comprension": [
+        {"pregunta": "What does Kenji say Ben should have done?", "opciones": ["Held his phone tighter", "Left earlier", "Called Sofía"], "respuesta": "Held his phone tighter"},
+        {"pregunta": "According to Ben, what would have happened if he'd left the phone on the sand?", "opciones": ["Someone would have stolen it", "It would have been safe", "He wouldn't have gone swimming"], "respuesta": "Someone would have stolen it"}
+      ]
+    },
+    "reading": {
+      "texto": "Looking back, Ben likes to imagine all the ways that day could have gone differently. If he had checked the forecast, he might have known the waves were stronger than usual. If he had listened to Abuela Carmen, he would have left his phone on the towel instead of taking it into the water. If he had bought that waterproof case he kept promising to buy, none of this would have happened at all. But Ben has a theory: if the universe wanted him to keep a phone for more than six months, it would have made him a more careful person. Since it clearly didn't, he's decided to stop fighting it.",
+      "preguntas": [
+        {"afirmacion": "Ben thinks checking the forecast would have helped.", "respuesta": "true"},
+        {"afirmacion": "Abuela Carmen told Ben to take his phone into the water.", "respuesta": "false"},
+        {"afirmacion": "Ben actually bought the waterproof case before the trip.", "respuesta": "false"},
+        {"afirmacion": "Ben has decided to stop trying to be more careful.", "respuesta": "true"}
+      ]
+    }
+  }
+}

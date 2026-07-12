@@ -1,0 +1,103 @@
+{
+  "id": "c1-inversion-01",
+  "nivel": "C1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Inversion for Emphasis",
+  "habilidades": ["grammar", "writing", "speaking"],
+  "vocabulario": [
+    {"bandera": "nunca", "palabra": "never", "traduccion": "nunca (+ inversión)"},
+    {"bandera": "no solo... sino también", "palabra": "not only... but also", "traduccion": "no solo... sino también"},
+    {"bandera": "rara vez", "palabra": "rarely / seldom", "traduccion": "rara vez"},
+    {"bandera": "condicional formal", "palabra": "should you / had I", "traduccion": "si usted / si yo hubiera (formal)"},
+    {"bandera": "apenas", "palabra": "no sooner... than / hardly... when", "traduccion": "apenas... cuando"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Never have I seen such a mess in this office."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Not only did she finish early, but she also helped Ben."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Should you need anything, call me anytime."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Rarely do we get a chance like this."},
+    {"id": "s5", "forma": "negativo", "oracion": "Under no circumstances should you cancel the meeting."},
+    {"id": "s6", "forma": "negativo", "oracion": "Little did he know the phone was already gone."},
+    {"id": "s7", "forma": "negativo", "oracion": "At no point did Sofía complain about the extra work."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Have you ever heard such a formal sentence before?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Did she really finish early, and help Ben too?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Would you use inversion in a casual conversation?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Have you ever seen such a mess? Never."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Did she finish early? Not only did she finish early, but she also helped."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Would you use this in a text message? No, I wouldn't."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: **Never have I** heard Sofía so frustrated.",
+        "Sofía: **Not only did** the client change the deadline, but he also doubled the work.",
+        "Ben: **Should you need** help, I'm right here. Though I probably shouldn't offer, given my track record.",
+        "Abuela Carmen: **Rarely do I** see Ben volunteer for anything. Write this day down."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "Never I have seen such a mess.",
+        "opcion_b": "Never have I seen such a mess.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Starting a sentence with a negative or limiting adverb (never, rarely, not only) inverts the subject and auxiliary verb — it's a formal, emphatic way of making a point, common in writing and speeches.",
+      "tabla": {
+        "titulo": "Inversion triggers",
+        "encabezados": ["Trigger word/phrase", "Example"],
+        "filas": [
+          ["Never", "Never have I seen such a mess."],
+          ["Not only... but also", "Not only did she finish early, but she also helped."],
+          ["Rarely / Seldom", "Rarely do we get a chance like this."],
+          ["Should (formal if)", "Should you need anything, call me."],
+          ["Little", "Little did he know."],
+          ["No sooner... than", "No sooner had we arrived than it started raining."]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Never ___ I seen such a mess.", "opciones": ["have", "has", "did"], "respuesta": "have"},
+        {"tipo": "multiple_choice", "pregunta": "Not only did she finish early, but she ___ helped Ben.", "opciones": ["also", "too", "either"], "respuesta": "also"},
+        {"tipo": "multiple_choice", "pregunta": "Rarely ___ we get a chance like this.", "opciones": ["do", "are", "have"], "respuesta": "do"},
+        {"tipo": "true_false", "afirmacion": "Inversion is common in casual text messages.", "respuesta": "false"},
+        {"tipo": "true_false", "afirmacion": "'Never have I seen' inverts the subject and the auxiliary verb 'have'.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'Should you need anything' is a formal way of saying 'if you need anything'.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "___ did he know the phone was already gone.", "respuesta": "Little"},
+        {"tipo": "gap_fill", "texto": "Under no circumstances ___ you cancel the meeting.", "respuesta": "should"},
+        {"tipo": "gap_fill", "texto": "At no point ___ Sofía complain.", "respuesta": "did"},
+        {"tipo": "unscramble", "palabras": ["never", "have", "I", "seen", "such", "a", "mess"], "respuesta": "never have I seen such a mess"},
+        {"tipo": "unscramble", "palabras": ["should", "you", "need", "anything", "call", "me"], "respuesta": "should you need anything call me"},
+        {"tipo": "correct_mistake", "texto_con_error": "Never I have seen such a mess.", "respuesta": "Never have I seen such a mess."},
+        {"tipo": "transformation", "oracion_base": "I have never seen such a mess.", "instruccion": "Rewrite using inversion with 'Never'.", "respuesta": "Never have I seen such a mess."},
+        {"tipo": "transformation", "oracion_base": "She finished early and she also helped Ben.", "instruccion": "Rewrite using 'Not only... but also'.", "respuesta": "Not only did she finish early, but she also helped Ben."},
+        {"tipo": "transformation", "oracion_base": "If you need anything, call me.", "instruccion": "Rewrite using formal inversion with 'Should'.", "respuesta": "Should you need anything, call me."},
+        {"tipo": "write_opposite", "oracion_base": "Rarely do we get a chance like this.", "instruccion": "Write a version meaning the opposite (we get this chance often), without inversion.", "respuesta": "We often get a chance like this."},
+        {"tipo": "short_answer_production", "pregunta": "Have you ever used inversion in a formal email? (short answer)", "respuesta": "Yes, I have."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Never have I heard Sofía so frustrated.",
+        "Sofía: Not only did the client change the deadline, but he also doubled the work.",
+        "Ben: Should you need help, I'm right here.",
+        "Sofía: Rarely do I see you volunteer, Ben. This must be serious.",
+        "Abuela Carmen: Little did any of you know, I already called the client myself.",
+        "Kenji: Abuela Carmen, you continue to surprise us."
+      ],
+      "gaps": ["frustrated", "deadline", "volunteer", "called"],
+      "comprension": [
+        {"pregunta": "What did the client do, according to Sofía?", "opciones": ["Changed the deadline and doubled the work", "Cancelled the project", "Paid extra"], "respuesta": "Changed the deadline and doubled the work"},
+        {"pregunta": "What had Abuela Carmen already done?", "opciones": ["Called the client herself", "Fixed the deadline", "Left the office"], "respuesta": "Called the client herself"}
+      ]
+    },
+    "reading": {
+      "texto": "Never had the office seen a week quite like this one. Not only did the client change the deadline without warning, but he also doubled the scope of the project overnight. Rarely does Sofía lose her composure, but by Wednesday even she was struggling. Should anyone have asked Ben for help that week, they would have been surprised — for once, he showed up early every single day. Little did anyone expect the actual solution: Abuela Carmen, tired of hearing the complaints over dinner, simply called the client herself and negotiated a new deadline. Under no circumstances, she told them afterward, should young people forget that a phone call still works better than an anxious group chat.",
+      "preguntas": [
+        {"afirmacion": "The client changed the deadline without warning.", "respuesta": "true"},
+        {"afirmacion": "Sofía stayed perfectly calm the whole week.", "respuesta": "false"},
+        {"afirmacion": "Ben showed up late every day that week.", "respuesta": "false"},
+        {"afirmacion": "Abuela Carmen called the client to negotiate a new deadline.", "respuesta": "true"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "id": "a2-past-simple-irregular-01",
+  "nivel": "A2",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Past Simple — Irregular Verbs (patterns)",
+  "habilidades": ["grammar", "vocabulary", "listening", "reading", "writing", "speaking"],
+  "vocabulario": [
+    {"bandera": "i-a-u", "palabra": "drink · drank · drunk", "traduccion": "beber"},
+    {"bandera": "i-a-u", "palabra": "sing · sang · sung", "traduccion": "cantar"},
+    {"bandera": "i-a-u", "palabra": "swim · swam · swum", "traduccion": "nadar"},
+    {"bandera": "i-a-u", "palabra": "begin · began · begun", "traduccion": "empezar"},
+    {"bandera": "i-o-en", "palabra": "drive · drove · driven", "traduccion": "conducir"},
+    {"bandera": "i-o-en", "palabra": "write · wrote · written", "traduccion": "escribir"},
+    {"bandera": "i-o-en", "palabra": "ride · rode · ridden", "traduccion": "montar"},
+    {"bandera": "i-o-en", "palabra": "freeze · froze · frozen", "traduccion": "congelar"},
+    {"bandera": "-ought", "palabra": "buy · bought · bought", "traduccion": "comprar"},
+    {"bandera": "-ought", "palabra": "bring · brought · brought", "traduccion": "traer"},
+    {"bandera": "-ought", "palabra": "think · thought · thought", "traduccion": "pensar"},
+    {"bandera": "-ought", "palabra": "teach · taught · taught", "traduccion": "enseñar"},
+    {"bandera": "-ept", "palabra": "keep · kept · kept", "traduccion": "guardar / mantener"},
+    {"bandera": "-ept", "palabra": "sleep · slept · slept", "traduccion": "dormir"},
+    {"bandera": "-ept", "palabra": "feel · felt · felt", "traduccion": "sentir"},
+    {"bandera": "-ept", "palabra": "leave · left · left", "traduccion": "irse / dejar"},
+    {"bandera": "=", "palabra": "cut · cut · cut", "traduccion": "cortar"},
+    {"bandera": "=", "palabra": "put · put · put", "traduccion": "poner"},
+    {"bandera": "=", "palabra": "quit · quit · quit", "traduccion": "renunciar"},
+    {"bandera": "=", "palabra": "cost · cost · cost", "traduccion": "costar"},
+    {"bandera": "ew/own", "palabra": "know · knew · known", "traduccion": "saber / conocer"},
+    {"bandera": "ew/own", "palabra": "grow · grew · grown", "traduccion": "crecer"},
+    {"bandera": "ew/own", "palabra": "throw · threw · thrown", "traduccion": "lanzar"},
+    {"bandera": "ew/own", "palabra": "fly · flew · flown", "traduccion": "volar"},
+    {"bandera": "★", "palabra": "go · went · gone", "traduccion": "ir"},
+    {"bandera": "★", "palabra": "do · did · done", "traduccion": "hacer"},
+    {"bandera": "★", "palabra": "see · saw · seen", "traduccion": "ver"},
+    {"bandera": "★", "palabra": "take · took · taken", "traduccion": "tomar"},
+    {"bandera": "★", "palabra": "eat · ate · eaten", "traduccion": "comer"},
+    {"bandera": "★", "palabra": "make · made · made", "traduccion": "hacer / fabricar"},
+    {"bandera": "★", "palabra": "get · got · got", "traduccion": "conseguir"},
+    {"bandera": "★", "palabra": "give · gave · given", "traduccion": "dar"},
+    {"bandera": "modal", "palabra": "can → could / was able to", "traduccion": "poder (pasado)"},
+    {"bandera": "modal", "palabra": "must / have to → had to", "traduccion": "tener que (pasado)"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "Ben flew to Cartagena last winter. The ticket cost a fortune!"},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Kenji drank Colombian coffee a week ago and thought it was perfect."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Sofía wrote three reports last night and slept only four hours."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Abuela Carmen rode a horse to school and swam in the river."},
+    {"id": "s5", "forma": "afirmativo", "oracion": "I bought a new phone two days ago."},
+    {"id": "s6", "forma": "negativo", "oracion": "I didn't sleep well last night."},
+    {"id": "s7", "forma": "negativo", "oracion": "They didn't go to the party yesterday."},
+    {"id": "s8", "forma": "negativo", "oracion": "Sofía didn't drink coffee this morning."},
+    {"id": "s9", "forma": "negativo", "oracion": "We couldn't swim in the sea; the water was too cold."},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Did you sleep well last night?"},
+    {"id": "s11", "forma": "interrogativo", "oracion": "Where did Ben go last winter?"},
+    {"id": "s12", "forma": "interrogativo", "oracion": "What did you eat yesterday?"},
+    {"id": "s13", "forma": "interrogativo", "oracion": "Could you swim when you were five?"},
+    {"id": "s14", "forma": "short_answer", "oracion": "Did you drink coffee this morning? Yes, I did."},
+    {"id": "s15", "forma": "short_answer", "oracion": "Did Ben fly to Cartagena? Yes, he did."},
+    {"id": "s16", "forma": "short_answer", "oracion": "Could Abuela Carmen ride a horse? Yes, she could."},
+    {"id": "s17", "forma": "short_answer", "oracion": "Did they go to the party? No, they didn't."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Ben: I **flew** to Cartagena **last winter** — the ticket **cost** a fortune!",
+        "Kenji: I **drank** Colombian coffee for the first time **a week ago**. I **thought** it was perfect.",
+        "Sofía: I **wrote** three reports **last night**... and I **slept** only four hours.",
+        "Abuela Carmen: When I was young, I **swam** in the river and **rode** a horse to school!"
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I buyed a new phone yesterday.",
+        "opcion_b": "I bought a new phone yesterday.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Irregular verbs make the past without -ed — each one changes its shape, but most follow a family pattern you can learn in groups.",
+      "tabla": {
+        "titulo": "Irregular patterns: base · past · participle",
+        "encabezados": ["Pattern", "Verbs", "Example"],
+        "filas": [
+          ["i - a - u", "drink, sing, swim, begin", "drink · drank · drunk"],
+          ["i - o + -en", "drive, write, ride, freeze", "write · wrote · written"],
+          ["-ought / -aught", "buy, bring, think, teach", "buy · bought · bought"],
+          ["two short forms", "keep, sleep, feel, leave", "sleep · slept · slept"],
+          ["no change", "cut, put, quit, cost", "cut · cut · cut"],
+          ["-ew / -own", "know, grow, throw, fly", "fly · flew · flown"],
+          ["superstars (no pattern)", "go, do, see, take, eat, make, get, give", "go · went · gone"],
+          ["past modals", "can → could / was able to · must, have to → had to", "I had to work"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "Ben ___ to Cartagena last winter.", "opciones": ["flew", "flied", "flyed"], "respuesta": "flew"},
+        {"tipo": "multiple_choice", "pregunta": "Which verb does NOT change in the past?", "opciones": ["cut", "drink", "write"], "respuesta": "cut"},
+        {"tipo": "multiple_choice", "pregunta": "The past of 'buy' is ___.", "opciones": ["bought", "buyed", "brought"], "respuesta": "bought"},
+        {"tipo": "true_false", "afirmacion": "'Drink, drank, drunk' follows the i-a-u pattern, like 'sing' and 'swim'.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "The past of 'can' is 'could' or 'was able to'.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "Kenji ___ (drink) Colombian coffee a week ago.", "respuesta": "drank"},
+        {"tipo": "gap_fill", "texto": "Sofía ___ (write) three reports last night.", "respuesta": "wrote"},
+        {"tipo": "gap_fill", "texto": "The ticket ___ (cost) a fortune last winter.", "respuesta": "cost"},
+        {"tipo": "unscramble", "palabras": ["Abuela", "Carmen", "rode", "a", "horse", "to", "school"], "respuesta": "Abuela Carmen rode a horse to school"},
+        {"tipo": "unscramble", "palabras": ["did", "you", "sleep", "well", "last", "night"], "respuesta": "Did you sleep well last night"},
+        {"tipo": "correct_mistake", "texto_con_error": "I buyed a new phone yesterday.", "respuesta": "I bought a new phone yesterday."},
+        {"tipo": "correct_mistake", "texto_con_error": "Ben flied to Cartagena last winter.", "respuesta": "Ben flew to Cartagena last winter."},
+        {"tipo": "correct_mistake", "texto_con_error": "She didn't slept well.", "respuesta": "She didn't sleep well."},
+        {"tipo": "transformation", "oracion_base": "Ben flew to Cartagena.", "instruccion": "Write the negative form.", "respuesta": "Ben didn't fly to Cartagena."},
+        {"tipo": "transformation", "oracion_base": "Kenji drank coffee this morning.", "instruccion": "Write the yes/no question.", "respuesta": "Did Kenji drink coffee this morning?"},
+        {"tipo": "transformation", "oracion_base": "Did they go to the party?", "instruccion": "Answer with a short answer (No).", "respuesta": "No, they didn't."},
+        {"tipo": "write_opposite", "oracion_base": "I slept well last night.", "instruccion": "Write the negative form.", "respuesta": "I didn't sleep well last night."},
+        {"tipo": "write_opposite", "oracion_base": "They didn't eat breakfast.", "instruccion": "Write the affirmative form.", "respuesta": "They ate breakfast."},
+        {"tipo": "short_answer_production", "pregunta": "Did you go to school yesterday? (short answer)", "respuesta": "Yes, I did."},
+        {"tipo": "short_answer_production", "pregunta": "Could you swim when you were five? (short answer)", "respuesta": "Yes, I could."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Ben, I heard you went to the beach yesterday!",
+        "Ben: Yes! I swam all morning. Then I ate fish and drank fresh juice.",
+        "Sofía: Did you take photos?",
+        "Ben: I took hundreds! But then I made a classic Ben mistake...",
+        "Kenji: Oh no. What did you do?",
+        "Ben: I left my phone on the bus. I had to buy a new one.",
+        "Abuela Carmen: Don't worry, Ben. When I was young, we couldn't even take photos!"
+      ],
+      "gaps": ["swam", "drank", "took", "left"],
+      "comprension": [
+        {"pregunta": "What did Ben do at the beach in the morning?", "opciones": ["He swam", "He slept", "He wrote reports"], "respuesta": "He swam"},
+        {"pregunta": "Why did Ben have to buy a new phone?", "opciones": ["He left his phone on the bus", "Someone took it", "It fell in the sea"], "respuesta": "He left his phone on the bus"}
+      ]
+    },
+    "reading": {
+      "texto": "Abuela Carmen grew up in a small town near the river. Life was simple: she rode a horse to school, swam in the river every summer, and drank fresh milk from her grandfather's farm. She couldn't travel much — a trip to the city cost a lot of money — but she never felt poor. 'We made our own fun,' she says. 'I sang with my sisters every night, and my mother taught me hundreds of songs. I forgot many things in my life, but I never forgot those songs.'",
+      "preguntas": [
+        {"afirmacion": "Abuela Carmen rode a horse to school.", "respuesta": "true"},
+        {"afirmacion": "She swam in the sea every summer.", "respuesta": "false"},
+        {"afirmacion": "A trip to the city was cheap.", "respuesta": "false"},
+        {"afirmacion": "Her mother taught her hundreds of songs.", "respuesta": "true"}
+      ]
+    }
+  }
+}

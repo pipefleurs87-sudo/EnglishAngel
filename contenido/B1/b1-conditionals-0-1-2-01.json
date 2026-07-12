@@ -1,0 +1,100 @@
+{
+  "id": "b1-conditionals-0-1-2-01",
+  "nivel": "B1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Conditionals 0, 1 & 2 — One Ice Cream, Three Realities",
+  "habilidades": ["grammar", "listening", "reading", "writing"],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "If I place ice cream under the sun, it melts."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "If I study for the exam, I will pass."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "If I had a million dollars, I would travel the world."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "The ice cream melts if I place it under the sun."},
+    {"id": "s5", "forma": "afirmativo", "oracion": "We'll stay at home if it rains."},
+    {"id": "s6", "forma": "negativo", "oracion": "If you don't water the plants, they die."},
+    {"id": "s7", "forma": "negativo", "oracion": "If I don't study, I won't pass the exam."},
+    {"id": "s8", "forma": "negativo", "oracion": "If I were rich, I wouldn't work on Mondays."},
+    {"id": "s9", "forma": "interrogativo", "oracion": "What happens if you place ice cream under the sun?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Will you pass if you don't study?"},
+    {"id": "s11", "forma": "interrogativo", "oracion": "What would you do if you had a million dollars?"},
+    {"id": "s12", "forma": "interrogativo", "oracion": "If you could live anywhere, where would you live?"},
+    {"id": "s13", "forma": "short_answer", "oracion": "Will you come if I invite you? Yes, I will."},
+    {"id": "s14", "forma": "short_answer", "oracion": "Would you travel if you had the money? Yes, I would."},
+    {"id": "s15", "forma": "short_answer", "oracion": "Does ice melt if you heat it? Yes, it does."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Kenji: If I **place** ice cream under the sun, it **melts**. That's just physics.",
+        "Sofía: If I **place** ice cream under the sun tomorrow, it **will melt** — so I'm going to eat it now.",
+        "Ben: If I **placed** ice cream under the sun... wait. I already ate it.",
+        "Abuela Carmen: If I **were** you, I **would buy** more ice cream. Problem solved."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "If I will study, I will pass the exam.",
+        "opcion_b": "If I study, I will pass the exam.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "Conditionals connect a condition and a consequence: zero for facts that always happen, first for real future possibilities, second for imaginary situations.",
+      "tabla": {
+        "titulo": "One sentence, three conditionals",
+        "encabezados": ["Conditional", "Structure", "The ice cream test"],
+        "filas": [
+          ["Zero — always true", "If + present, present", "If I place ice cream under the sun, it melts"],
+          ["First — real future", "If + present, will + verb", "If I place ice cream under the sun, it will melt"],
+          ["Second — imaginary", "If + past, would + verb", "If I placed ice cream under the sun, it would melt"],
+          ["Order swap", "consequence first → no comma", "The ice cream melts if I place it under the sun"],
+          ["Note", "'were' for all persons in the 2nd conditional", "If I were you, I would buy more ice cream"]
+        ]
+      },
+      "vocab_warmup": false
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "If I study for the exam, ___", "opciones": ["I will pass.", "I would passed.", "I will passed."], "respuesta": "I will pass."},
+        {"tipo": "multiple_choice", "pregunta": "If you heat ice, ___", "opciones": ["it would melt.", "it melts.", "it will melted."], "respuesta": "it melts."},
+        {"tipo": "multiple_choice", "pregunta": "If I had a million dollars, ___", "opciones": ["I will buy a house.", "I buy a house.", "I would buy a house."], "respuesta": "I would buy a house."},
+        {"tipo": "multiple_choice", "pregunta": "We'll go to the beach ___", "opciones": ["if the weather is nice.", "if the weather would be nice.", "if the weather will be nice."], "respuesta": "if the weather is nice."},
+        {"tipo": "multiple_choice", "pregunta": "If I were you, ___", "opciones": ["I will apologize.", "I would apologize.", "I apologize."], "respuesta": "I would apologize."},
+        {"tipo": "multiple_choice", "pregunta": "The ice cream melts ___", "opciones": ["if you would leave it under the sun.", "if you will leave it under the sun.", "if you leave it under the sun."], "respuesta": "if you leave it under the sun."},
+        {"tipo": "true_false", "afirmacion": "In the first conditional, 'will' goes in the consequence, never after 'if'.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'If I was you' is the standard form of the second conditional.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "If you ___ (not / water) the plants, they die.", "respuesta": "don't water"},
+        {"tipo": "gap_fill", "texto": "If I ___ (be) rich, I would travel the world.", "respuesta": "were"},
+        {"tipo": "gap_fill", "texto": "If it rains tomorrow, we ___ (stay) at home.", "respuesta": "will stay"},
+        {"tipo": "unscramble", "palabras": ["the", "ice", "cream", "melts", "if", "you", "heat", "it"], "respuesta": "The ice cream melts if you heat it"},
+        {"tipo": "unscramble", "palabras": ["what", "would", "you", "do", "if", "you", "had", "a", "million", "dollars"], "respuesta": "What would you do if you had a million dollars"},
+        {"tipo": "correct_mistake", "texto_con_error": "If I will study, I will pass the exam.", "respuesta": "If I study, I will pass the exam."},
+        {"tipo": "correct_mistake", "texto_con_error": "If I would have money, I would travel.", "respuesta": "If I had money, I would travel."},
+        {"tipo": "transformation", "oracion_base": "If I study, I will pass.", "instruccion": "Change it to the second conditional (imaginary).", "respuesta": "If I studied, I would pass."},
+        {"tipo": "transformation", "oracion_base": "If you heat ice, it melts.", "instruccion": "Rewrite it with the consequence first.", "respuesta": "Ice melts if you heat it."},
+        {"tipo": "transformation", "oracion_base": "Will you come if I invite you?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, I will."},
+        {"tipo": "write_opposite", "oracion_base": "If I study, I will pass the exam.", "instruccion": "Write both parts in negative.", "respuesta": "If I don't study, I won't pass the exam."},
+        {"tipo": "short_answer_production", "pregunta": "Would you travel the world if you had the money? (short answer)", "respuesta": "Yes, I would."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Sofía, if you won the lottery, what would you do?",
+        "Sofía: If I won the lottery, I would open my own design studio.",
+        "Ben: I would buy a boat. If you have a boat, people think you are rich.",
+        "Abuela Carmen: If I won the lottery, I wouldn't change anything. Well... maybe I would buy a bigger kitchen.",
+        "Kenji: And if it rains tomorrow, what will you do?",
+        "Sofía: If it rains, we'll stay here and cook. Abuela needs that bigger kitchen first!"
+      ],
+      "gaps": ["lottery", "studio", "boat", "kitchen"],
+      "comprension": [
+        {"pregunta": "What would Sofía do if she won the lottery?", "opciones": ["Open a design studio", "Buy a boat", "Buy a bigger kitchen"], "respuesta": "Open a design studio"},
+        {"pregunta": "What will they do if it rains tomorrow?", "opciones": ["Go to the beach", "Stay and cook", "Buy a boat"], "respuesta": "Stay and cook"}
+      ]
+    },
+    "reading": {
+      "texto": "Abuela Carmen has a rule for every situation. Some rules are facts: 'If you cook beans with love, they taste better.' Some rules are warnings: 'If you go out with wet hair, you will catch a cold.' (Science doesn't agree, but nobody argues with Abuela Carmen.) And some rules are dreams: 'If I were president, every town would have a big market and a bigger kitchen.' Ben once asked her: 'What happens if I break one of your rules?' She smiled: 'If you break my rules, you wash the dishes. That one is a fact, my dear.'",
+      "preguntas": [
+        {"afirmacion": "According to Abuela Carmen, beans taste better if you cook them with love.", "respuesta": "true"},
+        {"afirmacion": "Science agrees that wet hair causes colds.", "respuesta": "false"},
+        {"afirmacion": "If she were president, every town would have a big market.", "respuesta": "true"},
+        {"afirmacion": "If Ben breaks her rules, nothing happens.", "respuesta": "false"}
+      ]
+    }
+  }
+}

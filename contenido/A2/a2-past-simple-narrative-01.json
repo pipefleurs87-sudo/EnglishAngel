@@ -1,0 +1,322 @@
+{
+  "id": "a2-past-simple-narrative-01",
+  "nivel": "A2",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Past Simple — Telling a Story",
+  "habilidades": [
+    "grammar",
+    "vocabulary",
+    "listening",
+    "reading",
+    "writing"
+  ],
+  "vocabulario": [
+    {
+      "bandera": "★",
+      "palabra": "go · went · gone",
+      "traduccion": "ir"
+    },
+    {
+      "bandera": "★",
+      "palabra": "take · took · taken",
+      "traduccion": "tomar"
+    },
+    {
+      "bandera": "★",
+      "palabra": "eat · ate · eaten",
+      "traduccion": "comer"
+    },
+    {
+      "bandera": "irreg",
+      "palabra": "fall · fell · fallen",
+      "traduccion": "caer"
+    },
+    {
+      "bandera": "-ought",
+      "palabra": "buy · bought · bought",
+      "traduccion": "comprar"
+    },
+    {
+      "bandera": "2 forms",
+      "palabra": "lose · lost · lost",
+      "traduccion": "perder"
+    },
+    {
+      "bandera": "2 forms",
+      "palabra": "find · found · found",
+      "traduccion": "encontrar"
+    },
+    {
+      "bandera": "2 forms",
+      "palabra": "meet · met · met",
+      "traduccion": "conocer"
+    }
+  ],
+  "banco_oraciones": [
+    {
+      "id": "s1",
+      "forma": "afirmativo",
+      "oracion": "Last year, Ben traveled to Cartagena."
+    },
+    {
+      "id": "s2",
+      "forma": "afirmativo",
+      "oracion": "He took a boat to the islands, but he lost his hat."
+    },
+    {
+      "id": "s3",
+      "forma": "afirmativo",
+      "oracion": "Ben fell into the water because he was clumsy."
+    },
+    {
+      "id": "s4",
+      "forma": "negativo",
+      "oracion": "He did not bring a map, so he got lost."
+    },
+    {
+      "id": "s5",
+      "forma": "short_answer",
+      "oracion": "Did Ben enjoy the trip? Yes, he did."
+    },
+    {
+      "id": "s6",
+      "forma": "afirmativo",
+      "oracion": "He met a local family and they helped him."
+    },
+    {
+      "id": "s7",
+      "forma": "afirmativo",
+      "oracion": "Ben bought a new hat at the market."
+    },
+    {
+      "id": "s8",
+      "forma": "afirmativo",
+      "oracion": "They ate arepas together on the beach."
+    },
+    {
+      "id": "s9",
+      "forma": "negativo",
+      "oracion": "Ben did not speak Spanish well, but he tried."
+    },
+    {
+      "id": "s10",
+      "forma": "interrogativo",
+      "oracion": "Where did you go on your last holiday?"
+    },
+    {
+      "id": "s11",
+      "forma": "interrogativo",
+      "oracion": "Did you take photos on your last trip?"
+    },
+    {
+      "id": "s12",
+      "forma": "short_answer",
+      "oracion": "Did Ben speak Spanish well? No, he didn't."
+    }
+  ],
+  "fases": {
+    "inicio": {
+      "banner_diagnostico": {
+        "opcion_a": "Did Ben went to Cartagena?",
+        "opcion_b": "Did Ben go to Cartagena?",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "We use the past simple to tell finished actions in the past; after 'did' the verb goes back to its base form (go, not went).",
+      "vocab_warmup": true,
+      "tabla": {
+        "titulo": "Past simple in a story: did / didn't",
+        "encabezados": [
+          "Form",
+          "Structure",
+          "Example"
+        ],
+        "filas": [
+          [
+            "Affirmative",
+            "verb in past form (went, took, lost)",
+            "Ben went to Cartagena"
+          ],
+          [
+            "Negative",
+            "did not (didn't) + base verb",
+            "He didn't bring a map"
+          ],
+          [
+            "Question",
+            "Did + subject + base verb?",
+            "Did Ben enjoy the trip?"
+          ],
+          [
+            "Short answer",
+            "Yes, he did. / No, he didn't.",
+            "Did you go? Yes, I did."
+          ],
+          [
+            "Story connectors",
+            "first, then, because, so, luckily",
+            "He lost his map, so he got lost"
+          ]
+        ]
+      }
+    },
+    "practica": {
+      "ejercicios": [
+        {
+          "tipo": "multiple_choice",
+          "pregunta": "Last year, Ben ___ to Cartagena.",
+          "opciones": [
+            "go",
+            "went",
+            "goes"
+          ],
+          "respuesta": "went"
+        },
+        {
+          "tipo": "multiple_choice",
+          "pregunta": "Ben ___ into the water because he was clumsy.",
+          "opciones": [
+            "fell",
+            "falled",
+            "felled"
+          ],
+          "respuesta": "fell"
+        },
+        {
+          "tipo": "multiple_choice",
+          "pregunta": "He didn't ___ a map, so he got lost.",
+          "opciones": [
+            "brought",
+            "bring",
+            "brings"
+          ],
+          "respuesta": "bring"
+        },
+        {
+          "tipo": "true_false",
+          "afirmacion": "After 'did' in a question, the main verb goes back to its base form: 'Did he go?', not 'Did he went?'.",
+          "respuesta": "true"
+        },
+        {
+          "tipo": "true_false",
+          "afirmacion": "'Ben buyed a hat' is correct because 'buy' is a regular verb.",
+          "respuesta": "false"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "Ben ___ his hat when he fell into the water. (lose)",
+          "respuesta": "lost"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "He ___ not bring a map, so he got lost.",
+          "respuesta": "did"
+        },
+        {
+          "tipo": "unscramble",
+          "palabras": [
+            "met",
+            "Ben",
+            "a",
+            "family",
+            "local",
+            "."
+          ],
+          "respuesta": "Ben met a local family."
+        },
+        {
+          "tipo": "correct_mistake",
+          "texto_con_error": "Ben buyed a new hat at the market.",
+          "respuesta": "Ben bought a new hat at the market."
+        },
+        {
+          "tipo": "correct_mistake",
+          "texto_con_error": "Did Ben went to Cartagena?",
+          "respuesta": "Did Ben go to Cartagena?"
+        },
+        {
+          "tipo": "transformation",
+          "oracion_base": "Ben enjoyed the trip.",
+          "instruccion": "Turn it into a question (use 'did').",
+          "respuesta": "Did Ben enjoy the trip?"
+        },
+        {
+          "tipo": "transformation",
+          "oracion_base": "Ben took a boat to the islands.",
+          "instruccion": "Make it negative (use 'did not').",
+          "respuesta": "Ben did not take a boat to the islands."
+        },
+        {
+          "tipo": "short_answer_production",
+          "pregunta": "Where did you go on your last holiday? (Answer with a full sentence.)",
+          "respuesta": "I went to Cartagena."
+        },
+        {
+          "tipo": "write_opposite",
+          "oracion_base": "Ben lost his hat.",
+          "instruccion": "Write the negative form.",
+          "respuesta": "Ben didn't lose his hat."
+        },
+        {
+          "tipo": "short_answer_production",
+          "pregunta": "Did Ben meet a local family? (short answer)",
+          "respuesta": "Yes, he did."
+        }
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Ben, tell me about your trip to Cartagena!",
+        "Ben: Oh, it was an adventure. I took a boat to the islands.",
+        "Kenji: Nice! Did you enjoy it?",
+        "Ben: Yes, but I fell into the water and I lost my hat.",
+        "Kenji: Oh no! What did you do?",
+        "Ben: I bought a new one and I met a wonderful local family."
+      ],
+      "gaps": [
+        "boat",
+        "hat"
+      ],
+      "comprension": [
+        {
+          "pregunta": "What did Ben take to the islands?",
+          "opciones": [
+            "A boat",
+            "A bus",
+            "A plane"
+          ],
+          "respuesta": "A boat"
+        },
+        {
+          "pregunta": "What did Ben lose?",
+          "opciones": [
+            "His phone",
+            "His hat",
+            "His passport"
+          ],
+          "respuesta": "His hat"
+        }
+      ]
+    },
+    "reading": {
+      "texto": "Last year, Ben traveled to Cartagena. He was excited, but he was also very clumsy. He took a boat to the islands, and he fell into the water. He lost his hat and his map, so he got lost in the old town. Luckily, he met a local family. They helped him, and they ate arepas together on the beach. Ben did not speak Spanish well, but he tried, and he had a wonderful time.",
+      "preguntas": [
+        {
+          "afirmacion": "Ben traveled to Cartagena last year.",
+          "respuesta": "true"
+        },
+        {
+          "afirmacion": "Ben lost his hat and his map.",
+          "respuesta": "true"
+        },
+        {
+          "afirmacion": "Ben spoke Spanish perfectly.",
+          "respuesta": "false"
+        },
+        {
+          "afirmacion": "A local family helped Ben.",
+          "respuesta": "true"
+        }
+      ]
+    }
+  }
+}

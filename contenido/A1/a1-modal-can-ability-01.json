@@ -1,0 +1,250 @@
+{
+  "id": "a1-modal-can-ability-01",
+  "nivel": "A1",
+  "arquetipo": "modales",
+  "tema": "Modal Verb 'Can' — Ability & the Body",
+  "habilidades": [
+    "grammar",
+    "vocabulary",
+    "listening",
+    "reading",
+    "writing"
+  ],
+  "vocabulario": [
+    {
+      "palabra": "eyes",
+      "traduccion": "see (ver)"
+    },
+    {
+      "palabra": "ears",
+      "traduccion": "hear (oír)"
+    },
+    {
+      "palabra": "nose",
+      "traduccion": "smell (oler)"
+    },
+    {
+      "palabra": "mouth",
+      "traduccion": "taste / speak"
+    },
+    {
+      "palabra": "hands",
+      "traduccion": "touch / hold"
+    },
+    {
+      "palabra": "legs",
+      "traduccion": "walk (caminar)"
+    },
+    {
+      "palabra": "feet",
+      "traduccion": "run / balance"
+    },
+    {
+      "palabra": "brain",
+      "traduccion": "think (pensar)"
+    }
+  ],
+  "banco_oraciones": [
+    {
+      "id": "s1",
+      "forma": "afirmativo",
+      "oracion": "I can see with my eyes and hear with my ears."
+    },
+    {
+      "id": "s2",
+      "forma": "afirmativo",
+      "oracion": "Ben can cook, and Sofía can dance very well."
+    },
+    {
+      "id": "s3",
+      "forma": "negativo",
+      "oracion": "Kenji can't drive, and I can't swim well."
+    },
+    {
+      "id": "s4",
+      "forma": "negativo",
+      "oracion": "A fish can't walk, and birds can't read."
+    },
+    {
+      "id": "s5",
+      "forma": "interrogativo",
+      "oracion": "Can you swim? What can you do with your legs?"
+    },
+    {
+      "id": "s6",
+      "forma": "interrogativo",
+      "oracion": "Can Sofía speak three languages?"
+    },
+    {
+      "id": "s7",
+      "forma": "short_answer",
+      "oracion": "Can birds fly? Yes, they can."
+    },
+    {
+      "id": "s8",
+      "forma": "short_answer",
+      "oracion": "Can a fish walk? No, it can't."
+    }
+  ],
+  "fases": {
+    "inicio": {
+      "banner_diagnostico": {
+        "opcion_a": "I can to hear with my ears.",
+        "opcion_b": "I can hear with my ears.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "We use 'can' to express ability, what we know how to do; can + the base verb, no 'to' (I can swim, not 'I can to swim').",
+      "tabla": {
+        "titulo": "can — ability",
+        "encabezados": [
+          "Form",
+          "Example"
+        ],
+        "filas": [
+          [
+            "Affirmative",
+            "I can swim"
+          ],
+          [
+            "Negative",
+            "I can't (cannot) fly"
+          ],
+          [
+            "Question",
+            "Can you swim?"
+          ],
+          [
+            "Short answer",
+            "Yes, I can. / No, I can't."
+          ]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {
+          "tipo": "multiple_choice",
+          "pregunta": "A bird ___ fly.",
+          "opciones": [
+            "can",
+            "cans",
+            "can to"
+          ],
+          "respuesta": "can"
+        },
+        {
+          "tipo": "true_false",
+          "afirmacion": "After 'can', we use the base verb without 'to': 'I can swim', not 'I can to swim'.",
+          "respuesta": "true"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "With my eyes, I can ___.",
+          "respuesta": "see"
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "These are my ears. With them, I can ___ music.",
+          "respuesta": "hear",
+          "combina": [
+            "demostrativos",
+            "can"
+          ]
+        },
+        {
+          "tipo": "gap_fill",
+          "texto": "This is my nose. With it, I can ___ flowers.",
+          "respuesta": "smell",
+          "combina": [
+            "demostrativos",
+            "can"
+          ]
+        },
+        {
+          "tipo": "correct_mistake",
+          "texto_con_error": "I can to swim very well.",
+          "respuesta": "I can swim very well."
+        },
+        {
+          "tipo": "transformation",
+          "oracion_base": "Ben can cook.",
+          "instruccion": "Make it negative (use can't).",
+          "respuesta": "Ben can't cook."
+        },
+        {
+          "tipo": "transformation",
+          "oracion_base": "You can swim.",
+          "instruccion": "Turn it into a question.",
+          "respuesta": "Can you swim?"
+        },
+        {
+          "tipo": "short_answer_production",
+          "pregunta": "Can you dance? (Answer: Yes, I can. / No, I can't.)",
+          "respuesta": "Yes, I can."
+        },
+        {
+          "tipo": "short_answer_production",
+          "pregunta": "These are your hands. What can you do with them?",
+          "respuesta": "I can hold things.",
+          "combina": [
+            "demostrativos",
+            "object pronouns",
+            "can"
+          ]
+        }
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Ben, can you swim?",
+        "Ben: Yes, I can! But I can't dance.",
+        "Kenji: Really? Can Sofía dance?",
+        "Ben: Yes, she can. She can also speak three languages.",
+        "Kenji: Wow! And you? What can you do?",
+        "Ben: I can cook... a little. And I can make people laugh!"
+      ],
+      "gaps": [
+        "swim",
+        "dance"
+      ],
+      "comprension": [
+        {
+          "pregunta": "Can Ben dance?",
+          "opciones": [
+            "Yes, very well",
+            "No, he can't",
+            "Only a little"
+          ],
+          "respuesta": "No, he can't"
+        },
+        {
+          "pregunta": "What can Sofía do?",
+          "opciones": [
+            "Drive a bus",
+            "Speak three languages",
+            "Fly a plane"
+          ],
+          "respuesta": "Speak three languages"
+        }
+      ]
+    },
+    "reading": {
+      "texto": "The human body is amazing. With your eyes you can see, and with your ears you can hear. With your nose you can smell, and with your hands you can touch and hold things. Your legs can walk and run, and your brain can think and remember. 'What can't the body do?' asks Kenji. Sofía smiles: 'It can't be in two places at the same time!'",
+      "preguntas": [
+        {
+          "afirmacion": "With your ears you can hear.",
+          "respuesta": "true"
+        },
+        {
+          "afirmacion": "Your nose can walk.",
+          "respuesta": "false"
+        },
+        {
+          "afirmacion": "Your brain can think and remember.",
+          "respuesta": "true"
+        }
+      ]
+    }
+  }
+}

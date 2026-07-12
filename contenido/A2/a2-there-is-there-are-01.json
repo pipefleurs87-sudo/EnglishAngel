@@ -1,0 +1,112 @@
+{
+  "id": "a2-there-is-there-are-01",
+  "nivel": "A2",
+  "arquetipo": "tiempo_verbal",
+  "tema": "There is / There are — Describing the House",
+  "habilidades": ["grammar", "vocabulary", "listening", "reading", "writing"],
+  "vocabulario": [
+    {"bandera": "🍳", "palabra": "kitchen", "traduccion": "cocina"},
+    {"bandera": "🛋️", "palabra": "living room", "traduccion": "sala"},
+    {"bandera": "🛏️", "palabra": "bedroom", "traduccion": "habitación"},
+    {"bandera": "🛁", "palabra": "bathroom", "traduccion": "baño"},
+    {"bandera": "🌳", "palabra": "garden", "traduccion": "jardín"},
+    {"bandera": "🚗", "palabra": "garage", "traduccion": "garaje"},
+    {"bandera": "🔥", "palabra": "oven", "traduccion": "horno"},
+    {"bandera": "🧊", "palabra": "fridge", "traduccion": "nevera"},
+    {"bandera": "🪞", "palabra": "mirror", "traduccion": "espejo"},
+    {"bandera": "🪟", "palabra": "window", "traduccion": "ventana"},
+    {"bandera": "🚪", "palabra": "door", "traduccion": "puerta"},
+    {"bandera": "🪜", "palabra": "stairs", "traduccion": "escaleras"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "There is a big sofa in the living room."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "There are two bedrooms and a small kitchen."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "There is an oven and a fridge in the kitchen."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "In Abuela Carmen's old house, there was a garden with mango trees."},
+    {"id": "s5", "forma": "negativo", "oracion": "There isn't a garage in Sofía's building."},
+    {"id": "s6", "forma": "negativo", "oracion": "There aren't any plants in Ben's room."},
+    {"id": "s7", "forma": "negativo", "oracion": "There isn't an elevator, but there are stairs."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "Is there a shower in the bathroom?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Are there two beds in the room?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "How many rooms are there in your house?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Is there a garden? Yes, there is."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Are there any windows? No, there aren't."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Is there an oven in the kitchen? Yes, there is."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: In my apartment **there is** a small studio where I design. **There are** plants everywhere!",
+        "Ben: In my hostel room **there is** one bed... and **there isn't** a window. Classic Ben luck.",
+        "Kenji: **Are there** many rooms in your house? In Japan, my family's house is very small.",
+        "Abuela Carmen: In my old house **there was** a garden with mango trees. Now there is a parking lot there..."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "There is two bedrooms in my house.",
+        "opcion_b": "There are two bedrooms in my house.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "We use 'there is' and 'there are' to say what exists in a place — one form for singular things and one for plural, unlike Spanish 'hay'.",
+      "tabla": {
+        "titulo": "there is / there are",
+        "encabezados": ["", "Singular", "Plural"],
+        "filas": [
+          ["Affirmative", "There is a sofa / an oven", "There are two beds"],
+          ["Negative", "There isn't a garage", "There aren't any plants"],
+          ["Question", "Is there a shower?", "Are there any windows?"],
+          ["Short answer", "Yes, there is. / No, there isn't.", "Yes, there are. / No, there aren't."],
+          ["Note: an + vowel SOUND", "an oven, an elevator, an armchair", "a window, a garden (consonant sound)"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "___ two bedrooms in my apartment.", "opciones": ["There are", "There is", "There am"], "respuesta": "There are"},
+        {"tipo": "multiple_choice", "pregunta": "There is ___ oven in the kitchen.", "opciones": ["an", "a", "two"], "respuesta": "an"},
+        {"tipo": "multiple_choice", "pregunta": "Is there a garage? ___", "opciones": ["Yes, there is.", "Yes, it is.", "Yes, there are."], "respuesta": "Yes, there is."},
+        {"tipo": "true_false", "afirmacion": "We use 'there are' with plural nouns: 'there are two beds'.", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "We choose 'an' by the sound, not the letter: 'an oven' but 'a window'.", "respuesta": "true"},
+        {"tipo": "gap_fill", "texto": "There ___ a big sofa in the living room.", "respuesta": "is"},
+        {"tipo": "gap_fill", "texto": "There ___ four chairs in the kitchen.", "respuesta": "are"},
+        {"tipo": "gap_fill", "texto": "When Abuela Carmen was young, there ___ no supermarkets in her town.", "respuesta": "were", "combina": ["Verb To Be — Past (was / were)"]},
+        {"tipo": "unscramble", "palabras": ["there", "is", "a", "mirror", "in", "the", "bathroom"], "respuesta": "There is a mirror in the bathroom"},
+        {"tipo": "unscramble", "palabras": ["are", "there", "two", "bedrooms", "in", "your", "house"], "respuesta": "Are there two bedrooms in your house"},
+        {"tipo": "correct_mistake", "texto_con_error": "There is two bedrooms in my house.", "respuesta": "There are two bedrooms in my house."},
+        {"tipo": "correct_mistake", "texto_con_error": "There are a garden behind the house.", "respuesta": "There is a garden behind the house."},
+        {"tipo": "correct_mistake", "texto_con_error": "In the kitchen there is a oven.", "respuesta": "In the kitchen there is an oven."},
+        {"tipo": "transformation", "oracion_base": "There is a garage.", "instruccion": "Write the negative form.", "respuesta": "There isn't a garage."},
+        {"tipo": "transformation", "oracion_base": "There are two windows in the bedroom.", "instruccion": "Write the yes/no question.", "respuesta": "Are there two windows in the bedroom?"},
+        {"tipo": "transformation", "oracion_base": "Is there a shower in the bathroom?", "instruccion": "Answer with a short answer (Yes).", "respuesta": "Yes, there is."},
+        {"tipo": "write_opposite", "oracion_base": "There is a TV in the bedroom.", "instruccion": "Write the negative form.", "respuesta": "There isn't a TV in the bedroom."},
+        {"tipo": "write_opposite", "oracion_base": "There aren't any stairs in the house.", "instruccion": "Write the affirmative form (use 'some').", "respuesta": "There are some stairs in the house."},
+        {"tipo": "short_answer_production", "pregunta": "Is there a garden in your house? (short answer)", "respuesta": "Yes, there is."},
+        {"tipo": "short_answer_production", "pregunta": "Are there five bathrooms in your house? (short answer)", "respuesta": "No, there aren't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Sofía: Kenji, how is your new house?",
+        "Kenji: It's great! There are three bedrooms and there is a beautiful garden.",
+        "Ben: Is there a garage?",
+        "Kenji: Yes, there is. But there isn't a car — my host family rides bicycles!",
+        "Sofía: Are there any plants in your room?",
+        "Kenji: No, there aren't. But there is a big window with a view of the mountains."
+      ],
+      "gaps": ["bedrooms", "garden", "garage", "window"],
+      "comprension": [
+        {"pregunta": "How many bedrooms are there in Kenji's new house?", "opciones": ["three", "two", "four"], "respuesta": "three"},
+        {"pregunta": "Is there a car in the garage?", "opciones": ["No, there isn't", "Yes, there is", "There isn't a garage"], "respuesta": "No, there isn't"}
+      ]
+    },
+    "reading": {
+      "texto": "FOR RENT — Apartment in Laureles, Medellín. There are two bedrooms and a bright living room. There is a modern kitchen with an oven and a big fridge. There isn't a garage, but there is parking on the street. In the bathroom there is a shower and a large mirror. Are there pets in the building? Yes — there are cats, dogs and one very loud parrot. Price: $1.800.000 per month. Call Sofía Reyes.",
+      "preguntas": [
+        {"afirmacion": "There are two bedrooms in the apartment.", "respuesta": "true"},
+        {"afirmacion": "There is a garage.", "respuesta": "false"},
+        {"afirmacion": "There is an oven in the kitchen.", "respuesta": "true"},
+        {"afirmacion": "There aren't any animals in the building.", "respuesta": "false"}
+      ]
+    }
+  }
+}

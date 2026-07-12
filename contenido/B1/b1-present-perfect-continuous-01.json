@@ -1,0 +1,109 @@
+{
+  "id": "b1-present-perfect-continuous-01",
+  "nivel": "B1",
+  "arquetipo": "tiempo_verbal",
+  "tema": "Present Perfect Continuous — for / since / just",
+  "habilidades": ["grammar", "vocabulary", "listening", "reading", "writing"],
+  "vocabulario": [
+    {"bandera": "since", "palabra": "since 2020", "traduccion": "desde 2020 (punto de inicio)"},
+    {"bandera": "since", "palabra": "since Monday", "traduccion": "desde el lunes"},
+    {"bandera": "since", "palabra": "since 8 a.m.", "traduccion": "desde las 8 a.m."},
+    {"bandera": "since", "palabra": "since I was a child", "traduccion": "desde que era niño/a"},
+    {"bandera": "for", "palabra": "for two hours", "traduccion": "durante dos horas (rango)"},
+    {"bandera": "for", "palabra": "for three days", "traduccion": "durante tres días"},
+    {"bandera": "for", "palabra": "for ten years", "traduccion": "durante diez años"},
+    {"bandera": "for", "palabra": "for a long time", "traduccion": "durante mucho tiempo"}
+  ],
+  "banco_oraciones": [
+    {"id": "s1", "forma": "afirmativo", "oracion": "I have been working here since 2020."},
+    {"id": "s2", "forma": "afirmativo", "oracion": "Kenji has been studying Spanish for six months."},
+    {"id": "s3", "forma": "afirmativo", "oracion": "Abuela Carmen has been cooking since 6 a.m."},
+    {"id": "s4", "forma": "afirmativo", "oracion": "Sofía has been designing the same logo for two weeks."},
+    {"id": "s5", "forma": "negativo", "oracion": "I haven't been sleeping well lately."},
+    {"id": "s6", "forma": "negativo", "oracion": "Ben hasn't been paying attention for the last ten minutes."},
+    {"id": "s7", "forma": "negativo", "oracion": "We haven't been practicing for a long time."},
+    {"id": "s8", "forma": "interrogativo", "oracion": "How long have you been living in Medellín?"},
+    {"id": "s9", "forma": "interrogativo", "oracion": "Have you been waiting for a long time?"},
+    {"id": "s10", "forma": "interrogativo", "oracion": "Have you finished the task?"},
+    {"id": "s11", "forma": "short_answer", "oracion": "Have you finished the task? Yes, I have. I just did."},
+    {"id": "s12", "forma": "short_answer", "oracion": "Have you been waiting long? No, I haven't. I just arrived."},
+    {"id": "s13", "forma": "short_answer", "oracion": "Has he been studying all night? Yes, he has."}
+  ],
+  "fases": {
+    "inicio": {
+      "interaccion": [
+        "Sofía: I **have been designing** the same logo **for** two weeks. The client wants it 'more blue, but less blue'.",
+        "Kenji: I **have been studying** Spanish **since** January. Today I learned that 'ahorita' can mean any moment in history.",
+        "Abuela Carmen: I **have been cooking** **since** 6 a.m. — Ben, have you finished setting the table?",
+        "Ben: Yes, I have! I **just** did. ...OK, OK, I'm doing it now."
+      ],
+      "banner_diagnostico": {
+        "opcion_a": "I have been working here since three years.",
+        "opcion_b": "I have been working here for three years.",
+        "correcta": "b"
+      },
+      "definicion_pragmatica": "The present perfect continuous (have been + -ing) measures how long something has been happening — 'since' marks the starting point, 'for' the amount of time, and 'just' says it finished a moment ago.",
+      "tabla": {
+        "titulo": "have been + -ing · since / for / just",
+        "encabezados": ["Piece", "Structure", "Example"],
+        "filas": [
+          ["Structure", "have/has been + verb-ing", "I have been working all day"],
+          ["since + starting point", "a specific date or moment", "since 2020 · since Monday · since 8 a.m."],
+          ["for + time range", "an amount of time", "for three hours · for ten years"],
+          ["just = a moment ago", "Yes, I have. I just did. / I have just finished.", "Have you finished the task? Yes, I have. I just did."],
+          ["Question", "How long have you been + -ing?", "How long have you been living here?"],
+          ["Negative", "haven't/hasn't been + -ing", "She hasn't been sleeping well lately"]
+        ]
+      },
+      "vocab_warmup": true
+    },
+    "practica": {
+      "ejercicios": [
+        {"tipo": "multiple_choice", "pregunta": "I have been working here ___ 2020.", "opciones": ["since", "for", "just"], "respuesta": "since"},
+        {"tipo": "multiple_choice", "pregunta": "Kenji has been studying Spanish ___ six months.", "opciones": ["since", "for", "ago"], "respuesta": "for"},
+        {"tipo": "multiple_choice", "pregunta": "Have you finished the task? — Yes, I have. I ___ did.", "opciones": ["yet", "since", "just"], "respuesta": "just"},
+        {"tipo": "true_false", "afirmacion": "'Since' introduces the starting point (since 2020); 'for' introduces the amount of time (for three years).", "respuesta": "true"},
+        {"tipo": "true_false", "afirmacion": "'I have been working since three years' is correct.", "respuesta": "false"},
+        {"tipo": "gap_fill", "texto": "Abuela Carmen has been cooking ___ 6 a.m.", "respuesta": "since"},
+        {"tipo": "gap_fill", "texto": "Sofía has been designing the same logo ___ two weeks.", "respuesta": "for"},
+        {"tipo": "gap_fill", "texto": "How long ___ you been living in Medellín?", "respuesta": "have"},
+        {"tipo": "unscramble", "palabras": ["I", "have", "been", "studying", "for", "three", "hours"], "respuesta": "I have been studying for three hours"},
+        {"tipo": "unscramble", "palabras": ["how", "long", "have", "you", "been", "waiting"], "respuesta": "How long have you been waiting"},
+        {"tipo": "correct_mistake", "texto_con_error": "I have been working here since three years.", "respuesta": "I have been working here for three years."},
+        {"tipo": "correct_mistake", "texto_con_error": "She has been study English for two years.", "respuesta": "She has been studying English for two years."},
+        {"tipo": "correct_mistake", "texto_con_error": "We have been living here for 2019.", "respuesta": "We have been living here since 2019."},
+        {"tipo": "transformation", "oracion_base": "I have been sleeping well.", "instruccion": "Write the negative form.", "respuesta": "I haven't been sleeping well."},
+        {"tipo": "transformation", "oracion_base": "She has been working all day.", "instruccion": "Write the yes/no question.", "respuesta": "Has she been working all day?"},
+        {"tipo": "transformation", "oracion_base": "Have you finished the task?", "instruccion": "Answer Yes with the short answer + 'just'.", "respuesta": "Yes, I have. I just did."},
+        {"tipo": "write_opposite", "oracion_base": "They have been practicing for a long time.", "instruccion": "Write the negative form.", "respuesta": "They haven't been practicing for a long time."},
+        {"tipo": "write_opposite", "oracion_base": "He hasn't been listening.", "instruccion": "Write the affirmative form.", "respuesta": "He has been listening."},
+        {"tipo": "short_answer_production", "pregunta": "Have you been studying English for more than a year? (short answer)", "respuesta": "Yes, I have."},
+        {"tipo": "short_answer_production", "pregunta": "Have you been sleeping in class? (short answer, No)", "respuesta": "No, I haven't."}
+      ]
+    },
+    "listening": {
+      "guion": [
+        "Kenji: Sofía, how long have you been working as a designer?",
+        "Sofía: I have been designing since 2019 — so, for about seven years.",
+        "Kenji: And how long have you been waiting for that client's answer?",
+        "Sofía: For three days. I have been checking my email every five minutes.",
+        "Ben: News! The client has just answered!",
+        "Sofía: Finally! ...He wants it 'more blue, but less blue' again."
+      ],
+      "gaps": ["designing", "seven", "email", "answered"],
+      "comprension": [
+        {"pregunta": "How long has Sofía been working as a designer?", "opciones": ["Since 2019", "Since 2016", "For three days"], "respuesta": "Since 2019"},
+        {"pregunta": "What has the client just done?", "opciones": ["Answered the email", "Paid the invoice", "Called Kenji"], "respuesta": "Answered the email"}
+      ]
+    },
+    "reading": {
+      "texto": "Abuela Carmen has been living in the same house since 1980, and she has been cooking in the same kitchen for more than forty years. 'People ask me: Abuela, how long have you been making this recipe? Since before your parents met, my dear.' This morning she has been preparing a special lunch since six o'clock, because Kenji's parents have just arrived from Japan. Kenji has been practicing one Spanish sentence for a week: 'Mucho gusto, la comida está deliciosa.' He has just said it perfectly — and Abuela Carmen has been smiling since that moment.",
+      "preguntas": [
+        {"afirmacion": "Abuela Carmen has been living in the same house since 1980.", "respuesta": "true"},
+        {"afirmacion": "She has been cooking in that kitchen for ten years.", "respuesta": "false"},
+        {"afirmacion": "Kenji's parents have just arrived from Japan.", "respuesta": "true"},
+        {"afirmacion": "Kenji has been practicing his sentence for a month.", "respuesta": "false"}
+      ]
+    }
+  }
+}
