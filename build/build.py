@@ -23,8 +23,8 @@ MOTOR_GEN = ROOT / "motor" / "generador-generico.html"
 HERRAMIENTAS = ROOT / "herramientas"
 MOTOR_CLASE = ROOT / "motor" / "generador-clases.html"
 
-# Repo real en GitHub: pipefleurs87-sudo/EnglishAngel.com (ajustado 2026-07-11 para que coincida).
-BASE_URL = "https://pipefleurs87-sudo.github.io/EnglishAngel.com"
+# Repo real en GitHub: pipefleurs87-sudo/EnglishAngel — publicado en /EnglishAngel/ (corregido 2026-07-16: el sufijo .com rompia todos los canonicals).
+BASE_URL = "https://pipefleurs87-sudo.github.io/EnglishAngel"
 
 NIVEL_ORDEN = ["A1", "A2", "B1", "B2", "C1", "C2"]
 ARQ_GRAMATICALES = {"tiempo_verbal","determinantes","pronombres","comparativos","clausulas_relativas","modales"}
