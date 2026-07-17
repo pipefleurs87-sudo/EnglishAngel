@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A1 Review — Present Simple: Routines, Frequency, Questions &amp; Likes (repaso de ingles) — A1 Exercises | EnglishAngel</title>
-<meta name="description" content="A1 Review — Present Simple: Routines, Frequency, Questions &amp; Likes — A1 English exercises: grammar, listening and reading in one sequence. Ejercicios de repaso de ingles gratis.">
-<meta name="keywords" content="A1 Review — Present Simple: Routines, Frequency, Questions &amp; Likes exercises, English grammar, Review, A1 English, ESL, ejercicios de ingles, ejercicios repaso de ingles, repaso de ingles">
-<meta property="og:title" content="A1 Review — Present Simple: Routines, Frequency, Questions &amp; Likes (repaso de ingles) — A1 Exercises | EnglishAngel">
-<meta property="og:description" content="A1 Review — Present Simple: Routines, Frequency, Questions &amp; Likes — A1 English exercises: grammar, listening and reading in one sequence. Ejercicios de repaso de ingles gratis.">
+<title>A1 Review — Present Simple: Routines, Frequency, Questions &amp; Likes (repaso de ingles) — Ejercicios interactivos A1 | EnglishAngel</title>
+<meta name="description" content="Practica A1 Review — Present Simple: Routines, Frequency, Questions &amp; Likes (A1) con ejercicios interactivos de opcion multiple y verdadero/falso, respuestas incluidas y correccion al instante. Free A1 English exercises online.">
+<meta name="keywords" content="A1 Review — Present Simple: Routines, Frequency, Questions &amp; Likes exercises, English grammar, Review, A1 English, ESL, ejercicios de ingles, ejercicios repaso de ingles, repaso de ingles, ejercicios interactivos, practicar ingles online">
+<meta property="og:title" content="A1 Review — Present Simple: Routines, Frequency, Questions &amp; Likes (repaso de ingles) — Ejercicios interactivos A1 | EnglishAngel">
+<meta property="og:description" content="Practica A1 Review — Present Simple: Routines, Frequency, Questions &amp; Likes (A1) con ejercicios interactivos de opcion multiple y verdadero/falso, respuestas incluidas y correccion al instante. Free A1 English exercises online.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://pipefleurs87-sudo.github.io/EnglishAngel/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -313,13 +313,24 @@
       return {txt:spoken,node:line};
     });
     box.appendChild(tr); wrapEl.appendChild(box);
-    play.onclick=()=>{ if(!('speechSynthesis' in window)){alert('Your browser does not support speech synthesis.');return;}
-      window.speechSynthesis.cancel(); play.disabled=true; let i=0;
+    play.onclick=()=>{ if(!('speechSynthesis' in window) && !window.SEQUENCE_DATA){alert('Your browser does not support audio playback.');return;}
+      window.speechSynthesis && window.speechSynthesis.cancel(); play.disabled=true; let i=0;
+      const seqId=(window.SEQUENCE_DATA&&window.SEQUENCE_DATA.id)||'';
+      const speakFallback=(txt,cb)=>{
+        if(!('speechSynthesis' in window)){cb();return;}
+        const u=new SpeechSynthesisUtterance(txt);u.lang='en-US';u.rate=.95;
+        u.onend=cb;u.onerror=cb;window.speechSynthesis.speak(u);
+      };
       const speakNext=()=>{ tr.querySelectorAll('.line').forEach(l=>l.classList.remove('active'));
         if(i>=lines.length){play.disabled=false;play.textContent='▶ Play again';return;}
         lines[i].node.classList.add('active');
-        const u=new SpeechSynthesisUtterance(lines[i].txt);u.lang='en-US';u.rate=.95;
-        u.onend=()=>{i++;speakNext();};u.onerror=()=>{i++;speakNext();};window.speechSynthesis.speak(u);};
+        const idx=i; const txt=lines[i].txt; const advance=()=>{i++;speakNext();};
+        if(seqId){
+          const audio=new Audio('../audio/'+seqId+'/'+(idx+1)+'.mp3');
+          audio.onended=advance; audio.onerror=()=>{speakFallback(txt,advance);};
+          audio.play().catch(()=>{speakFallback(txt,advance);});
+        } else { speakFallback(txt,advance); }
+      };
       speakNext();};
     if(gaps.length){
       wrapEl.appendChild(el('div','listen-sub','Fill in the missing words'));
