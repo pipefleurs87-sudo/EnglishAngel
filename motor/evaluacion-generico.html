@@ -155,13 +155,13 @@
       g.box.querySelectorAll('input,button').forEach(x=>x.disabled=true);
     });
     const pct=Math.round(ok/graders.length*100);
-    res.className='result'+(pct>=60?' pass':''); res.innerHTML=`Score: ${ok}/${graders.length} · <span class="pct">${pct}%</span>`;
+    res.className='result'+(pct>=75?' pass':''); res.innerHTML=`Score: ${ok}/${graders.length} · <span class="pct">${pct}%</span>`;
     submit.style.display='none'; again.style.display='';
     cta.style.display='block';
     try{if(D.id){const P=JSON.parse(localStorage.getItem('ea_progreso')||'{}');const prev=P[D.id];
       if(!prev||pct>prev.pct)P[D.id]={pct:pct,ok:ok,total:graders.length,fecha:new Date().toISOString().slice(0,10)};
       localStorage.setItem('ea_progreso',JSON.stringify(P));
-      if(pct>=60)res.innerHTML+=' <span style="color:var(--gold);font-weight:600">· \u2726 star lit on the 3D map</span>';
+      if(pct>=75)res.innerHTML+=' <span style="color:var(--gold);font-weight:600">· \u2726 star lit on the 3D map</span>';
     }}catch(e){}
     window.scrollTo({top:0,behavior:'smooth'});
   };
