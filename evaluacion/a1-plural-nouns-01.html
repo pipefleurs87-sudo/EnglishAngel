@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Test de Plural Nouns — regular &amp; irregular (sustantivos y plurales) A1 — Examen online con nota | EnglishAngel</title>
-<meta name="description" content="Evalua tu nivel de Plural Nouns — regular &amp; irregular con este test A1: sin pistas, un intento, nota instantanea. Free A1 English test.">
-<meta name="keywords" content="Plural Nouns — regular &amp; irregular exercises, English grammar, Nouns, A1 English, ESL, ejercicios de ingles, ejercicios sustantivos y plurales, sustantivos y plurales, test de ingles, examen online, quiz">
-<meta property="og:title" content="Test de Plural Nouns — regular &amp; irregular (sustantivos y plurales) A1 — Examen online con nota | EnglishAngel">
-<meta property="og:description" content="Evalua tu nivel de Plural Nouns — regular &amp; irregular con este test A1: sin pistas, un intento, nota instantanea. Free A1 English test.">
+<title>Plural Nouns — regular &amp; irregular (sustantivos y plurales) — A1 Test | EnglishAngel</title>
+<meta name="description" content="Plural Nouns — regular &amp; irregular — A1 test: check your grammar with instant scoring. Examen de sustantivos y plurales gratis.">
+<meta name="keywords" content="Plural Nouns — regular &amp; irregular exercises, English grammar, Nouns, A1 English, ESL, ejercicios de ingles, ejercicios sustantivos y plurales, sustantivos y plurales">
+<meta property="og:title" content="Plural Nouns — regular &amp; irregular (sustantivos y plurales) — A1 Test | EnglishAngel">
+<meta property="og:description" content="Plural Nouns — regular &amp; irregular — A1 test: check your grammar with instant scoring. Examen de sustantivos y plurales gratis.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://pipefleurs87-sudo.github.io/EnglishAngel/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -113,7 +113,7 @@
       box.appendChild(el('p','prompt',esc(ex.pregunta).replace(/___/g,'<b>_____</b>')));
       const ch=el('div','choices');
       (ex.opciones||[]).forEach(o=>{const l=el('label','choice');l.innerHTML=`<input type="radio" name="q${n}" value="${esc(o)}"> <span>${esc(o)}</span>`;ch.appendChild(l);});
-      box.appendChild(ch); getVal=()=>{const r=box.querySelector(`input[name=q${n}]:checked`);return r?r.value:'';}; correct=ex.respuesta;
+      box.appendChild(ch); getVal=()=>{const r=box.querySelector('input[type=radio]:checked');return r?r.value:'';}; correct=ex.respuesta;
     } else if(t==='true_false'){
       box.appendChild(el('p','prompt',esc(ex.afirmacion)));
       const tf=el('div','tf-btns'); let sel='';

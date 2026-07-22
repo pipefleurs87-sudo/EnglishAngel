@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Test de Verb To Be — Past (was / were) (verbo to be) A2 — Examen online con nota | EnglishAngel</title>
-<meta name="description" content="Evalua tu nivel de Verb To Be — Past (was / were) con este test A2: sin pistas, un intento, nota instantanea. Free A2 English test.">
-<meta name="keywords" content="Verb To Be — Past (was / were) exercises, English grammar, Verb To Be, A2 English, ESL, ejercicios de ingles, ejercicios verbo to be, verbo to be, test de ingles, examen online, quiz">
-<meta property="og:title" content="Test de Verb To Be — Past (was / were) (verbo to be) A2 — Examen online con nota | EnglishAngel">
-<meta property="og:description" content="Evalua tu nivel de Verb To Be — Past (was / were) con este test A2: sin pistas, un intento, nota instantanea. Free A2 English test.">
+<title>Verb To Be — Past (was / were) (verbo to be) — A2 Test | EnglishAngel</title>
+<meta name="description" content="Verb To Be — Past (was / were) — A2 test: check your grammar with instant scoring. Examen de verbo to be gratis.">
+<meta name="keywords" content="Verb To Be — Past (was / were) exercises, English grammar, Verb To Be, A2 English, ESL, ejercicios de ingles, ejercicios verbo to be, verbo to be">
+<meta property="og:title" content="Verb To Be — Past (was / were) (verbo to be) — A2 Test | EnglishAngel">
+<meta property="og:description" content="Verb To Be — Past (was / were) — A2 test: check your grammar with instant scoring. Examen de verbo to be gratis.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://pipefleurs87-sudo.github.io/EnglishAngel/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -113,7 +113,7 @@
       box.appendChild(el('p','prompt',esc(ex.pregunta).replace(/___/g,'<b>_____</b>')));
       const ch=el('div','choices');
       (ex.opciones||[]).forEach(o=>{const l=el('label','choice');l.innerHTML=`<input type="radio" name="q${n}" value="${esc(o)}"> <span>${esc(o)}</span>`;ch.appendChild(l);});
-      box.appendChild(ch); getVal=()=>{const r=box.querySelector(`input[name=q${n}]:checked`);return r?r.value:'';}; correct=ex.respuesta;
+      box.appendChild(ch); getVal=()=>{const r=box.querySelector('input[type=radio]:checked');return r?r.value:'';}; correct=ex.respuesta;
     } else if(t==='true_false'){
       box.appendChild(el('p','prompt',esc(ex.afirmacion)));
       const tf=el('div','tf-btns'); let sel='';
