@@ -101,7 +101,7 @@
       box.appendChild(el('p','prompt',esc(ex.pregunta).replace(/___/g,'<b>_____</b>')));
       const ch=el('div','choices');
       (ex.opciones||[]).forEach(o=>{const l=el('label','choice');l.innerHTML=`<input type="radio" name="q${n}" value="${esc(o)}"> <span>${esc(o)}</span>`;ch.appendChild(l);});
-      box.appendChild(ch); getVal=()=>{const r=box.querySelector(`input[name=q${n}]:checked`);return r?r.value:'';}; correct=ex.respuesta;
+      box.appendChild(ch); getVal=()=>{const r=box.querySelector('input[type=radio]:checked');return r?r.value:'';}; correct=ex.respuesta;
     } else if(t==='true_false'){
       box.appendChild(el('p','prompt',esc(ex.afirmacion)));
       const tf=el('div','tf-btns'); let sel='';
