@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Aula — Asistencia y horas | EnglishAngel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1B2A41;--paper:#EFF1EC;--red:#B23A2E;--gold:#C9962F;--muted:#6B7079;--line:#D8DAD1;--green:#2E7D5B;
+    --serif:'Source Serif 4',Georgia,serif;--sans:'IBM Plex Sans',system-ui,sans-serif;--mono:'IBM Plex Mono',monospace;--hand:'Caveat',cursive;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px 80px}
+  .hero{border-bottom:2px solid var(--ink);padding:34px 0 20px;margin-bottom:16px}
+  .brand{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(26px,5vw,40px);line-height:1.05;margin:8px 0 8px}
+  .sub{font-size:16px;color:var(--muted);max-width:680px}
+  a.back{font-family:var(--mono);font-size:12px;color:var(--muted);text-decoration:none}
+  a.back:hover{color:var(--red)}
+  .cloudbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 14px;margin-bottom:14px;font-size:14px}
+  .dot{width:9px;height:9px;border-radius:99px;background:var(--muted);flex:none}
+  .dot.on{background:var(--green)} .dot.off{background:var(--gold)}
+  .cloudbar .who{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 16px}
+  button{font-family:var(--sans);cursor:pointer}
+  .btn{border:2px solid var(--ink);background:var(--ink);color:#fff;border-radius:10px;padding:10px 16px;font-size:15px;font-weight:600}
+  .btn:hover{background:#0f1c2e}
+  .btn.ghost{background:#fff;color:var(--ink)}
+  .btn.ghost:hover{background:#f4f5f0}
+  .btn.sm{padding:6px 11px;font-size:13px;border-width:1px;border-radius:8px}
+  .btn.red{border-color:var(--red);background:var(--red)}
+  .btn.red.ghost{background:#fff;color:var(--red)}
+  .layout{display:grid;grid-template-columns:320px 1fr;gap:22px;align-items:start}
+  @media(max-width:760px){.layout{grid-template-columns:1fr}}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+  .panel h2{font-family:var(--serif);font-size:19px;margin:0 0 12px}
+  .slabel{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  .stud{border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px;cursor:pointer;background:#fff;transition:border-color .15s}
+  .stud:hover{border-color:var(--ink)}
+  .stud.sel{border-color:var(--ink);border-width:2px;padding:11px}
+  .stud .nm{font-weight:600;font-size:16px}
+  .stud .meta{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:3px}
+  .prog{height:7px;background:#eceee7;border-radius:99px;margin-top:9px;overflow:hidden}
+  .prog i{display:block;height:100%;background:var(--green);border-radius:99px}
+  .prog.low i{background:var(--gold)}
+  .prog.out i{background:var(--red)}
+  .empty{color:var(--muted);font-size:14px;padding:16px 4px}
+  .bignum{display:flex;gap:18px;flex-wrap:wrap;margin:6px 0 16px}
+  .stat{border:1px solid var(--line);border-radius:10px;padding:12px 16px;min-width:96px}
+  .stat .n{font-family:var(--serif);font-size:30px;font-weight:700;line-height:1}
+  .stat .l{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+  .stat.rem .n{color:var(--green)} .stat.rem.low .n{color:var(--gold)} .stat.rem.out .n{color:var(--red)}
+  .tokenline{font-family:var(--mono);font-size:11px;color:var(--muted);margin:-6px 0 14px;word-break:break-all}
+  .tokenline b{color:var(--ink)}
+  .copyt{border:1px solid var(--line);background:#fff;border-radius:6px;font-size:11px;padding:2px 7px;margin-left:6px;color:var(--muted)}
+  .copyt:hover{border-color:var(--ink);color:var(--ink)}
+  .alert{border-radius:10px;padding:10px 14px;font-size:14px;margin-bottom:14px}
+  .alert.warn{background:#fbf3e0;border:1px solid var(--gold);color:#7a5a12}
+  .alert.danger{background:#fbe7e4;border:1px solid var(--red);color:#8a271d}
+  .cal{margin-top:6px}
+  .calhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+  .calhead .mo{font-family:var(--serif);font-size:18px;font-weight:600;text-transform:capitalize}
+  .nav{border:1px solid var(--line);background:#fff;border-radius:8px;width:34px;height:34px;font-size:17px;color:var(--ink)}
+  .nav:hover{background:#f4f5f0}
+  .grid7{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+  .dow{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);text-align:center;padding-bottom:4px}
+  .day{aspect-ratio:1/1;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:14px;color:var(--ink);display:flex;align-items:center;justify-content:center;position:relative;padding:0}
+  .day:hover{border-color:var(--ink)}
+  .day.blank{border:none;background:transparent;cursor:default}
+  .day.today{border-color:var(--gold);border-width:2px}
+  .day.has{background:var(--green);color:#fff;border-color:var(--green);font-weight:600}
+  .day.has:hover{background:#276b4c}
+  .day.future{color:#b9bcb4}
+  .hint{font-size:13px;color:var(--muted);margin-top:10px}
+  .hist{margin-top:16px}
+  .hrow{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:8px 2px;font-size:14px}
+  .hrow .d{font-family:var(--mono)}
+  .x{border:none;background:none;color:var(--muted);font-size:16px;cursor:pointer;padding:2px 6px;border-radius:6px}
+  .x:hover{background:#fbe7e4;color:var(--red)}
+  .foot{font-size:12px;color:var(--muted);margin-top:26px;text-align:center;font-family:var(--mono)}
+  input[type=file]{display:none}
+  dialog{border:2px solid var(--ink);border-radius:12px;padding:0;max-width:360px;width:92%;background:#fff;color:var(--ink)}
+  dialog::backdrop{background:rgba(27,42,65,.45)}
+  .dlg{padding:20px}
+  .dlg h3{font-family:var(--serif);margin:0 0 12px;font-size:20px}
+  .dlg label{display:block;font-size:13px;color:var(--muted);margin:10px 0 4px}
+  .dlg input{width:100%;font-family:var(--sans);font-size:16px;padding:10px 12px;border:2px solid var(--ink);border-radius:9px;background:#fff;color:var(--ink)}
+  .dlg .row{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <a class="back" href="../index.html">‹ EnglishAngel</a>
+    <div class="brand" style="margin-top:10px">Aula · uso interno del profesor</div>
+    <h1>Asistencia y horas</h1>
+    <p class="sub">Da de alta a cada estudiante con sus horas contratadas. Marca cada clase en el calendario y el saldo se descuenta solo (1&nbsp;hora por clase). Con la nube activada, se sincroniza entre tu compu y tu tablet.</p>
+  </div>
+
+  <div class="cloudbar" id="cloudbar">
+    <span class="dot" id="cdot"></span>
+    <span id="cmsg">Iniciando…</span>
+    <span class="who" id="cwho"></span>
+    <span style="margin-left:auto;display:flex;gap:8px" id="cbtns"></span>
+  </div>
+
+  <div class="bar">
+    <button class="btn" id="addStudent">＋ Nuevo estudiante</button>
+    <button class="btn ghost sm" id="exportBtn">⬇ Exportar respaldo</button>
+    <button class="btn ghost sm" id="importBtn">⬆ Importar respaldo</button>
+    <input type="file" id="importFile" accept="application/json,.json">
+  </div>
+
+  <div class="layout">
+    <div class="panel">
+      <div class="slabel">Estudiantes</div>
+      <div id="studentList"></div>
+    </div>
+    <div class="panel" id="detail">
+      <div class="empty">Selecciona un estudiante, o crea uno nuevo con “＋ Nuevo estudiante”.</div>
+    </div>
+  </div>
+
+  <div class="foot" id="foot">EnglishAngel · aula</div>
+</div>
+
+<dialog id="studentDlg">
+  <form method="dialog" class="dlg" id="studentForm">
+    <h3 id="dlgTitle">Nuevo estudiante</h3>
+    <label for="fName">Nombre</label>
+    <input id="fName" type="text" autocomplete="off" required>
+    <label for="fHours" id="hoursLabel">¿Cuántas horas contrató?</label>
+    <input id="fHours" type="number" min="0" step="0.5" value="60" required>
+    <div class="row">
+      <button class="btn ghost sm" value="cancel" type="submit">Cancelar</button>
+      <button class="btn sm" value="ok" id="dlgOk" type="submit">Guardar</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- ============================================================
+     FIREBASE (opcional). Mientras no pegues tu config, la página
+     funciona en MODO LOCAL (solo este navegador). Pega abajo los
+     6 valores de tu proyecto (Firebase console → Configuración del
+     proyecto → Tus apps → SDK de configuración) y súbela por HTTPS
+     (GitHub Pages) para que sincronice entre dispositivos.
+     El login está restringido a ADMIN_EMAIL: solo esa cuenta ve
+     y edita los datos (protege a los estudiantes, incluidos menores).
+============================================================ -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyB3-Zld9m5cskqIj1h3Dmf4qfy52rVtEqM",
+  authDomain: "sanguine-fusion-403621.firebaseapp.com",
+  projectId: "sanguine-fusion-403621",
+  storageBucket: "sanguine-fusion-403621.firebasestorage.app",
+  messagingSenderId: "1048421550101",
+  appId: "1:1048421550101:web:c068b31ef9873cd525a61c",
+  measurementId: "G-Q9PWY206RY"
+};
+const ADMIN_EMAIL = "pipefleurs87@gmail.com";  // única cuenta con acceso
+const COL = "estudiantes";                      // colección Firestore (student_token = id del doc)
+</script>
+
+<script>
+"use strict";
+const KEY = "englishangel_aula_v1";
+const HOURS_PER_CLASS = 1;
+const MONTHS = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+const DOW = ["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"];
+
+let state = load();
+let selectedId = null;
+let viewYear, viewMonth;
+(function initView(){ const t=new Date(); viewYear=t.getFullYear(); viewMonth=t.getMonth(); })();
+
+/* ---------- Nube (Firebase) ---------- */
+let db=null, auth=null, cloudMode=false, unsub=null;
+function firebaseConfigured(){ return typeof FIREBASE_CONFIG==="object" && FIREBASE_CONFIG.apiKey && FIREBASE_CONFIG.apiKey.indexOf("PEGA")<0; }
+function initCloud(){
+  if(!firebaseConfigured() || typeof firebase==="undefined"){ renderCloudBar(null); return; }
+  try{
+    firebase.initializeApp(FIREBASE_CONFIG);
+    db=firebase.firestore(); auth=firebase.auth();
+    auth.onAuthStateChanged(u=>{
+      if(u && u.email===ADMIN_EMAIL){ cloudMode=true; attach(); }
+      else { cloudMode=false; if(unsub){unsub();unsub=null;} }
+      renderCloudBar(u);
+    });
+  }catch(e){ console.warn("Firebase init:", e); renderCloudBar(null); }
+}
+function attach(){
+  if(unsub) return;
+  // Lee la colección existente 'estudiantes' (nombre, correo, nivel, fecha_alta...)
+  // y superpone SOLO los campos de asistencia. No se sobrescribe nada más.
+  unsub = db.collection(COL).onSnapshot(snap=>{
+    state.students = snap.docs.map(d=>{ const x=d.data()||{}; return {
+      id:d.id,
+      nombre:x.nombre||"(sin nombre)",
+      correo:x.correo||"",
+      nivel:x.nivel||"",
+      horasContratadas:Number(x.horas_contratadas)||0,
+      clases:Array.isArray(x.clases)?x.clases:[] }; });
+    if(selectedId && !state.students.some(s=>s.id===selectedId)) selectedId=null;
+    render();
+  }, err=>{ console.warn("Firestore:", err); alert("No pude leer la nube: "+err.message); });
+}
+// Escritura SEGURA: merge:true → solo toca los campos listados, conserva
+// correo, nivel, fecha_alta, resultados, tareas y todo lo del reporte académico.
+function pushStudent(s, isNew){
+  if(!(cloudMode&&db)) return;
+  const payload = {
+    nombre:s.nombre,
+    horas_contratadas:s.horasContratadas,
+    clases:s.clases,
+    horas_dadas:given(s),
+    horas_restantes:remaining(s),
+    student_token:s.id,
+    updated:new Date().toISOString()
+  };
+  if(isNew){ try{ payload.fecha_alta = firebase.firestore.FieldValue.serverTimestamp(); }catch(e){} }
+  db.collection(COL).doc(s.id).set(payload, {merge:true})
+    .catch(e=>alert("No se pudo guardar en la nube: "+e.message));
+}
+// En la nube NO borramos al estudiante (su reporte académico vive en el mismo doc):
+// solo limpiamos los campos de asistencia.
+function pushClearAttendance(id){
+  if(!(cloudMode&&db)) return;
+  db.collection(COL).doc(id).set({ horas_contratadas:0, clases:[], horas_dadas:0, horas_restantes:0, updated:new Date().toISOString() }, {merge:true}).catch(()=>{});
+}
+
+function renderCloudBar(u){
+  const dot=document.getElementById("cdot"), msg=document.getElementById("cmsg"),
+        who=document.getElementById("cwho"), btns=document.getElementById("cbtns");
+  btns.innerHTML=""; who.textContent="";
+  if(!firebaseConfigured()){
+    dot.className="dot off"; msg.textContent="Modo local — pega tu config de Firebase para sincronizar con la tablet.";
+    return;
+  }
+  if(cloudMode){
+    dot.className="dot on"; msg.textContent="Sincronizado con la nube";
+    who.textContent=u&&u.email?("· "+u.email):"";
+    const b=document.createElement("button"); b.className="btn ghost sm"; b.textContent="Salir";
+    b.onclick=()=>auth.signOut(); btns.appendChild(b);
+  }else{
+    dot.className="dot off";
+    if(u && u.email!==ADMIN_EMAIL){ msg.textContent="Esa cuenta no tiene acceso. Entra con "+ADMIN_EMAIL+"."; }
+    else { msg.textContent="Config lista. Entra para sincronizar."; }
+    const b=document.createElement("button"); b.className="btn sm"; b.textContent="☁ Entrar con Google";
+    b.onclick=()=>{ auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .catch(e=>alert("No se pudo entrar: "+e.message+"\n\n(El login necesita abrir la página por HTTPS, p. ej. tu GitHub Pages — no funciona con doble clic file://.)")); };
+    btns.appendChild(b);
+  }
+}
+
+/* ---------- Persistencia local (caché / modo sin nube) ---------- */
+function load(){
+  try{ const raw=localStorage.getItem(KEY); if(raw) return JSON.parse(raw); }catch(e){}
+  return { version:1, students:[] };
+}
+function saveLocal(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+
+/* ---------- Utilidades ---------- */
+function uid(){ return "s"+Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
+function todayISO(){ return toISO(new Date()); }
+function toISO(d){ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function fmt(iso){ const [y,m,d]=iso.split("-").map(Number); return d+" "+MONTHS[m-1].slice(0,3)+" "+y; }
+function given(s){ return s.clases.length * HOURS_PER_CLASS; }
+function remaining(s){ return round(s.horasContratadas - given(s)); }
+function round(n){ return Math.round(n*100)/100; }
+
+/* ---------- Render ---------- */
+function render(){ renderList(); renderDetail(); saveLocal(); }
+
+function renderList(){
+  const box=document.getElementById("studentList");
+  if(state.students.length===0){ box.innerHTML='<div class="empty">Aún no hay estudiantes.</div>'; return; }
+  const ordered=[...state.students].sort((a,b)=>a.nombre.localeCompare(b.nombre,"es"));
+  box.innerHTML=ordered.map(s=>{
+    const rem=remaining(s), tot=s.horasContratadas||0;
+    const pct=tot>0?Math.max(0,Math.min(100,given(s)/tot*100)):0;
+    const cls=rem<=0?"out":rem<=5?"low":"";
+    return `<div class="stud ${s.id===selectedId?'sel':''}" data-id="${s.id}">
+      <div class="nm">${esc(s.nombre)}</div>
+      <div class="meta">${rem} h restantes · ${given(s)}/${tot} h</div>
+      <div class="prog ${cls}"><i style="width:${pct}%"></i></div>
+    </div>`;
+  }).join("");
+  box.querySelectorAll(".stud").forEach(el=>el.onclick=()=>{ selectedId=el.dataset.id; render(); });
+}
+
+function renderDetail(){
+  const box=document.getElementById("detail");
+  const s=state.students.find(x=>x.id===selectedId);
+  if(!s){ box.innerHTML='<div class="empty">Selecciona un estudiante, o crea uno nuevo con “＋ Nuevo estudiante”.</div>'; return; }
+  const rem=remaining(s), tot=s.horasContratadas||0;
+  const remCls=rem<=0?"out":rem<=5?"low":"";
+  let alert="";
+  if(rem<=0) alert=`<div class="alert danger">⚠ Se acabaron las horas de ${esc(s.nombre)}. Edita las horas para agregar un paquete nuevo.</div>`;
+  else if(rem<=5) alert=`<div class="alert warn">Quedan pocas horas (${rem}). Buen momento para renovar.</div>`;
+
+  const subinfo=[s.nivel?("Nivel "+esc(s.nivel)):"", s.correo?esc(s.correo):""].filter(Boolean).join(" · ");
+  box.innerHTML=`
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+      <div>
+        <h2 style="margin:0">${esc(s.nombre)}</h2>
+        ${subinfo?`<div style="font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:2px">${subinfo}</div>`:""}
+      </div>
+      <div style="display:flex;gap:6px">
+        <button class="btn ghost sm" id="editStud">Editar / agregar horas</button>
+        <button class="btn red ghost sm" id="delStud">${cloudMode?"Borrar asistencia":"Eliminar"}</button>
+      </div>
+    </div>
+    ${alert}
+    <div class="bignum">
+      <div class="stat"><div class="n">${tot}</div><div class="l">Contratadas</div></div>
+      <div class="stat"><div class="n">${given(s)}</div><div class="l">Dadas</div></div>
+      <div class="stat rem ${remCls}"><div class="n">${rem}</div><div class="l">Restantes</div></div>
+    </div>
+    <div class="tokenline">token del estudiante: <b>${esc(s.id)}</b><button class="copyt" id="copyTok">copiar</button>
+      <span style="display:block;margin-top:3px">— úsalo para enlazar su reporte académico y su pronunciación al mismo perfil.</span></div>
+    <div class="cal">
+      <div class="calhead">
+        <button class="nav" id="prevM">‹</button>
+        <div class="mo">${MONTHS[viewMonth]} ${viewYear}</div>
+        <button class="nav" id="nextM">›</button>
+      </div>
+      <div class="grid7">${DOW.map(d=>`<div class="dow">${d}</div>`).join("")}</div>
+      <div class="grid7" id="calGrid"></div>
+      <div class="hint">Toca un día para registrar la clase (se descuenta 1 h). Toca un día verde para quitarla.</div>
+    </div>
+    <div class="hist" id="hist"></div>`;
+
+  document.getElementById("editStud").onclick=()=>openStudentDlg(s);
+  document.getElementById("delStud").onclick=()=>deleteStudent(s);
+  document.getElementById("copyTok").onclick=()=>{ try{navigator.clipboard.writeText(s.id);}catch(e){} };
+  document.getElementById("prevM").onclick=()=>{ if(--viewMonth<0){viewMonth=11;viewYear--;} renderDetail(); };
+  document.getElementById("nextM").onclick=()=>{ if(++viewMonth>11){viewMonth=0;viewYear++;} renderDetail(); };
+  renderCalendar(s);
+  renderHistory(s);
+}
+
+function renderCalendar(s){
+  const grid=document.getElementById("calGrid");
+  const first=new Date(viewYear, viewMonth, 1);
+  let startDow=(first.getDay()+6)%7;
+  const days=new Date(viewYear, viewMonth+1, 0).getDate();
+  const today=todayISO();
+  const set=new Set(s.clases);
+  let html="";
+  for(let i=0;i<startDow;i++) html+=`<div class="day blank"></div>`;
+  for(let d=1;d<=days;d++){
+    const iso=viewYear+"-"+String(viewMonth+1).padStart(2,"0")+"-"+String(d).padStart(2,"0");
+    const has=set.has(iso);
+    const isFuture=iso>today;
+    const cls=["day", has?"has":"", iso===today?"today":"", (!has&&isFuture)?"future":""].join(" ").trim();
+    html+=`<button class="${cls}" data-iso="${iso}">${d}</button>`;
+  }
+  grid.innerHTML=html;
+  grid.querySelectorAll(".day[data-iso]").forEach(el=>el.onclick=()=>toggleClass(s, el.dataset.iso));
+}
+
+function renderHistory(s){
+  const box=document.getElementById("hist");
+  if(s.clases.length===0){ box.innerHTML='<div class="empty">Sin clases registradas todavía.</div>'; return; }
+  const sorted=[...s.clases].sort().reverse();
+  box.innerHTML=`<div class="slabel">Historial de clases (${s.clases.length})</div>`+
+    sorted.map(iso=>`<div class="hrow"><span class="d">${fmt(iso)}</span><button class="x" data-iso="${iso}" title="Quitar esta clase">✕</button></div>`).join("");
+  box.querySelectorAll(".x").forEach(el=>el.onclick=()=>removeOne(s, el.dataset.iso));
+}
+
+/* ---------- Acciones ---------- */
+function toggleClass(s, iso){
+  const i=s.clases.indexOf(iso);
+  if(i>=0){ s.clases.splice(i,1); pushStudent(s); render(); return; }
+  if(remaining(s)<=0 && !confirm(s.nombre+" no tiene horas restantes. ¿Registrar la clase igualmente (quedará en negativo)?")) return;
+  s.clases.push(iso); pushStudent(s); render();
+}
+function removeOne(s, iso){
+  const i=s.clases.indexOf(iso);
+  if(i>=0){ s.clases.splice(i,1); pushStudent(s); render(); }
+}
+function deleteStudent(s){
+  if(cloudMode){
+    if(!confirm("Se borrarán las horas y la asistencia de "+s.nombre+".\n\nEl estudiante y su reporte académico NO se eliminan (siguen en tu plataforma). ¿Continuar?")) return;
+    pushClearAttendance(s.id);
+    s.horasContratadas=0; s.clases=[];
+    render();
+    return;
+  }
+  if(!confirm("¿Eliminar a "+s.nombre+" y todo su historial? Esto no se puede deshacer.")) return;
+  state.students=state.students.filter(x=>x.id!==s.id);
+  if(selectedId===s.id) selectedId=null;
+  render();
+}
+
+/* ---------- Diálogo alta / editar ---------- */
+const dlg=document.getElementById("studentDlg");
+const form=document.getElementById("studentForm");
+let editingId=null;
+function openStudentDlg(s){
+  editingId=s?s.id:null;
+  document.getElementById("dlgTitle").textContent=s?"Editar estudiante":"Nuevo estudiante";
+  document.getElementById("hoursLabel").textContent=s?"Horas contratadas (total)":"¿Cuántas horas contrató?";
+  document.getElementById("fName").value=s?s.nombre:"";
+  document.getElementById("fHours").value=s?s.horasContratadas:60;
+  dlg.showModal();
+  setTimeout(()=>document.getElementById("fName").focus(),30);
+}
+form.addEventListener("submit",(e)=>{
+  const val=e.submitter&&e.submitter.value;
+  if(val!=="ok") return;
+  const nombre=document.getElementById("fName").value.trim();
+  const horas=parseFloat(document.getElementById("fHours").value);
+  if(!nombre||isNaN(horas)){ e.preventDefault(); return; }
+  if(editingId){
+    const s=state.students.find(x=>x.id===editingId);
+    if(s){ s.nombre=nombre; s.horasContratadas=round(horas); pushStudent(s); }
+  }else{
+    const id=uid();
+    const s={ id, nombre, horasContratadas:round(horas), clases:[], creado:new Date().toISOString() };
+    state.students.push(s); selectedId=id; pushStudent(s, true);
+  }
+  render();
+});
+document.getElementById("addStudent").onclick=()=>openStudentDlg(null);
+
+/* ---------- Exportar / Importar ---------- */
+document.getElementById("exportBtn").onclick=()=>{
+  const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="aula-respaldo-"+todayISO()+".json";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+document.getElementById("importBtn").onclick=()=>document.getElementById("importFile").click();
+document.getElementById("importFile").addEventListener("change",(e)=>{
+  const file=e.target.files[0]; if(!file) return;
+  const r=new FileReader();
+  r.onload=()=>{
+    try{
+      const data=JSON.parse(r.result);
+      if(!data||!Array.isArray(data.students)) throw new Error("formato");
+      if(!confirm("Esto reemplazará los datos actuales por los del archivo"+(cloudMode?" y los subirá a la nube":"")+". ¿Continuar?")) return;
+      data.students.forEach(s=>{ s.id=s.id||uid(); s.clases=Array.isArray(s.clases)?s.clases:[]; s.horasContratadas=Number(s.horasContratadas)||0; });
+      if(cloudMode){ data.students.forEach(pushStudent); }
+      state=data; selectedId=null; render();
+      alert("Respaldo importado: "+data.students.length+" estudiante(s).");
+    }catch(err){ alert("No pude leer ese archivo. Asegúrate de que sea un respaldo exportado desde aquí."); }
+    finally{ e.target.value=""; }
+  };
+  r.readAsText(file);
+});
+
+function esc(str){ return String(str).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+/* ---------- Arranque ---------- */
+render();
+initCloud();
+</script>
+</body>
+</html>
