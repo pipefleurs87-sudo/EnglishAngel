@@ -217,3 +217,59 @@
   animation:miniTide 3.2s ease-in-out infinite alternate }
 @keyframes miniTide{ from{ height:26% } to{ height:58% } }
 @media (prefers-reduced-motion:reduce){ .mini-marea i{ animation:none; height:42% } }
+
+/* ---------- Empareja: imagen y palabra ---------- */
+
+.em-board{ display:grid; grid-template-columns:auto 1fr; gap:12px 18px; margin:16px 0; align-items:start }
+.em-col{ display:flex; flex-direction:column; gap:10px }
+
+.em-tile{
+  width:76px; height:66px; border:none; border-radius:14px; cursor:grab;
+  background:linear-gradient(165deg,#fff,#F4F6F0);
+  box-shadow:0 2px 0 rgba(27,42,65,.10), 0 6px 16px rgba(27,42,65,.10);
+  display:flex; align-items:center; justify-content:center;
+  transition:transform .12s var(--e-out), box-shadow .12s var(--e-out), opacity .3s;
+  touch-action:none;                       /* sin esto el arrastre hace scroll en movil */
+}
+.em-tile:hover:not(:disabled){ transform:translateY(-2px); box-shadow:0 4px 0 rgba(27,42,65,.12), 0 10px 22px rgba(27,42,65,.14) }
+.em-tile.is-sel{ transform:translateY(-2px) scale(1.04); box-shadow:0 0 0 3px var(--gold), 0 10px 22px rgba(201,150,47,.3); cursor:grabbing }
+.em-tile.is-done{ opacity:0 }
+.em-face{ font-size:36px; line-height:1 }
+
+/* el fantasma que sigue al dedo */
+.em-ghost{ position:fixed; z-index:9999; pointer-events:none; margin:0;
+  box-shadow:0 12px 28px rgba(27,42,65,.28); transform:scale(1.06); opacity:.95 }
+
+.em-slot{
+  min-height:66px; border-radius:14px; padding:12px 16px; cursor:pointer;
+  display:flex; align-items:center;
+  background:linear-gradient(165deg,#fff,#FAFBF7);
+  border:2px dashed rgba(27,42,65,.16);
+  box-shadow:0 2px 0 rgba(27,42,65,.05);
+  transition:border-color .16s var(--e-out), background .16s, transform .12s var(--e-out), box-shadow .12s;
+}
+.em-slot.is-target{ border-color:var(--gold); border-style:solid; background:linear-gradient(165deg,#FFFDF7,#FDF6E6);
+  transform:translateY(-1px); box-shadow:0 4px 0 rgba(201,150,47,.25), 0 8px 18px rgba(201,150,47,.18) }
+.em-slot.is-done{ border:2px solid var(--ok); background:linear-gradient(165deg,#F1F8F3,#E9F4EC); cursor:default;
+  box-shadow:0 2px 0 rgba(47,125,79,.25) }
+.em-slot.is-wrong, .em-tile.is-wrong{ animation:emShake .4s }
+@keyframes emShake{ 0%,100%{transform:translateX(0)} 20%{transform:translateX(-7px)} 40%{transform:translateX(7px)} 60%{transform:translateX(-4px)} 80%{transform:translateX(4px)} }
+
+.em-word{ font-family:var(--serif); font-size:20px; font-weight:600; color:var(--ink) }
+.em-mini{ font-size:22px; margin-right:4px }
+.em-slot:focus-visible{ outline:3px solid var(--gold); outline-offset:3px }
+
+@media (max-width:560px){
+  .em-tile{ width:62px; height:56px }
+  .em-face{ font-size:30px }
+  .em-word{ font-size:17px }
+  .em-board{ gap:10px 12px }
+}
+
+/* miniatura en la tarjeta del hub */
+.mini-match2{ display:flex; align-items:center; justify-content:center; gap:8px; height:100% }
+.mini-match2 i{ display:block; width:22px; height:22px; border-radius:6px; background:rgba(27,42,65,.16);
+  animation:miniPull 2.6s ease-in-out infinite alternate }
+.mini-match2 i:last-child{ background:rgba(201,150,47,.4); animation-delay:.5s }
+@keyframes miniPull{ from{ transform:translateX(-5px) } to{ transform:translateX(5px) } }
+@media (prefers-reduced-motion:reduce){ .mini-match2 i{ animation:none } .em-slot.is-wrong,.em-tile.is-wrong{ animation:none } }
