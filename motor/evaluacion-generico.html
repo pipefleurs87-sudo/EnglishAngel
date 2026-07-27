@@ -55,6 +55,41 @@
   .cta-sp a{color:var(--red);font-weight:600;text-decoration:underline;text-underline-offset:2px}
   footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);text-align:center}
   footer a{color:var(--red);font-weight:600}
+  /* --- Gap-fill inline (taller impreso): la oracion no se parte en bloques --- */
+  .gapfill{line-height:2.5;max-width:62ch}
+  .gapfill .gap{display:inline-block;white-space:nowrap}
+  .gapfill input[type=text]{display:inline-block;vertical-align:baseline;font:inherit;
+    width:7ch;padding:0 .3rem;border:none;border-bottom:2px solid var(--line);
+    border-radius:0;background:transparent;text-align:center;color:inherit}
+  .gapfill input[type=text]:focus{outline:none;border-bottom-color:var(--red);background:var(--paper)}
+  .gapfill input[type=text][data-state=ok]{border-bottom-color:#2f7d4f;color:#2f7d4f}
+  .gapfill input[type=text][data-state=bad]{border-bottom-color:var(--red);color:var(--red)}
+  .gapfill .hint{font-size:.85em;color:var(--muted);margin-left:.25rem}
+  .gapfill .solved{border-bottom:2px solid var(--line);padding:0 .3rem;font-weight:600}
+  @media (prefers-reduced-motion:no-preference){
+    .gapfill input[type=text]{transition:border-color .15s ease,background-color .15s ease}
+  }
+  .cats{margin-top:14px;border-top:1px solid var(--line);padding-top:10px;font-size:14px;font-weight:400}
+  .cat-row{display:flex;justify-content:space-between;gap:12px;padding:3px 0;color:var(--ink)}
+  .cat-name{text-transform:capitalize}
+  .cat-num{font-family:var(--mono);font-size:13px;color:var(--muted)}
+  .cat-tag{font-family:var(--mono);font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-left:6px}
+  .banked .bank{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:10px 0}
+  .banked .bank-row{display:flex;gap:10px;padding:3px 0;align-items:baseline}
+  .banked .bank-key{font-family:var(--mono);font-weight:600;color:var(--red);min-width:1.4em}
+  .banked .bank-label{color:var(--ink)}
+  .banked .bank-note{font-size:13px;color:var(--muted);margin-bottom:8px}
+  .banked .mm-row{display:flex;align-items:center;gap:14px;padding:8px 0;border-bottom:1px solid var(--line)}
+  .banked .mm-row:last-child{border-bottom:none}
+  .banked .mm-prompt{flex:1}
+  .banked .mm-chips{display:flex;gap:6px;flex-wrap:wrap}
+  .banked .mm-chip{width:2.75rem;height:2.75rem;border:1.5px solid var(--line);border-radius:6px;
+    background:#fff;font-family:var(--sans);font-weight:600;font-size:.95rem;color:var(--ink);cursor:pointer}
+  .banked .mm-chip[aria-checked=true]{background:var(--red);border-color:var(--red);color:#fff}
+  .banked .mm-chip[data-taken]{opacity:.35}
+  .banked .mm-chip[data-state=ok]{background:#2f7d4f;border-color:#2f7d4f;color:#fff}
+  .banked .mm-chip[data-state=bad]{background:var(--red);border-color:var(--red);color:#fff}
+  .banked .mm-chip:focus-visible{outline:2px solid var(--red);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -63,6 +98,84 @@
 <script>
 (function(){
   const D=window.SEQUENCE_DATA, app=document.getElementById('app'), bar=document.getElementById('bar');
+
+  /* banked_choice — multiple matching estilo Cambridge (Listening Part 4 / Use of English Part 8).
+     UN banco de opciones compartido por todas las preguntas.
+     Reglas que NO son cosmeticas:
+      - el banco NUNCA se baraja: si A deja de ser A entre renders, el estudiante
+        que anoto "1-C" en papel queda perdido.
+      - allowReuse:false ATENUA la opcion tomada, no la esconde: hay que poder cambiar de opinion.
+      - se puede deseleccionar: un radio nativo no lo permite, por eso son botones con role=radio.
+      - el banco no se repite en cada pregunta: 6 preguntas x 4 opciones = 24 bloques y se deja de leer. */
+  function construirBanked(ex,el,esc,onCambio){
+    const cont=el('div','banked');
+    const opciones=Array.isArray(ex.options)?ex.options:[];
+    const reusar=ex.allowReuse===true;
+    const valores={};
+    if(ex.prompt)cont.appendChild(el('div','instr',esc(ex.prompt)));
+    const banco=el('div','bank');
+    opciones.forEach(o=>{const r=el('div','bank-row');
+      r.appendChild(el('span','bank-key',esc(o.id)));
+      r.appendChild(el('span','bank-label',esc(o.label)));
+      banco.appendChild(r);});
+    cont.appendChild(banco);
+    if(!reusar)cont.appendChild(el('div','bank-note','Each option can be used once only.'));
+    const chips=[];
+    (ex.items||[]).forEach(it=>{
+      const fila=el('div','mm-row');
+      fila.appendChild(el('span','mm-prompt',esc(it.prompt||it.id)));
+      const grupo=el('div','mm-chips');grupo.setAttribute('role','radiogroup');
+      grupo.setAttribute('aria-label',String(it.prompt||it.id));
+      opciones.forEach(o=>{
+        const b=el('button','mm-chip',esc(o.id));
+        b.type='button';b.setAttribute('role','radio');b.setAttribute('aria-checked','false');
+        b.onclick=()=>{valores[it.id]=(valores[it.id]===o.id)?null:o.id;pintar();if(onCambio)onCambio(valores);};
+        grupo.appendChild(b);chips.push({item:it.id,opcion:o.id,btn:b});});
+      fila.appendChild(grupo);cont.appendChild(fila);});
+    function pintar(){
+      chips.forEach(c=>{
+        const elegido=valores[c.item]===c.opcion;
+        c.btn.setAttribute('aria-checked',elegido?'true':'false');
+        let tomada=false;
+        if(!reusar&&!elegido){for(const k in valores){if(k!==c.item&&valores[k]===c.opcion){tomada=true;break;}}}
+        if(tomada)c.btn.setAttribute('data-taken','');else c.btn.removeAttribute('data-taken');});
+    }
+    pintar();
+    return {node:cont,valores:valores,
+      marcar:(porItem)=>chips.forEach(c=>{
+        if(valores[c.item]!==c.opcion)return;
+        c.btn.setAttribute('data-state',porItem[c.item]?'ok':'bad');}),
+      limpiar:()=>chips.forEach(c=>c.btn.removeAttribute('data-state'))};
+  }
+
+  // Ancho del hueco: en A1-A2 insinua la longitud (baja carga cognitiva); B1+ fijo.
+  function gapAncho(niv,resp){
+    return (niv==='A1'||niv==='A2') ? Math.max(String(resp==null?'':resp).length+2,5) : 7;
+  }
+  // Construye la oracion como UN parrafo con los huecos en el flujo del texto.
+  // Soporta N huecos: el split anterior descartaba todo lo que viniera tras el segundo ___.
+  function construirGapFill(ex,niv,esc,el){
+    const p=el('p','prompt gapfill');
+    const partes=esc(ex.texto==null?'':ex.texto).split('___');
+    const ancho=gapAncho(niv,ex.respuesta);
+    const inputs=[];
+    partes.forEach(function(seg,i){
+      if(i>0){
+        // La pista "(stay)" viaja DENTRO del .gap para que no se separe del input al wrapear.
+        const m=seg.match(/^\s*\([^)]*\)/);
+        const pista=m?m[0]:'';
+        const g=el('span','gap');
+        const inp=el('input');inp.type='text';inp.style.width=ancho+'ch';
+        g.appendChild(inp);
+        if(pista)g.insertAdjacentHTML('beforeend','<span class="hint">'+pista+'</span>');
+        p.appendChild(g);inputs.push(inp);
+        p.insertAdjacentHTML('beforeend',pista?seg.slice(pista.length):seg);
+      } else {
+        p.insertAdjacentHTML('beforeend',seg);
+      }
+    });
+    return {p:p,inputs:inputs};
+  }
   if(!D) return; app.innerHTML='';
   function normalize(s){ if(s==null)return''; s=String(s).toLowerCase().trim();
     const c={"i'm":"i am","you're":"you are","he's":"he is","she's":"she is","it's":"it is","we're":"we are","they're":"they are","isn't":"is not","aren't":"are not","don't":"do not","doesn't":"does not","didn't":"did not","can't":"cannot","won't":"will not","that's":"that is","what's":"what is"};
@@ -93,9 +206,23 @@
   app.appendChild(cta);
 
   const F=D.fases||{};
-  function item(ex){
+
+  // Desglose por categoria. 'unanswered' va aparte de 'incorrect' a proposito:
+  // sin responder suele ser falta de tiempo; incorrecto es un error de lengua real.
+  function desglose(R){
+    const cats=Object.keys(R.byCategory); if(!cats.length)return '';
+    const fila=c=>{const b=R.byCategory[c];
+      const pct=b.percent==null?'—':Math.round(b.percent*100)+'%';
+      const nota=b.mode==='formative'?' <span class="cat-tag">not graded</span>':'';
+      const sin=b.unanswered?' · '+b.unanswered+' blank':'';
+      return '<div class="cat-row"><span class="cat-name">'+esc(c)+nota+'</span>'
+        +'<span class="cat-num">'+b.correct+'/'+b.possible+' · '+pct+sin+'</span></div>';};
+    return '<div class="cats">'+cats.map(fila).join('')+'</div>';
+  }
+  function item(ex,categoria){
     n++; const box=el('div','q'); box.appendChild(el('div','qnum','Question '+n));
     let getVal, correct, markEl=el('div','mark','');
+    let marcarGaps=null, limpiarGaps=null;
     const t=ex.tipo;
     if(t==='multiple_choice'){
       box.appendChild(el('p','prompt',esc(ex.pregunta).replace(/___/g,'<b>_____</b>')));
@@ -108,9 +235,11 @@
       ['true','false'].forEach(v=>{const b=el('button',null,'');b.textContent=v==='true'?'✔ True':'✗ False';b.onclick=()=>{sel=v;tf.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');};tf.appendChild(b);});
       box.appendChild(tf); getVal=()=>sel; correct=String(ex.respuesta);
     } else if(t==='gap_fill'){
-      const p=el('p','prompt'); const parts=esc(ex.texto).split('___'); const inp=el('input');inp.type='text';
-      p.innerHTML=parts[0]; p.appendChild(inp); p.insertAdjacentHTML('beforeend',parts[1]||''); box.appendChild(p);
-      getVal=()=>inp.value; correct=ex.respuesta;
+      const gf=construirGapFill(ex,D.nivel,esc,el); box.appendChild(gf.p);
+      getVal=()=>gf.inputs.map(x=>x.value).join(' ').trim();
+      marcarGaps=(ok)=>gf.inputs.forEach(x=>x.setAttribute('data-state',ok?'ok':'bad'));
+      limpiarGaps=()=>gf.inputs.forEach(x=>x.removeAttribute('data-state'));
+      correct=ex.respuesta;
     } else if(t==='unscramble'){
       box.appendChild(el('div','instr-line','Put the words in order.'));
       const sc=el('div','scrambled');const ws=(ex.palabras||[]).slice();for(let i=ws.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[ws[i],ws[j]]=[ws[j],ws[i]];}if(ws.length>2&&ws.join(' ')===(ex.palabras||[]).join(' '))ws.push(ws.shift());ws.forEach(w=>sc.appendChild(el('span',null,esc(w))));box.appendChild(sc);
@@ -123,12 +252,18 @@
       box.appendChild(el('div','instr-line',esc(ex.instruccion||'')));
       box.appendChild(el('div','base',esc(ex.oracion_base)));
       const inp=el('input');inp.type='text';box.appendChild(inp);getVal=()=>inp.value;correct=ex.respuesta;
+    } else if(t==='banked_choice'){
+      const bc=construirBanked(ex,el,esc,null); box.appendChild(bc.node);
+      (ex.items||[]).forEach(it=>graders.push({box,tipo:'banked_choice',category:'listening',
+        getVal:()=>bc.valores[it.id]||'', correct:it.answer, markEl:el('div','mark',''),
+        marcarGaps:(ok)=>{const m={};m[it.id]=ok;bc.marcar(m);}, limpiarGaps:()=>bc.limpiar()}));
+      box.appendChild(markEl); return box;
     } else if(t==='short_answer_production'){
       box.appendChild(el('p','prompt',esc(ex.pregunta)));
       const inp=el('input');inp.type='text';box.appendChild(inp);getVal=()=>inp.value;correct=ex.respuesta;
     } else { getVal=()=>''; correct=''; }
     box.appendChild(markEl);
-    graders.push({box,getVal,correct,markEl});
+    graders.push({box,getVal,correct,markEl,marcarGaps,limpiarGaps,tipo:t,category:categoria||null});
     return box;
   }
 
@@ -139,7 +274,7 @@
   if(F.reading && Array.isArray(F.reading.preguntas) && F.reading.preguntas.length){
     app.appendChild(el('div','sec-label','Reading'));
     if(F.reading.texto) app.appendChild(el('div','base',esc(F.reading.texto)));
-    F.reading.preguntas.forEach(p=>app.appendChild(item({tipo:'true_false',afirmacion:p.afirmacion,respuesta:p.respuesta})));
+    F.reading.preguntas.forEach(p=>app.appendChild(item({tipo:'true_false',afirmacion:p.afirmacion,respuesta:p.respuesta},'reading')));
   }
 
   app.appendChild(el('footer','','EnglishAngel — made by your teacher, not a random worksheet machine. · <a href="https://www.superprof.co/ingles-real-para-hablar-sin-miedo-conversacion-confianza-clases-disfrutan.html" target="_blank" rel="noopener noreferrer">Book real classes on Superprof</a>'));
@@ -149,13 +284,26 @@
   const res=el('div','result','');
   submit.onclick=()=>{
     let ok=0;
-    graders.forEach(g=>{ const r=eq(g.getVal(),g.correct); if(r)ok++;
+    const S=window.EAScoring;
+    const cfg=Object.assign({weightMode:'byItems'},window.EA_SCORING_CONFIG||{});
+    const items=graders.map((g,i)=>({id:'i'+i,tipo:g.tipo,category:g.category,
+      answers:(g.tipo==='multiple_choice'||g.tipo==='true_false'||g.tipo==='banked_choice')?g.correct:[g.correct],
+      given:g.getVal()}));
+    const R=S.scoreAssessment(items,cfg);
+    const porId={}; Object.keys(R.byCategory).forEach(c=>R.byCategory[c].items.forEach(x=>{porId[x.id]=x;}));
+    graders.forEach((g,i)=>{
+      const mine=porId['i'+i];
+      const r=mine?mine.ok:false; if(r)ok++;
       g.markEl.className='mark '+(r?'right':'wrong');
-      g.markEl.innerHTML=r?'✓ Correct':'✗ Incorrect<span class="sol">Answer: '+esc(g.correct)+'</span>';
+      if(g.marcarGaps)g.marcarGaps(r);
+      g.markEl.innerHTML=r?'✓ Correct':(mine&&!mine.answered?'○ Not answered':'✗ Incorrect')+'<span class="sol">Answer: '+esc(g.correct)+'</span>';
       g.box.querySelectorAll('input,button').forEach(x=>x.disabled=true);
     });
-    const pct=Math.round(ok/graders.length*100);
-    res.className='result'+(pct>=75?' pass':''); res.innerHTML=`Score: ${ok}/${graders.length} · <span class="pct">${pct}%</span>`;
+    const pct=R.grade==null?null:Math.round(R.grade);
+    res.className='result'+(pct!=null&&pct>=75?' pass':'');
+    res.innerHTML=pct==null
+      ? 'Nothing graded in this test.'
+      : `Score: ${ok}/${graders.length} · <span class="pct">${pct}%</span>`+desglose(R);
     submit.style.display='none'; again.style.display='';
     cta.style.display='block';
     try{if(D.id){const P=JSON.parse(localStorage.getItem('ea_progreso')||'{}');const prev=P[D.id];
@@ -169,5 +317,6 @@
   bar.appendChild(submit); bar.appendChild(again); bar.appendChild(res);
 })();
 </script>
+<script src="../js/ea-scoring.js"></script>
 </body>
 </html>
