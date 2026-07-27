@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wh- Questions — Question Bank (you / he-she) (preguntas en ingles) — Ejercicios interactivos A1 | EnglishAngel</title>
-<meta name="description" content="Practica Wh- Questions — Question Bank (you / he-she) (A1) con ejercicios interactivos de opcion multiple y verdadero/falso, respuestas incluidas y correccion al instante. Free A1 English exercises online.">
-<meta name="keywords" content="Wh- Questions — Question Bank (you / he-she) exercises, English grammar, Questions, A1 English, ESL, ejercicios de ingles, ejercicios preguntas en ingles, preguntas en ingles, ejercicios interactivos, practicar ingles online">
-<meta property="og:title" content="Wh- Questions — Question Bank (you / he-she) (preguntas en ingles) — Ejercicios interactivos A1 | EnglishAngel">
-<meta property="og:description" content="Practica Wh- Questions — Question Bank (you / he-she) (A1) con ejercicios interactivos de opcion multiple y verdadero/falso, respuestas incluidas y correccion al instante. Free A1 English exercises online.">
+<title>Wh- Questions — Question Bank (you / he-she) (preguntas en ingles) — A1 Exercises | EnglishAngel</title>
+<meta name="description" content="Wh- Questions — Question Bank (you / he-she) — A1 English exercises: grammar, listening and reading in one sequence. Ejercicios de preguntas en ingles gratis.">
+<meta name="keywords" content="Wh- Questions — Question Bank (you / he-she) exercises, English grammar, Questions, A1 English, ESL, ejercicios de ingles, ejercicios preguntas en ingles, preguntas en ingles">
+<meta property="og:title" content="Wh- Questions — Question Bank (you / he-she) (preguntas en ingles) — A1 Exercises | EnglishAngel">
+<meta property="og:description" content="Wh- Questions — Question Bank (you / he-she) — A1 English exercises: grammar, listening and reading in one sequence. Ejercicios de preguntas en ingles gratis.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://pipefleurs87-sudo.github.io/EnglishAngel/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -121,6 +121,36 @@
     body.print-tabla section.sec-inicio>*{display:none}
     body.print-tabla section.sec-inicio .gtab{display:table;width:100%}
   }
+  /* --- Gap-fill inline (taller impreso): la oracion no se parte en bloques --- */
+  .gapfill{line-height:2.5;max-width:62ch}
+  .gapfill .gap{display:inline-block;white-space:nowrap}
+  .gapfill input[type=text]{display:inline-block;vertical-align:baseline;font:inherit;
+    width:7ch;padding:0 .3rem;border:none;border-bottom:2px solid var(--line);
+    border-radius:0;background:transparent;text-align:center;color:inherit}
+  .gapfill input[type=text]:focus{outline:none;border-bottom-color:var(--red);background:var(--paper)}
+  .gapfill input[type=text][data-state=ok]{border-bottom-color:#2f7d4f;color:#2f7d4f}
+  .gapfill input[type=text][data-state=bad]{border-bottom-color:var(--red);color:var(--red)}
+  .gapfill .hint{font-size:.85em;color:var(--muted);margin-left:.25rem}
+  .gapfill .solved{border-bottom:2px solid var(--line);padding:0 .3rem;font-weight:600}
+  @media (prefers-reduced-motion:no-preference){
+    .gapfill input[type=text]{transition:border-color .15s ease,background-color .15s ease}
+  }
+  .banked .bank{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:10px 0}
+  .banked .bank-row{display:flex;gap:10px;padding:3px 0;align-items:baseline}
+  .banked .bank-key{font-family:var(--mono);font-weight:600;color:var(--red);min-width:1.4em}
+  .banked .bank-label{color:var(--ink)}
+  .banked .bank-note{font-size:13px;color:var(--muted);margin-bottom:8px}
+  .banked .mm-row{display:flex;align-items:center;gap:14px;padding:8px 0;border-bottom:1px solid var(--line)}
+  .banked .mm-row:last-child{border-bottom:none}
+  .banked .mm-prompt{flex:1}
+  .banked .mm-chips{display:flex;gap:6px;flex-wrap:wrap}
+  .banked .mm-chip{width:2.75rem;height:2.75rem;border:1.5px solid var(--line);border-radius:6px;
+    background:#fff;font-family:var(--sans);font-weight:600;font-size:.95rem;color:var(--ink);cursor:pointer}
+  .banked .mm-chip[aria-checked=true]{background:var(--red);border-color:var(--red);color:#fff}
+  .banked .mm-chip[data-taken]{opacity:.35}
+  .banked .mm-chip[data-state=ok]{background:#2f7d4f;border-color:#2f7d4f;color:#fff}
+  .banked .mm-chip[data-state=bad]{background:var(--red);border-color:var(--red);color:#fff}
+  .banked .mm-chip:focus-visible{outline:2px solid var(--red);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -129,6 +159,84 @@
 <script>
 (function(){
   const D=window.SEQUENCE_DATA, app=document.getElementById('app');
+
+  /* banked_choice — multiple matching estilo Cambridge (Listening Part 4 / Use of English Part 8).
+     UN banco de opciones compartido por todas las preguntas.
+     Reglas que NO son cosmeticas:
+      - el banco NUNCA se baraja: si A deja de ser A entre renders, el estudiante
+        que anoto "1-C" en papel queda perdido.
+      - allowReuse:false ATENUA la opcion tomada, no la esconde: hay que poder cambiar de opinion.
+      - se puede deseleccionar: un radio nativo no lo permite, por eso son botones con role=radio.
+      - el banco no se repite en cada pregunta: 6 preguntas x 4 opciones = 24 bloques y se deja de leer. */
+  function construirBanked(ex,el,esc,onCambio){
+    const cont=el('div','banked');
+    const opciones=Array.isArray(ex.options)?ex.options:[];
+    const reusar=ex.allowReuse===true;
+    const valores={};
+    if(ex.prompt)cont.appendChild(el('div','instr',esc(ex.prompt)));
+    const banco=el('div','bank');
+    opciones.forEach(o=>{const r=el('div','bank-row');
+      r.appendChild(el('span','bank-key',esc(o.id)));
+      r.appendChild(el('span','bank-label',esc(o.label)));
+      banco.appendChild(r);});
+    cont.appendChild(banco);
+    if(!reusar)cont.appendChild(el('div','bank-note','Each option can be used once only.'));
+    const chips=[];
+    (ex.items||[]).forEach(it=>{
+      const fila=el('div','mm-row');
+      fila.appendChild(el('span','mm-prompt',esc(it.prompt||it.id)));
+      const grupo=el('div','mm-chips');grupo.setAttribute('role','radiogroup');
+      grupo.setAttribute('aria-label',String(it.prompt||it.id));
+      opciones.forEach(o=>{
+        const b=el('button','mm-chip',esc(o.id));
+        b.type='button';b.setAttribute('role','radio');b.setAttribute('aria-checked','false');
+        b.onclick=()=>{valores[it.id]=(valores[it.id]===o.id)?null:o.id;pintar();if(onCambio)onCambio(valores);};
+        grupo.appendChild(b);chips.push({item:it.id,opcion:o.id,btn:b});});
+      fila.appendChild(grupo);cont.appendChild(fila);});
+    function pintar(){
+      chips.forEach(c=>{
+        const elegido=valores[c.item]===c.opcion;
+        c.btn.setAttribute('aria-checked',elegido?'true':'false');
+        let tomada=false;
+        if(!reusar&&!elegido){for(const k in valores){if(k!==c.item&&valores[k]===c.opcion){tomada=true;break;}}}
+        if(tomada)c.btn.setAttribute('data-taken','');else c.btn.removeAttribute('data-taken');});
+    }
+    pintar();
+    return {node:cont,valores:valores,
+      marcar:(porItem)=>chips.forEach(c=>{
+        if(valores[c.item]!==c.opcion)return;
+        c.btn.setAttribute('data-state',porItem[c.item]?'ok':'bad');}),
+      limpiar:()=>chips.forEach(c=>c.btn.removeAttribute('data-state'))};
+  }
+
+  // Ancho del hueco: en A1-A2 insinua la longitud (baja carga cognitiva); B1+ fijo.
+  function gapAncho(niv,resp){
+    return (niv==='A1'||niv==='A2') ? Math.max(String(resp==null?'':resp).length+2,5) : 7;
+  }
+  // Construye la oracion como UN parrafo con los huecos en el flujo del texto.
+  // Soporta N huecos: el split anterior descartaba todo lo que viniera tras el segundo ___.
+  function construirGapFill(ex,niv,esc,el){
+    const p=el('p','prompt gapfill');
+    const partes=esc(ex.texto==null?'':ex.texto).split('___');
+    const ancho=gapAncho(niv,ex.respuesta);
+    const inputs=[];
+    partes.forEach(function(seg,i){
+      if(i>0){
+        // La pista "(stay)" viaja DENTRO del .gap para que no se separe del input al wrapear.
+        const m=seg.match(/^\s*\([^)]*\)/);
+        const pista=m?m[0]:'';
+        const g=el('span','gap');
+        const inp=el('input');inp.type='text';inp.style.width=ancho+'ch';
+        g.appendChild(inp);
+        if(pista)g.insertAdjacentHTML('beforeend','<span class="hint">'+pista+'</span>');
+        p.appendChild(g);inputs.push(inp);
+        p.insertAdjacentHTML('beforeend',pista?seg.slice(pista.length):seg);
+      } else {
+        p.insertAdjacentHTML('beforeend',seg);
+      }
+    });
+    return {p:p,inputs:inputs};
+  }
   if(!D) return; app.innerHTML='';
   function normalize(s){ if(s==null)return''; s=String(s).toLowerCase().trim();
     const c={"i'm":"i am","you're":"you are","he's":"he is","she's":"she is","it's":"it is","we're":"we are","they're":"they are","isn't":"is not","aren't":"are not","don't":"do not","doesn't":"does not","didn't":"did not","can't":"cannot","won't":"will not","i've":"i have","you've":"you have","we've":"we have","they've":"they have","that's":"that is","what's":"what is"};
@@ -257,6 +365,7 @@
     box.appendChild(el('div','stage',stageMap[ex.tipo]||'Exercise'));
     if(Array.isArray(ex.combina) && ex.combina.length) box.appendChild(el('div','joined','🔗 Combines: '+ex.combina.map(esc).join(' + ')));
     let getVal,correct,markEl=el('div','mark','');
+    let marcarGaps=null,limpiarGaps=null;
     switch(ex.tipo){
       case 'multiple_choice':{
         box.appendChild(el('p','prompt',esc(ex.pregunta).replace(/___/g,'<b>_____</b>')));
@@ -269,9 +378,11 @@
         ['true','false'].forEach(v=>{const btn=el('button',null,'');btn.textContent=v==='true'?'✔ True':'✗ False';btn.onclick=()=>{sel=v;tf.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));btn.classList.add('sel');};tf.appendChild(btn);});
         box.appendChild(tf);getVal=()=>sel;correct=String(ex.respuesta);break;}
       case 'gap_fill':{
-        const parts=esc(ex.texto).split('___');const p=el('p','prompt');const inp=el('input');inp.type='text';inp.className='inline-gap';
-        p.innerHTML=parts[0];p.appendChild(inp);p.insertAdjacentHTML('beforeend',parts[1]||'');box.appendChild(p);
-        getVal=()=>inp.value;correct=ex.respuesta;break;}
+        const gf=construirGapFill(ex,D.nivel,esc,el);box.appendChild(gf.p);
+        getVal=()=>gf.inputs.map(x=>x.value).join(' ').trim();
+        marcarGaps=(ok)=>gf.inputs.forEach(x=>x.setAttribute('data-state',ok?'ok':'bad'));
+        limpiarGaps=()=>gf.inputs.forEach(x=>x.removeAttribute('data-state'));
+        correct=ex.respuesta;break;}
       case 'unscramble':{
         box.appendChild(el('div','instr','Put the words in order to make a correct sentence.'));
         const sc=el('div','scrambled');const ws=(ex.palabras||[]).slice();for(let i=ws.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[ws[i],ws[j]]=[ws[j],ws[i]];}if(ws.length>2&&ws.join(' ')===(ex.palabras||[]).join(' '))ws.push(ws.shift());ws.forEach(w=>sc.appendChild(el('span',null,esc(w))));box.appendChild(sc);
@@ -288,13 +399,23 @@
       case 'short_answer_production':{
         box.appendChild(el('p','prompt',esc(ex.pregunta)));
         const inp=el('input');inp.type='text';inp.placeholder='Answer in a full sentence…';box.appendChild(inp);getVal=()=>inp.value;correct=ex.respuesta;break;}
+      case 'banked_choice':{
+        const bc=construirBanked(ex,el,esc,null);box.appendChild(bc.node);
+        // Un grader por pregunta: 3 aciertos de 4 valen 0.75, no 0.
+        (ex.items||[]).forEach(it=>{
+          graders.push({check:()=>String(bc.valores[it.id]||'')===String(it.answer),
+            answered:()=>!!bc.valores[it.id],
+            categoria:'listening',
+            clear:()=>bc.limpiar(),
+            reveal:(ok)=>{const m={};m[it.id]=ok;bc.marcar(m);}});});
+        return box;}
       default: box.appendChild(el('p','prompt','[Unsupported type: '+esc(ex.tipo)+']'));getVal=()=>'';correct='';
     }
     box.appendChild(markEl);
     graders.push({check:()=>eq(getVal(),correct),
       answered:()=>String(getVal()||'').trim()!=='',
-      clear:()=>{markEl.className='mark';markEl.innerHTML='';},
-      reveal:(ok)=>{markEl.className='mark '+(ok?'right':'wrong');markEl.innerHTML=(ok?'✓ Correct!':'✗ Not quite<span class="sol">Answer: '+esc(correct)+'</span>')+(ex.tambien_valido?'<span class="alt">Also correct: '+esc(ex.tambien_valido)+'</span>':'');}});
+      clear:()=>{markEl.className='mark';markEl.innerHTML='';if(limpiarGaps)limpiarGaps();},
+      reveal:(ok)=>{markEl.className='mark '+(ok?'right':'wrong');if(marcarGaps)marcarGaps(ok);markEl.innerHTML=(ok?'✓ Correct!':'✗ Not quite<span class="sol">Answer: '+esc(correct)+'</span>')+(ex.tambien_valido?'<span class="alt">Also correct: '+esc(ex.tambien_valido)+'</span>':'');}});
     return box;
   }
 
@@ -351,5 +472,6 @@
   }
 })();
 </script>
+<script src="../js/ea-nav.js"></script>
 </body>
 </html>
