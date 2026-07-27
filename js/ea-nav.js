@@ -24,7 +24,7 @@
     var tieneFluidez = CON_FLUIDEZ.indexOf(D.id) !== -1 || !!(D.fases && D.fases.fluency);
     var modos = [];
     if (tieneFluidez) modos.push(['🗣 Fluency', '../fluency/']);
-    // Games: se activara aqui cuando las paginas de juegos esten publicadas.
+    modos.push(['🎮 Games', '../juegos/']);   // activado 2026-07-27 (ludoteca publicada)
 
     modos.forEach(function (m) {
       var destino = m[1] + D.id + '.html';
