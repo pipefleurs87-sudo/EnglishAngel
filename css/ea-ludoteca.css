@@ -1,0 +1,214 @@
+/* EnglishAngel — Ludoteca: sistema visual compartido
+   ====================================================
+   UN solo archivo controla el aspecto del hub y de las 81 paginas de juego.
+   Va enlazado con <link>, NO incrustado: si se incrusta, build.py lo estampa
+   en 82 archivos y afinar un color vuelve a costar 82 subidas.
+
+   Criterio: suelo tranquilo, figura vibrante.
+   El fondo es apacible y de bajo contraste para que se pueda estar ahi mucho
+   rato sin cansancio. Todo el contraste se concentra en lo que se toca.
+
+   Las tres cosas que hacen que se sienta bien y que no son decorativas:
+     1. Los controles tienen un borde inferior solido (no blur): eso los vuelve
+        objetos con grosor, no rectangulos pintados.
+     2. Al pulsar bajan 2px y el borde inferior se come. Es el 'clic' visual.
+     3. El acierto es saturado; el fallo se RETIRA (gris, opacidad) en vez de
+        pintarse de rojo. Nada en pantalla castiga al estudiante.
+*/
+
+:root{
+  /* Halos del fondo — dan profundidad sin subir el contraste */
+  --halo-sea: rgba(79,163,165,.16);
+  --sea: #4FA3A5;
+  --sea-deep: #266E78;
+
+  /* Superficie fisica de los controles */
+  --key-top: #33465F;
+  --key-bot: #1B2A41;
+  --key-edge: rgba(15,24,38,.85);
+  --key-hit-top: #3E9A6B;
+  --key-hit-bot: #2F7D4F;
+  --key-hit-edge: #235F3B;
+  --key-off-top: #E4E7DF;
+  --key-off-bot: #D3D8CE;
+  --key-off-txt: #9AA096;
+
+  --cta-top: #C9A24A;
+  --cta-bot: #B08428;
+  --cta-edge: #8A6414;
+
+  /* Profundidad */
+  --lift: 0 1px 2px rgba(27,42,65,.05), 0 14px 40px rgba(27,42,65,.09);
+  --lift-sm: 0 1px 2px rgba(27,42,65,.05), 0 6px 18px rgba(27,42,65,.07);
+
+  --e-spring: cubic-bezier(.34,1.56,.64,1);
+  --e-out: cubic-bezier(.22,1,.36,1);
+}
+
+/* ---------- Suelo: fondo apacible con dos halos ---------- */
+
+.ea-ground{
+  position:relative;
+  background:radial-gradient(120% 90% at 12% 0%, var(--paper-hi) 0%, #F3F4EE 45%, var(--paper-lo) 100%);
+}
+.ea-ground::before{
+  content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
+  background:
+    radial-gradient(38% 44% at 82% 8%,  var(--halo-gold), transparent 70%),
+    radial-gradient(34% 40% at 8% 88%,  var(--halo-sea),  transparent 70%);
+}
+.ea-ground > *{ position:relative; z-index:1 }
+
+/* ---------- Controles fisicos ---------- */
+
+.ea-key{
+  height:44px; min-width:44px;              /* objetivo tactil minimo */
+  border:none; border-radius:11px; cursor:pointer;
+  font-family:var(--mono); font-size:14px; font-weight:500; color:#fff;
+  background:linear-gradient(165deg, var(--key-top) 0%, var(--key-bot) 100%);
+  box-shadow:0 2px 0 var(--key-edge), 0 4px 12px rgba(27,42,65,.22);
+  transition:transform .1s var(--e-out), box-shadow .1s var(--e-out), opacity .3s;
+}
+.ea-key:hover:not(:disabled){
+  transform:translateY(-1px);
+  box-shadow:0 3px 0 var(--key-edge), 0 7px 16px rgba(27,42,65,.28);
+}
+.ea-key:active:not(:disabled){
+  transform:translateY(2px);
+  box-shadow:0 0 0 var(--key-edge), 0 2px 6px rgba(27,42,65,.2);
+}
+.ea-key:disabled{ cursor:default }
+
+.ea-key.is-hit{
+  background:linear-gradient(165deg, var(--key-hit-top), var(--key-hit-bot));
+  box-shadow:0 2px 0 var(--key-hit-edge), 0 4px 12px rgba(47,125,79,.3);
+}
+/* El fallo se retira, no se castiga */
+.ea-key.is-miss{
+  background:linear-gradient(165deg, var(--key-off-top), var(--key-off-bot));
+  color:var(--key-off-txt); box-shadow:none; opacity:.55;
+}
+
+/* Llamada a la accion — oro, la unica pieza calida y saturada */
+.ea-cta{
+  border:none; border-radius:999px; padding:12px 24px; cursor:pointer;
+  font-family:var(--sans); font-size:15px; font-weight:600; color:#fff;
+  min-height:48px;
+  background:linear-gradient(165deg, var(--cta-top), var(--cta-bot));
+  box-shadow:0 2px 0 var(--cta-edge), 0 5px 14px rgba(201,150,47,.35);
+  transition:transform .1s var(--e-out), box-shadow .1s var(--e-out);
+}
+.ea-cta:hover{ transform:translateY(-1px); box-shadow:0 3px 0 var(--cta-edge), 0 8px 20px rgba(201,150,47,.42) }
+.ea-cta:active{ transform:translateY(2px); box-shadow:0 0 0 var(--cta-edge), 0 2px 6px rgba(201,150,47,.3) }
+
+/* ---------- Refuerzo de los componentes que ya existen ---------- */
+/* No se reescriben: se les da grosor y una pulsacion que se siente. */
+
+.btn{
+  box-shadow:0 2px 0 rgba(27,42,65,.10), var(--lift-sm);
+  transition:transform .1s var(--e-out), box-shadow .1s var(--e-out), background var(--t-fast), border-color var(--t-fast);
+}
+.btn:hover{ transform:translateY(-1px); box-shadow:0 3px 0 rgba(27,42,65,.12), 0 8px 20px rgba(27,42,65,.12) }
+.btn:active{ transform:translateY(2px); box-shadow:0 0 0 rgba(27,42,65,.10), 0 2px 6px rgba(27,42,65,.10) }
+
+.btn.pri{
+  background:linear-gradient(165deg,#C25243,var(--red)); border-color:transparent;
+  box-shadow:0 2px 0 #7E2117, 0 5px 14px rgba(178,58,46,.32);
+}
+.btn.pri:hover{ background:linear-gradient(165deg,#C25243,#9d3227); box-shadow:0 3px 0 #7E2117, 0 8px 20px rgba(178,58,46,.4) }
+.btn.pri:active{ box-shadow:0 0 0 #7E2117, 0 2px 6px rgba(178,58,46,.3) }
+
+/* Opciones de respuesta: se quedan claras (cuatro barras oscuras cansan),
+   pero ganan grosor, y la seleccion si es saturada. */
+.opt{
+  background:linear-gradient(165deg,#fff,#FAFBF7);
+  box-shadow:0 2px 0 rgba(27,42,65,.07), 0 4px 12px rgba(27,42,65,.06);
+  transition:transform .1s var(--e-out), box-shadow .1s var(--e-out), border-color var(--t-fast), background var(--t-fast);
+}
+.opt:hover:not(:disabled){ transform:translateY(-1px); border-color:var(--ink-12); box-shadow:0 3px 0 rgba(27,42,65,.09), 0 8px 18px rgba(27,42,65,.10) }
+.opt:active:not(:disabled){ transform:translateY(2px); box-shadow:0 0 0 rgba(27,42,65,.07), 0 2px 6px rgba(27,42,65,.08) }
+.opt.ok{ background:linear-gradient(165deg,#57A97A,var(--ok)); border-color:transparent; color:#fff; box-shadow:0 2px 0 #235F3B, 0 6px 16px rgba(47,125,79,.3) }
+.opt.err{ background:linear-gradient(165deg,#EDE9E4,#DFDCD5); border-color:transparent; color:#8B8880; box-shadow:none; opacity:.7 }
+
+.chip{
+  box-shadow:0 2px 0 rgba(27,42,65,.08), var(--lift-sm);
+  transition:transform .1s var(--e-out), box-shadow .1s var(--e-out), background var(--t-fast), border-color var(--t-fast);
+}
+.chip:hover{ transform:translateY(-1px); box-shadow:0 3px 0 rgba(27,42,65,.10), 0 8px 18px rgba(27,42,65,.12) }
+.chip:active{ transform:translateY(2px); box-shadow:0 0 0 rgba(27,42,65,.08), 0 2px 6px rgba(27,42,65,.08) }
+
+.glass{ box-shadow:var(--lift) }
+
+/* ---------- Ranura de letra ----------
+   Mismo lenguaje que el hueco de los ejercicios: raya inferior, no caja. */
+
+.ea-slot{
+  width:32px; height:42px;
+  border-bottom:3px solid rgba(27,42,65,.18);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-size:27px; font-weight:600; color:var(--ink);
+  transition:border-color .3s var(--e-out);
+}
+.ea-slot.is-on{ border-bottom-color:var(--gold) }
+.ea-slot.is-on > span{ display:inline-block; animation:eaPop .4s var(--e-spring) }
+@keyframes eaPop{ from{ transform:translateY(7px) scale(.7); opacity:0 } to{ transform:none; opacity:1 } }
+
+/* ---------- Escena de La Marea ---------- */
+
+.ea-scene{
+  position:relative; height:132px; border-radius:14px; overflow:hidden;
+  background:linear-gradient(180deg,var(--paper-hi) 0%,#EFF2EC 100%);
+  border:1px solid rgba(255,255,255,.7);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 2px 10px rgba(27,42,65,.06);
+}
+.ea-phone{
+  position:absolute; left:50%; top:34px; transform:translateX(-50%);
+  width:34px; height:56px; border-radius:6px; z-index:1;
+  background:linear-gradient(160deg,#2B3A52,var(--ink));
+  box-shadow:0 3px 8px rgba(27,42,65,.3);
+}
+.ea-phone::after{ content:''; position:absolute; inset:4px 4px 8px; border-radius:3px; background:rgba(201,150,47,.35) }
+.ea-water{ position:absolute; left:0; right:0; bottom:0; height:0; z-index:2; transition:height .7s var(--e-out) }
+.ea-water-fill{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(79,163,165,.55), rgba(38,110,120,.78)) }
+.ea-water-top{ position:absolute; left:0; right:0; top:-13px; width:200%; height:16px; animation:eaSwell 5s linear infinite }
+@keyframes eaSwell{ to{ transform:translateX(-50%) } }
+.ea-tag{
+  position:absolute; left:14px; bottom:10px; z-index:3;
+  font-family:var(--hand); font-size:17px; color:var(--ink);
+  background:rgba(255,255,255,.72); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+  padding:4px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 2px 8px rgba(27,42,65,.08);
+}
+
+/* ---------- Rejilla de teclado ---------- */
+
+.ea-keys{ display:grid; grid-template-columns:repeat(9,1fr); gap:7px }
+@media (max-width:520px){ .ea-keys{ grid-template-columns:repeat(7,1fr); gap:6px } }
+
+/* ---------- Accesibilidad ---------- */
+
+.ea-key:focus-visible, .ea-cta:focus-visible, .btn:focus-visible, .opt:focus-visible, .chip:focus-visible{
+  outline:3px solid var(--gold); outline-offset:3px;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .ea-water-top{ animation:none }
+  .ea-water{ transition:none }
+  .ea-slot.is-on > span{ animation:none }
+  .ea-key, .ea-cta, .btn, .opt, .chip{ transition:none }
+  .ea-key:hover, .ea-cta:hover, .btn:hover, .opt:hover, .chip:hover,
+  .ea-key:active, .ea-cta:active, .btn:active, .opt:active, .chip:active{ transform:none }
+}
+
+/* ---------- La Marea: palabra y miniatura del hub ---------- */
+
+.ea-word{ display:flex; gap:9px; justify-content:center; flex-wrap:wrap; margin:20px 0 22px }
+
+/* Miniatura de la tarjeta en el hub: una ola que sube en bucle */
+.mini-marea{ position:relative; width:100%; height:100%; overflow:hidden; border-radius:8px;
+  background:linear-gradient(180deg,var(--paper-hi),#EAEEE8) }
+.mini-marea i{ position:absolute; left:0; right:0; bottom:0; height:42%; display:block;
+  background:linear-gradient(180deg,rgba(79,163,165,.5),rgba(38,110,120,.75));
+  animation:miniTide 3.2s ease-in-out infinite alternate }
+@keyframes miniTide{ from{ height:26% } to{ height:58% } }
+@media (prefers-reduced-motion:reduce){ .mini-marea i{ animation:none; height:42% } }
