@@ -143,10 +143,10 @@
    Mismo lenguaje que el hueco de los ejercicios: raya inferior, no caja. */
 
 .ea-slot{
-  width:32px; height:42px;
-  border-bottom:3px solid rgba(27,42,65,.18);
+  width:40px; height:52px;
+  border-bottom:4px solid rgba(27,42,65,.22);
   display:flex; align-items:center; justify-content:center;
-  font-family:var(--serif); font-size:27px; font-weight:600; color:var(--ink);
+  font-family:var(--serif); font-size:34px; font-weight:700; color:var(--ink);
   transition:border-color .3s var(--e-out);
 }
 .ea-slot.is-on{ border-bottom-color:var(--gold) }
@@ -156,14 +156,14 @@
 /* ---------- Escena de La Marea ---------- */
 
 .ea-scene{
-  position:relative; height:132px; border-radius:14px; overflow:hidden;
+  position:relative; height:150px; border-radius:14px; overflow:hidden;
   background:linear-gradient(180deg,var(--paper-hi) 0%,#EFF2EC 100%);
   border:1px solid rgba(255,255,255,.7);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 2px 10px rgba(27,42,65,.06);
 }
 .ea-phone{
-  position:absolute; left:50%; top:34px; transform:translateX(-50%);
-  width:34px; height:56px; border-radius:6px; z-index:1;
+  position:absolute; left:50%; top:30px; transform:translateX(-50%);
+  width:42px; height:70px; border-radius:8px; z-index:1;
   background:linear-gradient(160deg,#2B3A52,var(--ink));
   box-shadow:0 3px 8px rgba(27,42,65,.3);
 }
@@ -180,10 +180,15 @@
   box-shadow:0 2px 8px rgba(27,42,65,.08);
 }
 
-/* ---------- Rejilla de teclado ---------- */
+/* ---------- Rejilla de teclado ----------
+   Ancho tope: sin el, en pantallas anchas las teclas se estiran a rectangulos
+   de 130px y pierden el aspecto de tecla. */
 
-.ea-keys{ display:grid; grid-template-columns:repeat(9,1fr); gap:7px }
-@media (max-width:520px){ .ea-keys{ grid-template-columns:repeat(7,1fr); gap:6px } }
+.ea-keys{ display:grid; grid-template-columns:repeat(9,minmax(0,46px)); gap:8px;
+  justify-content:center; max-width:520px; margin:0 auto }
+@media (max-width:560px){
+  .ea-keys{ grid-template-columns:repeat(7,minmax(0,44px)); gap:6px; max-width:360px }
+}
 
 /* ---------- Accesibilidad ---------- */
 
