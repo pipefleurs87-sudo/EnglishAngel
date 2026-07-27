@@ -13,6 +13,9 @@ MOTOR_EJ = ROOT / "motor" / "motor-generico.html"
 MOTOR_LE = ROOT / "motor" / "lecciones-generico.html"
 MOTOR_EV = ROOT / "motor" / "evaluacion-generico.html"
 TEMPLATE = ROOT / "build" / "index_template.html"
+MOTOR_LUD = ROOT / "motor" / "ludoteca-generico.html"
+LUDOTECA = ROOT / "ludoteca.html"
+JUEGOS = ROOT / "juegos"
 CONTENIDO = ROOT / "contenido"
 PREVIEW = ROOT / "preview"
 LECCION = ROOT / "leccion"
@@ -303,6 +306,240 @@ def build_ea_nav():
     print("  OK  js/ea-nav.js (" + str(len(ids)) + " temas con fluidez)")
 
 
+# ============================================================
+# Ludoteca
+# ============================================================
+# El motor de la ludoteca lee window.EA_POOL, no window.SEQUENCE_DATA, asi que
+# necesita su propia inyeccion. slim_pool() es la UNICA funcion que conoce las
+# tres formas de "vocabulario" que hay en el contenido; el motor nunca ve esa
+# heterogeneidad.
+
+def _vocab_items(data):
+    """Normaliza las tres formas de vocabulario a {w, tr, f}."""
+    out = []
+    for it in (data.get("vocabulario") or []):
+        if not isinstance(it, dict):
+            continue
+        if "palabra" in it:
+            w = str(it.get("palabra", "")).strip()
+            tr = str(it.get("traduccion", "")).strip()
+        elif "nacionalidad" in it:
+            # el pais es la cara visible y la nacionalidad la respuesta, no al reves
+            w = str(it.get("pais", "")).strip()
+            tr = str(it.get("nacionalidad", "")).strip()
+        else:
+            continue
+        if not w or not tr:
+            continue
+        # "bandera" no siempre es una bandera: en los verbos irregulares lleva el
+        # patron vocalico (i-o-en). Se emite siempre, vacia si no hay.
+        out.append({"w": w, "tr": tr, "f": it.get("bandera", "") or ""})
+    return out
+
+
+# --- Banco de pistas EN INGLES -------------------------------------------
+# Regla dura: si no hay pista en ingles, la palabra NO entra. Nunca se cae de
+# vuelta al espanol. Es mejor tener menos cartas que cartas con traduccion.
+#
+# Dos fuentes, ambas verificadas a mano:
+#   1. Los tres temas de clausulas relativas, donde "traduccion" NO es espanol
+#      sino la definicion ("Actor" -> "acts in films"), y el banco de oraciones
+#      da el molde exacto.
+#   2. Cualquier oracion del MISMO tema que contenga la palabra: se tapa y ya
+#      es una pista en ingles. Cuando la oracion es definitoria
+#      ("My mother's mother is my grandmother") sale justo el formato que
+#      queria Felipe, sin escribir nada.
+
+MOLDES_DEF = {
+    "a1-relative-clauses-professions-01": "A {w} is a person who {d}.",
+    "a1-relative-clauses-objects-01":     "A {w} is a thing that you use to {d}.",
+    "a1-relative-clauses-places-01":      "A {w} is a place where you {d}.",
+}
+
+def _partir_compuesta(w):
+    """'mother / father' -> ['mother','father'];  'drink · drank · drunk' -> ['drink']"""
+    w = str(w).strip()
+    if "·" in w:
+        return [w.split("·")[0].strip()]      # verbos irregulares: solo el infinitivo
+    if "/" in w:
+        return [x.strip() for x in w.split("/") if x.strip()]
+    if "→" in w:
+        return [w.split("→")[0].strip()]
+    return [w]
+
+
+def build_pistas(seqs):
+    """Devuelve la lista 'd' del pool: pistas en ingles, una por palabra."""
+    out = []
+    for data in seqs:
+        tid, niv = data["id"], data["nivel"]
+        frases = [str(o.get("oracion", "")).strip()
+                  for o in (data.get("banco_oraciones") or []) if o.get("oracion")]
+        molde = MOLDES_DEF.get(tid)
+        for it in (data.get("vocabulario") or []):
+            if not isinstance(it, dict):
+                continue
+            bruto = it.get("palabra") or it.get("nacionalidad") or ""
+            defin = it.get("traduccion") or ""
+            emo = it.get("bandera", "") or ""
+            for w in _partir_compuesta(bruto):
+                if not w or not re.match(r"^[A-Za-z][A-Za-z' -]*$", w):
+                    continue
+                pista, clase = None, None
+                if molde and defin:
+                    pista = molde.format(w="______", d=defin)
+                    clase = "def"
+                else:
+                    rx = re.compile(r"\b" + re.escape(w) + r"\b", re.I)
+                    cand = [f for f in frases if rx.search(f)]
+                    # se prefiere la oracion definitoria: la que termina en la palabra
+                    cand.sort(key=lambda f: (not rx.search(f.rstrip(".?!").split()[-1] if f.split() else ""), len(f)))
+                    if cand:
+                        pista = rx.sub("______", cand[0], count=1)
+                        clase = "sent"
+                if not pista:
+                    continue
+                e = {"n": niv, "t": tid, "w": w, "c": pista, "k": clase}
+                if emo and len(emo) <= 4:
+                    e["f"] = emo
+                out.append(e)
+
+    # Marca de univocidad. Una pista sacada de una oracion suele admitir otras
+    # palabras del mismo tema ("They are ______ students" acepta tall, smart,
+    # friendly...). Eso la inhabilita para pedir que el estudiante PRODUZCA la
+    # palabra, pero sirve perfectamente con opciones o con el emoji al lado.
+    # Las definiciones de clausula relativa si son univocas.
+    por_tema = {}
+    for e in out:
+        por_tema.setdefault(e["t"], set()).add(e["w"].lower())
+    for e in out:
+        if e["k"] == "def":
+            e["u"] = 1                       # univoca: vale para producir
+        else:
+            otras = por_tema[e["t"]] - {e["w"].lower()}
+            e["u"] = 0 if otras else 1
+    return out
+
+
+def slim_pool(seqs, solo_id=None):
+    fuente = [d for d in seqs if solo_id is None or d["id"] == solo_id]
+    q, v, s_, u = [], [], [], []
+    for d in fuente:
+        tid, niv = d["id"], d["nivel"]
+        for ex in ((d.get("fases") or {}).get("practica") or {}).get("ejercicios", []):
+            t = ex.get("tipo")
+            if t == "multiple_choice" and ex.get("opciones"):
+                q.append({"n": niv, "t": tid, "q": ex.get("pregunta", ""),
+                          "o": list(ex["opciones"]), "a": ex.get("respuesta", "")})
+            elif t == "true_false" and ex.get("afirmacion"):
+                # los verdadero/falso son preguntas de dos opciones: sirven igual
+                q.append({"n": niv, "t": tid, "q": ex["afirmacion"],
+                          "o": ["True", "False"],
+                          "a": "True" if str(ex.get("respuesta")).lower() == "true" else "False"})
+            elif t == "unscramble" and ex.get("palabras"):
+                # los signos sueltos ("?", ".") no son fichas jugables
+                ws = [w for w in ex["palabras"] if str(w).strip(" .,;:!?")]
+                if len(ws) >= 3:
+                    u.append({"n": niv, "t": tid, "w": ws, "a": ex.get("respuesta", "")})
+        for e in _vocab_items(d):
+            e2 = {"n": niv, "t": tid}; e2.update(e); v.append(e2)
+        for o in (d.get("banco_oraciones") or []):
+            txt = str(o.get("oracion", "")).strip()
+            if txt:
+                s_.append({"n": niv, "t": tid, "s": txt})
+
+    if solo_id is None:
+        pool = {"modo": "hub",
+                "temas": [{"id": d["id"], "nivel": d["nivel"], "tema": d["tema"],
+                           "area": d.get("_area", "")} for d in seqs]}
+    else:
+        d = fuente[0]
+        pool = {"modo": "tema", "id": d["id"], "tema": d["tema"], "nivel": d["nivel"],
+                "area": d.get("_area", ""),
+                "flu": (ROOT / "fluency" / (d["id"] + ".html")).exists()}
+    d_ = [x for x in build_pistas(fuente)]
+    pool.update({"q": q, "v": v, "s": s_, "u": u, "d": d_})
+    return pool
+
+
+def inyectar_pool(motor_txt, pool, prerender, title, desc, keywords, jsonld, canonical="", css_rel="css/ea-ludoteca.css"):
+    """Hermana de inyectar(). Mismo patron, pero con EA_POOL y sin tocar inyectar()."""
+    ld = json.dumps(jsonld, ensure_ascii=False)
+    head = seo_head(title, desc, keywords, ld, canonical)
+    page = re.sub(r"<title>.*?</title>", lambda m: head, motor_txt, count=1)
+    payload = json.dumps(pool, ensure_ascii=False, separators=(",", ":"))
+    page = page.replace("<body>", "<body>\n<script>window.EA_POOL = " + payload + ";</script>", 1)
+    anchor = '<div class="wrap" id="app"><div class="empty">No content loaded.</div></div>'
+    assert page.count(anchor) == 1, "ancla de la ludoteca no encontrada"
+    page = page.replace(anchor, '<div class="wrap" id="app">' + prerender + "</div>", 1)
+    # la hoja compartida cuelga de la raiz, asi que la ruta cambia segun donde viva la pagina
+    page = page.replace('href="../css/ea-ludoteca.css"', 'href="' + css_rel + '"', 1)
+    return page
+
+
+def prerender_ludoteca_tema(data, area):
+    p = ['<h1>' + esc(data["tema"]) + ' &mdash; juegos</h1>']
+    p.append('<p><em>' + esc(data["nivel"]) + ' &middot; ' + esc(area) + '</em></p>')
+    p.append('<p>Practica este tema jugando: vocabulario, orden de palabras y gramatica a contrarreloj.</p>')
+    p.append('<p><a href="../leccion/' + data["id"] + '.html">Leccion</a> &middot; '
+             '<a href="../preview/' + data["id"] + '.html">Ejercicios</a> &middot; '
+             '<a href="../evaluacion/' + data["id"] + '.html">Examen</a></p>')
+    return "".join(p)
+
+
+def prerender_ludoteca_hub(seqs):
+    p = ['<h1>Ludoteca EnglishAngel</h1>',
+         '<p>Juegos de ingles por tema y por nivel: vocabulario, gramatica y orden de palabras. '
+         'Todo el material sale de las 81 secuencias del curso.</p>', '<ul>']
+    for d in seqs:
+        p.append('<li><a href="juegos/' + d["id"] + '.html">' + esc(d["tema"]) +
+                 '</a> <em>' + esc(d["nivel"]) + '</em></li>')
+    p.append("</ul>")
+    return "".join(p)
+
+
+def build_ludoteca_pool(seqs):
+    pool = slim_pool(seqs)
+    (DATOS / "ludoteca-pool.json").write_text(
+        json.dumps(pool, ensure_ascii=False, indent=1), encoding="utf-8")
+    print("  OK  datos/ludoteca-pool.json (" + str(len(pool["q"])) + " q, " +
+          str(len(pool["v"])) + " v, " + str(len(pool["s"])) + " s, " +
+          str(len(pool["u"])) + " u, " + str(len(pool["d"])) + " pistas EN)")
+
+
+def build_ludoteca(seqs):
+    JUEGOS.mkdir(exist_ok=True)
+    motor = MOTOR_LUD.read_text(encoding="utf-8")
+
+    # hub
+    t = "Ludoteca — juegos de ingles por nivel | EnglishAngel"
+    de = "Juegos de ingles gratis por tema y nivel CEFR: vocabulario, gramatica y orden de palabras. 81 temas, del A1 al C1."
+    kw = "juegos de ingles, aprender ingles jugando, vocabulario ingles, gramatica inglesa, ESL games"
+    ld = {"@context": "https://schema.org", "@type": "WebApplication", "name": "Ludoteca EnglishAngel",
+          "applicationCategory": "EducationalApplication", "inLanguage": "en", "isAccessibleForFree": True,
+          "provider": {"@type": "Person", "name": "Felipe - EnglishAngel"}}
+    LUDOTECA.write_text(
+        inyectar_pool(motor, slim_pool(seqs), prerender_ludoteca_hub(seqs), t, de, kw, ld,
+                      BASE_URL + "/ludoteca.html", css_rel="css/ea-ludoteca.css"),
+        encoding="utf-8")
+    print("  OK  ludoteca.html (hub)")
+
+    # una pagina por tema
+    for d in seqs:
+        area = d.get("_area", "")
+        th = titulo_hibrido(d["tema"], area)
+        t = th + " — " + d["nivel"] + " Games | EnglishAngel"
+        de = d["tema"] + " — " + d["nivel"] + " English games: vocabulary, grammar and word order. Juegos de ingles gratis."
+        kw = d["tema"] + " games, English games, " + area + ", " + d["nivel"] + " English, juegos de ingles"
+        ld = jsonld_for(d, area, "game")
+        (JUEGOS / (d["id"] + ".html")).write_text(
+            inyectar_pool(motor, slim_pool(seqs, d["id"]), prerender_ludoteca_tema(d, area),
+                          t, de, kw, ld, BASE_URL + "/juegos/" + d["id"] + ".html",
+                          css_rel="../css/ea-ludoteca.css"),
+            encoding="utf-8")
+    print("  OK  juegos/ (" + str(len(seqs)) + " paginas)")
+
+
 def build_index(seqs):
     niveles = [n for n in NIVEL_ORDEN if any(s["nivel"]==n for s in seqs)]
     chips = '<span class="chip-f on" data-level="all">All</span>'
@@ -469,6 +706,8 @@ def main():
     build_sitemap(seqs)
     build_banco_maestro(seqs)
     build_temas_completos(seqs)
+    build_ludoteca_pool(seqs)
+    build_ludoteca(seqs)
     print("Listo. " + str(len(seqs)) + " temas -> " + str(len(seqs)*3) + " paginas + index + sitemap.")
     problemas = verificar_integridad(seqs)
     if problemas:
