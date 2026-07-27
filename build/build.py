@@ -242,6 +242,10 @@ def inyectar(motor_txt, data, title, desc, keywords, jsonld, modo="ejercicios", 
         anchor = '<div class="wrap" id="app"><div class="empty">No content loaded.</div></div>'
         assert page.count(anchor) == 1, "app anchor no encontrado en " + data.get("id", "?")
         page = page.replace(anchor, '<div class="wrap" id="app">' + pre + '</div>', 1)
+    # navegacion compartida: un solo archivo controla los enlaces de modo de todas las paginas
+    if "js/ea-nav.js" not in page:
+        assert page.count("</body>") == 1, "body de cierre no encontrado en " + data.get("id", "?")
+        page = page.replace("</body>", '<script src="../js/ea-nav.js"></script>\n</body>', 1)
     return page
 
 def jsonld_for(data, area, rtype):
@@ -280,6 +284,24 @@ def build_por_tema():
         seqs.append(data)
         print("  OK  " + data["id"] + "  (3 paginas + SEO)")
     return seqs
+
+def build_ea_nav():
+    """Genera js/ea-nav.js desde motor/ea-nav.js.
+
+    La lista de temas con fluidez se deriva de /fluency, no de /contenido: los JSON
+    de contenido no tienen bloque fases.fluency (0 de 81), asi que el directorio
+    publicado es la unica fuente de verdad disponible.
+    """
+    plantilla = ROOT / "motor" / "ea-nav.js"
+    destino = ROOT / "js" / "ea-nav.js"
+    ids = sorted(f.stem for f in (ROOT / "fluency").glob("*.html"))
+    txt = plantilla.read_text(encoding="utf-8")
+    assert "{{FLUENCY_IDS}}" in txt, "motor/ea-nav.js no tiene el marcador {{FLUENCY_IDS}}"
+    txt = txt.replace("{{FLUENCY_IDS}}", json.dumps(ids, ensure_ascii=False))
+    destino.parent.mkdir(exist_ok=True)
+    destino.write_text(txt, encoding="utf-8")
+    print("  OK  js/ea-nav.js (" + str(len(ids)) + " temas con fluidez)")
+
 
 def build_index(seqs):
     niveles = [n for n in NIVEL_ORDEN if any(s["nivel"]==n for s in seqs)]
@@ -441,6 +463,7 @@ def verificar_integridad(seqs):
 
 def main():
     print("Construyendo EnglishAngel...")
+    build_ea_nav()
     seqs = build_por_tema()
     build_index(seqs)
     build_sitemap(seqs)
